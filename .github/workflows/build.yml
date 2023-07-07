@@ -44,15 +44,15 @@ jobs:
         
     - run: mkdir -pv testing && echo 123 > testing/testing.txt
     
-    - name: Deploy with SCP
-      id: deploy_with_scp
-      uses: i3h/deploy-with-scp@v1
+    - name: Deploy to web server
+      uses: moonpathbg/scp_uploader@latest
       with:
-        src: ./testing/*
-        dest: /var/www/html/testing
-        username: ubuntu
-        server-ip: ec2-43-198-50-165.ap-east-1.compute.amazonaws.com
-        ssh-key: ${{ secrets.SSH_KEY }}
+          host: ec2-43-198-50-165.ap-east-1.compute.amazonaws.com
+          port: 22
+          username: ubuntu
+          key : ${{ secrets.SSH_KEY }}
+          source: "./testing/*"
+          target: "/var/www/html/testing"
         
     - name: Release prebuilt
       uses: ncipollo/release-action@v1
