@@ -52,7 +52,7 @@ jobs:
           username: ubuntu
           key : ${{ secrets.SSH_KEY }}
           source: "./testing"
-          target: "/var/www/html"
+          target: "/var/www/html/testing"
 
     - name: Release prebuilt
       uses: ncipollo/release-action@v1
