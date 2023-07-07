@@ -45,15 +45,15 @@ jobs:
     - run: mkdir -pv testing && echo 123 > testing/testing.txt
     
     - name: Deploy to web server
-      uses: moonpathbg/scp_uploader@latest
+      uses: kostya-ten/ssh-server-deploy@v4
       with:
-          host: ec2-43-198-50-165.ap-east-1.compute.amazonaws.com
-          port: 22
-          username: ubuntu
-          key : ${{ secrets.SSH_KEY }}
-          source: "./testing"
-          target: "/var/www/html/testing"
-
+        host: ec2-43-198-50-165.ap-east-1.compute.amazonaws.com
+        port: 22
+        username: ubuntu
+        private_key: ${{ secrets.SSH_KEY }}
+        scp_source: "./testing/testing.txt"
+        scp_target: "/var/www/html/testing"
+        
     - name: Release prebuilt
       uses: ncipollo/release-action@v1
       with:
