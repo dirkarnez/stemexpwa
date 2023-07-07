@@ -41,6 +41,18 @@ jobs:
         type: 'zip'
         directory: "dist"
         filename: "${{ env.targetZip }}"
+        
+    - run: mkdir -pv testing && echo 123 > testing/testing.txt
+    
+    - name: Deploy to web server
+      uses: moonpathbg/scp_uploader@latest
+      with:
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: ${{ secrets.USERNAME }}
+          key : ${{ secrets.SSH_KEY }}
+          source: "./testing"
+          target: "/var/www/html"
 
     - name: Release prebuilt
       uses: ncipollo/release-action@v1
