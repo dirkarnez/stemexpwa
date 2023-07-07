@@ -44,16 +44,15 @@ jobs:
         
     - run: mkdir -pv testing && echo 123 > testing/testing.txt
     
-    
-    - name: Publish
-      uses: nogsantos/scp-deploy@master
+    - name: Deploy with SCP
+      id: deploy_with_scp
+      uses: i3h/deploy-with-scp@v1
       with:
         src: ./testing/*
-        host: ec2-43-198-50-165.ap-east-1.compute.amazonaws.com
-        remote: /var/www/html/testing
-        port: 22
-        user: ubuntu
-        key: ${{ secrets.SSH_KEY }}
+        dest: /var/www/html/testing
+        username: ubuntu
+        server-ip: ec2-43-198-50-165.ap-east-1.compute.amazonaws.com
+        ssh-key: ${{ secrets.SSH_KEY }}
         
     - name: Release prebuilt
       uses: ncipollo/release-action@v1
