@@ -1,5 +1,11 @@
 <script>
 	let name = "world";
+
+	import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+
+	confetti();
+
+
 </script>
 
 <h1 class="title">Hello {name}!</h1>
