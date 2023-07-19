@@ -46,9 +46,9 @@ module.exports = {
 		bundle: ["whatwg-fetch", "./index.ts"]
 	},
 	resolve: {
-		alias: {
-			svelte: path.resolve("node_modules", "svelte")
-		},
+		// alias: {
+		// 	svelte: path.resolve("node_modules", "svelte")
+		// },
 		extensions: [".ts", ".mjs", ".js", ".json", ".css", ".scss", ".svelte"],
 		mainFields: ["svelte", "browser", "module", "main"],
 		conditionNames: ['svelte', 'import']
@@ -189,12 +189,13 @@ module.exports = {
 			fileName: "asset-manifest.json",
 			publicPath
 		}),
-		new CopyPlugin([
+		new CopyPlugin({
+			patterns: [
 			{
 				from: path.resolve(__dirname, "public"),
 				to: path.resolve(__dirname, "dist")
 			}
-		])
+		]})
 		// new DashboardPlugin({port: DEV_PORT})
 	].filter(Boolean),
 	optimization: {
