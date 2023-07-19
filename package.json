@@ -49,6 +49,10 @@
 		"start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
 	},
 	"dependencies": {
+		"canvg": "^4.0.1",
+		"core-js": "^3.31.1",
+		"jspdf": "^2.5.1",
+		"jspdf-autotable": "^3.5.31",
 		"svelte-loadable": "^2.0.1",
 		"whatwg-fetch": "^3.0.0"
 	}

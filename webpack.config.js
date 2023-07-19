@@ -12,7 +12,7 @@ const { merge } = require("webpack-merge");
 const preprocess = require("svelte-preprocess");
 
 const path = require("path");
-const DEV_PORT = 5000;
+const DEV_PORT = 5678;
 
 // const mode = process.env.NODE_ENV || "development";
 // const prod = mode === "production";
@@ -51,7 +51,7 @@ module.exports = {
 		},
 		extensions: [".ts", ".mjs", ".js", ".json", ".css", ".scss", ".svelte"],
 		mainFields: ["svelte", "browser", "module", "main"],
-		conditionNames: ['svelte', 'browser']
+		conditionNames: ['svelte', 'import']
 	},
 	output: {
 		path: __dirname + "/dist",
