@@ -41,7 +41,7 @@ module.exports = {
 	mode: isProduction ? 'production' : 'development',
 	bail: isProduction,
 	context: path.resolve(__dirname, "./src"),
-	// devtool: prod ? false : "cheap-module-eval-source-map",
+	devtool: isProduction ? false : "inline-source-map",
 	entry: {
 		bundle: ["whatwg-fetch", "./index.ts"]
 	},
@@ -170,6 +170,7 @@ module.exports = {
 					: {}
 			)
 		),
+		new webpack.SourceMapDevToolPlugin({}),
 		new webpack.DefinePlugin({
 			"process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
 			PUBLIC_URL: JSON.stringify(publicPath)

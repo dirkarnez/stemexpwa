@@ -28,6 +28,7 @@
 		"prettier-plugin-svelte": "^0.7.0",
 		"sass": "^1.63.4",
 		"sass-loader": "^13.3.2",
+		"source-map-loader": "^4.0.1",
 		"string-replace-loader": "^3.1.0",
 		"style-loader": "^0.23.1",
 		"svelte": "^3.6.7",
@@ -54,6 +55,7 @@
 		"jspdf": "^2.5.1",
 		"jspdf-autotable": "^3.5.31",
 		"svelte-loadable": "^2.0.1",
+		"svelte-routing": "^1.11.0",
 		"whatwg-fetch": "^3.0.0"
 	}
 }
