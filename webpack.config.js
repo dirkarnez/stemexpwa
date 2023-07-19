@@ -46,12 +46,12 @@ module.exports = {
 		bundle: ["whatwg-fetch", "./index.ts"]
 	},
 	resolve: {
-		// alias: {
-		// 	svelte: path.resolve("node_modules", "svelte")
-		// },
+		alias: {
+			svelte: path.resolve('node_modules', 'svelte/src/runtime')
+		},
 		extensions: [".ts", ".mjs", ".js", ".json", ".css", ".scss", ".svelte"],
 		mainFields: ["svelte", "browser", "module", "main"],
-		conditionNames: ['svelte', 'import']
+		conditionNames: ['svelte', 'import', 'browser']
 	},
 	output: {
 		path: __dirname + "/dist",
@@ -66,7 +66,10 @@ module.exports = {
 				use: {
 					loader: "svelte-loader",
 					options: {
-						emitCss: true,
+						compilerOptions: {
+							dev: !isProduction
+						},
+						emitCss: isProduction,
 						hotReload: !isProduction,
 						preprocess: preprocess({
 							scss: true,
@@ -91,7 +94,13 @@ module.exports = {
 					 * For developing, use 'style-loader' instead.
 					 * */
 					isProduction ? MiniCssExtractPlugin.loader : "style-loader",
-					"css-loader?url=false"
+					{
+						loader: 'css-loader',
+						options: {
+							url: false
+							// options...
+						}
+					}
 				]
 			},
 			{

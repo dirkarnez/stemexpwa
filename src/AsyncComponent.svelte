@@ -1,14 +1,12 @@
-<script lang="ts">
-  import { onMount } from 'svelte'
-  export let customProp: boolean;
+<script>
+  import { onMount } from 'svelte';
+  //xport let customProp: boolean;
   
+  debugger;
   onMount(() => {
+    debugger;
     console.log(`I'm the on create method of the async component c:`)
   })
 </script>
 
-I'm an async component!
-{#if customProp}
-  <br />
-  With custom props \o/
-{/if}
+sdsad
