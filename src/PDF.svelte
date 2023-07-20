@@ -280,7 +280,7 @@
 			],
 			theme: "grid"
 		});
-
+		
 		doc.save("table.pdf");
 	}
 </script>
