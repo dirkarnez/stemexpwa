@@ -280,7 +280,108 @@
 			],
 			theme: "grid"
 		});
-		
+		doc.autoTable({
+                styles: {
+                    halign: 'center',
+                    fontSize: 8
+                },
+                startY: 615,
+                tableWidth: 220,
+                showHead: false,
+                body: [
+                    [{
+                        content: "Advance B",
+                        colSpan: 1
+                    }, {
+                        content: "9",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#d53e4f"
+                        }
+                    }],
+                    [{
+                        content: "Advance A",
+                        colSpan: 1
+                    }, {
+                        content: "8",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#f46d43"
+                        }
+                    }],
+                    [{
+                        content: "Intermediate E",
+                        colSpan: 1
+                    }, {
+                        content: "7",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#fdae61"
+                        }
+                    }],
+                    [{
+                        content: "Intermediate D",
+                        colSpan: 1
+                    }, {
+                        content: "6",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#fee08b"
+                        }
+                    }],
+                    [{
+                        content: "Intermediate C",
+                        colSpan: 1
+                    }, {
+                        content: "5",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#e6f598"
+                        }
+                    }],
+                    [{
+                        content: "Intermediate B",
+                        colSpan: 1
+                    }, {
+                        content: "4",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#abdda4"
+                        }
+                    }],
+                    [{
+                        content: "Intermediate A",
+                        colSpan: 1
+                    }, {
+                        content: "3",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#66c2a5"
+                        }
+                    }],
+                    [{
+                        content: "Introductory",
+                        colSpan: 1
+                    }, {
+                        content: "2",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#3288bd"
+                        }
+                    }],
+                    [{
+                        content: "Camp",
+                        colSpan: 1
+                    }, {
+                        content: "1",
+                        colSpan: 1,
+                        styles: {
+                            fillColor: "#5e4fa2"
+                        }
+                    }]
+                ],
+                theme: "plain"
+            });	
 		doc.save("table.pdf");
 	}
 </script>
