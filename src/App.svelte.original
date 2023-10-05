@@ -1,0 +1,81 @@
+<script>
+	import Loadable from "svelte-loadable";
+
+	let retry;
+	// export var world: string = "asd";
+
+	let user = { loggedIn: false };
+
+	function toggle() {
+		user.loggedIn = !user.loggedIn;
+	}
+
+	let files = [];
+
+	function onInput(event) {
+		files = Array.from(event.target.files).map(file =>
+			window.URL.createObjectURL(file)
+		);
+	}
+
+	function loadImage(event) {
+		var src = event.target.src;
+		URL.revokeObjectURL(src);
+	}
+</script>
+
+<style>
+	div {
+		font-size: 25px;
+		font-weight: 400;
+		height: 100vh;
+		text-align: center;
+		color: black;
+		margin: 100px;
+	}
+	/* span {
+    color: #1f9fa8;
+  } */
+</style>
+
+<!-- <Loadable loader={() => import('./AsyncComponent.svelte')} delay="500" bind:this={retry} on:load={() => console.log('The component has been loaded')} >
+  <div slot="loading">Loading and blessed to succeed...</div>
+  <div slot="error" let:error>
+    {error}
+    <br>
+  </div>
+  <svelte:component this={retry} />
+  <button on:click={() => retry.load()}>Try again</button>
+</Loadable> -->
+	
+<button on:click={toggle}>
+	{#if user.loggedIn}
+		Log out
+	{/if}
+	{#if !user.loggedIn}
+		Log in
+	{/if}
+</button>
+
+{#if user.loggedIn}
+	<Loadable
+		loader={() => import('./AsyncComponent.svelte')}
+		let:component
+		bind:this={retry}>
+		<div slot="loading">Loading and blessed to succeed...</div>
+		<svelte:component this={component} customProp={true} />
+		<button on:click={() => retry.load()}>Reload</button>
+	</Loadable>
+{/if}
+
+
+<input
+	type="file"
+	id="avatar"
+	name="avatar"
+	accept="image/png, image/jpeg"
+	on:input={onInput} />
+
+{#if files.length > 0}
+	<img src={files[0]} alt="preview" on:load={loadImage} />
+{/if}

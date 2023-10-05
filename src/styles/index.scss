@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$primary: #0d6efd;
+$secondary: #6c757d;
+
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+
+//$link: $pink;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color:  #fff;//#f5f7fb;
+$control-border-width: 2px;
+//$input-border-color: transparent;
+//$input-shadow: none;
+
+// Import only what you need from Bulma
+// @import "bulma/sass/utilities/_all.sass";
+// @import "bulma/sass/base/_all.sass";
+// @import "bulma/sass/components/_all.sass";
+// @import "bulma/sass/elements/_all.sass";
+// @import "bulma/sass/form/_all.sass";
+// @import "bulma/sass/layout/hero.sass";
+// @import "bulma/sass/layout/section.sass";
+
+$menu-item-radius: 0;
+$menu-item-color: #e9ecef80;
+$menu-item-active-color: #e9ecef;
+$menu-item-active-background-color: unset;
+$menu-item-hover-color: #e9ecefbf;
+$menu-item-hover-background-color: unset;
+$menu-list-link-padding: 0.625rem 1.625rem;
+//$menu-label-spacing: 0;
+//$menu-label-font-size: 1rem;
+$menu-label-color:  #e9ecef80;
+
+.menu-list a.is-active {
+  background: linear-gradient(90deg,rgba(59,125,221,.1),rgba(59,125,221,.088) 50%,transparent);
+  border-left-color: #3b7ddd;
+}
+.menu-list a {
+  border-left: 3px solid transparent;
+}
+
+@import "bulma";
+
+
+
+@import "bulma-timeline";
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+// body {
+// 	margin: 0;
+// 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+// 		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+// 		sans-serif;
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
+// }
+
+

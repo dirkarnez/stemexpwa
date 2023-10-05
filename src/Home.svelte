@@ -1,0 +1,335 @@
+<script>
+	import { useLocation, navigate, Route, Router, link } from "svelte-routing";
+    import BookedClasses from "./pages/BookedClasses.svelte";
+	import Dashboard from "./pages/Dashboard.svelte";
+	import Installation from "./pages/Installation.svelte";
+	import Settings from "./pages/Settings.svelte";
+	import StudentPortfolio from "./pages/StudentPortfolio.svelte";
+	import UpcomingSchedule from "./pages/UpcomingSchedule.svelte";
+	import LastMinuteOffer from "./pages/LastMinuteOffer.svelte";
+	import UserManagement from "./pages/UserManagement.svelte";
+	import FileManagement from "./pages/FileManagement.svelte";
+	import ClientManagement from "./pages/ClientManagement.svelte";
+	import Statistics from "./pages/Statistics.svelte";
+
+	import stemexIcon from "./assets/images/stemex_icon.png"
+
+	import { WrappedFetch } from "./utils/fetch";
+	import { getHost } from "./utils/api";
+	// import { AreaPlugin } from "rete-area-plugin";
+	// import { NodeEditor } from "rete";
+	// import { SveltePlugin, Presets } from "rete-svelte-plugin";
+
+	// const area = new AreaPlugin();
+	// const render = new SveltePlugin();
+	// render.addPreset(Presets.classic.setup());
+	// const editor = new NodeEditor();
+	// editor.use(area);
+	// area.use(render);
+
+	let location = useLocation();
+    // if (Math.random() > 0.5) {
+	// 	navigate("/login", { replace: true });
+    // }
+
+	let role = "";
+	let userName = "";
+	 
+	// this may return 403
+	const [ wrappedFetchPromise, abort ] = WrappedFetch("/api/init")
+	wrappedFetchPromise
+	.then(json => {
+		role = json.role;
+		userName = json["user_name"];
+	})
+	.catch(e => {
+		navigate("/login", { replace: true });
+	});
+</script>
+
+<!-- <svelte:head>
+	<style>
+		html {
+			height: fill-available;
+			height: -webkit-fill-available;
+		}
+
+		body {
+			margin: 0;
+            /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            min-height: fill-available;
+            min-height: -webkit-fill-available;
+		}
+
+		. {
+            z-index: 10;
+            top: var(--navbar-height);
+            background-color: black;
+            color: white;
+
+            width: 15rem;
+            /*height: 100%;*/
+
+
+            bottom: 0;
+			right: 0;
+            left: 0;
+            overflow: hidden;
+            position: fixed;
+            z-index: 4;
+        }
+	</style>
+</svelte:head> -->
+	<!-- <Route path="/dashboard" component={Dashboard} />
+	<Route path="/installation" component={Installation} />
+	<Route path="/settings" component={Settings} />
+	<Route path="/student-portfolio" component={StudentPortfolio} />
+	<Route path="/upcoming-schedule" component={UpcomingSchedule} />  -->
+
+
+<!-- <nav>
+	<Link to="/">Home</Link>
+	redirect to home and set invisible after login
+	<Link to="/login">Login</Link>
+
+	<Link to="/booked-classes">BookedClass</Link>
+	<Link to="/dashboard">Dashboard</Link>
+	<Link to="/installation">Installation</Link>
+	<Link to="/settings">Settings</Link>
+	<Link to="/student-portfolio">StudentPortfolio</Link>
+	<Link to="/upcoming-schedule">UpcomingSchedule</Link>
+</nav> -->
+<nav class="navbar" aria-label="main navigation">
+	<div class="navbar-brand">
+		<a class="navbar-item" href="/" use:link>
+			<img
+				src={stemexIcon}
+				height="100%"
+				alt="" />
+		</a>
+
+		<a
+			href={`javascript:void(0);`}
+			role="button"
+			class="navbar-burger"
+			aria-label="menu"
+			aria-expanded="false"
+			data-target="navbarBasicExample">
+			<span aria-hidden="true" />
+			<span aria-hidden="true" />
+			<span aria-hidden="true" />
+		</a>
+	</div>
+
+	<div id="navbarBasicExample" class="navbar-menu">
+		<div class="navbar-start">
+			<a class="navbar-item" href={`javascript:void(0);`}>Home</a>
+
+			<a class="navbar-item" href={`javascript:void(0);`}>Documentation</a>
+
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link" href={`javascript:void(0);`}>More</a>
+
+				<div class="navbar-dropdown">
+					<a class="navbar-item" href={`javascript:void(0);`}>About</a>
+					<a class="navbar-item" href={`javascript:void(0);`}>Jobs</a>
+					<a class="navbar-item" href={`javascript:void(0);`}>Contact</a>
+					<hr class="navbar-divider" />
+					<a class="navbar-item" href={`javascript:void(0);`}>
+						Report an issue
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar-end">
+			<div class="navbar-item">
+				<div class="buttons">
+					<a class="button is-primary" href={`javascript:void(0);`}>
+						<strong>Sign up</strong>
+					</a>
+					<a class="button is-light" href={`javascript:void(0);`}>Log in</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<section class="section" style="padding: 0rem; border-top: 2px solid #f5f5f5;">
+	<div class="columns is-gapless">
+		<div class="column is-narrow" style="background-color: #222e3c;">
+			<aside class="menu pt-4 pb-4 pl-0" style="max-width: 260px; min-width: 260px;">
+				<ul class="menu-list">
+					<li>
+						<a class={$location.pathname == "/" ? "is-active" : "" } href="/" use:link>
+							Dashboard
+						</a>
+					</li>
+				</ul>
+				<p class="menu-label pl-4">
+					Classes
+				</p>
+				<ul class="menu-list">
+					{#if role == "parent"}
+						<li>
+							<a class={$location.pathname.includes("/booked-classes") ? "is-active" : "" } href="/booked-classes" use:link>
+								Booked Classes
+							</a>
+						</li>
+						<li>
+							<a class={$location.pathname.includes("/student-portfolio") ? "is-active" : "" } href="/student-portfolio" use:link>
+								Student Portfolio
+							</a>
+						</li>
+					{/if}
+					<li>
+						<a class={$location.pathname.includes("/last-minute-offer") ? "is-active" : "" } href="/last-minute-offer" use:link>
+							Last Minute Offer
+						</a>
+					</li>
+					<li>
+						<a class={$location.pathname.includes("/stemex-academy-curriculum") ? "is-active" : "" } href="/stemex-academy-curriculum" use:link>
+							Stemex Academy Curriculum
+						</a>
+					</li>
+					{#if role == "parent"}
+					<li>
+						<a class={$location.pathname.includes("/installation-guide") ? "is-active" : "" } href="/installation-guide" use:link>
+							Installation Guide
+						</a>
+					</li>
+					<li>
+						<a class={$location.pathname.includes("/settings") ? "is-active" : "" } href="/settings" use:link>
+							Settings
+						</a>
+					</li>
+					{/if}
+					{#if role == "admin" || role == "sales"}
+						<p class="menu-label pl-4">
+							Internal
+						</p>
+						<ul class="menu-list">
+							{#if role == "admin" || role == "sales"}
+								<li>
+									<a class={$location.pathname.includes("/statistics") ? "is-active" : "" } href="/statistics" use:link>
+										Statistics
+									</a>
+								</li>
+							{/if}
+							{#if role == "admin"}
+								<li>
+									<a class={$location.pathname.includes("/user-management") ? "is-active" : "" } href="/user-management" use:link>
+										User management
+									</a>
+								</li>
+							{/if}
+
+							{#if role == "admin"}
+								<li>
+									<a class={$location.pathname.includes("/file-management") ? "is-active" : "" } href="/file-management" use:link>
+										File management
+									</a>
+								</li>
+							{/if}
+							{#if role == "sales"}
+							<li>
+								<a class={$location.pathname.includes("/client-management") ? "is-active" : "" } href="/client-management" use:link>
+									Client management
+								</a>
+							</li>
+						{/if}
+						</ul>
+					{/if}
+					<li>
+						<a class={$location.pathname == `${getHost()}/api/logout` ? "is-active" : "" } href={`${getHost()}/api/logout`} on:click={() => { return confirm('Are you sure?') }}>
+							Logout
+						</a>
+					</li>
+				</ul>
+			</aside>
+		</div>
+		<div class="column" style="background-color: #f5f7fb; padding: 3rem;">
+            <section class="section">
+				<Router>
+					<Route path="/">
+						<Dashboard role={role} userName={userName}/>
+					</Route>
+					<Route path="/booked-classes/*">
+						<BookedClasses/>
+					</Route>
+					<Route path="/stemex-academy-curriculum/*">
+						<UpcomingSchedule/>
+					</Route>
+					<Route path="/student-portfolio" component={StudentPortfolio} />
+					<Route path="/installation-guide" component={Installation} />
+					<Route path="/last-minute-offer" component={LastMinuteOffer}/>
+					
+					<Route path="/user-management">
+						<UserManagement/>
+					</Route>
+
+					<Route path="/client-management">
+						<ClientManagement/>
+					</Route>
+
+					<Route path="/file-management">
+						<FileManagement/>
+					</Route>
+
+					<Route path="/statistics">
+						<Statistics role={role} userName={userName}/>
+					</Route>
+					
+					<Route path="/sales">
+						<div class="columns">
+							<div class="column">
+								<div class="content">
+									<h4>Hi sales {userName}</h4>
+								</div>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="column">
+								<div class="content">
+									<div class="box">
+										<!-- <table class="table">
+											<thead>
+												<tr>
+													<th>A</th>
+													<th>Course Date</th>
+												</tr>
+											</thead>
+											<tbody>
+												{#each response.data.results as item}
+													<tr>
+														<td>
+															<a href="{$location.pathname}/{item.id}"
+																class="is-underlined"
+																use:link
+															>
+																{item.properties.course_dates}
+															</a>
+														</td>
+														<td>{item.properties.new_course_name}</td>
+													</tr>
+												{/each}
+											</tbody>
+										</table> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</Route>
+					<Route path="/settings" component={Settings} />
+					<Route>
+						<h1>yo</h1>
+					</Route>
+				</Router>
+			</section>
+        </div>
+	</div>
+</section>
+

@@ -1,0 +1,21 @@
+<script>
+	import { Router, Route } from "svelte-routing";
+	import Home from "./Home.svelte";
+	import LoginPage from "./pages/LoginPage.svelte";
+</script>
+
+<Router>
+	<Route path="/login">
+		<LoginPage/>
+	</Route>
+	<Route path="/*">
+		<Home/>
+	</Route>
+</Router>
+
+<!-- 
+  "/"
+if logined -> "/"
+else "/login"
+
+-->
