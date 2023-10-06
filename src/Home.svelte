@@ -157,7 +157,7 @@
 	</div>
 </nav>
 
-<section class="section" style="padding: 0rem; border-top: 2px solid #f5f5f5;">
+<section class="section" style="padding: 0rem;">
 	<div class="columns is-gapless">
 		<div class="column is-narrow" style="background-color: #222e3c;">
 			<aside class="menu pt-4 pb-4 pl-0" style="max-width: 260px; min-width: 260px;">
@@ -256,7 +256,7 @@
 				</ul>
 			</aside>
 		</div>
-		<div class="column" style="background-color: #f5f7fb; padding: 3rem;">
+		<div class="column" style="background-color: #f5f7fb; padding: 3rem; border-top: 2px solid rgb(245, 245, 245);">
             <section class="section">
 				<Router>
 					<Route path="/">
