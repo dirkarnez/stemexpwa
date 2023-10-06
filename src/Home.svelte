@@ -5,7 +5,8 @@
 	import Installation from "./pages/Installation.svelte";
 	import Settings from "./pages/Settings.svelte";
 	import StudentPortfolio from "./pages/StudentPortfolio.svelte";
-	import UpcomingSchedule from "./pages/UpcomingSchedule.svelte";
+	import StemexAcademyCurriculum from "./pages/StemexAcademyCurriculum.svelte";
+	import InstructorSchedule from "./pages/InstructorSchedule.svelte";
 	import LastMinuteOffer from "./pages/LastMinuteOffer.svelte";
 	import UserManagement from "./pages/UserManagement.svelte";
 	import FileManagement from "./pages/FileManagement.svelte";
@@ -87,7 +88,6 @@
 	<Route path="/installation" component={Installation} />
 	<Route path="/settings" component={Settings} />
 	<Route path="/student-portfolio" component={StudentPortfolio} />
-	<Route path="/upcoming-schedule" component={UpcomingSchedule} />  -->
 
 
 <!-- <nav>
@@ -100,7 +100,6 @@
 	<Link to="/installation">Installation</Link>
 	<Link to="/settings">Settings</Link>
 	<Link to="/student-portfolio">StudentPortfolio</Link>
-	<Link to="/upcoming-schedule">UpcomingSchedule</Link>
 </nav> -->
 <nav class="navbar" aria-label="main navigation">
 	<div class="navbar-brand">
@@ -207,7 +206,7 @@
 						</a>
 					</li>
 					{/if}
-					{#if role == "admin" || role == "sales"}
+					{#if role == "admin" || role == "sales" || role == "instructor"}
 						<p class="menu-label pl-4">
 							Internal
 						</p>
@@ -226,7 +225,6 @@
 									</a>
 								</li>
 							{/if}
-
 							{#if role == "admin"}
 								<li>
 									<a class={$location.pathname.includes("/file-management") ? "is-active" : "" } href="/file-management" use:link>
@@ -235,12 +233,19 @@
 								</li>
 							{/if}
 							{#if role == "sales"}
-							<li>
-								<a class={$location.pathname.includes("/client-management") ? "is-active" : "" } href="/client-management" use:link>
-									Client management
-								</a>
-							</li>
-						{/if}
+								<li>
+									<a class={$location.pathname.includes("/client-management") ? "is-active" : "" } href="/client-management" use:link>
+										Client management
+									</a>
+								</li>
+							{/if}
+							{#if role == "instructor"}
+								<li>
+									<a class={$location.pathname.includes("/instructor-schedule") ? "is-active" : "" } href="/instructor-schedule" use:link>
+										Instructor Schedule
+									</a>
+								</li>
+							{/if}
 						</ul>
 					{/if}
 					<li>
@@ -261,7 +266,7 @@
 						<BookedClasses/>
 					</Route>
 					<Route path="/stemex-academy-curriculum/*">
-						<UpcomingSchedule/>
+						<StemexAcademyCurriculum/>
 					</Route>
 					<Route path="/student-portfolio" component={StudentPortfolio} />
 					<Route path="/installation-guide" component={Installation} />
@@ -281,6 +286,10 @@
 
 					<Route path="/statistics">
 						<Statistics role={role} userName={userName}/>
+					</Route>
+
+					<Route path="/instructor-schedule">
+						<InstructorSchedule role={role} userName={userName}/>
 					</Route>
 					
 					<Route path="/sales">
@@ -324,8 +333,9 @@
 						</div>
 					</Route>
 					<Route path="/settings" component={Settings} />
+
 					<Route>
-						<h1>yo</h1>
+						<h1>Not found</h1>
 					</Route>
 				</Router>
 			</section>

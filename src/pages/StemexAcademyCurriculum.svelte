@@ -208,7 +208,7 @@
 		<div class="columns">
 			<div class="column">
 				<div class="content">
-					<h4>Upcoming Schedule</h4>
+					<h4>Stemex Academy Curriculum</h4>
 				</div>
 			</div>
 		</div>
