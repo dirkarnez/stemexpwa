@@ -5,7 +5,7 @@
 	import Installation from "./pages/Installation.svelte";
 	import Settings from "./pages/Settings.svelte";
 	import StudentPortfolio from "./pages/StudentPortfolio.svelte";
-	import StemexAcademyCurriculum from "./pages/StemexAcademyCurriculum.svelte";
+	import StemexAcademyCurriculum from "./pages/StemexAcademyCurriculum/index.svelte";
 	import InstructorSchedule from "./pages/InstructorSchedule.svelte";
 	import LastMinuteOffer from "./pages/LastMinuteOffer.svelte";
 	import UserManagement from "./pages/UserManagement.svelte";
