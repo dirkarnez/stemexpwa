@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import { WrappedFetch } from "../../utils/fetch";
+    import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
     import { toUUIDexString } from "../../utils/UUIDex";
     import SelectedCurriculumCategoryCourse from "./SelectedCurriculumCategoryCourse.svelte"
@@ -47,7 +48,7 @@
 <Router>
 	{#if Array.isArray(curriculumCategoryCourses)}
 		{#each curriculumCategoryCourses as { description, id } }
-			<Route path={`/${description.replaceAll(/\s+/g, "-").toLowerCase()}`}>
+			<Route path={`/${stringToURLPart(description)}`}>
 				<SelectedCurriculumCategoryCourse parentId={id}/>
 			</Route>
 		{/each}
@@ -58,7 +59,7 @@
             <div class="columns is-multiline is-mobile">
                 {#each curriculumCategoryCourses as { description, icon}, index}
                     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-                        <Link to={`${$location.pathname}/${description.replaceAll(/\s+/g, "-").toLowerCase()}`}>
+                        <Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
                             <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
                                 <div class="card-image">
                                     <figure class="image is-96x96">
