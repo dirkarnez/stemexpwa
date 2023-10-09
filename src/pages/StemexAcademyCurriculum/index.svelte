@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import { WrappedFetch } from "../../utils/fetch";
 	import { useLocation, Link, Route, Router } from "svelte-routing";
-	import SelectedUpcomingSchedule from "./SelectedUpcomingSchedule.svelte";
+	import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 
 	// import codingMinecraft from "../assets/images/upcoming-schedule/codingMinecraft/Level 1-min.png";
 	// import codingRoblox from "../assets/images/upcoming-schedule/codingRoblox/Level 1-min.png";
@@ -219,7 +219,7 @@
 	{#if Array.isArray(curriculum)}
 		{#each curriculum as { description, id } }
 			<Route path={`/${description.replaceAll(/\s+/g, "-").toLowerCase()}`}>
-				<SelectedUpcomingSchedule colors={colors} parentId={id}/>
+				<SelectedCurriculumCategory colors={colors} parentId={id}/>
 			</Route>
 		{/each}
 	{/if}

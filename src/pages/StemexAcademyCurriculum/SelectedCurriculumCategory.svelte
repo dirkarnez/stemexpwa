@@ -3,6 +3,7 @@
 	import { WrappedFetch } from "../../utils/fetch";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
     import { toUUIDexString } from "../../utils/UUIDex";
+    import SelectedCurriculumCategoryCourse from "./SelectedCurriculumCategoryCourse.svelte"
     
     //import elementry1 from "../assets/images/schedule-details/codingMineCraftElementry/elementry1.png"
 
@@ -15,12 +16,17 @@
     
     const location = useLocation();
 
-    let wrappedFetchCurriculumCourse = null;
+    let wrappedFetchCurriculumCategory = null;
+    let curriculumCategoryCourses = []
 
     onMount(() => {
         const url = `/api/curriculum-course?parent-id=${toUUIDexString(parentId)}`;
-        const [  _wrappedFetchCurriculumCourse ] = WrappedFetch(url);
-        wrappedFetchCurriculumCourse = _wrappedFetchCurriculumCourse;
+        const [  _wrappedFetchCurriculumCategory ] = WrappedFetch(url);
+        wrappedFetchCurriculumCategory = _wrappedFetchCurriculumCategory;
+        wrappedFetchCurriculumCategory
+        .then(data => {
+            curriculumCategoryCourses = data;
+        })
     });
 </script>
 
@@ -38,12 +44,19 @@
     </div>
 </div>
 
-{#if !!wrappedFetchCurriculumCourse}
-    {#await wrappedFetchCurriculumCourse}
-        <p>...waiting</p>
-    {:then curriculumCourse}
+<Router>
+	{#if Array.isArray(curriculumCategoryCourses)}
+		{#each curriculumCategoryCourses as { description, id } }
+			<Route path={`/${description.replaceAll(/\s+/g, "-").toLowerCase()}`}>
+				<SelectedCurriculumCategoryCourse parentId={id}/>
+			</Route>
+		{/each}
+	{/if}
+
+	<Route path="/">
+        {#if Array.isArray(curriculumCategoryCourses)}
             <div class="columns is-multiline is-mobile">
-                {#each curriculumCourse as { description, icon}, index}
+                {#each curriculumCategoryCourses as { description, icon}, index}
                     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
                         <Link to={`${$location.pathname}/${description.replaceAll(/\s+/g, "-").toLowerCase()}`}>
                             <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
@@ -66,13 +79,11 @@
                     </div>
                 {/each}
             </div>
-    
-    {:catch error}
-        <p style="color: red">{error.message}</p>
-    {/await}
-{/if}
-<!-- 
+        {/if}
+    </Route>
+</Router>
 
+<!-- 
 <Router>
     {#each selectedUpdatedSchedule.subCategories as { name, icon, routePath}, index}
         <Route path="/{routePath}">
@@ -116,6 +127,8 @@
             </div>
         </Route>
     {/each}
+
+
     <Route path="/">
         <div class="columns is-multiline is-mobile">
             {#each selectedUpdatedSchedule.subCategories as { name, icon, routePath}, index}
