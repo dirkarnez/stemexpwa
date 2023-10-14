@@ -30,56 +30,54 @@
 </script>
 
 <div class="columns is-multiline">
-    <div class="column is-one-third-desktop is-full-tablet is-full-mboile">
-        <div class="columns is-multiline">
-            <div class="column is-full-desktop is-half-tablet is-full-mobile">
-                <iframe
-                    style="height: 380px; width: 100%"
-                    frameborder="0"
-                    webkitallowfullscreen=""
-                    mozallowfullscreen=""
-                    allowfullscreen=""
-                    src="https://www.youtube.com/embed/0SLnKsFWwFA"
-                    title="2019 STEMex Summer Camp - Technology & Coding"
-                />
-            </div>
-            <div class="column is-full-desktop is-half-tablet is-full-mobile">
-                <div class="content">
-                    <h4>Our blog</h4>
-                    <p>
-                    {#if Array.isArray(curriculumCategoryCourseDetails.blog_entries)}
-                        {#each curriculumCategoryCourseDetails.blog_entries as { external_url, title } }
-                            <a href="{external_url}" target="_blank">{title}</a><br>
-                        {/each}
-                    {/if}
-                </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="column is-two-thirds-desktop is-full-tablet is-full-mboile">
-        <div class="content">
-            <div class="box">
-                <article class="media">
-                    <div class="media-left">
-                        <figure class="image" style="height: 150px; width: 150px;">
-                            <!-- <img src={elementry1} alt="fg"> -->
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <div class="content">
-                            <h2>A-Medieval Machinations Redstone</h2>
-                            <p>
-                                This course will introduce students to use Redstone,
-                                electrical circuitry, in a Medieval Theme. Students make mine
-                                carts to gather resources, collaborate to build their kingdom
-                                and to defend their castle. They are going to experience a lot
-                                of creation, adventure and exploration.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
+	<div class="column is-one-third-desktop is-full-tablet is-full-mboile">
+		<div class="columns is-multiline">
+			<div class="column is-full-desktop is-half-tablet is-full-mobile">
+				<iframe
+					style="height: 380px; width: 100%"
+					frameborder="0"
+					webkitallowfullscreen=""
+					mozallowfullscreen=""
+					allowfullscreen=""
+					src="https://www.youtube.com/embed/0SLnKsFWwFA"
+					title="2019 STEMex Summer Camp - Technology & Coding"
+				/>
+			</div>
+			<div class="column is-full-desktop is-half-tablet is-full-mobile">
+				<div class="content">
+					<h4>Our blog</h4>
+					<p>
+						{#if Array.isArray(curriculumCategoryCourseDetails.blog_entries)}
+							{#each curriculumCategoryCourseDetails.blog_entries as { external_url, title }}
+								<a href={external_url} target="_blank">{title}</a><br />
+							{/each}
+						{/if}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column is-two-thirds-desktop is-full-tablet is-full-mboile">
+		<div class="content">
+			{#if Array.isArray(curriculumCategoryCourseDetails.information_entries)}
+				{#each curriculumCategoryCourseDetails.information_entries as { title, content }}
+					<div class="box">
+						<article class="media">
+							<div class="media-left">
+								<figure class="image" style="height: 150px; width: 150px;">
+									<!-- <img src={elementry1} alt="fg"> -->
+								</figure>
+							</div>
+							<div class="media-content">
+								<div class="content">
+									<h2>{title}</h2>
+									<p>{content}</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				{/each}
+			{/if}
+		</div>
+	</div>
 </div>
