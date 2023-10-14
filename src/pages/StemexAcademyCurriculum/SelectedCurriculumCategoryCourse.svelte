@@ -38,9 +38,9 @@
                         <iframe
                             style="height: 380px; width: 100%"
                             frameborder="0"
-                            webkitallowfullscreen=""
-                            mozallowfullscreen=""
-                            allowfullscreen=""
+                            webkitallowfullscreen="false"
+                            mozallowfullscreen="false"
+                            allowfullscreen="false"
                             src={url}
                             title={title}
                         />
