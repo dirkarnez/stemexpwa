@@ -1,1 +1,4 @@
-export const stringToURLPart = (a: string) => a.replaceAll(/\s+/g, "-").toLowerCase();
+export const stringToURLPart = (a: string) => {
+    console.log("stringToURLPart:", a);
+    return a.replaceAll(/\s+/g, "-").toLowerCase();
+}

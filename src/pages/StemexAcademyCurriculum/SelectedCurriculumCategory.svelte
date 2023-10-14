@@ -18,10 +18,10 @@
     const location = useLocation();
 
     let wrappedFetchCurriculumCategory = null;
-    let curriculumCategoryCourses = []
+    let curriculumCategoryCourses = [];
 
     onMount(() => {
-        const url = `/api/curriculum-course?parent-id=${toUUIDexString(parentId)}`;
+        const url = `/api/curriculum-courses?parent-id=${toUUIDexString(parentId)}`;
         const [  _wrappedFetchCurriculumCategory ] = WrappedFetch(url);
         wrappedFetchCurriculumCategory = _wrappedFetchCurriculumCategory;
         wrappedFetchCurriculumCategory
@@ -48,7 +48,7 @@
 <Router>
 	{#if Array.isArray(curriculumCategoryCourses)}
 		{#each curriculumCategoryCourses as { description, id } }
-			<Route path={`/${stringToURLPart(description)}`}>
+            <Route path={`/${stringToURLPart(description)}`}>
 				<SelectedCurriculumCategoryCourse parentId={id}/>
 			</Route>
 		{/each}

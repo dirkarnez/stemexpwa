@@ -219,7 +219,7 @@
 <Router>
 	{#if Array.isArray(curriculum)}
 		{#each curriculum as { description, id } }
-			<Route path={`/${stringToURLPart(description)}`}>
+			<Route path={`/${stringToURLPart(description)}/*`}>
 				<SelectedCurriculumCategory colors={colors} parentId={id}/>
 			</Route>
 		{/each}
