@@ -33,15 +33,19 @@
 	<div class="column is-one-third-desktop is-full-tablet is-full-mboile">
 		<div class="columns is-multiline">
 			<div class="column is-full-desktop is-half-tablet is-full-mobile">
-				<iframe
-					style="height: 380px; width: 100%"
-					frameborder="0"
-					webkitallowfullscreen=""
-					mozallowfullscreen=""
-					allowfullscreen=""
-					src="https://www.youtube.com/embed/0SLnKsFWwFA"
-					title="2019 STEMex Summer Camp - Technology & Coding"
-				/>
+                {#if Array.isArray(curriculumCategoryCourseDetails.youtube_video_entries)}
+                    {#each curriculumCategoryCourseDetails.youtube_video_entries as { url, title }}
+                        <iframe
+                            style="height: 380px; width: 100%"
+                            frameborder="0"
+                            webkitallowfullscreen=""
+                            mozallowfullscreen=""
+                            allowfullscreen=""
+                            src={url}
+                            title={title}
+                        />
+                    {/each}
+                {/if}
 			</div>
 			<div class="column is-full-desktop is-half-tablet is-full-mobile">
 				<div class="content">
