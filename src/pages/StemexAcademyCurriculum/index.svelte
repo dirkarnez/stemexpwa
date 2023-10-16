@@ -5,6 +5,7 @@
 	import { useLocation, Link, Route, Router } from "svelte-routing";
 	import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import { getHost } from "../../utils/api";
+	import { toUUIDexString } from "../../utils/UUIDex";
 
 	// import codingMinecraft from "../assets/images/upcoming-schedule/codingMinecraft/Level 1-min.png";
 	// import codingRoblox from "../assets/images/upcoming-schedule/codingRoblox/Level 1-min.png";
@@ -236,13 +237,13 @@
 		</div>
 		<div class="columns is-multiline is-mobile">
 			{#if Array.isArray(curriculum)}
-				{#each curriculum as { description, icon }, index}
+				{#each curriculum as { description, icon_id }, index}
 					<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
 						<Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
 							<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
 								<div class="card-image">
 									<figure class="image is-96x96">
-										<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/ /* /api/resourses?id=23*/  `${getHost()}${icon ?? ""}`}
+										<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/ /* /api/resourses?id=23*/  `${getHost()}${icon_id ? `/api/resourses?id=${toUUIDexString(icon_id)}`  :""}`}
 											style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
 											alt="Placeholder">
 									</figure>
