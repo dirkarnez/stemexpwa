@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-  import codingMinecraft from "../assets/images/upcoming-schedule/codingMinecraft/Level 1-min.png";
+  //import codingMinecraft from "../assets/images/upcoming-schedule/codingMinecraft/Level 1-min.png";
   import { FakeFetch } from "../utils/fetch";
 
   let promise = undefined;
@@ -67,7 +67,7 @@
 							</div>
 							<div class="timeline-item">
 								<div class="timeline-marker is-image is-64x64" style="border-radius: 0;">
-									<img src={codingMinecraft} alt="" />
+									<!-- <img src={codingMinecraft} alt="" /> -->
 								</div>
 								<div class="timeline-content">
 									<p class="heading">February 2016</p>

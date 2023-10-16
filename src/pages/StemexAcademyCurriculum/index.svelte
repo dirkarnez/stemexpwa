@@ -4,6 +4,7 @@
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router } from "svelte-routing";
 	import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
+	import { getHost } from "../../utils/api";
 
 	// import codingMinecraft from "../assets/images/upcoming-schedule/codingMinecraft/Level 1-min.png";
 	// import codingRoblox from "../assets/images/upcoming-schedule/codingRoblox/Level 1-min.png";
@@ -241,7 +242,7 @@
 							<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
 								<div class="card-image">
 									<figure class="image is-96x96">
-										<img src={icon ?? "https://bulma.io/images/placeholders/96x96.png"} 
+										<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/ /* /api/resourses?id=23*/  `${getHost()}${icon}`}
 											style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
 											alt="Placeholder">
 									</figure>
