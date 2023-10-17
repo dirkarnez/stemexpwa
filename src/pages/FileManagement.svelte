@@ -3,6 +3,8 @@
 	import { /*useLocation,*/ Route, Router } from "svelte-routing";
     import { required } from "svelte-forms/validators";
     import { WrappedFetch } from "../utils/fetch";
+	import { toUUIDexString } from "../utils/UUIDex";
+	import { getHost } from "../utils/api";
     import { form, field, defaultFieldOptions  } from "svelte-forms";
 
 	// let location = useLocation();
@@ -61,8 +63,8 @@
 			{#if !!wrappedFetchServerFilesPromise}
 				{#await wrappedFetchServerFilesPromise}
 					<p>...waiting</p>
-				{:then files}
-					{#each [...(Array.isArray(files) ? files : [])] as file, index}
+				{:then fileManagement}
+					{#each [...(Array.isArray(fileManagement.files) ? fileManagement.files : [])] as { id }, index}
 						<div
 							class="column is-one-third-desktop is-half-tablet is-full-mobile"
 						>
@@ -70,7 +72,7 @@
 								<div class="card-image">
 									<figure class="image is-96x96">
 										<img
-											src={"https://bulma.io/images/placeholders/96x96.png"}
+											src={ `${getHost()}${id ? `/api/resourses?id=${toUUIDexString(id)}`  :""}`}
 											style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;"
 											alt="Placeholder"
 										/>
@@ -83,10 +85,10 @@
 											style="height: 100%; width: 100%"
 										>
 											<p
-												style="text-align: center;"
+												style="text-align: center; word-break: break-all;"
 												class="is-size-5 is-size-6-tablet has-text-weight-semibold"
 											>
-												{file}
+												{toUUIDexString(id)}
 											</p>
 										</div>
 									</div>
