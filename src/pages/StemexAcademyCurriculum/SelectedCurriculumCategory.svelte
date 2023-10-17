@@ -4,6 +4,7 @@
     import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
     import { toUUIDexString } from "../../utils/UUIDex";
+    import { getHost } from "../../utils/api";
     import SelectedCurriculumCategoryCourse from "./SelectedCurriculumCategoryCourse.svelte"
     
     //import elementry1 from "../assets/images/schedule-details/codingMineCraftElementry/elementry1.png"
@@ -16,6 +17,8 @@
     //$: selectedUpdatedSchedule = courses.get(routePath);
     
     const location = useLocation();
+
+    const currentPath = $location.pathname;
 
     let wrappedFetchCurriculumCategory = null;
     let curriculumCategoryCourses = [];
@@ -31,39 +34,39 @@
     });
 </script>
 
-<div class="columns">
-    <div class="column">
-        <div class="content">
-            <p>
-                <a href="/stemex-academy-curriculum" class="button is-danger" use:link>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left align-middle" _ngcontent-drd-c75=""><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    Back
-                </a>
-            </p>
-            <h4>Schedule Items</h4>
-        </div>
-    </div>
-</div>
+
 
 <Router>
 	{#if Array.isArray(curriculumCategoryCourses)}
 		{#each curriculumCategoryCourses as { description, id } }
             <Route path={`/${stringToURLPart(description)}`}>
-				<SelectedCurriculumCategoryCourse parentId={id}/>
+				<SelectedCurriculumCategoryCourse parentId={id} previousPath={currentPath}/>
 			</Route>
 		{/each}
 	{/if}
 
 	<Route path="/">
+        <div class="columns">
+            <div class="column">
+                <div class="content">
+                    <p>
+                        <a href="/stemex-academy-curriculum" class="button is-danger" use:link>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left align-middle" _ngcontent-drd-c75=""><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            Back
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
         {#if Array.isArray(curriculumCategoryCourses)}
             <div class="columns is-multiline is-mobile">
-                {#each curriculumCategoryCourses as { description, icon}, index}
+                {#each curriculumCategoryCourses as { description, icon_id}, index}
                     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
                         <Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
                             <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
                                 <div class="card-image">
                                     <figure class="image is-96x96">
-                                        <img src={icon ?? "https://bulma.io/images/placeholders/96x96.png"} 
+                                        <img src={ `${getHost()}${icon_id ? `/api/resourses?id=${toUUIDexString(icon_id)}`  :""}`}
                                             style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
                                             alt="Placeholder">
                                     </figure>
