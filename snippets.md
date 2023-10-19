@@ -1,3 +1,6 @@
+Snippets
+========
+```svelte
 <script>
   import { onMount } from 'svelte';
   //xport let customProp: boolean;
@@ -14,5 +17,4 @@
     }
   </style>
 </svelte:head>
-
-asddsf
+```

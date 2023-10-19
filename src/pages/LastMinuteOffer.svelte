@@ -10,10 +10,6 @@
 
     }
   ]);
-
-	onMount(() => {
-		console.log(`I'm the on create method of the async component c:`);
-	});
 </script>
 
 <div class="columns">

@@ -6,6 +6,8 @@
 	import Settings from "./pages/Settings.svelte";
 	import StudentPortfolio from "./pages/StudentPortfolio.svelte";
 	import StemexAcademyCurriculum from "./pages/StemexAcademyCurriculum/index.svelte";
+	import CurriculumManagement from "./pages/CurriculumManagement/index.svelte";
+	
 	import InstructorSchedule from "./pages/InstructorSchedule.svelte";
 	import LastMinuteOffer from "./pages/LastMinuteOffer.svelte";
 	import UserManagement from "./pages/UserManagement.svelte";
@@ -90,7 +92,7 @@
 	<Route path="/student-portfolio" component={StudentPortfolio} />
 
 
-<!-- <nav>
+ <nav>
 	<Link to="/">Home</Link>
 	redirect to home and set invisible after login
 	<Link to="/login">Login</Link>
@@ -124,7 +126,7 @@
 	</div>
 
 	<div id="navbarBasicExample" class="navbar-menu">
-		<div class="navbar-start">
+		<!-- <div class="navbar-start">
 			<a class="navbar-item" href={`javascript:void(0);`}>Home</a>
 
 			<a class="navbar-item" href={`javascript:void(0);`}>Documentation</a>
@@ -142,9 +144,9 @@
 					</a>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-		<div class="navbar-end">
+		<!-- <div class="navbar-end">
 			<div class="navbar-item">
 				<div class="buttons">
 					<a class="button is-primary" href={`javascript:void(0);`}>
@@ -153,7 +155,7 @@
 					<a class="button is-light" href={`javascript:void(0);`}>Log in</a>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </nav>
 
@@ -239,6 +241,13 @@
 									</a>
 								</li>
 							{/if}
+							{#if role == "admin"}
+								<li>
+									<a class={$location.pathname.includes("/curriculum-management") ? "is-active" : "" } href="/curriculum-management" use:link>
+										Curriculum management
+									</a>
+								</li>
+							{/if}
 							{#if role == "instructor"}
 								<li>
 									<a class={$location.pathname.includes("/instructor-schedule") ? "is-active" : "" } href="/instructor-schedule" use:link>
@@ -268,6 +277,7 @@
 					<Route path="/stemex-academy-curriculum/*">
 						<StemexAcademyCurriculum/>
 					</Route>
+					
 					<Route path="/student-portfolio" component={StudentPortfolio} />
 					<Route path="/installation-guide" component={Installation} />
 					<Route path="/last-minute-offer" component={LastMinuteOffer}/>
@@ -282,6 +292,10 @@
 
 					<Route path="/file-management">
 						<FileManagement/>
+					</Route>
+
+					<Route path="/curriculum-management/*">
+						<CurriculumManagement/>
 					</Route>
 
 					<Route path="/statistics">

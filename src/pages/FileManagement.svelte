@@ -3,7 +3,6 @@
 	import { /*useLocation,*/ Route, Router } from "svelte-routing";
     import { required } from "svelte-forms/validators";
     import { WrappedFetch } from "../utils/fetch";
-	import { toUUIDexString } from "../utils/UUIDex";
 	import { getHost } from "../utils/api";
     import { form, field, defaultFieldOptions  } from "svelte-forms";
 
@@ -72,7 +71,7 @@
 								<div class="card-image">
 									<figure class="image is-96x96">
 										<img
-											src={ `${getHost()}${id ? `/api/resourses?id=${toUUIDexString(id)}`  :""}`}
+											src={ `${getHost()}${id ? `/api/resourses?id=${id}`  :""}`}
 											style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;"
 											alt="Placeholder"
 										/>
@@ -88,7 +87,7 @@
 												style="text-align: center; word-break: break-all;"
 												class="is-size-5 is-size-6-tablet has-text-weight-semibold"
 											>
-												{toUUIDexString(id)}
+												{id}
 											</p>
 										</div>
 									</div>

@@ -2,7 +2,6 @@
 	import { onMount } from "svelte";
 	import { WrappedFetch } from "../../utils/fetch";
 	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
-    import { toUUIDexString } from "../../utils/UUIDex";
 	import { getHost } from "../../utils/api";
     
     //import elementry1 from "../assets/images/schedule-details/codingMineCraftElementry/elementry1.png"
@@ -20,7 +19,7 @@
     let curriculumCategoryCourseDetails = [];
 
     onMount(() => {
-        const url = `/api/curriculum-course-details?id=${toUUIDexString(parentId)}`;
+        const url = `/api/curriculum-course-details?id=${parentId}`;
         const [  _wrappedFetchCurriculumCategoryCourse ] = WrappedFetch(url);
         wrappedFetchCurriculumCategoryCourse = _wrappedFetchCurriculumCategoryCourse;
         wrappedFetchCurriculumCategoryCourse
@@ -48,7 +47,7 @@
 		<div class="columns is-multiline">
 			<div class="column is-full-desktop is-half-tablet is-full-mobile">
                 {#if Array.isArray(curriculumCategoryCourseDetails.youtube_video_entries)}
-                    {#each curriculumCategoryCourseDetails.youtube_video_entries as { url, title }}
+                    {#each curriculumCategoryCourseDetails.youtube_video_entries as { url , title }}
                         <iframe
                             style="height: 380px; width: 100%"
                             frameborder="0"
@@ -84,7 +83,7 @@
 							<div class="media-left">
 								<figure class="image" style="height: 150px; width: 150px;">
 									<!-- svelte-ignore a11y-missing-attribute -->
-									<img src={ `${getHost()}${icon_id ? `/api/resourses?id=${toUUIDexString(icon_id)}`  :""}`}>
+									<img src={ `${getHost()}${icon_id ? `/api/resourses?id=${icon_id}`  :""}`}>
 								</figure>
 							</div>
 							<div class="media-content">

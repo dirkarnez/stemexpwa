@@ -3,7 +3,6 @@
 	import { WrappedFetch } from "../../utils/fetch";
     import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
-    import { toUUIDexString } from "../../utils/UUIDex";
     import { getHost } from "../../utils/api";
     import SelectedCurriculumCategoryCourse from "./SelectedCurriculumCategoryCourse.svelte"
     
@@ -24,7 +23,7 @@
     let curriculumCategoryCourses = [];
 
     onMount(() => {
-        const url = `/api/curriculum-courses?parent-id=${toUUIDexString(parentId)}`;
+        const url = `/api/curriculum-courses?parent-id=${parentId}`;
         const [  _wrappedFetchCurriculumCategory ] = WrappedFetch(url);
         wrappedFetchCurriculumCategory = _wrappedFetchCurriculumCategory;
         wrappedFetchCurriculumCategory
@@ -66,7 +65,7 @@
                             <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
                                 <div class="card-image">
                                     <figure class="image is-96x96">
-                                        <img src={ `${getHost()}${icon_id ? `/api/resourses?id=${toUUIDexString(icon_id)}`  :""}`}
+                                        <img src={ `${getHost()}${icon_id ? `/api/resourses?id=${icon_id}`  :""}`}
                                             style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
                                             alt="Placeholder">
                                     </figure>

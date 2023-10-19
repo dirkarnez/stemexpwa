@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import { useLocation, Route, Router, link } from "svelte-routing";
   	import { WrappedFetch } from '../utils/fetch';
-	import { isUUIDexEqual } from "../utils/UUIDex";
 	//xport let customProp: boolean;
 
 	let location = useLocation();
@@ -32,7 +31,7 @@
 	function reset_inputs(user) {
 		name = user ? user.UserName : '';
 		if (user && Array.isArray(user.RoleID)) {
-			k = roles.findIndex(e => isUUIDexEqual(e.ID, user.RoleID));
+			k = roles.findIndex(e => e.ID == user.RoleID);
 		} else {
 			k = -1;
 		}
