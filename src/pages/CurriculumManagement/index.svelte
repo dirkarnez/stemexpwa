@@ -53,8 +53,10 @@
 				{#each curriculum as { description, icon_id }, index}
 					<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
 
-              <div style="margin-top: 1.2rem; position:relative; ">
-                <a href="/booked-classes" use:link><i class="fas fa-pen" style="position:absolute;right:0;top:-20px"></i></a>
+              <div style="margin-top: 1.2rem; position:relative;">
+				<div style="position:absolute;right:0;top:-20px;">
+					<a href="/booked-classes" use:link><i class="fas fa-pen" style="padding: 0.2rem"></i></a>
+				</div>
                 <Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
                 <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
                   
