@@ -7,7 +7,9 @@ stemexpwa
 - [User Tie Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/user-tie?f=classic&s=solid)
 
 ### TODOs
-- [ ] https://github.com/gauntface/simple-push-demo
-- [ ] https://www.pushengage.com/microsoft-edge-now-supporting-web-push-notifications/
-- [ ] https://github.com/MicrosoftEdge/pushnotifications-demo
-- [ ] https://developer.chrome.com/blog/web-push-interop-wins/
+- [ ] PWA
+    - https://github.com/gauntface/simple-push-demo
+    - https://www.pushengage.com/microsoft-edge-now-supporting-web-push-notifications/
+    - https://github.com/MicrosoftEdge/pushnotifications-demo
+    - https://developer.chrome.com/blog/web-push-interop-wins/
+- [ ] [dirkarnez/svelte-nested-sample](https://github.com/dirkarnez/svelte-nested-sample/)
