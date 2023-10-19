@@ -7,3 +7,5 @@ export const getHost = () => {
     :
     "";
 }
+
+export const getResourcesAPIByID = (id: string) => `${getHost()}${!!id ? `/api/resourses?id=${id}` : ""}`;
