@@ -4,6 +4,7 @@
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
+	import Edit from "./Edit.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	
 	let location = useLocation();
@@ -22,6 +23,8 @@
 	let wrappedFetchCurriculum = null;
 	let curriculum = [];
 
+	const currentPath = $location.pathname;
+
 	onMount(() => {
 		const [  _wrappedFetchCurriculum ] = WrappedFetch("/api/curriculum");
 		wrappedFetchCurriculum = _wrappedFetchCurriculum;
@@ -36,34 +39,7 @@
 		{#each curriculum as { description, icon_id, id } }
 			<Route path={`/${stringToURLPart(description)}/edit`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-
-				<div class="field">
-					<figure class="image is-128x128">
-						<img src={getResourcesAPIByID(icon_id)} alt="">
-					</figure>
-					<br>
-					<label class="label">Icon
-						<div class="control">
-							<input class="input" type="file">
-						</div>
-					</label>
-				</div>
-				<div class="field">
-					<label class="label">Name
-					<div class="control">
-					  <input class="input" type="text" placeholder="Text input" value={description}>
-					</div>
-					</label>
-				</div>
-
-				<div class="field is-grouped">
-					<div class="control">
-						<button class="button is-link">Update</button>
-					</div>
-					<div class="control">
-						<button class="button is-link is-light">Cancel</button>
-					</div>
-				</div>
+				<Edit id={id} description={description} iconId={icon_id} previousPath={currentPath}/>
 			</Route>
 		{/each}
 	{/if}
