@@ -4,9 +4,13 @@
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
-	import Edit from "./Edit.svelte";
+	import CreateOrEdit from "./CreateOrEdit.svelte";
+	import Index from "./index.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
+	import { isNullOrEmpty } from "../../utils/strings";
 	
+	export let parentId = null;
+
 	let location = useLocation();
 
 	const colors = [
@@ -26,7 +30,7 @@
 	const currentPath = $location.pathname;
 
 	onMount(() => {
-		const [  _wrappedFetchCurriculum ] = WrappedFetch("/api/curriculum");
+		const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum` : `/api/curriculum-courses?parent-id=${parentId}`);
 		wrappedFetchCurriculum = _wrappedFetchCurriculum;
 		wrappedFetchCurriculum.then(data => {
 			curriculum = data;
@@ -39,10 +43,18 @@
 		{#each curriculum as { description, icon_id, id } }
 			<Route path={`/${stringToURLPart(description)}/edit`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<Edit id={id} description={description} iconId={icon_id} previousPath={currentPath}/>
+				<CreateOrEdit id={id} previousPath={currentPath}/>
+			</Route>
+			<Route path={`/${stringToURLPart(description)}/*`}>
+				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
+				<Index parentId={id}/>
 			</Route>
 		{/each}
 	{/if}
+	<Route path="/add">
+		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
+		<CreateOrEdit id={""} previousPath={currentPath}/>
+	</Route>
 
 	<Route path="/">
 		<div class="columns">
@@ -82,6 +94,29 @@
 					</div>
 				{/each}
 			{/if}
+			<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+				<div style="margin-top: 1.2rem; position:relative;">
+					<Link to={`${$location.pathname}/add`}>
+						
+						<div class="card is-flex is-flex-direction-row" style={`background-color: red`}>
+							<!-- <div class="card-image">
+								<figure class="image is-96x96">
+								<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/ /* /api/resourses?id=23*/  getResourcesAPIByID(icon_id)}
+									style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
+									alt="Placeholder">
+								</figure>
+							</div> -->
+							<div class="card-content pt-0 pb-0">
+								<div class="content" style="height: 96px;width: 100%;">
+								<div class="is-flex is-flex-direction-row is-align-items-center pt-1 pb-1" style="height: 100%; width: 100%">
+									<p style="color: white; text-align: center;" class="is-size-5 is-size-6-tablet has-text-weight-semibold">+</p>
+								</div>
+								</div>
+							</div>
+						</div>
+					</Link>
+				</div>
+			</div>
 		</div>
 	</Route>
 </Router>
