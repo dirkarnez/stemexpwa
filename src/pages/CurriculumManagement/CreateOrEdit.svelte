@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from "svelte";
+	import { onMount, createEventDispatcher } from "svelte";
 	import { WrappedFetch, WrappedFetchPOST, WrappedFetchPOSTMultipart } from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
@@ -15,7 +15,10 @@
     const icon_file_field_key = "icon_file";
 	const id_field_key = "id";
 
+	const dispatch = createEventDispatcher();
+
     export let id;
+	export let parentId;
     export let previousPath;
 
     let wrappedFetchCurriculumEntry = null;
@@ -26,6 +29,7 @@
 			wrappedFetchPromise
 			.then(() => {
 				alert("OK")
+				dispatch('done');
 				navigate(previousPath, {replace: false});
 			})
 			.catch(err => {
@@ -38,6 +42,7 @@
 		if (isNullOrEmpty(id)) {
 			$data[description_field_key] = "";
 			$data[icon_id_key] = "";
+			$data[parent_id_key] = parentId;
 		} else {
 			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
 			wrappedFetchCurriculumEntry = _wrappedFetchCurriculumEntry;

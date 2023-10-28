@@ -30,11 +30,15 @@
 
 	export let previousPath;
 
-	const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum` : `/api/curriculum-courses?parent-id=${parentId}`);
-	wrappedFetchCurriculum = _wrappedFetchCurriculum;
-	wrappedFetchCurriculum.then(data => {
-		curriculum = data;
-	})
+	const init = () => {
+		const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum?top-level=true` : `/api/curriculum-courses?parent-id=${parentId}`);
+		wrappedFetchCurriculum = _wrappedFetchCurriculum;
+		wrappedFetchCurriculum.then(data => {
+			curriculum = data;
+		})
+	}
+
+	onMount(init);
 </script>
 
 <Router>
@@ -42,18 +46,19 @@
 		{#each curriculum as { description, icon_id, id } }
 			<Route path={`/${stringToURLPart(description)}/edit`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<CreateOrEdit id={id} previousPath={currentPath}/>
+				<CreateOrEdit id={id} previousPath={currentPath} on:done={init}/>
 			</Route>
 			<Route path={`/${stringToURLPart(description)}/*`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 				<Index parentId={id} previousPath={currentPath}/>
 			</Route>
+			<Route path={`/${stringToURLPart(description)}/add`}>
+				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
+				<CreateOrEdit parentId={id} id={""} previousPath={currentPath}/>
+			</Route>
 		{/each}
 	{/if}
-	<Route path="/add">
-		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-		<CreateOrEdit id={""} previousPath={currentPath}/>
-	</Route>
+
 
 	<Route path="/">
 		<div class="columns">
