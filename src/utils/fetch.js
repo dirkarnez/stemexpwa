@@ -50,3 +50,26 @@ export const WrappedFetch = (url, params = {}) => {
         abortController
     ];
 }
+
+// const [  wrappedFetchPromise , abort ] = WrappedFetchPOST("/api/login", JSON.stringify(myForm.summary()));
+export const WrappedFetchPOST = (url, stringifyJSON) => {
+    return WrappedFetch(url, {
+        method: "POST",
+        body: stringifyJSON
+    });
+}
+
+// const [  wrappedFetchPromise , abort ] = WrappedFetchPOST("/api/login", JSON.stringify(myForm.summary()));
+export const WrappedFetchPOSTMultipart = (url, obj) => {
+    const formData  = new FormData();
+      
+    for(const name in obj) {
+      formData.append(name, obj[name]);
+    }
+    
+    return WrappedFetch(url, {
+        method: "POST",
+        body: formData
+    });
+}
+

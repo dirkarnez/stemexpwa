@@ -295,7 +295,7 @@
 					</Route>
 
 					<Route path="/curriculum-management/*">
-						<CurriculumManagement/>
+						<CurriculumManagement previousPath={$location.pathname}/>
 					</Route>
 
 					<Route path="/statistics">

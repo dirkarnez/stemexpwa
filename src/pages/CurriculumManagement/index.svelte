@@ -12,6 +12,7 @@
 	export let parentId = null;
 
 	let location = useLocation();
+	const currentPath = $location.pathname;
 
 	const colors = [
 		"rgb(33, 209, 100)",
@@ -27,15 +28,13 @@
 	let wrappedFetchCurriculum = null;
 	let curriculum = [];
 
-	const currentPath = $location.pathname;
+	export let previousPath;
 
-	onMount(() => {
-		const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum` : `/api/curriculum-courses?parent-id=${parentId}`);
-		wrappedFetchCurriculum = _wrappedFetchCurriculum;
-		wrappedFetchCurriculum.then(data => {
-			curriculum = data;
-		})
-	});
+	const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum` : `/api/curriculum-courses?parent-id=${parentId}`);
+	wrappedFetchCurriculum = _wrappedFetchCurriculum;
+	wrappedFetchCurriculum.then(data => {
+		curriculum = data;
+	})
 </script>
 
 <Router>
@@ -47,7 +46,7 @@
 			</Route>
 			<Route path={`/${stringToURLPart(description)}/*`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<Index parentId={id}/>
+				<Index parentId={id} previousPath={currentPath}/>
 			</Route>
 		{/each}
 	{/if}
@@ -62,8 +61,29 @@
 				<div class="content">
 					<h4>Stemex Academy Curriculum</h4>
 				</div>
+				{#if (previousPath.match(/\//g) || []).length > 1}
+					<p>
+						<a href={previousPath} class="button is-danger" use:link>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-chevron-left align-middle">
+								<polyline points="15 18 9 12 15 6" />
+							</svg>
+							Back
+						</a>
+					</p>
+				{/if}
 			</div>
 		</div>
+		
 		<div class="columns is-multiline is-mobile">
 			{#if Array.isArray(curriculum)}
 				{#each curriculum as { description, icon_id }, index}

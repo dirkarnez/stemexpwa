@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-	import { WrappedFetch } from "../../utils/fetch";
+	import { WrappedFetch, WrappedFetchPOST, WrappedFetchPOSTMultipart } from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
@@ -11,8 +11,9 @@
 
     const description_field_key = "description";
     const icon_id_key = "icon_id";
+	const parent_id_key = "parent_id";
     const icon_file_field_key = "icon_file";
-    
+	const id_field_key = "id";
 
     export let id;
     export let previousPath;
@@ -21,15 +22,19 @@
 
     const { data, form } = createForm({ 
         onSubmit: (values) => {
-			debugger;
-			alert(`check console`);
-			console.log(`subnmiting ${JSON.stringify(values)}`);
-			navigate(previousPath, {replace: false});
+			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", values);
+			wrappedFetchPromise
+			.then(() => {
+				alert("OK")
+				navigate(previousPath, {replace: false});
+			})
+			.catch(err => {
+				alert("Not OK")
+			});
         },
     });
 
     onMount(() => {
-		debugger;
 		if (isNullOrEmpty(id)) {
 			$data[description_field_key] = "";
 			$data[icon_id_key] = "";
@@ -37,8 +42,10 @@
 			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
 			wrappedFetchCurriculumEntry = _wrappedFetchCurriculumEntry;
 			wrappedFetchCurriculumEntry.then(_data => {
+				$data[id_field_key] = _data[id_field_key];
 				$data[description_field_key] = _data[description_field_key];
 				$data[icon_id_key] = _data[icon_id_key];
+				$data[parent_id_key] = _data[parent_id_key];
 			})
 		}
 	});
