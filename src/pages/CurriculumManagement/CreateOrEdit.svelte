@@ -33,7 +33,7 @@
 				navigate(previousPath, {replace: false});
 			})
 			.catch(err => {
-				alert("Not OK")
+				alert(`Not OK: ${err}`)
 			});
         },
     });
@@ -55,6 +55,20 @@
 		}
 	});
 
+	let previewImageSrc = '';
+	function handleImageChange(event) {
+		const file = event.target.files[0];
+
+		if (file) {
+			const reader = new FileReader();
+
+			reader.onload = (event) => {
+				previewImageSrc = event.target.result;
+			};
+
+			reader.readAsDataURL(file);
+		}
+	}
 </script>
 
 <div class="columns">
@@ -85,12 +99,12 @@
 <form use:form enctype="multipart/form-data">
 	<div class="field">
 		<figure class="image is-128x128">
-                <img src={$data[icon_id_key] ? getResourcesAPIByID($data[icon_id_key]) : `https://bulma.io/images/placeholders/96x96.png`} alt=""/>
+                <img src={($data[icon_id_key] ? getResourcesAPIByID($data[icon_id_key]) : (previewImageSrc ? previewImageSrc : `https://bulma.io/images/placeholders/96x96.png`))} alt=""/>
             </figure>
 		<br />
 		<label class="label">Icon
 			<div class="control">
-				<input class="input" type="file" name={icon_file_field_key} />
+				<input class="input" type="file" name={icon_file_field_key} on:change={handleImageChange}/>
 			</div>
 		</label>
 	</div>
@@ -102,6 +116,7 @@
 					type="text"
 					name={description_field_key}
 					bind:value={$data[description_field_key]}
+					required={true}
 				/>
 			</div>
 		</label>
