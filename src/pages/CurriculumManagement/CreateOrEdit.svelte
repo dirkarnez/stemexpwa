@@ -22,8 +22,6 @@
 
     // export let previousPath;
 
-	let isCourse = false;
-
     let wrappedFetchCurriculumEntry = null;
 
     const { form, data, setFields } = createForm({ 
@@ -77,13 +75,6 @@
 	}
 </script>
 
-<style>
-	.hero {
-		padding-top:  2rem;
-		padding-bottom:  2rem;
-	}
-</style>
-
 <div class="columns">
 	<div class="column">
 		<div class="content">
@@ -112,17 +103,31 @@
 <form use:form enctype="multipart/form-data">
 	<div class="field">
 		<figure class="image is-128x128">
-                <img src={($data[icon_id_key] ? getResourcesAPIByID($data[icon_id_key]) : (previewImageSrc ? previewImageSrc : `https://bulma.io/images/placeholders/96x96.png`))} alt=""/>
-            </figure>
+			<img
+				src={$data[icon_id_key]
+					? getResourcesAPIByID($data[icon_id_key])
+					: previewImageSrc
+					? previewImageSrc
+					: `https://bulma.io/images/placeholders/96x96.png`}
+				alt=""
+			/>
+		</figure>
 		<br />
-		<label class="label">Icon
+		<label class="label"
+			>Icon
 			<div class="control">
-				<input class="input" type="file" name={icon_file_field_key} on:change={handleImageChange}/>
+				<input
+					class="input"
+					type="file"
+					name={icon_file_field_key}
+					on:change={handleImageChange}
+				/>
 			</div>
 		</label>
 	</div>
 	<div class="field">
-		<label class="label">Description
+		<label class="label"
+			>Description
 			<div class="control">
 				<input
 					class="input"
@@ -137,21 +142,21 @@
 
 	<section class="hero">
 		<h1 class="title">YouTube URL</h1>
-	{#each ($data.youtube_video_entries || []) as youtube_video_entry, index}
-		<div class="field">
-			<label class="label">entry #{index + 1}
-				<div class="control">
-					<input
-						class="input"
-						type="text"
-						name={"youtube_video_entries.{index}.url"}
-						bind:value={youtube_video_entry.url}
-						required={true}
-					/>
-				</div>
-			</label>
-		</div>
-		<!-- <div>
+		{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+			<div class="field">
+				<label class="label">entry #{index + 1}
+					<div class="control">
+						<input
+							class="input"
+							type="text"
+							name={"youtube_video_entries.{index}.url"}
+							bind:value={youtube_video_entry.url}
+							required={true}
+						/>
+					</div>
+				</label>
+			</div>
+			<!-- <div>
 			<input name= value={}/>
 			<button type="button" on:click="{addInterest(index + 1)}">
 				Add Interest
@@ -160,35 +165,35 @@
 				Remove Interest
 			</button>
 		</div> -->
-	{/each}
-</section>
+		{/each}
+	</section>
 	<section class="hero">
 		<h1 class="title">Blog entries</h1>
-	{#each ($data.blog_entries || []) as blog_entry, index}
-		<div class="field">
-			<label class="label">entry #{index + 1}
-				<div class="control">
-					<input
-						class="input"
-						type="text"
-						name={"blog_entries.{index}.external_url"}
-						bind:value={blog_entry.external_url}
-						required={true}
-					/>
-				</div>
-				<div class="control">
-					<input
-						class="input"
-						type="text"
-						name={"blog_entries.{index}.title"}
-						bind:value={blog_entry.title}
-						required={true}
-					/>
-				</div>
-			</label>
-		</div>
-		
-		<!-- <div>
+		{#each $data.blog_entries || [] as blog_entry, index}
+			<div class="field">
+				<label class="label">entry #{index + 1}
+					<div class="control">
+						<input
+							class="input"
+							type="text"
+							name={"blog_entries.{index}.external_url"}
+							bind:value={blog_entry.external_url}
+							required={true}
+						/>
+					</div>
+					<div class="control">
+						<input
+							class="input"
+							type="text"
+							name={"blog_entries.{index}.title"}
+							bind:value={blog_entry.title}
+							required={true}
+						/>
+					</div>
+				</label>
+			</div>
+
+			<!-- <div>
 			<input name= value={}/>
 			<button type="button" on:click="{addInterest(index + 1)}">
 				Add Interest
@@ -197,59 +202,53 @@
 				Remove Interest
 			</button>
 		</div> -->
-	{/each}
-
-</section>
+		{/each}
+	</section>
 
 	<section class="hero">
 		<h1 class="title">Information entries</h1>
-		{#each ($data.information_entries || []) as information_entry, index}
-		<div class="field">
-			<label class="label">entry #{index + 1}
-				<div class="control">
-					<input
-						class="input"
-						type="text"
-						name={"information_entries.{index}.title"}
-						bind:value={information_entry.title}
-						required={true}
-					/>
-				</div>
-				<div class="control">
-					<input
-						class="input"
-						type="text"
-						name={"information_entries.{index}.icon_id"}
-						bind:value={information_entry.icon_id}
-						required={true}
-					/>
-				</div>
-				<div class="control">
-					<textarea
-						class="textarea"
-						type="text"
-						name={"information_entries.{index}.content"}
-						bind:value={information_entry.content}
-						required={true}
-					/>
-				</div>
-			</label>
-		</div>
-		<!-- <div>
-			<input name= value={}/>
-			<button type="button" on:click="{addInterest(index + 1)}">
-				Add Interest
-			</button>
-			<button type="button" on:click="{removeInterest(index)}">
-				Remove Interest
-			</button>
-		</div> -->
-	{/each}
+		{#each $data.information_entries || [] as information_entry, index}
+			<div class="field">
+				<label class="label">entry #{index + 1}
+					<button type="button">
+						Remove Interest
+					</button>
+					<div class="control">
+						<input
+							class="input"
+							type="text"
+							name={"information_entries.{index}.title"}
+							bind:value={information_entry.title}
+							required={true}
+						/>
+					</div>
+					<div class="control">
+						<input
+							class="input"
+							type="text"
+							name={"information_entries.{index}.icon_id"}
+							bind:value={information_entry.icon_id}
+							required={true}
+						/>
+					</div>
+					<div class="control">
+						<textarea
+							class="textarea"
+							type="text"
+							name={"information_entries.{index}.content"}
+							bind:value={information_entry.content}
+							required={true}
+						/>
+					</div>
+				</label>
+			</div>
+		{/each}
+		<button type="button">
+			Add Interest
+		</button>
 	</section>
-	
 
-	
-<!-- 
+	<!-- 
 	blog_entries
 
 	information_entries -->
@@ -259,14 +258,11 @@
 			<button class="button is-link">Save</button>
 		</div>
 	</div>
-
-	
-	<label>
-		<input type="checkbox" bind:checked={isCourse} />
-		This item is a course
-	</label>
-
-	{#if isCourse}
-		<p>Thank you. We will bombard your inbox and sell your personal details.</p>
-	{/if}
 </form>
+
+<style>
+	.hero {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+</style>
