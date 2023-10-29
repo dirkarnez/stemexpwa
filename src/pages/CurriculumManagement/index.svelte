@@ -43,10 +43,10 @@
 
 <Router>
 	{#if Array.isArray(curriculum)}
-		{#each curriculum as { description, icon_id, id } }
+		{#each curriculum as { description, icon_id, id, parent_id } }
 			<Route path={`/${stringToURLPart(description)}/edit`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<CreateOrEdit id={id}  on:done={init}/> <!---previousPath={currentPath}-->
+				<CreateOrEdit parentId={parent_id} id={id} on:done={init}/> <!---previousPath={currentPath}-->
 			</Route>
 			<Route path={`/${stringToURLPart(description)}/*`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
@@ -144,7 +144,6 @@
 			<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
 				<div style="margin-top: 1.2rem; position:relative;">
 					<Link to={`${$location.pathname}/add`}>
-						
 						<div class="card is-flex is-flex-direction-row" style={`border: 2px dashed #0087F7; border-radius: 5px;`}>
 							<!-- <div class="card-image">
 								<figure class="image is-96x96">
