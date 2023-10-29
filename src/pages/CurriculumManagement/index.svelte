@@ -100,7 +100,26 @@
 							<div style="position:absolute;right:0;top:-20px;">
 								<a href={`${$location.pathname}/${stringToURLPart(description)}/edit`} use:link><i class="fas fa-pen" style="padding: 0.2rem"></i></a>
 							</div>
-							<Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
+							{#if curriculum.some(item => !item.is_course)}
+								<Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
+									<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
+										<div class="card-image">
+											<figure class="image is-96x96">
+											<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/ /* /api/resourses?id=23*/  getResourcesAPIByID(icon_id)}
+												style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
+												alt="Placeholder">
+											</figure>
+										</div>
+										<div class="card-content pt-0 pb-0">
+											<div class="content" style="height: 96px;width: 100%;">
+											<div class="is-flex is-flex-direction-row is-align-items-center pt-1 pb-1" style="height: 100%; width: 100%">
+												<p style="color: white; text-align: center;" class="is-size-5 is-size-6-tablet has-text-weight-semibold">{description}</p>
+											</div>
+											</div>
+										</div>
+									</div>
+								</Link>
+							{:else}
 								<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
 									<div class="card-image">
 										<figure class="image is-96x96">
@@ -117,7 +136,7 @@
 										</div>
 									</div>
 								</div>
-							</Link>
+							{/if}
 						</div>
 					</div>
 				{/each}

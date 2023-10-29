@@ -19,12 +19,16 @@
 
     export let id;
 	export let parentId;
+
     // export let previousPath;
+
+	let isCourse = false;
 
     let wrappedFetchCurriculumEntry = null;
 
-    const { data, form } = createForm({ 
+    const { form, data, setFields } = createForm({ 
         onSubmit: (values) => {
+			debugger;
 			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", values);
 			wrappedFetchPromise
 			.then(() => {
@@ -39,17 +43,20 @@
 
     onMount(() => {
 		if (isNullOrEmpty(id)) {
-			$data[description_field_key] = "";
-			$data[icon_id_key] = "";
-			$data[parent_id_key] = parentId;
+			setFields(description_field_key, "", true);
+			setFields(icon_id_key, "", true);
+			setFields(parent_id_key, parentId, true);
 		} else {
 			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
 			wrappedFetchCurriculumEntry = _wrappedFetchCurriculumEntry;
 			wrappedFetchCurriculumEntry.then(_data => {
-				$data[id_field_key] = _data[id_field_key];
-				$data[description_field_key] = _data[description_field_key];
-				$data[icon_id_key] = _data[icon_id_key];
-				$data[parent_id_key] = _data[parent_id_key];
+				setFields(id_field_key, _data[id_field_key], true);
+				setFields(description_field_key, _data[description_field_key], true);
+				setFields(icon_id_key, _data[icon_id_key], true);
+				setFields(parent_id_key, _data[parent_id_key], true);
+				setFields("youtube_video_entries", (_data["youtube_video_entries"] || []), true);
+				setFields("blog_entries", (_data["blog_entries"] || []), true);
+				setFields("information_entries", (_data["information_entries"] || []), true);
 			})
 		}
 	});
@@ -108,7 +115,7 @@
 		</label>
 	</div>
 	<div class="field">
-		<label class="label">Name
+		<label class="label">Description
 			<div class="control">
 				<input
 					class="input"
@@ -121,9 +128,102 @@
 		</label>
 	</div>
 
+
+	{#each ($data.youtube_video_entries || []) as youtube_video_entry, index}
+		<div class="field">
+			<label class="label">YouTube URL
+				<div class="control">
+					<input
+						class="input"
+						type="text"
+						name={"youtube_video_entries.{index}.url"}
+						bind:value={youtube_video_entry.url}
+						required={true}
+					/>
+				</div>
+			</label>
+		</div>
+		<!-- <div>
+			<input name= value={}/>
+			<button type="button" on:click="{addInterest(index + 1)}">
+				Add Interest
+			</button>
+			<button type="button" on:click="{removeInterest(index)}">
+				Remove Interest
+			</button>
+		</div> -->
+	{/each}
+
+	{#each ($data.blog_entries || []) as blog_entry, index}
+		<div class="field">
+			<label class="label">Blog entries
+				<div class="control">
+					<input
+						class="input"
+						type="text"
+						name={"blog_entries.{index}.external_url"}
+						bind:value={blog_entry.external_url}
+						required={true}
+					/>
+				</div>
+			</label>
+		</div>
+		<!-- <div>
+			<input name= value={}/>
+			<button type="button" on:click="{addInterest(index + 1)}">
+				Add Interest
+			</button>
+			<button type="button" on:click="{removeInterest(index)}">
+				Remove Interest
+			</button>
+		</div> -->
+	{/each}
+
+
+	{#each ($data.information_entries || []) as information_entry, index}
+		<div class="field">
+			<label class="label">Information entries
+				<div class="control">
+					<input
+						class="input"
+						type="text"
+						name={"information_entries.{index}.title"}
+						bind:value={information_entry.title}
+						required={true}
+					/>
+				</div>
+			</label>
+		</div>
+		<!-- <div>
+			<input name= value={}/>
+			<button type="button" on:click="{addInterest(index + 1)}">
+				Add Interest
+			</button>
+			<button type="button" on:click="{removeInterest(index)}">
+				Remove Interest
+			</button>
+		</div> -->
+	{/each}
+
+	
+<!-- 
+	blog_entries
+
+	information_entries -->
+
 	<div class="field is-grouped">
 		<div class="control">
 			<button class="button is-link">Save</button>
 		</div>
 	</div>
+
+	
+	<label>
+		<input type="checkbox" bind:checked={isCourse} />
+		This item is a course
+	</label>
+
+	{#if isCourse}
+		<p>Thank you. We will bombard your inbox and sell your personal details.</p>
+	{/if}
 </form>
