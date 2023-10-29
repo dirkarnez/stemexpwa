@@ -12,7 +12,7 @@
 	export let parentId = null;
 
 	let location = useLocation();
-	const currentPath = $location.pathname;
+	// const currentPath = $location.pathname;
 
 	const colors = [
 		"rgb(33, 209, 100)",
@@ -28,7 +28,7 @@
 	let wrappedFetchCurriculum = null;
 	let curriculum = [];
 
-	export let previousPath;
+	// export let previousPath;
 
 	const init = () => {
 		const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum?top-level=true` : `/api/curriculum-courses?parent-id=${parentId}`);
@@ -46,21 +46,21 @@
 		{#each curriculum as { description, icon_id, id } }
 			<Route path={`/${stringToURLPart(description)}/edit`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<CreateOrEdit id={id} previousPath={currentPath} on:done={init}/>
+				<CreateOrEdit id={id}  on:done={init}/> <!---previousPath={currentPath}-->
 			</Route>
 			<Route path={`/${stringToURLPart(description)}/*`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<Index parentId={id} previousPath={currentPath}/>
+				<Index parentId={id}/> <!---previousPath={currentPath}-->
 			</Route>
 			<Route path={`/${stringToURLPart(description)}/add`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<CreateOrEdit parentId={id} id={""} previousPath={currentPath}/>
+				<CreateOrEdit parentId={id} id={""}/> <!---previousPath={currentPath}-->
 			</Route>
 		{/each}
 	{/if}
 	<Route path={`/add`}>
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-		<CreateOrEdit parentId={""} id={""} previousPath={currentPath}/>
+		<CreateOrEdit parentId={""} id={""} on:done={init}/> <!---previousPath={currentPath}-->
 	</Route>
 
 	<Route path="/">
@@ -69,7 +69,7 @@
 				<div class="content">
 					<h4>Stemex Academy Curriculum</h4>
 				</div>
-				{#if (previousPath.match(/\//g) || []).length > 1}
+				<!-- {#if (previousPath.match(/\//g) || []).length > 1}
 					<p>
 						<a href={previousPath} class="button is-danger" use:link>
 							<svg
@@ -88,7 +88,7 @@
 							Back
 						</a>
 					</p>
-				{/if}
+				{/if} -->
 			</div>
 		</div>
 		

@@ -63,7 +63,7 @@
 				{#await wrappedFetchServerFilesPromise}
 					<p>...waiting</p>
 				{:then fileManagement}
-					{#each [...(Array.isArray(fileManagement.files) ? fileManagement.files : [])] as { id }, index}
+					{#each [...(Array.isArray(fileManagement.files) ? fileManagement.files : [])] as { id, original_physical_file_name }, index}
 						<div
 							class="column is-one-third-desktop is-half-tablet is-full-mobile"
 						>
@@ -87,7 +87,7 @@
 												style="text-align: center; word-break: break-all;"
 												class="is-size-5 is-size-6-tablet has-text-weight-semibold"
 											>
-												{id}
+												{original_physical_file_name}
 											</p>
 										</div>
 									</div>

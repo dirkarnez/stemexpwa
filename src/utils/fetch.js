@@ -41,7 +41,6 @@ export const WrappedFetch = (url, params = {}) => {
     return [
         fetch(input, obj)
         .then(response => {
-            debugger;
             if (response.ok && response.status >= 200 && response.status < 300) {
                 return response.json();
             } else {

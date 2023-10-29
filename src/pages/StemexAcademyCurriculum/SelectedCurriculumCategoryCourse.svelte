@@ -19,7 +19,7 @@
     let curriculumCategoryCourseDetails = [];
 
     onMount(() => {
-        const url = `/api/curriculum-course-details?id=${parentId}`;
+        const url = `/api/curriculum?id=${parentId}`;
         const [  _wrappedFetchCurriculumCategoryCourse ] = WrappedFetch(url);
         wrappedFetchCurriculumCategoryCourse = _wrappedFetchCurriculumCategoryCourse;
         wrappedFetchCurriculumCategoryCourse

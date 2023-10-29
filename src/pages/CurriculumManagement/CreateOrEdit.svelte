@@ -19,7 +19,7 @@
 
     export let id;
 	export let parentId;
-    export let previousPath;
+    // export let previousPath;
 
     let wrappedFetchCurriculumEntry = null;
 
@@ -30,7 +30,6 @@
 			.then(() => {
 				alert("OK")
 				dispatch('done');
-				navigate(previousPath, {replace: false});
 			})
 			.catch(err => {
 				alert(`Not OK: ${err}`)
@@ -74,7 +73,7 @@
 <div class="columns">
 	<div class="column">
 		<div class="content">
-			<p>
+			<!-- <p>
 				<a href={previousPath} class="button is-danger" use:link>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +90,7 @@
                     </svg>
 					Back
 				</a>
-			</p>
+			</p> -->
 		</div>
 	</div>
 </div>
