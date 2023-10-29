@@ -77,6 +77,13 @@
 	}
 </script>
 
+<style>
+	.hero {
+		padding-top:  2rem;
+		padding-bottom:  2rem;
+	}
+</style>
+
 <div class="columns">
 	<div class="column">
 		<div class="content">
@@ -128,10 +135,11 @@
 		</label>
 	</div>
 
-
+	<section class="hero">
+		<h1 class="title">YouTube URL</h1>
 	{#each ($data.youtube_video_entries || []) as youtube_video_entry, index}
 		<div class="field">
-			<label class="label">YouTube URL
+			<label class="label">entry #{index + 1}
 				<div class="control">
 					<input
 						class="input"
@@ -153,10 +161,12 @@
 			</button>
 		</div> -->
 	{/each}
-
+</section>
+	<section class="hero">
+		<h1 class="title">Blog entries</h1>
 	{#each ($data.blog_entries || []) as blog_entry, index}
 		<div class="field">
-			<label class="label">Blog entries
+			<label class="label">entry #{index + 1}
 				<div class="control">
 					<input
 						class="input"
@@ -166,8 +176,18 @@
 						required={true}
 					/>
 				</div>
+				<div class="control">
+					<input
+						class="input"
+						type="text"
+						name={"blog_entries.{index}.title"}
+						bind:value={blog_entry.title}
+						required={true}
+					/>
+				</div>
 			</label>
 		</div>
+		
 		<!-- <div>
 			<input name= value={}/>
 			<button type="button" on:click="{addInterest(index + 1)}">
@@ -179,16 +199,37 @@
 		</div> -->
 	{/each}
 
+</section>
 
-	{#each ($data.information_entries || []) as information_entry, index}
+	<section class="hero">
+		<h1 class="title">Information entries</h1>
+		{#each ($data.information_entries || []) as information_entry, index}
 		<div class="field">
-			<label class="label">Information entries
+			<label class="label">entry #{index + 1}
 				<div class="control">
 					<input
 						class="input"
 						type="text"
 						name={"information_entries.{index}.title"}
 						bind:value={information_entry.title}
+						required={true}
+					/>
+				</div>
+				<div class="control">
+					<input
+						class="input"
+						type="text"
+						name={"information_entries.{index}.icon_id"}
+						bind:value={information_entry.icon_id}
+						required={true}
+					/>
+				</div>
+				<div class="control">
+					<textarea
+						class="textarea"
+						type="text"
+						name={"information_entries.{index}.content"}
+						bind:value={information_entry.content}
 						required={true}
 					/>
 				</div>
@@ -204,6 +245,8 @@
 			</button>
 		</div> -->
 	{/each}
+	</section>
+	
 
 	
 <!-- 
