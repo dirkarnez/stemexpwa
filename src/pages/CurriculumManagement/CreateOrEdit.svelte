@@ -23,7 +23,7 @@
 	let shouldBeACourse = false;
     // export let previousPath;
 
-    const { form, data, setFields } = createForm({ 
+    const { form, data, setFields, addField, unsetField } = createForm({ 
         onSubmit: (values) => {
 			debugger;
 			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", values);
@@ -79,6 +79,14 @@ debugger;
 			reader.readAsDataURL(file);
 		}
 	}
+
+	function removeBlogEntry(index) {
+		return () => unsetField(`blog_entries.${index}`);
+	}
+
+	function addBlogEntry(index) {
+		return () => addField(`blog_entries`, { value: '' }, index);
+	}
 </script>
 
 <div class="columns">
@@ -119,8 +127,7 @@ debugger;
 			/>
 		</figure>
 		<br />
-		<label class="label"
-			>Icon
+		<label class="label">Icon
 			<div class="control">
 				<input
 					class="input"
@@ -148,37 +155,46 @@ debugger;
 
 	{#if shouldBeACourse}
 		<section class="hero">
-			<h1 class="title">YouTube URL</h1>
+			<h1 class="title">YouTube Videos</h1>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 				<div class="field">
 					<label class="label">entry #{index + 1}
+						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeBlogEntry(index)}>
+							x
+						</button>
 						<div class="control">
 							<input
 								class="input"
 								type="text"
-								name={"youtube_video_entries.{index}.url"}
+								name="youtube_video_entries.{index}.title"
+								bind:value={youtube_video_entry.title}
+								required={true}
+							/>
+						</div>
+						<div class="control">
+							<input
+								class="input"
+								type="text"
+								name="youtube_video_entries.{index}.url"
 								bind:value={youtube_video_entry.url}
 								required={true}
 							/>
 						</div>
 					</label>
 				</div>
-				<!-- <div>
-				<input name= value={}/>
-				<button type="button" on:click="{addInterest(index + 1)}">
-					Add Interest
-				</button>
-				<button type="button" on:click="{removeInterest(index)}">
-					Remove Interest
-				</button>
-			</div> -->
 			{/each}
+			<button type="button" class="button is-primary" on:click={addBlogEntry(($data.blog_entries || []).length)}>
+				+
+			</button>
 		</section>
 		<section class="hero">
 			<h1 class="title">Blog entries</h1>
 			{#each $data.blog_entries || [] as blog_entry, index}
 				<div class="field">
 					<label class="label">entry #{index + 1}
+						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeBlogEntry(index)}>
+							x
+						</button>
 						<div class="control">
 							<input
 								class="input"
@@ -199,17 +215,10 @@ debugger;
 						</div>
 					</label>
 				</div>
-
-				<!-- <div>
-				<input name= value={}/>
-				<button type="button" on:click="{addInterest(index + 1)}">
-					Add Interest
-				</button>
-				<button type="button" on:click="{removeInterest(index)}">
-					Remove Interest
-				</button>
-			</div> -->
 			{/each}
+			<button type="button" class="button is-primary" on:click={addBlogEntry(($data.blog_entries || []).length)}>
+				+
+			</button>
 		</section>
 
 		<section class="hero">
@@ -217,32 +226,50 @@ debugger;
 			{#each $data.information_entries || [] as information_entry, index}
 				<div class="field">
 					<label class="label">entry #{index + 1}
-						<button type="button">
-							Remove Interest
+						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeBlogEntry(index)}>
+							x
 						</button>
+						<figure class="image is-128x128">
+							<img
+								src={information_entry[icon_id_key]
+									? getResourcesAPIByID(information_entry[icon_id_key])
+									: previewImageSrc
+									? previewImageSrc
+									: `https://bulma.io/images/placeholders/96x96.png`}
+								alt=""
+							/>
+						</figure>
+						<div class="control">
+							<input
+								class="input"
+								type="file"
+								name={icon_file_field_key}
+								on:change={handleImageChange}
+							/>
+						</div>
 						<div class="control">
 							<input
 								class="input"
 								type="text"
-								name={"information_entries.{index}.title"}
+								name="information_entries.{index}.title"
 								bind:value={information_entry.title}
 								required={true}
 							/>
 						</div>
-						<div class="control">
+						<!-- <div class="control">
 							<input
 								class="input"
 								type="text"
-								name={"information_entries.{index}.icon_id"}
+								name="information_entries.{index}.icon_id"
 								bind:value={information_entry.icon_id}
 								required={true}
 							/>
-						</div>
+						</div> -->
 						<div class="control">
 							<textarea
 								class="textarea"
 								type="text"
-								name={"information_entries.{index}.content"}
+								name="information_entries.{index}.content"
 								bind:value={information_entry.content}
 								required={true}
 							/>
@@ -250,15 +277,15 @@ debugger;
 					</label>
 				</div>
 			{/each}
-			<button type="button">
-				Add Interest
+			<button type="button" class="button is-primary" on:click={addBlogEntry(($data.blog_entries || []).length)}>
+				+
 			</button>
 		</section>
 	{/if}
 
 	<div class="field is-grouped">
 		<div class="control">
-			<button class="button is-link">Save</button>
+			<button class="button is-primary">Save</button>
 		</div>
 	</div>
 </form>
