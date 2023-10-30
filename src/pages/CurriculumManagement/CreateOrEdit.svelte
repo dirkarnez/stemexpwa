@@ -204,8 +204,8 @@
 			<h2 class="subtitle">YouTube videos</h2>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 				<div class="box">
-					<label class="label">#{index + 1}
-						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeYouTubeVideo(index)}>
+					<label class="label" style="position: relative;">#{index + 1}
+						<button type="button" class="is-danger button delete" style="height: 1rem; vertical-align: middle;position: absolute; top: 0; right: 0;" on:click={removeYouTubeVideo(index)}>
 							x
 						</button>
 						<br><br>
