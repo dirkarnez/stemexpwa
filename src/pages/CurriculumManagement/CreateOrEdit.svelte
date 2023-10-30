@@ -17,8 +17,18 @@
 
 
 	const youtube_video_entries_field_key = "youtube_video_entries";
+	const youtube_video_entries_title_field_key = "title";
+	const youtube_video_entries_url_field_key = "url";
+
 	const information_entries_field_key = "information_entries";
+	const information_entries_title_field_key = "title";
+	const information_entries_icon_file_field_key = "icon_file";
+	const information_entries_content_field_key = "content";
+
 	const blog_entries_field_key = "blog_entries";
+	const blog_entries_external_url_field_key = "external_url";
+	const blog_entries_title_field_key = "title";
+	
 
 	const dispatch = createEventDispatcher();
 
@@ -62,7 +72,6 @@
 			})
 		}
 
-debugger;
 		if (!isNullOrEmpty(parentId)) {
 			const [  _wrappedFetchShouldBeACourse ] = WrappedFetch(`/api/should-be-a-course?parent-id=${parentId}`);
 			_wrappedFetchShouldBeACourse.then(_data => {
@@ -91,7 +100,7 @@ debugger;
 	}
 
 	function addYouTubeVideo(index) {
-		return () => addField(`${youtube_video_entries_field_key}`, { value: '' }, index);
+		return () => addField(`${youtube_video_entries_field_key}`, { title: "", url: "" }, index);
 	}
 
 
@@ -100,16 +109,16 @@ debugger;
 	}
 
 	function addBlogEntry(index) {
-		return () => addField(`${blog_entries_field_key}`, { value: '' }, index);
+		return () => addField(`${blog_entries_field_key}`, { external_url: "", title: "" }, index);
 	}
 
 
 	function removeInformationEntry(index) {
-		return () => unsetField(`${blog_entries_field_key}.${index}`);
+		return () => unsetField(`${information_entries_field_key}.${index}`);
 	}
 
 	function addInformationEntry(index) {
-		return () => addField(`${blog_entries_field_key}`, { value: '' }, index);
+		return () => addField(`${information_entries_field_key}`, { icon_id: "", title: "2", content: "4" }, index);
 	}
 </script>
 
@@ -195,7 +204,7 @@ debugger;
 							<input
 								class="input"
 								type="text"
-								name="{youtube_video_entries_field_key}.{index}.title}"
+								name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_title_field_key}"
 								bind:value={youtube_video_entry.title}
 								required={true}
 							/>
@@ -204,7 +213,7 @@ debugger;
 							<input
 								class="input"
 								type="text"
-								name="youtube_video_entries.{index}.url"
+								name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_url_field_key}"
 								bind:value={youtube_video_entry.url}
 								required={true}
 							/>
@@ -228,7 +237,7 @@ debugger;
 							<input
 								class="input"
 								type="text"
-								name="{blog_entries_field_key}.{index}.external_url"
+								name="{blog_entries_field_key}.{index}.{blog_entries_external_url_field_key}"
 								bind:value={blog_entry.external_url}
 								required={true}
 							/>
@@ -237,7 +246,7 @@ debugger;
 							<input
 								class="input"
 								type="text"
-								name="{blog_entries_field_key}.{index}.title"
+								name="{blog_entries_field_key}.{index}.{blog_entries_title_field_key}"
 								bind:value={blog_entry.title}
 								required={true}
 							/>
@@ -272,7 +281,7 @@ debugger;
 							<input
 								class="input"
 								type="file"
-								name={icon_file_field_key}
+								name="{information_entries_field_key}.{index}.{information_entries_icon_file_field_key}"
 								on:change={handleImageChange}
 							/>
 						</div>
@@ -280,7 +289,7 @@ debugger;
 							<input
 								class="input"
 								type="text"
-								name="{information_entries_field_key}.{index}.title"
+								name="{information_entries_field_key}.{index}.{information_entries_title_field_key}"
 								bind:value={information_entry.title}
 								required={true}
 							/>
@@ -298,7 +307,7 @@ debugger;
 							<textarea
 								class="textarea"
 								type="text"
-								name="{information_entries_field_key}.{index}.content"
+								name="{information_entries_field_key}.{index}.{information_entries_content_field_key}"
 								bind:value={information_entry.content}
 								required={true}
 							/>
