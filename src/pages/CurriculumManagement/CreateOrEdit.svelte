@@ -7,12 +7,14 @@
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { isNullOrEmpty } from "../../utils/strings";
     import { createForm } from 'felte';
+	import InputFileContainer from "../../components/InputFileContainer.svelte";
     //import { WrappedFetch } from "../../utils/fetch";
 
     const description_field_key = "description";
     const icon_id_key = "icon_id";
 	const parent_id_key = "parent_id";
     const icon_file_field_key = "icon_file";
+    const icon_file_preview_field_key = "icon_file_preview";
 	const id_field_key = "id";
 
 
@@ -22,7 +24,9 @@
 
 	const information_entries_field_key = "information_entries";
 	const information_entries_title_field_key = "title";
+	const information_entries_icon_id_field_key = "icon_id";
 	const information_entries_icon_file_field_key = "icon_file";
+	const information_entries_icon_file_preview_field_key = "icon_file_preview";
 	const information_entries_content_field_key = "content";
 
 	const blog_entries_field_key = "blog_entries";
@@ -80,15 +84,15 @@
 		}
 	});
 
-	let previewImageSrc = '';
-	function handleImageChange(event) {
+	function handleImageChange(event, callback) {
+		debugger;
 		const file = event.target.files[0];
 
 		if (file) {
 			const reader = new FileReader();
 
 			reader.onload = (event) => {
-				previewImageSrc = event.target.result;
+				callback(event.target.result);
 			};
 
 			reader.readAsDataURL(file);
@@ -118,7 +122,7 @@
 	}
 
 	function addInformationEntry(index) {
-		return () => addField(`${information_entries_field_key}`, { icon_id: "", title: "2", content: "4" }, index);
+		return () => addField(`${information_entries_field_key}`, { icon_id: "", title: "", content: "" }, index);
 	}
 </script>
 
@@ -153,21 +157,23 @@
 			<img
 				src={$data[icon_id_key]
 					? getResourcesAPIByID($data[icon_id_key])
-					: previewImageSrc
-					? previewImageSrc
-					: `https://bulma.io/images/placeholders/96x96.png`}
+					: 
+					$data[icon_file_preview_field_key]
+					? $data[icon_file_preview_field_key]
+					: `https://bulma.io/images/placeholders/128x128.png`}
 				alt=""
 			/>
 		</figure>
-		<br />
 		<label class="label">Icon
 			<div class="control">
-				<input
-					class="input"
-					type="file"
-					name={icon_file_field_key}
-					on:change={handleImageChange}
-				/>
+				<InputFileContainer>
+					<input
+						class="file-input"
+						type="file"
+						name={icon_file_field_key}
+						on:change={e => handleImageChange(e, dataURI => setFields(icon_file_preview_field_key , dataURI, true))}
+					/>
+				</InputFileContainer>
 			</div>
 		</label>
 	</div>
@@ -190,133 +196,165 @@
 		<input type="checkbox" bind:checked={toBeACourse} />
 		This item is a course
 	</label>
+	<br>
+	<br>
 
 	{#if shouldBeACourse || toBeACourse}
 		<section class="hero">
-			<h1 class="title">YouTube Videos</h1>
+			<h2 class="subtitle">YouTube videos</h2>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
-				<div class="field">
-					<label class="label">entry #{index + 1}
+				<div class="box">
+					<label class="label">#{index + 1}
 						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeYouTubeVideo(index)}>
 							x
 						</button>
-						<div class="control">
-							<input
-								class="input"
-								type="text"
-								name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_title_field_key}"
-								bind:value={youtube_video_entry.title}
-								required={true}
-							/>
+						<br><br>
+						<div class="field">
+							<div class="control">
+								<label class="label">Title
+									<input
+										class="input"
+										type="text"
+										name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_title_field_key}"
+										placeholder="Title of the video"
+										bind:value={youtube_video_entry.title}
+										required={true}
+									/>
+								</label>
+							</div>
 						</div>
-						<div class="control">
-							<input
-								class="input"
-								type="text"
-								name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_url_field_key}"
-								bind:value={youtube_video_entry.url}
-								required={true}
-							/>
+						<div class="field">
+							<div class="control">
+								<label class="label">URL
+									<input
+										class="input"
+										type="text"
+										name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_url_field_key}"
+										bind:value={youtube_video_entry.url}
+										placeholder="URL of the video"
+										required={true}
+									/>
+								</label>
+							</div>
 						</div>
 					</label>
 				</div>
 			{/each}
-			<button type="button" class="button is-primary" on:click={addYouTubeVideo(($data.youtube_video_entries || []).length)}>
-				+
+			<button type="button" class="button is-primary is-light" on:click={addYouTubeVideo(($data.youtube_video_entries || []).length)}>
+				Add new
 			</button>
 		</section>
 		<section class="hero">
-			<h1 class="title">Blog entries</h1>
+			<h2 class="subtitle">Blog entries</h2>
 			{#each $data.blog_entries || [] as blog_entry, index}
-				<div class="field">
-					<label class="label">entry #{index + 1}
+				<div class="box">
+					<label class="label">#{index + 1}
 						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeBlogEntry(index)}>
 							x
 						</button>
-						<div class="control">
-							<input
-								class="input"
-								type="text"
-								name="{blog_entries_field_key}.{index}.{blog_entries_external_url_field_key}"
-								bind:value={blog_entry.external_url}
-								required={true}
-							/>
+						<br><br>
+						<div class="field">
+							<div class="control">
+								<label class="label">External Url
+									<input
+										class="input"
+										type="text"
+										name="{blog_entries_field_key}.{index}.{blog_entries_external_url_field_key}"
+										bind:value={blog_entry.external_url}
+										placeholder="External URL of the blog"
+										required={true}
+									/>
+								</label>
+							</div>
 						</div>
-						<div class="control">
-							<input
-								class="input"
-								type="text"
-								name="{blog_entries_field_key}.{index}.{blog_entries_title_field_key}"
-								bind:value={blog_entry.title}
-								required={true}
-							/>
+						<div class="field">
+							<div class="control">
+								<label class="label">Title
+									<input
+										class="input"
+										type="text"
+										name="{blog_entries_field_key}.{index}.{blog_entries_title_field_key}"
+										bind:value={blog_entry.title}
+										placeholder="Title of the blog"
+										required={true}
+									/>
+								</label>
+							</div>
 						</div>
 					</label>
 				</div>
 			{/each}
-			<button type="button" class="button is-primary" on:click={addBlogEntry(($data.blog_entries || []).length)}>
-				+
+			<button type="button" class="button is-primary is-light" on:click={addBlogEntry(($data.blog_entries || []).length)}>
+				Add new
 			</button>
 		</section>
 
 		<section class="hero">
-			<h1 class="title">Information entries</h1>
+			<h2 class="subtitle">Information entries</h2>
 			{#each $data.information_entries || [] as information_entry, index}
-				<div class="field">
-					<label class="label">entry #{index + 1}
+				<div class="box">
+					<label class="label">#{index + 1}
 						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeInformationEntry(index)}>
 							x
 						</button>
+						<br><br>
 						<figure class="image is-128x128">
 							<img
-								src={information_entry[icon_id_key]
-									? getResourcesAPIByID(information_entry[icon_id_key])
-									: previewImageSrc
-									? previewImageSrc
-									: `https://bulma.io/images/placeholders/96x96.png`}
+								src={information_entry[information_entries_icon_id_field_key]
+									? getResourcesAPIByID(information_entry[information_entries_icon_id_field_key])
+									: information_entry[information_entries_icon_file_preview_field_key]
+									? information_entry[information_entries_icon_file_preview_field_key]
+									: `https://bulma.io/images/placeholders/128x128.png`}
 								alt=""
 							/>
 						</figure>
-						<div class="control">
-							<input
-								class="input"
-								type="file"
-								name="{information_entries_field_key}.{index}.{information_entries_icon_file_field_key}"
-								on:change={handleImageChange}
-							/>
+						<div class="field">
+							<div class="control">
+								<label class="label">Icon
+									<InputFileContainer>
+										<input
+											class="file-input"
+											type="file"
+											name="{information_entries_field_key}.{index}.{information_entries_icon_file_field_key}"
+											on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_field_key}.${index}.${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+										/>
+									</InputFileContainer> 
+								</label>
+							</div>
 						</div>
-						<div class="control">
-							<input
-								class="input"
-								type="text"
-								name="{information_entries_field_key}.{index}.{information_entries_title_field_key}"
-								bind:value={information_entry.title}
-								required={true}
-							/>
+						<div class="field">
+							<div class="control">
+								<label class="label">Title
+									<input
+										class="input"
+										type="text"
+										name="{information_entries_field_key}.{index}.{information_entries_title_field_key}"
+										bind:value={information_entry.title}
+										required={true}
+										placeholder="Title of the information entry"
+									/>
+								</label>
+							</div>
 						</div>
-						<!-- <div class="control">
-							<input
-								class="input"
-								type="text"
-								name="information_entries.{index}.icon_id"
-								bind:value={information_entry.icon_id}
-								required={true}
-							/>
-						</div> -->
-						<div class="control">
-							<textarea
-								class="textarea"
-								type="text"
-								name="{information_entries_field_key}.{index}.{information_entries_content_field_key}"
-								bind:value={information_entry.content}
-								required={true}
-							/>
+						<div class="field">
+							<div class="control">
+								<label class="label">Content
+									<textarea
+										class="textarea"
+										type="text"
+										name="{information_entries_field_key}.{index}.{information_entries_content_field_key}"
+										bind:value={information_entry.content}
+										placeholder="Content of the information entry"
+										required={true}
+									/>
+								</label>
+							</div>
 						</div>
 					</label>
 				</div>
 			{/each}
-			<button type="button" class="button is-primary" on:click={addInformationEntry(($data.information_entries || []).length)}>
-				+
+			<button type="button" class="button is-primary is-light" on:click={addInformationEntry(($data.information_entries || []).length)}>
+				Add new
 			</button>
 		</section>
 	{/if}
