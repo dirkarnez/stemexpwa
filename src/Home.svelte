@@ -258,7 +258,12 @@
 						</ul>
 					{/if}
 					<li>
-						<a class={$location.pathname == `${getHost()}/api/logout` ? "is-active" : "" } href={`${getHost()}/api/logout`} on:click={() => { return confirm('Are you sure?') }}>
+						<a class={$location.pathname == `${getHost()}/api/logout` ? "is-active" : "" } href={`javascript:void(0)`} on:click={() => { 
+								if (confirm('Are you sure?')) {
+									navigate(`${getHost()}/api/logout`)
+								} 
+							}
+						}>
 							Logout
 						</a>
 					</li>
