@@ -15,12 +15,18 @@
     const icon_file_field_key = "icon_file";
 	const id_field_key = "id";
 
+
+	const youtube_video_entries_field_key = "youtube_video_entries";
+	const information_entries_field_key = "information_entries";
+	const blog_entries_field_key = "blog_entries";
+
 	const dispatch = createEventDispatcher();
 
     export let id;
 	export let parentId;
 
 	let shouldBeACourse = false;
+	let toBeACourse = false;
     // export let previousPath;
 
     const { form, data, setFields, addField, unsetField } = createForm({ 
@@ -50,9 +56,9 @@
 				setFields(description_field_key, _data[description_field_key], true);
 				setFields(icon_id_key, _data[icon_id_key], true);
 				setFields(parent_id_key, _data[parent_id_key], true);
-				setFields("youtube_video_entries", (_data["youtube_video_entries"] || []), true);
-				setFields("blog_entries", (_data["blog_entries"] || []), true);
-				setFields("information_entries", (_data["information_entries"] || []), true);
+				setFields(youtube_video_entries_field_key , (_data[youtube_video_entries_field_key] || []), true);
+				setFields(blog_entries_field_key , (_data[blog_entries_field_key] || []), true);
+				setFields(information_entries_field_key , (_data[information_entries_field_key] || []), true);
 			})
 		}
 
@@ -80,12 +86,30 @@ debugger;
 		}
 	}
 
+	function removeYouTubeVideo(index) {
+		return () => unsetField(`${youtube_video_entries_field_key}.${index}`);
+	}
+
+	function addYouTubeVideo(index) {
+		return () => addField(`${youtube_video_entries_field_key}`, { value: '' }, index);
+	}
+
+
 	function removeBlogEntry(index) {
-		return () => unsetField(`blog_entries.${index}`);
+		return () => unsetField(`${blog_entries_field_key}.${index}`);
 	}
 
 	function addBlogEntry(index) {
-		return () => addField(`blog_entries`, { value: '' }, index);
+		return () => addField(`${blog_entries_field_key}`, { value: '' }, index);
+	}
+
+
+	function removeInformationEntry(index) {
+		return () => unsetField(`${blog_entries_field_key}.${index}`);
+	}
+
+	function addInformationEntry(index) {
+		return () => addField(`${blog_entries_field_key}`, { value: '' }, index);
 	}
 </script>
 
@@ -153,20 +177,25 @@ debugger;
 		</label>
 	</div>
 
-	{#if shouldBeACourse}
+	<label>
+		<input type="checkbox" bind:checked={toBeACourse} />
+		This item is a course
+	</label>
+
+	{#if shouldBeACourse || toBeACourse}
 		<section class="hero">
 			<h1 class="title">YouTube Videos</h1>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 				<div class="field">
 					<label class="label">entry #{index + 1}
-						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeBlogEntry(index)}>
+						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeYouTubeVideo(index)}>
 							x
 						</button>
 						<div class="control">
 							<input
 								class="input"
 								type="text"
-								name="youtube_video_entries.{index}.title"
+								name="{youtube_video_entries_field_key}.{index}.title}"
 								bind:value={youtube_video_entry.title}
 								required={true}
 							/>
@@ -183,7 +212,7 @@ debugger;
 					</label>
 				</div>
 			{/each}
-			<button type="button" class="button is-primary" on:click={addBlogEntry(($data.blog_entries || []).length)}>
+			<button type="button" class="button is-primary" on:click={addYouTubeVideo(($data.youtube_video_entries || []).length)}>
 				+
 			</button>
 		</section>
@@ -199,7 +228,7 @@ debugger;
 							<input
 								class="input"
 								type="text"
-								name={"blog_entries.{index}.external_url"}
+								name="{blog_entries_field_key}.{index}.external_url"
 								bind:value={blog_entry.external_url}
 								required={true}
 							/>
@@ -208,7 +237,7 @@ debugger;
 							<input
 								class="input"
 								type="text"
-								name={"blog_entries.{index}.title"}
+								name="{blog_entries_field_key}.{index}.title"
 								bind:value={blog_entry.title}
 								required={true}
 							/>
@@ -226,7 +255,7 @@ debugger;
 			{#each $data.information_entries || [] as information_entry, index}
 				<div class="field">
 					<label class="label">entry #{index + 1}
-						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeBlogEntry(index)}>
+						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeInformationEntry(index)}>
 							x
 						</button>
 						<figure class="image is-128x128">
@@ -251,7 +280,7 @@ debugger;
 							<input
 								class="input"
 								type="text"
-								name="information_entries.{index}.title"
+								name="{information_entries_field_key}.{index}.title"
 								bind:value={information_entry.title}
 								required={true}
 							/>
@@ -269,7 +298,7 @@ debugger;
 							<textarea
 								class="textarea"
 								type="text"
-								name="information_entries.{index}.content"
+								name="{information_entries_field_key}.{index}.content"
 								bind:value={information_entry.content}
 								required={true}
 							/>
@@ -277,7 +306,7 @@ debugger;
 					</label>
 				</div>
 			{/each}
-			<button type="button" class="button is-primary" on:click={addBlogEntry(($data.blog_entries || []).length)}>
+			<button type="button" class="button is-primary" on:click={addInformationEntry(($data.information_entries || []).length)}>
 				+
 			</button>
 		</section>
