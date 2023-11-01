@@ -70,9 +70,21 @@
 				setFields(description_field_key, _data[description_field_key], true);
 				setFields(icon_id_key, _data[icon_id_key], true);
 				setFields(parent_id_key, _data[parent_id_key], true);
-				setFields(youtube_video_entries_field_key , (_data[youtube_video_entries_field_key] || []), true);
-				setFields(blog_entries_field_key , (_data[blog_entries_field_key] || []), true);
-				setFields(information_entries_field_key , (_data[information_entries_field_key] || []), true);
+				setFields(youtube_video_entries_field_key , (_data[youtube_video_entries_field_key] || [{ 
+					[youtube_video_entries_title_field_key]: "",  
+					[youtube_video_entries_url_field_key]: "" 
+				}]), true);
+
+				setFields(blog_entries_field_key , (_data[blog_entries_field_key] || [{
+					[blog_entries_external_url_field_key]: "", 
+					[blog_entries_title_field_key]: ""
+				}]), true);
+
+				setFields(information_entries_field_key , (_data[information_entries_field_key] || [{ 
+					[information_entries_icon_id_field_key]: "",
+					[information_entries_title_field_key]: "", 
+					[information_entries_content_field_key]: "" 
+				}]), true);
 			})
 		}
 
@@ -104,7 +116,7 @@
 	}
 
 	function addYouTubeVideo(index) {
-		return () => addField(`${youtube_video_entries_field_key}`, { title: "", url: "" }, index);
+		return () => addField(`${youtube_video_entries_field_key}`, { [youtube_video_entries_title_field_key]: "", [youtube_video_entries_url_field_key]: "" }, index);
 	}
 
 
@@ -113,7 +125,7 @@
 	}
 
 	function addBlogEntry(index) {
-		return () => addField(`${blog_entries_field_key}`, { external_url: "", title: "" }, index);
+		return () => addField(`${blog_entries_field_key}`, { [blog_entries_external_url_field_key]: "", [blog_entries_title_field_key]: "" }, index);
 	}
 
 
@@ -122,7 +134,7 @@
 	}
 
 	function addInformationEntry(index) {
-		return () => addField(`${information_entries_field_key}`, { icon_id: "", title: "", content: "" }, index);
+		return () => addField(`${information_entries_field_key}`, { [information_entries_icon_id_field_key]: "", [information_entries_title_field_key]: "", [information_entries_content_field_key]: "" }, index);
 	}
 </script>
 
