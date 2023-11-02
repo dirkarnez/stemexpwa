@@ -45,30 +45,23 @@
 
     const { form, data, setFields, addField, unsetField } = createForm({ 
         onSubmit: (values) => {
-			const { [icon_file_preview_field_key]: undefined, ...newValues } =  values;
+			const { 
+				[icon_file_preview_field_key]: undefined,
+				[information_entries_field_key]: [], 
+				...tempValues 
+			} = values;
 
+			const finalValues = {
+				[information_entries_field_key]: (values[information_entries_field_key] || [])
+					.map(information_entry => {
+						const { [information_entries_icon_file_preview_field_key]: undefined, ...obj  } = information_entry;
+						return ({...obj})
+					}),
+				...tempValues
+			};
 
-
-
-			const { [information_entries_field_key]: [], ...newValues2 } =  newValues;
-
-			const a = {
-				[information_entries_field_key]: (newValues[information_entries_field_key] || [])
-				.map( a => {
-					const { [information_entries_icon_file_preview_field_key]: undefined, ...b  } = a;
-					return ({...b})
-				}),
-				...newValues2
-			}
-
-			// const  = { 
-			// 	[information_entries_field_key]: , 
-			// 		...newValues
-			// };
-				
-			debugger;
-			console.log(a);
-			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", newValues2);
+			console.log(finalValues);
+			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", finalValues);
 			wrappedFetchPromise
 			.then(() => {
 				alert("OK")
