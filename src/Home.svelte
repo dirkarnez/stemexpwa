@@ -11,6 +11,7 @@
 	import InstructorSchedule from "./pages/InstructorSchedule.svelte";
 	import LastMinuteOffer from "./pages/LastMinuteOffer.svelte";
 	import UserManagement from "./pages/UserManagement.svelte";
+	import ClassManagement from "./pages/ClassManagement/index.svelte";
 	import FileManagement from "./pages/FileManagement.svelte";
 	import ClientManagement from "./pages/ClientManagement.svelte";
 	import Statistics from "./pages/Statistics.svelte";
@@ -243,6 +244,13 @@
 							{/if}
 							{#if role == "admin"}
 								<li>
+									<a class={$location.pathname.includes("/class-management") ? "is-active" : "" } href="/class-management" use:link>
+										Class management
+									</a>
+								</li>
+							{/if}
+							{#if role == "admin"}
+								<li>
 									<a class={$location.pathname.includes("/curriculum-management") ? "is-active" : "" } href="/curriculum-management" use:link>
 										Curriculum management
 									</a>
@@ -290,6 +298,11 @@
 					<Route path="/user-management">
 						<UserManagement/>
 					</Route>
+
+					<Route path="/class-management">
+						<ClassManagement/>
+					</Route>
+
 
 					<Route path="/client-management">
 						<ClientManagement/>

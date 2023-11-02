@@ -45,8 +45,30 @@
 
     const { form, data, setFields, addField, unsetField } = createForm({ 
         onSubmit: (values) => {
+			const { [icon_file_preview_field_key]: undefined, ...newValues } =  values;
+
+
+
+
+			const { [information_entries_field_key]: [], ...newValues2 } =  newValues;
+
+			const a = {
+				[information_entries_field_key]: (newValues[information_entries_field_key] || [])
+				.map( a => {
+					const { [information_entries_icon_file_preview_field_key]: undefined, ...b  } = a;
+					return ({...b})
+				}),
+				...newValues2
+			}
+
+			// const  = { 
+			// 	[information_entries_field_key]: , 
+			// 		...newValues
+			// };
+				
 			debugger;
-			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", values);
+			console.log(a);
+			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", newValues2);
 			wrappedFetchPromise
 			.then(() => {
 				alert("OK")
@@ -57,6 +79,33 @@
 			});
         },
     });
+
+	
+	$: if (toBeACourse) {
+		if (($data[youtube_video_entries_field_key] || []).length < 1) {
+			addYouTubeVideo(0)();
+		}
+
+		if (($data[information_entries_field_key] || []).length < 1) {
+			addInformationEntry(0)();
+		}
+
+		if (($data[blog_entries_field_key] || []).length < 1) {
+			addBlogEntry(0)();
+		}
+	} else {
+		Array(($data[youtube_video_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+			removeYouTubeVideo(i);
+		});
+
+		Array(($data[information_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+			removeInformationEntry(i);
+		});
+
+		Array(($data[blog_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+			removeBlogEntry(i);
+		});
+	}
 
     onMount(() => {
 		if (isNullOrEmpty(id)) {
@@ -70,23 +119,26 @@
 				setFields(description_field_key, _data[description_field_key], true);
 				setFields(icon_id_key, _data[icon_id_key], true);
 				setFields(parent_id_key, _data[parent_id_key], true);
-				setFields(youtube_video_entries_field_key , (_data[youtube_video_entries_field_key] || [{ 
-					[youtube_video_entries_title_field_key]: "",  
-					[youtube_video_entries_url_field_key]: "" 
-				}]), true);
-
-				setFields(blog_entries_field_key , (_data[blog_entries_field_key] || [{
-					[blog_entries_external_url_field_key]: "", 
-					[blog_entries_title_field_key]: ""
-				}]), true);
-
-				setFields(information_entries_field_key , (_data[information_entries_field_key] || [{ 
-					[information_entries_icon_id_field_key]: "",
-					[information_entries_title_field_key]: "", 
-					[information_entries_content_field_key]: "" 
-				}]), true);
 			})
 		}
+
+
+
+		// setFields(youtube_video_entries_field_key , ($data[youtube_video_entries_field_key] || [{ 
+		// 	[youtube_video_entries_title_field_key]: "",  
+		// 	[youtube_video_entries_url_field_key]: "" 
+		// }]), true);
+
+		// setFields(blog_entries_field_key , ($data[blog_entries_field_key] || [{
+		// 	[blog_entries_external_url_field_key]: "", 
+		// 	[blog_entries_title_field_key]: ""
+		// }]), true);
+
+		// setFields(information_entries_field_key , ($data[information_entries_field_key] || [{ 
+		// 	[information_entries_icon_id_field_key]: "",
+		// 	[information_entries_title_field_key]: "", 
+		// 	[information_entries_content_field_key]: "" 
+		// }]), true);
 
 		if (!isNullOrEmpty(parentId)) {
 			const [  _wrappedFetchShouldBeACourse ] = WrappedFetch(`/api/should-be-a-course?parent-id=${parentId}`);
@@ -97,7 +149,6 @@
 	});
 
 	function handleImageChange(event, callback) {
-		debugger;
 		const file = event.target.files[0];
 
 		if (file) {
@@ -217,9 +268,11 @@
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 				<div class="box">
 					<label class="label" style="position: relative;">#{index + 1}
-						<button type="button" class="is-danger button delete" style="height: 1rem; vertical-align: middle;position: absolute; top: 0; right: 0;" on:click={removeYouTubeVideo(index)}>
-							x
-						</button>
+						{#if index > 0}
+							<button type="button" class="is-danger button delete" style="height: 1rem; vertical-align: middle;position: absolute; top: 0; right: 0;" on:click={removeYouTubeVideo(index)}>
+								x
+							</button>
+						{/if}
 						<br><br>
 						<div class="field">
 							<div class="control">
@@ -261,9 +314,11 @@
 			{#each $data.blog_entries || [] as blog_entry, index}
 				<div class="box">
 					<label class="label">#{index + 1}
-						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeBlogEntry(index)}>
-							x
-						</button>
+						{#if index > 0}
+							<button type="button" class="is-danger button delete" style="height: 1rem; vertical-align: middle;position: absolute; top: 0; right: 0;" on:click={removeBlogEntry(index)}>
+								x
+							</button>
+						{/if}
 						<br><br>
 						<div class="field">
 							<div class="control">
@@ -306,9 +361,11 @@
 			{#each $data.information_entries || [] as information_entry, index}
 				<div class="box">
 					<label class="label">#{index + 1}
-						<button type="button" class="button is-danger" style="height: 1rem; vertical-align: middle;" on:click={removeInformationEntry(index)}>
-							x
-						</button>
+						{#if index > 0}
+							<button type="button" class="is-danger button delete" style="height: 1rem; vertical-align: middle;position: absolute; top: 0; right: 0;" on:click={removeInformationEntry(index)}>
+								x
+							</button>
+						{/if}
 						<br><br>
 						<figure class="image is-128x128">
 							<img
