@@ -110,12 +110,13 @@
 			setFields(icon_id_key, "", true);
 			setFields(parent_id_key, parentId, true);
 		} else {
-			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
+			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
 			_wrappedFetchCurriculumEntry.then(_data => {
 				setFields(id_field_key, _data[id_field_key], true);
 				setFields(description_field_key, _data[description_field_key], true);
 				setFields(icon_id_key, _data[icon_id_key], true);
 				setFields(parent_id_key, _data[parent_id_key], true);
+				setFields(blog_entries_field_key, (_data[blog_entries_field_key] || []), true);
 			})
 		}
 
@@ -126,7 +127,7 @@
 		// 	[youtube_video_entries_url_field_key]: "" 
 		// }]), true);
 
-		// setFields(blog_entries_field_key , ($data[blog_entries_field_key] || [{
+		// setFields(blog_entries_field_key , ($data[] || [{
 		// 	[blog_entries_external_url_field_key]: "", 
 		// 	[blog_entries_title_field_key]: ""
 		// }]), true);
