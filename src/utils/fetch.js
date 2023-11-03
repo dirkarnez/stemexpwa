@@ -13,19 +13,19 @@ export const WrappedFetch = (url, params = {}) => {
     //     , 
     //     ...params
     // )
-    const isDev =  location.host.includes("localhost");
+    const isDev = location.host.includes("localhost");
 
     var abortController = new AbortController();
 
     var myHeaders = new Headers();
-	// myHeaders.append("pragma", "no-cache");
-	// myHeaders.append("Cache-Control", "no-cache");
+    // myHeaders.append("pragma", "no-cache");
+    // myHeaders.append("Cache-Control", "no-cache");
 
-    const input = isDev 
-    ?
-    `https://localhost:443${url}`
-    :
-    url;
+    const input = isDev
+        ?
+        `https://localhost:443${url}`
+        :
+        url;
 
     const obj = {
         signal: abortController.signal,
@@ -40,15 +40,15 @@ export const WrappedFetch = (url, params = {}) => {
 
     return [
         fetch(input, obj)
-        .then(response => {
-            if (response.ok && response.status >= 200 && response.status < 300) {
-                return response.json();
-            } else {
-                return response.text().then(a => {
-                    throw a
-                })
-            }
-        }),
+            .then(response => {
+                if (response.ok && response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    return response.text().then(a => {
+                        throw a
+                    })
+                }
+            }),
         abortController
     ];
 }
@@ -62,16 +62,34 @@ export const WrappedFetchPOST = (url, stringifyJSON) => {
 }
 
 // const [  wrappedFetchPromise , abort ] = WrappedFetchPOST("/api/login", JSON.stringify(myForm.summary()));
-export const WrappedFetchPOSTMultipart = (url, obj) => {
-    const formData  = new FormData();
-      
-    for(const name in obj) {
-      formData.append(name, obj[name]);
-    }
-    
+export const WrappedFetchPOSTMultipart = (url, formData) => {
+    //const formData = new FormData();
+
+   //objectToFormData(obj, formData, "");
+
     return WrappedFetch(url, {
         method: "POST",
         body: formData
     });
 }
 
+
+function objectToFormData(obj, formData, parentKey) {
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            const value = obj[key];
+            const formKey = parentKey ? `${parentKey}[${key}]` : key;
+
+            if (typeof value === 'object' && !Array.isArray(value) && Object.prototype.toString.call(value) != "[object File]" && value !== null) {
+                objectToFormData(value, formData, formKey);
+            } else if (Array.isArray(value)) {
+                value.forEach((item, index) => {
+                    const arrayKey = `${formKey}[${index}]`;
+                    objectToFormData(item, formData, arrayKey);
+                });
+            } else {
+                formData.append(formKey, value);
+            }
+        }
+    }
+}
