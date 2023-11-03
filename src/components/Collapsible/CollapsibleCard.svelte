@@ -3,6 +3,7 @@
 
 	export let index;
 
+	export let title;
 
 
 	export let expanding;
@@ -11,7 +12,7 @@
 
 <div class="card">
 	<header class="card-header">
-		<p class="card-header-title">Component</p>
+		<p class="card-header-title">{title}</p>
 		<label style="cursor: pointer;">
 			<input
 				type="checkbox"
@@ -28,13 +29,7 @@
 	{#if expanding == index}
 	<div class="card-content" transition:slide>
 		<div class="content">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-			iaculis mauris.
-			<a href={`javascript:void(0)`}>@bulmaio</a>.
-			<a href={`javascript:void(0)`}>#css</a>
-			<a href={`javascript:void(0)`}>#responsive</a>
-			<br />
-			<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+			<slot/>
 		</div>
 	</div>
 	{/if}

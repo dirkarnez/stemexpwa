@@ -10,12 +10,21 @@
 	
     let data = [];
     FakeFetch("/api/435").then(a => {
-        data = [1, 2, 3, 4, 5];
+        data = [
+            {
+                className: "Coding Minecraft Elementary",
+                photos: "51aa549e7a5711ee9aa006c3bc34e27e"
+            }, 
+            {
+                className: "Lego Robotics Advance - EV3",
+                photos: "51aa549e7a5711ee9aa006c3bc34e27e"
+            }
+        ];
     });
 	let location = useLocation();
 	// const currentPath = $location.pathname;
 
-
+   // https://localhost/api/resourses?id=
 </script>
 
 <!-- <Router>
@@ -34,8 +43,7 @@
 
 <div class="tabs">
 <ul>
-    <li class="is-active"><a href={`javascript:void(0)`}>Pictures</a></li>
-    <li><a href={`javascript:void(0)`}>Music</a></li>
+    <li class="is-active"><a href={`javascript:void(0)`}>Lincoln Leung</a></li>
 </ul>
 </div>
 
@@ -43,14 +51,19 @@
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
         <div class="content">
             <div class="box">
-               324
+                <figure class="image is-128x128">
+                    <img src={`https://ec2-43-198-50-165.ap-east-1.compute.amazonaws.com/assets/images/defaultImg.png`} alt="testing">
+                </figure>
+                <p>
+                    Lincoln Leung
+                </p>
             </div>
         </div>
     </div>
     <div class="column is-two-third-desktop is-two-third-tablet is-full-mobile">
         <div class="content">
             {#if Array.isArray(data)}
-                <Collapsible data={data}></Collapsible>
+                <Collapsible data={data}/>
             {:else}
                 <p>loading</p>
             {/if}
