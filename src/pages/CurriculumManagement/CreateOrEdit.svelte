@@ -117,6 +117,8 @@
 				setFields(icon_id_key, _data[icon_id_key], true);
 				setFields(parent_id_key, _data[parent_id_key], true);
 				setFields(blog_entries_field_key, (_data[blog_entries_field_key] || []), true);
+				setFields(youtube_video_entries_field_key, (_data[youtube_video_entries_field_key] || []), true);
+				setFields(information_entries_field_key, (_data[information_entries_field_key] || []), true);
 			})
 		}
 
