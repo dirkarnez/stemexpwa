@@ -12,19 +12,18 @@
 <div class="card">
 	<header class="card-header">
 		<p class="card-header-title">Component</p>
-		<div>
-			<label style="cursor: pointer;">
-				<input
-					type="checkbox"
-					class="myCheckbox card-header-icon"
-					aria-label="more options"
-					on:change={() => {
-						showCollapse(index)
-					}}
-				/>
-				<i class="fas fa-angle-down checkIcon" />
-			</label>
-		</div>
+		<label style="cursor: pointer;">
+			<input
+				type="checkbox"
+				hidden={true}
+				class="myCheckbox card-header-icon"
+				aria-label="more options"
+				on:change={() => {
+					showCollapse(index)
+				}}
+			/>
+			<i class="fas fa-angle-down checkIcon" />
+		</label>
 	</header>
 	{#if expanding == index}
 	<div class="card-content" transition:slide>
