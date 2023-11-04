@@ -6,7 +6,9 @@
 	import Index from "./index.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { isNullOrEmpty } from "../../utils/strings";
+    import { splitArrayToArrayGroups } from "../../utils/array";
     import Collapsible from "../../components/Collapsible/index.svelte";
+    import Modal from "../../components/Modal/index.svelte";
 	
     const scratch0 = "https://www.youtube.com/watch?v=_eDDre7drsY";
     const scratch1 = "https://www.youtube.com/watch?v=_LIQPioIP44";
@@ -17,15 +19,60 @@
         data = [
             {
                 className: "Coding Minecraft Elementary",
-                photos: "51aa549e7a5711ee9aa006c3bc34e27e"
+                photos: [
+                    "51aa549e7a5711ee9aa006c3bc34e27e"
+                ],
+                videos: [
+                    scratch0,
+                    scratch1,
+                    scratch2
+                ]
             }, 
             {
                 className: "Lego Robotics Advance - EV3",
-                photos: "51aa549e7a5711ee9aa006c3bc34e27e"
+                photos: [
+                    "https://www.w3schools.com/w3images/wedding.jpg",
+                    "https://www.w3schools.com/w3images/rocks.jpg",
+                    "https://www.w3schools.com/w3images/falls2.jpg",
+                    "https://www.w3schools.com/w3images/paris.jpg",
+                    "https://www.w3schools.com/w3images/nature.jpg",
+                    "https://www.w3schools.com/w3images/mist.jpg",
+                    "https://www.w3schools.com/w3images/paris.jpg",
+                    "https://www.w3schools.com/w3images/underwater.jpg",
+                    "https://www.w3schools.com/w3images/ocean.jpg",
+                    "https://www.w3schools.com/w3images/wedding.jpg",
+                    "https://www.w3schools.com/w3images/mountainskies.jpg",
+                    "https://www.w3schools.com/w3images/rocks.jpg",
+                    "https://www.w3schools.com/w3images/underwater.jpg",
+                    "https://www.w3schools.com/w3images/wedding.jpg",
+                    "https://www.w3schools.com/w3images/rocks.jpg",
+                    "https://www.w3schools.com/w3images/falls2.jpg",
+                    "https://www.w3schools.com/w3images/paris.jpg",
+                    "https://www.w3schools.com/w3images/nature.jpg",
+                    "https://www.w3schools.com/w3images/mist.jpg",
+                    "https://www.w3schools.com/w3images/paris.jpg",
+                    "https://www.w3schools.com/w3images/underwater.jpg",
+                    "https://www.w3schools.com/w3images/ocean.jpg",
+                    "https://www.w3schools.com/w3images/wedding.jpg",
+                    "https://www.w3schools.com/w3images/mountainskies.jpg",
+                    "https://www.w3schools.com/w3images/rocks.jpg",
+                    "https://www.w3schools.com/w3images/underwater.jpg",
+                ],
+                videos: [
+                    scratch0,
+                    scratch1,
+                    scratch2
+                ]
             }
         ];
+
+        data = data.map(dataum => {
+            return ({...dataum, photoGroups: splitArrayToArrayGroups(dataum.photos, 3)})
+        })
     });
 	let location = useLocation();
+
+    let openModal = false;
 	// const currentPath = $location.pathname;
 
    // https://localhost/api/resourses?id=
@@ -69,20 +116,34 @@
         <div class="content">
             {#if Array.isArray(data)}
                 <Collapsible data={data}>
-                    <div slot="header" let:datum>
+                    <svelte:fragment slot="header" let:datum>
                         {datum.className} <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                    </div>
+                    </svelte:fragment>
 
-                    <div slot="content" let:datum>
-                        <figure class="image is-128x128">
-                            <!-- <img src={`${getResourcesAPIByID(photos)}`} alt="testing"> -->
-                        </figure>
-                    </div>
+                    <svelte:fragment slot="content" let:datum>
+                        <div class="columns is-multiline is-mobile">
+                            {#each datum.photoGroups as photoGroup}
+                                <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+                                    {#each photoGroup as photo}
+                                        
+                                            <!-- <img src={`${getResourcesAPIByID(photo)}`} style="max-height: 100px;" alt="testing"> --> 
+                                            <img src={`${photo}`} style="width: 100%; padding-bottom: 0.75rem;"  on:click={() => {openModal = true}} alt="random img">
+
+                                            <!-- on:click={() => { }} aria-label="4" -->
+                                      
+                                    {/each}
+                                </div>
+                            {/each}
+                            
+                           
+                        </div>
+                    </svelte:fragment>
                 </Collapsible>
-
             {:else}
                 <p>loading</p>
             {/if}
         </div>
     </div>
 </div>
+
+<Modal open={openModal} callback={(out) => {openModal = out} }/>

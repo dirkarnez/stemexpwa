@@ -31,7 +31,7 @@
 	{#if expanding == index}
 	<div class="card-content" transition:slide>
 		<div class="content">
-			<slot name="cotent"/>
+			<slot name="content"/>
 		</div>
 	</div>
 	{/if}
