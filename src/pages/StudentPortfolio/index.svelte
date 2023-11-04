@@ -8,6 +8,10 @@
 	import { isNullOrEmpty } from "../../utils/strings";
     import Collapsible from "../../components/Collapsible/index.svelte";
 	
+    const scratch0 = "https://www.youtube.com/watch?v=_eDDre7drsY";
+    const scratch1 = "https://www.youtube.com/watch?v=_LIQPioIP44";
+    const scratch2 = "https://www.youtube.com/watch?v=0cgKCNZbbKk";
+
     let data = [];
     FakeFetch("/api/435").then(a => {
         data = [
@@ -48,7 +52,7 @@
 </div>
 
 <div class="columns is-multiline is-mobile">
-    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
+    <!-- <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
         <div class="content">
             <div class="box">
                 <figure class="image is-128x128">
@@ -59,16 +63,26 @@
                 </p>
             </div>
         </div>
-    </div>
-    <div class="column is-two-third-desktop is-two-third-tablet is-full-mobile">
+    </div> -->
+    <!-- <div class="column is-two-third-desktop is-two-third-tablet is-full-mobile"> -->
+    <div class="column">
         <div class="content">
             {#if Array.isArray(data)}
-                <Collapsible data={data}/>
+                <Collapsible data={data}>
+                    <div slot="header" let:datum>
+                        {datum.className} <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+
+                    <div slot="content" let:datum>
+                        <figure class="image is-128x128">
+                            <!-- <img src={`${getResourcesAPIByID(photos)}`} alt="testing"> -->
+                        </figure>
+                    </div>
+                </Collapsible>
+
             {:else}
                 <p>loading</p>
             {/if}
-
-                    
         </div>
     </div>
 </div>

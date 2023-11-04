@@ -3,21 +3,23 @@
 
 	export let index;
 
-	export let title;
-
-
 	export let expanding;
 	export let showCollapse;
 </script>
 
 <div class="card">
 	<header class="card-header">
-		<p class="card-header-title">{title}</p>
-		<label style="cursor: pointer;">
+		<div class="card-header-title">
+			<slot name="header">
+				No header was provided
+			</slot>
+		</div>
+		<label style="cursor: pointer;" class="card-header-icon">
 			<input
 				type="checkbox"
 				hidden={true}
-				class="myCheckbox card-header-icon"
+				class="myCheckbox"
+				style={`display: none`}
 				aria-label="more options"
 				on:change={() => {
 					showCollapse(index)
@@ -29,7 +31,7 @@
 	{#if expanding == index}
 	<div class="card-content" transition:slide>
 		<div class="content">
-			<slot/>
+			<slot name="cotent"/>
 		</div>
 	</div>
 	{/if}
