@@ -19,8 +19,6 @@ const DEV_PORT = 5678;
 
 const publicPath = "/";
 
-
-
 const isProduction = process.env.NODE_ENV === 'production';
 const shouldUseSourceMap = !isProduction;
 

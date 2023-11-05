@@ -104,14 +104,15 @@
 									<div class="content" style="height: 96px;width: 100%;">
 										<div
 											class="is-flex is-flex-direction-row is-align-items-center pt-1 pb-1"
-											style="height: 100%; width: 100%"
+											style="height: 100%; width: 100%;/* text-overflow: ellipsis; */overflow: hidden; word-break: break-all;"
 										>
-											<p
+											<!-- <p
 												style="text-align: center; word-break: break-all;"
 												class="is-size-5 is-size-6-tablet has-text-weight-semibold"
 											>
 												{original_physical_file_name}
-											</p>
+											</p> -->
+											{original_physical_file_name}
 										</div>
 									</div>
 								</div>

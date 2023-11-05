@@ -1,7 +1,10 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+$family-sans-serif: 'Balsamiq Sans', sans-serif;
 
 // Set your brand colors
 $purple: #8A4D76;
@@ -15,7 +18,7 @@ $beige-lighter: #EFF0EB;
 $primary: #0d6efd;
 $secondary: #6c757d;
 
-$family-sans-serif: "Nunito", sans-serif;
+// $family-sans-serif: "Nunito", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 

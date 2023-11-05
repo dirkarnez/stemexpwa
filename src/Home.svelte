@@ -104,25 +104,26 @@
 	<Link to="/settings">Settings</Link>
 	<Link to="/student-portfolio">StudentPortfolio</Link>
 </nav> -->
-<nav class="navbar" aria-label="main navigation">
+<nav class="navbar" aria-label="main navigation" style="box-shadow: 0 0 2rem #2125291a;">
 	<div class="navbar-brand">
+		<div class="navbar-start">
+			<a
+				href={`javascript:void(0);`}
+				role="button"
+				class="navbar-burger"
+				aria-label="menu"
+				aria-expanded="false"
+				data-target="navbarBasicExample">
+				<span aria-hidden="true" />
+				<span aria-hidden="true" />
+				<span aria-hidden="true" />
+			</a>
+		</div>
 		<a class="navbar-item" href="/" use:link>
 			<img
 				src={stemexIcon}
 				height="100%"
 				alt="" />
-		</a>
-
-		<a
-			href={`javascript:void(0);`}
-			role="button"
-			class="navbar-burger"
-			aria-label="menu"
-			aria-expanded="false"
-			data-target="navbarBasicExample">
-			<span aria-hidden="true" />
-			<span aria-hidden="true" />
-			<span aria-hidden="true" />
 		</a>
 	</div>
 
@@ -167,7 +168,7 @@
 				<ul class="menu-list">
 					<li>
 						<a class={$location.pathname == "/" ? "is-active" : "" } href="/" use:link>
-							<i class="fas fa-user" />&nbsp;
+							<i class="fa-solid fa-display"></i>&nbsp;
 							Dashboard
 						</a>
 					</li>
@@ -184,29 +185,29 @@
 						</li>
 						<li>
 							<a class={$location.pathname.includes("/student-portfolio") ? "is-active" : "" } href="/student-portfolio" use:link>
-								<i class="fas fa-user" />&nbsp;&nbsp;Student Portfolio
+								<i class="fas fa-award"></i>&nbsp;&nbsp;Student Portfolio
 							</a>
 						</li>
 					{/if}
 					<li>
 						<a class={$location.pathname.includes("/last-minute-offer") ? "is-active" : "" } href="/last-minute-offer" use:link>
-							<i class="fas fa-user" />&nbsp;&nbsp;Last Minute Offer
+							<i class="fa-regular fa-clock"></i>&nbsp;&nbsp;Last Minute Offer
 						</a>
 					</li>
 					<li>
 						<a class={$location.pathname.includes("/stemex-academy-curriculum") ? "is-active" : "" } href="/stemex-academy-curriculum" use:link>
-							<i class="fas fa-user" />&nbsp;&nbsp;Stemex Academy Curriculum
+							<i class="fa-solid fa-book-open"></i>&nbsp;&nbsp;Stemex Academy Curriculum
 						</a>
 					</li>
 					{#if role == "parent"}
 					<li>
 						<a class={$location.pathname.includes("/installation-guide") ? "is-active" : "" } href="/installation-guide" use:link>
-							<i class="fas fa-user" />&nbsp;&nbsp;Installation Guide
+							<i class="fa-solid fa-cloud-arrow-down"></i>&nbsp;&nbsp;Installation Guide
 						</a>
 					</li>
 					<li>
 						<a class={$location.pathname.includes("/settings") ? "is-active" : "" } href="/settings" use:link>
-							<i class="fas fa-user" />&nbsp;&nbsp;Settings
+							<i class="fa-solid fa-gear"></i>&nbsp;&nbsp;Settings
 						</a>
 					</li>
 					{/if}
@@ -218,49 +219,49 @@
 							{#if role == "admin" || role == "sales"}
 								<li>
 									<a class={$location.pathname.includes("/statistics") ? "is-active" : "" } href="/statistics" use:link>
-										<i class="fas fa-user" />&nbsp;&nbsp;Statistics
+										<i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Statistics
 									</a>
 								</li>
 							{/if}
 							{#if role == "admin"}
 								<li>
 									<a class={$location.pathname.includes("/user-management") ? "is-active" : "" } href="/user-management" use:link>
-										<i class="fas fa-user" />&nbsp;&nbsp;User management
+										<i class="fa-solid fa-users"></i>&nbsp;&nbsp;User management
 									</a>
 								</li>
 							{/if}
 							{#if role == "admin"}
 								<li>
 									<a class={$location.pathname.includes("/file-management") ? "is-active" : "" } href="/file-management" use:link>
-										<i class="fas fa-user" />&nbsp;&nbsp;File management
+										<i class="fa-regular fa-folder-open"></i>&nbsp;&nbsp;File management
 									</a>
 								</li>
 							{/if}
 							{#if role == "sales"}
 								<li>
 									<a class={$location.pathname.includes("/client-management") ? "is-active" : "" } href="/client-management" use:link>
-										<i class="fas fa-user" />&nbsp;&nbsp;Client management
+										<i class="fa-solid fa-users"></i>&nbsp;&nbsp;Client management
 									</a>
 								</li>
 							{/if}
 							{#if role == "admin"}
 								<li>
 									<a class={$location.pathname.includes("/class-management") ? "is-active" : "" } href="/class-management" use:link>
-										<i class="fas fa-user" />&nbsp;&nbsp;Class management
+										<i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;Class management
 									</a>
 								</li>
 							{/if}
 							{#if role == "admin"}
 								<li>
 									<a class={$location.pathname.includes("/curriculum-management") ? "is-active" : "" } href="/curriculum-management" use:link>
-										<i class="fas fa-user" />&nbsp;&nbsp;Curriculum management
+										<i class="fa-solid fa-flask"></i>&nbsp;&nbsp;Curriculum management
 									</a>
 								</li>
 							{/if}
 							{#if role == "instructor"}
 								<li>
 									<a class={$location.pathname.includes("/instructor-schedule") ? "is-active" : "" } href="/instructor-schedule" use:link>
-										<i class="fas fa-user" />&nbsp;&nbsp;Instructor Schedule
+										<i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;Instructor Schedule
 									</a>
 								</li>
 							{/if}
@@ -273,7 +274,7 @@
 								} 
 							}
 						}>
-							Logout
+							<i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Logout
 						</a>
 					</li>
 				</ul>
