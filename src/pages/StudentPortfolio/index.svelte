@@ -10,9 +10,9 @@
     import Collapsible from "../../components/Collapsible/index.svelte";
     import Modal from "../../components/Modal/index.svelte";
 	
-    const scratch0 = "https://www.youtube.com/watch?v=h0GNlnvaL48";
-    const scratch1 = "https://www.youtube.com/watch?v=RkgI3gPpC4w";
-    const scratch2 = "https://www.youtube.com/watch?v=HaLB9OvXbN8";
+    const scratch0 = "https://www.youtube.com/embed/h0GNlnvaL48";
+    const scratch1 = "https://www.youtube.com/embed/RkgI3gPpC4w";
+    const scratch2 = "https://www.youtube.com/embed/HaLB9OvXbN8";
 
     let data = [];
 
