@@ -19,8 +19,16 @@
         data = [
             {
                 className: "Coding Minecraft Elementary",
+                portfolio: "d8475e8c7bdf11ee9aa006c3bc34e27e",
                 photos: [
-                    "51aa549e7a5711ee9aa006c3bc34e27e"
+                    "11e29e537bdf11ee9aa006c3bc34e27e",
+                    "52b28af97a5711ee9aa006c3bc34e27e",
+                    "52b3289c7a5711ee9aa006c3bc34e27e",
+                    "52abb3537a5711ee9aa006c3bc34e27e",
+                    "52af1a3a7a5711ee9aa006c3bc34e27e",
+                    "5270f0d77a5711ee9aa006c3bc34e27e",
+                    "5262961f7a5711ee9aa006c3bc34e27e",
+                    "52704d807a5711ee9aa006c3bc34e27e"
                 ],
                 videos: [
                     scratch0,
@@ -30,33 +38,16 @@
             }, 
             {
                 className: "Lego Robotics Advance - EV3",
+                portfolio: "d8475e8c7bdf11ee9aa006c3bc34e27e",
                 photos: [
-                    "https://www.w3schools.com/w3images/wedding.jpg",
-                    "https://www.w3schools.com/w3images/rocks.jpg",
-                    "https://www.w3schools.com/w3images/falls2.jpg",
-                    "https://www.w3schools.com/w3images/paris.jpg",
-                    "https://www.w3schools.com/w3images/nature.jpg",
-                    "https://www.w3schools.com/w3images/mist.jpg",
-                    "https://www.w3schools.com/w3images/paris.jpg",
-                    "https://www.w3schools.com/w3images/underwater.jpg",
-                    "https://www.w3schools.com/w3images/ocean.jpg",
-                    "https://www.w3schools.com/w3images/wedding.jpg",
-                    "https://www.w3schools.com/w3images/mountainskies.jpg",
-                    "https://www.w3schools.com/w3images/rocks.jpg",
-                    "https://www.w3schools.com/w3images/underwater.jpg",
-                    "https://www.w3schools.com/w3images/wedding.jpg",
-                    "https://www.w3schools.com/w3images/rocks.jpg",
-                    "https://www.w3schools.com/w3images/falls2.jpg",
-                    "https://www.w3schools.com/w3images/paris.jpg",
-                    "https://www.w3schools.com/w3images/nature.jpg",
-                    "https://www.w3schools.com/w3images/mist.jpg",
-                    "https://www.w3schools.com/w3images/paris.jpg",
-                    "https://www.w3schools.com/w3images/underwater.jpg",
-                    "https://www.w3schools.com/w3images/ocean.jpg",
-                    "https://www.w3schools.com/w3images/wedding.jpg",
-                    "https://www.w3schools.com/w3images/mountainskies.jpg",
-                    "https://www.w3schools.com/w3images/rocks.jpg",
-                    "https://www.w3schools.com/w3images/underwater.jpg",
+                    "11e29e537bdf11ee9aa006c3bc34e27e",
+                    "52b28af97a5711ee9aa006c3bc34e27e",
+                    "52b3289c7a5711ee9aa006c3bc34e27e",
+                    "52abb3537a5711ee9aa006c3bc34e27e",
+                    "52af1a3a7a5711ee9aa006c3bc34e27e",
+                    "5270f0d77a5711ee9aa006c3bc34e27e",
+                    "5262961f7a5711ee9aa006c3bc34e27e",
+                    "52704d807a5711ee9aa006c3bc34e27e"
                 ],
                 videos: [
                     scratch0,
@@ -120,10 +111,18 @@
             {#if Array.isArray(data)}
                 <Collapsible data={data}>
                     <svelte:fragment slot="header" let:datum>
-                        {datum.className} <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        {datum.className}&nbsp;(Joined at&nbsp;<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>)
                     </svelte:fragment>
                     <svelte:fragment slot="content" let:datum>
-                        <h4>Photos and videos</h4>
+                        <h4>Student Learning Portfolio</h4>
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column">
+                                <object data={getResourcesAPIByID(datum.portfolio)} type="application/pdf" width="100%" height="500px" title="student learning portfolio">
+                                    <p>Unable to display PDF file. <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">Download</a> instead.</p>
+                                </object>
+                            </div>
+                        </div>
+                        <h4>Videos</h4>
                         <div class="columns is-multiline is-mobile">
                             {#each datum.videoGroups as videoGroup}
                                 <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -137,11 +136,14 @@
                                     {/each}
                                 </div>
                             {/each}
+                        </div>
+                        <h4>Photos</h4>
+                        <div class="columns is-multiline is-mobile">
                             {#each datum.photoGroups as photoGroup}
                                 <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
                                     {#each photoGroup as photo}
                                         <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
-                                            <img src={`${photo}`} style="width: 100%;"  alt="random img">
+                                            <img src={`${getResourcesAPIByID(photo)}`} style="width: 100%;"  alt="random img">
                                         </button>
                                     {/each}
                                 </div>

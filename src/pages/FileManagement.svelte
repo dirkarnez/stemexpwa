@@ -54,19 +54,19 @@
         //         const formData = new FormData();
         //         formData.append("file", );
 
-        let formData = new FormData();
+        	let formData = new FormData();
             for (var i = 0; i < files.length; i++) {
                 formData.append("files[]", files[i]);
             }
+			
+			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/upload", {
+				method: "POST",
+				body: formData
+			});
 
-                const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/upload", {
-                    method: "POST",
-                    body: formData
-                });
-
-                wrappedFetchPromise.then(response => {
-                    location.reload();
-                })
+			wrappedFetchPromise.then(response => {
+				location.reload();
+			})
 
         // });
     }
