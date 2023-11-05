@@ -1,6 +1,7 @@
 stemexpwa
 =========
 ### Icons
+- [**Font Awesome**](https://fontawesome.com/search?q=user&o=r&m=free)
 - [Chalkboard User Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/chalkboard-user?f=classic&s=solid)
 - [Child Reaching Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/child-reaching?f=classic&s=solid)
 - [Person Breastfeeding Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/person-breastfeeding?f=classic&s=solid)
