@@ -125,15 +125,16 @@
 		<div class="pagination is-centered" role="navigation" aria-label="pagination">
 			<ul class="pagination-list">
 				{#each paginationArray as pageNumberDisplay, i}
-					{#if (from / filesPerPagination) + 2 - i <= 4 || i == 0 || i == paginationArray.length - 1}
+					<li><button on:click={() => setPage(i)} class="pagination-link {from / filesPerPagination == i ? "is-current" : ""}" aria-label="Goto page {pageNumberDisplay}">{pageNumberDisplay}</button></li>
+					<!-- {#if ((from / filesPerPagination) > i) && (from / filesPerPagination) - i > 2 || (i > (from / filesPerPagination)) && i - (from / filesPerPagination) < 3 || i == 0 || i == paginationArray.length - 1}
 						<li><button on:click={() => setPage(i)} class="pagination-link {from / filesPerPagination == i ? "is-current" : ""}" aria-label="Goto page {pageNumberDisplay}">{pageNumberDisplay}</button></li>
-					{/if}
-					{#if i == 0} 
+					{/if} -->
+					<!-- {#if i == 0} 
 						<li><span class="pagination-ellipsis">&hellip;</span></li>
 					{:else if i == paginationArray.length - 2} 
 						<li><span class="pagination-ellipsis">&hellip;</span></li>
 					{/if}
-					
+					 -->
 
 					
 					<!-- <li><button class="pagination-link" aria-label="Goto page 1">1</button></li>
