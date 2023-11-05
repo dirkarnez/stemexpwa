@@ -127,7 +127,9 @@
                                     {#each photoGroup as photo}
                                         
                                             <!-- <img src={`${getResourcesAPIByID(photo)}`} style="max-height: 100px;" alt="testing"> --> 
-                                            <img src={`${photo}`} style="width: 100%; padding-bottom: 0.75rem;"  on:click={() => {openModal = true}} alt="random img">
+                                            <button on:click={() => {openModal = true}}>
+                                                <img src={`${photo}`} style="width: 100%; padding-bottom: 0.75rem;"  alt="random img">
+                                            </button>
 
                                             <!-- on:click={() => { }} aria-label="4" -->
                                       

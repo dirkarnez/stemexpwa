@@ -11,17 +11,40 @@
     let wrappedFetchServerFilesPromise = null;
 
     let files;
+	let fileListOnServer = {total_count: 0};
+
+	
+	const filesPerPagination = 20;
+
+	let from = 0;
+
+	let isLoading = false;
+
+	$: paginationArray = Array(((fileListOnServer.total_count - (fileListOnServer.total_count % filesPerPagination)) / filesPerPagination) + (fileListOnServer.total_count % filesPerPagination > 0 ? 1 : 0)).fill(0).map((_, i) => i + 1);
+
+	const getFiles = () => {
+		isLoading = true;
+        const [ _wrappedFetchServerFilesPromise, abort ] = WrappedFetch(`/api/files?from=${from}&to=${from + filesPerPagination}`)
+        wrappedFetchServerFilesPromise = _wrappedFetchServerFilesPromise;
+		wrappedFetchServerFilesPromise.then(data => {
+			fileListOnServer = data;
+			isLoading = false;
+		})
+    };
 
     onMount(() => {
-        const [ _wrappedFetchServerFilesPromise, abort ] = WrappedFetch("/api/files")
-        wrappedFetchServerFilesPromise = _wrappedFetchServerFilesPromise;
-    });
+		getFiles();
+	});
 
     const file = field("file", "", [required()], {
 		...defaultFieldOptions,
 		validateOnChange: false
 	});
 	
+	function setPage(i) {
+		from = (i * filesPerPagination); 
+		getFiles();
+	}
 
     const myForm = form(file);
 
@@ -59,11 +82,11 @@
 			</div>
 		</div>
 		<div class="columns is-multiline is-mobile">
-			{#if !!wrappedFetchServerFilesPromise}
-				{#await wrappedFetchServerFilesPromise}
-					<p>...waiting</p>
-				{:then fileManagement}
-					{#each [...(Array.isArray(fileManagement.files) ? fileManagement.files : [])] as { id, original_physical_file_name }, index}
+			{#if isLoading}
+				<p>Loading</p>
+			{:else}
+				{#if !!fileListOnServer}
+					{#each [...(Array.isArray(fileListOnServer.files) ? fileListOnServer.files : [])] as { id, original_physical_file_name }, index}
 						<div
 							class="column is-one-third-desktop is-half-tablet is-full-mobile"
 						>
@@ -95,15 +118,40 @@
 							</div>
 						</div>
 					{/each}
-				{:catch error}
-					<p style="color: red">{error.message}</p>
-				{/await}
+				{/if}
 			{/if}
 		</div>
+
+		<div class="pagination is-centered" role="navigation" aria-label="pagination">
+			<ul class="pagination-list">
+				{#each paginationArray as pageNumberDisplay, i}
+					{#if (from / filesPerPagination) + 2 - i <= 4 || i == 0 || i == paginationArray.length - 1}
+						<li><button on:click={() => setPage(i)} class="pagination-link {from / filesPerPagination == i ? "is-current" : ""}" aria-label="Goto page {pageNumberDisplay}">{pageNumberDisplay}</button></li>
+					{/if}
+					{#if i == 0} 
+						<li><span class="pagination-ellipsis">&hellip;</span></li>
+					{:else if i == paginationArray.length - 2} 
+						<li><span class="pagination-ellipsis">&hellip;</span></li>
+					{/if}
+					
+
+					
+					<!-- <li><button class="pagination-link" aria-label="Goto page 1">1</button></li>
+					<li><span class="pagination-ellipsis">&hellip;</span></li>
+					<li><button class="pagination-link" aria-label="Goto page 45">45</button></li>
+					<li><button class="pagination-link " aria-label="Page 46" aria-current="page">46</button></li>
+					<li><button class="pagination-link" aria-label="Goto page 47">47</button></li>
+					<li><span class="pagination-ellipsis">&hellip;</span></li>
+					<li><button class="pagination-link" aria-label="Goto page 86">86</button></li> -->
+				{/each}
+			</ul>
+		</div>
+
+
         <form on:submit|preventDefault={handleSubmit} enctype="multipart/form-data">
             <div class="file">
                 <label class="file-label">
-                    <input bind:files class="file-input"  type="file" />
+                    <input bind:files class="file-input" type="file" />
                     <span class="file-cta">
                         <span class="file-icon">
                             <i class="fas fa-upload" />
