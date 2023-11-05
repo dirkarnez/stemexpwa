@@ -10,9 +10,9 @@
     import Collapsible from "../../components/Collapsible/index.svelte";
     import Modal from "../../components/Modal/index.svelte";
 	
-    const scratch0 = "https://www.youtube.com/watch?v=_eDDre7drsY";
-    const scratch1 = "https://www.youtube.com/watch?v=_LIQPioIP44";
-    const scratch2 = "https://www.youtube.com/watch?v=0cgKCNZbbKk";
+    const scratch0 = "https://www.youtube.com/watch?v=h0GNlnvaL48";
+    const scratch1 = "https://www.youtube.com/watch?v=RkgI3gPpC4w";
+    const scratch2 = "https://www.youtube.com/watch?v=HaLB9OvXbN8";
 
     let data = [];
     FakeFetch("/api/435").then(a => {
@@ -67,7 +67,10 @@
         ];
 
         data = data.map(dataum => {
-            return ({...dataum, photoGroups: splitArrayToArrayGroups(dataum.photos, 3)})
+            return ({...dataum, 
+                photoGroups: splitArrayToArrayGroups(dataum.photos, 3),
+                videoGroups: splitArrayToArrayGroups(dataum.videos, 3)
+            })
         })
     });
 	let location = useLocation();
@@ -119,25 +122,30 @@
                     <svelte:fragment slot="header" let:datum>
                         {datum.className} <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                     </svelte:fragment>
-
                     <svelte:fragment slot="content" let:datum>
+                        <h4>Photos and videos</h4>
                         <div class="columns is-multiline is-mobile">
-                            {#each datum.photoGroups as photoGroup}
+                            {#each datum.videoGroups as videoGroup}
                                 <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-                                    {#each photoGroup as photo}
-                                        
-                                            <!-- <img src={`${getResourcesAPIByID(photo)}`} style="max-height: 100px;" alt="testing"> --> 
-                                            <button on:click={() => {openModal = true}}>
-                                                <img src={`${photo}`} style="width: 100%; padding-bottom: 0.75rem;"  alt="random img">
-                                            </button>
-
-                                            <!-- on:click={() => { }} aria-label="4" -->
-                                      
+                                    {#each videoGroup as video}
+                                        <!-- <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
+                                            <img src={`${video}`} style="width: 100%;"  alt="random img">
+                                        </button> -->
+                                        <div class="overflow: hidden; padding-top: 56.25%; position: relative;">
+                                            <iframe src={video} title="YouTube video player" frameborder="0" style="border: none; width: 100%"></iframe>
+                                        </div>
                                     {/each}
                                 </div>
                             {/each}
-                            
-                           
+                            {#each datum.photoGroups as photoGroup}
+                                <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+                                    {#each photoGroup as photo}
+                                        <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
+                                            <img src={`${photo}`} style="width: 100%;"  alt="random img">
+                                        </button>
+                                    {/each}
+                                </div>
+                            {/each}
                         </div>
                     </svelte:fragment>
                 </Collapsible>
