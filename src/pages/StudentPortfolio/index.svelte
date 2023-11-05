@@ -24,14 +24,12 @@
                 from: "2 Aug 2023",
                 to: "10 Aug 2023",
                 photos: [
-                    "11e29e537bdf11ee9aa006c3bc34e27e",
-                    "52b28af97a5711ee9aa006c3bc34e27e",
-                    "52b3289c7a5711ee9aa006c3bc34e27e",
-                    "52abb3537a5711ee9aa006c3bc34e27e",
-                    "52af1a3a7a5711ee9aa006c3bc34e27e",
-                    "5270f0d77a5711ee9aa006c3bc34e27e",
-                    "5262961f7a5711ee9aa006c3bc34e27e",
-                    "52704d807a5711ee9aa006c3bc34e27e"
+			"9c48e7bd7be111ee9aa006c3bc34e27e",
+			"9c4554d57be111ee9aa006c3bc34e27e",
+			"9c483be67be111ee9aa006c3bc34e27e",
+			"9c421c547be111ee9aa006c3bc34e27e",
+			"9c064aad7be111ee9aa006c3bc34e27e",
+			"9c05abe27be111ee9aa006c3bc34e27e"
                 ],
                 videos: [
                     scratch0,
@@ -45,14 +43,12 @@
                 from: "30 June 2023",
                 to: "5 July 2023",
                 photos: [
-                    "11e29e537bdf11ee9aa006c3bc34e27e",
-                    "52b28af97a5711ee9aa006c3bc34e27e",
-                    "52b3289c7a5711ee9aa006c3bc34e27e",
-                    "52abb3537a5711ee9aa006c3bc34e27e",
-                    "52af1a3a7a5711ee9aa006c3bc34e27e",
-                    "5270f0d77a5711ee9aa006c3bc34e27e",
-                    "5262961f7a5711ee9aa006c3bc34e27e",
-                    "52704d807a5711ee9aa006c3bc34e27e"
+			"9c48e7bd7be111ee9aa006c3bc34e27e",
+			"9c4554d57be111ee9aa006c3bc34e27e",
+			"9c483be67be111ee9aa006c3bc34e27e",
+			"9c421c547be111ee9aa006c3bc34e27e",
+			"9c064aad7be111ee9aa006c3bc34e27e",
+			"9c05abe27be111ee9aa006c3bc34e27e"
                 ],
                 videos: [
                     scratch0,
