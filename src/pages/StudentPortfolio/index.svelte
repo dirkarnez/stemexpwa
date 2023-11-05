@@ -15,11 +15,14 @@
     const scratch2 = "https://www.youtube.com/watch?v=HaLB9OvXbN8";
 
     let data = [];
+
     FakeFetch("/api/435").then(a => {
         data = [
             {
                 className: "Coding Minecraft Elementary",
                 portfolio: "d8475e8c7bdf11ee9aa006c3bc34e27e",
+                from: "2 Aug 2023",
+                to: "10 Aug 2023",
                 photos: [
                     "11e29e537bdf11ee9aa006c3bc34e27e",
                     "52b28af97a5711ee9aa006c3bc34e27e",
@@ -39,6 +42,8 @@
             {
                 className: "Lego Robotics Advance - EV3",
                 portfolio: "d8475e8c7bdf11ee9aa006c3bc34e27e",
+                from: "30 June 2023",
+                to: "5 July 2023",
                 photos: [
                     "11e29e537bdf11ee9aa006c3bc34e27e",
                     "52b28af97a5711ee9aa006c3bc34e27e",
@@ -108,10 +113,10 @@
     <!-- <div class="column is-two-third-desktop is-two-third-tablet is-full-mobile"> -->
     <div class="column">
         <div class="content">
-            {#if Array.isArray(data)}
+            {#if Array.isArray(data) && data.length > 0}
                 <Collapsible data={data}>
                     <svelte:fragment slot="header" let:datum>
-                        {datum.className}&nbsp;(Joined at&nbsp;<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>)
+                        {datum.className}&nbsp;(Joined at&nbsp{datum.from}&nbsp;to&nbsp;{datum.to})
                     </svelte:fragment>
                     <svelte:fragment slot="content" let:datum>
                         <h4>Student Learning Portfolio</h4>
@@ -152,7 +157,7 @@
                     </svelte:fragment>
                 </Collapsible>
             {:else}
-                <p>loading</p>
+                <p>Loading...</p>
             {/if}
         </div>
     </div>
