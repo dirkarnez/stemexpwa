@@ -127,7 +127,7 @@
 		</a>
 	</div>
 
-	<div id="navbarBasicExample" class="navbar-menu">
+	<!-- <div id="navbarBasicExample" class="navbar-menu"> -->
 		<!-- <div class="navbar-start">
 			<a class="navbar-item" href={`javascript:void(0);`}>Home</a>
 
@@ -158,6 +158,29 @@
 				</div>
 			</div>
 		</div> -->
+	<!-- </div> -->
+	<div class="navbar-end">
+		<div class="navbar-item">
+		  <!-- <div class="buttons">
+			<a class="button is-primary" href={`javascript:void(0)`}>
+			  <strong>Sign up</strong>
+			</a>
+			<a class="button is-light" href={`javascript:void(0)`}>
+			  Log in
+			</a>
+		  </div>
+		</div> -->
+		<!-- <div class="image">
+			<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="testing">
+		</div> -->
+		
+		<span>{userName}</span>
+		&nbsp;&nbsp;
+		<span class="icon" style="border-radius: 50%; background: hsl(0, 0%, 96%);">
+			<i class="fa-solid fa-user"></i>
+		</span>
+			
+
 	</div>
 </nav>
 
