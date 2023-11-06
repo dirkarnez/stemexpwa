@@ -5,6 +5,7 @@
 	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
+	import { handleImageChange } from "../../utils/file";
 	import { isNullOrEmpty } from "../../utils/strings";
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
@@ -148,19 +149,19 @@
 		}
 	});
 
-	function handleImageChange(event, callback) {
-		const file = event.target.files[0];
+	// function handleImageChange(event, callback) {
+	// 	const file = event.target.files[0];
 
-		if (file) {
-			const reader = new FileReader();
+	// 	if (file) {
+	// 		const reader = new FileReader();
 
-			reader.onload = (event) => {
-				callback(event.target.result);
-			};
+	// 		reader.onload = (event) => {
+	// 			callback(event.target.result);
+	// 		};
 
-			reader.readAsDataURL(file);
-		}
-	}
+	// 		reader.readAsDataURL(file);
+	// 	}
+	// }
 
 	function removeYouTubeVideo(index) {
 		return () => unsetField(`${youtube_video_entries_field_key}.${index}`);

@@ -1,10 +1,12 @@
 <script>
   import { onMount } from "svelte";
 	import { /*useLocation,*/ Route, Router } from "svelte-routing";
-    import { required } from "svelte-forms/validators";
-    import { WrappedFetch } from "../utils/fetch";
+	import InputFileContainer from "../components/InputFileContainer.svelte"
+    import { WrappedFetch, WrappedFetchPOSTMultipart } from "../utils/fetch";
 	import { getHost } from "../utils/api";
-    import { form, field, defaultFieldOptions  } from "svelte-forms";
+	import { handleImageChange } from "../utils/file";
+	import { createForm } from 'felte';
+    // import { form, field, defaultFieldOptions  } from "svelte-forms";
 
 	// let location = useLocation();
 
@@ -32,44 +34,66 @@
 		})
     };
 
+
+
     onMount(() => {
 		getFiles();
 	});
 
-    const file = field("file", "", [required()], {
-		...defaultFieldOptions,
-		validateOnChange: false
-	});
+    // const file = field("file", "", [required()], {
+	// 	...defaultFieldOptions,
+	// 	validateOnChange: false
+	// });
 	
 	function setPage(i) {
 		from = (i * filesPerPagination); 
 		getFiles();
 	}
 
-    const myForm = form(file);
+	const files_field_key = "files[]";
+	const file_preview_field_key = "preview";
 
-    function handleSubmit() {
-        // myForm.validate().then(() => {
-        //     if ($myForm.valid) {
-        //         const formData = new FormData();
-        //         formData.append("file", );
 
-        	let formData = new FormData();
-            for (var i = 0; i < files.length; i++) {
-                formData.append("files[]", files[i]);
-            }
-			
-			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/upload", {
-				method: "POST",
-				body: formData
-			});
+    const { form, data, setFields } = createForm({ 
+        onSubmit: (_, context) => {
+			const formData = new FormData(context.event.target);
 
-			wrappedFetchPromise.then(response => {
-				location.reload();
+			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/upload", formData);
+			wrappedFetchPromise
+			.then(() => {
+				alert("OK");
+				window.location.reload();
 			})
+			.catch(err => {
+				alert(`Not OK: ${err}`)
+			});
+        },
+    });
 
-        // });
-    }
+	
+
+    // function handleSubmit() {
+    //     // myForm.validate().then(() => {
+    //     //     if ($myForm.valid) {
+    //     //         const formData = new FormData();
+    //     //         formData.append("file", );
+
+    //     	let formData = new FormData();
+    //         for (var i = 0; i < files.length; i++) {
+    //             formData.append("files[]", files[i]);
+    //         }
+			
+	// 		const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/upload", {
+	// 			method: "POST",
+	// 			body: formData
+	// 		});
+
+	// 		wrappedFetchPromise.then(response => {
+	// 			location.reload();
+	// 		})
+
+    //     // });
+    // }
 </script>
 
 <Router>
@@ -92,13 +116,13 @@
 						>
 							<div class="card is-flex is-flex-direction-row">
 								<div class="card-image">
-									<figure class="image is-96x96">
+									<button class="image is-96x96" style="outline: none; border: none; cursor: pointer" on:click={() => { navigator.clipboard.writeText(`${id}`).then(() => alert("copied"))}}>
 										<img
 											src={ `${getHost()}${id ? `/api/resourses?id=${id}`  :""}`}
 											style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;"
 											alt="Placeholder"
 										/>
-									</figure>
+									</button>
 								</div>
 								<div class="card-content pt-0 pb-0">
 									<div class="content" style="height: 96px;width: 100%;">
@@ -150,7 +174,37 @@
 		</div>
 
 
-        <form on:submit|preventDefault={handleSubmit} enctype="multipart/form-data">
+		<form use:form enctype="multipart/form-data">
+			<div class="field">
+				<figure class="image is-128x128">
+					<img
+						src={$data[file_preview_field_key]
+							? $data[file_preview_field_key]
+							: `https://bulma.io/images/placeholders/128x128.png`}
+						alt=""
+					/>
+				</figure>
+				<label class="label">File
+					<div class="control">
+						<InputFileContainer>
+							<input
+								class="file-input"
+								type="file"
+								name={files_field_key}
+								on:change={e => handleImageChange(e, dataURI => setFields(file_preview_field_key , dataURI, true))}
+							/>
+						</InputFileContainer>
+					</div>
+				</label>
+			</div>
+			<div class="field is-grouped">
+				<div class="control">
+					<button type="submit" class="button is-primary">Upload</button>
+				</div>
+			</div>
+		</form>
+
+        <!-- <form on:submit|preventDefault={handleSubmit} enctype="multipart/form-data">
             <div class="file">
                 <label class="file-label">
                     <input bind:files class="file-input" type="file" />
@@ -167,6 +221,6 @@
                     <button class="button is-primary">Submit</button>
                 </div>
             </div>
-        </form>
+        </form> -->
 	</Route>
 </Router>

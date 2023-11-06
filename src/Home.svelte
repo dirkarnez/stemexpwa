@@ -12,7 +12,7 @@
 	import LastMinuteOffer from "./pages/LastMinuteOffer.svelte";
 	import UserManagement from "./pages/UserManagement.svelte";
 	import ClassManagement from "./pages/ClassManagement/index.svelte";
-	import FileManagement from "./pages/FileManagement.svelte";
+	import FileManagement from "./pages/FileManagement/index.svelte";
 	import ClientManagement from "./pages/ClientManagement.svelte";
 	import Statistics from "./pages/Statistics.svelte";
 
