@@ -1,10 +1,10 @@
 <script>
-  import { onMount } from "svelte";
+	import { onMount } from "svelte";
 	import { /*useLocation,*/ Route, Router } from "svelte-routing";
-	import InputFileContainer from "../components/InputFileContainer.svelte"
-    import { WrappedFetch, WrappedFetchPOSTMultipart } from "../utils/fetch";
-	import { getHost } from "../utils/api";
-	import { handleImageChange } from "../utils/file";
+	import InputFileContainer from "../../components/InputFileContainer.svelte"
+    import { WrappedFetch, WrappedFetchPOSTMultipart } from "../../utils/fetch";
+	import { getHost } from "../../utils/api";
+	import { handleImageChange } from "../../utils/file";
 	import { createForm } from 'felte';
     // import { form, field, defaultFieldOptions  } from "svelte-forms";
 
