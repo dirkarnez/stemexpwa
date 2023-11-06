@@ -54,10 +54,10 @@ export const WrappedFetch = (url, params = {}) => {
 }
 
 // const [  wrappedFetchPromise , abort ] = WrappedFetchPOST("/api/login", JSON.stringify(myForm.summary()));
-export const WrappedFetchPOST = (url, stringifyJSON) => {
+export const WrappedFetchPOST = (url, stringifiedJSON) => {
     return WrappedFetch(url, {
         method: "POST",
-        body: stringifyJSON
+        body: stringifiedJSON
     });
 }
 

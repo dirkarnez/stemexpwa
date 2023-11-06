@@ -18,7 +18,7 @@
 
 	import stemexIcon from "./assets/images/stemex_icon.png"
 
-	import { WrappedFetch } from "./utils/fetch";
+	import { WrappedFetch, WrappedFetchPOST } from "./utils/fetch";
 	import { getHost } from "./utils/api";
 	// import { AreaPlugin } from "rete-area-plugin";
 	// import { NodeEditor } from "rete";
@@ -293,7 +293,15 @@
 					<li>
 						<a class={$location.pathname == `${getHost()}/api/logout` ? "is-active" : "" } href={`javascript:void(0)`} on:click={() => { 
 								if (confirm('Are you sure?')) {
-									navigate(`${getHost()}/api/logout`)
+									debugger;
+									const [ logout, _ ]= WrappedFetchPOST(`/api/logout`, JSON.stringify({}));
+									debugger;
+									logout.then(() => {
+										navigate("/login", {replace: true})
+									})
+									.catch(err => {
+										alert(err);
+									})
 								} 
 							}
 						}>
