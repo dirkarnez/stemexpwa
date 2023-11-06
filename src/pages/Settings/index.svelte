@@ -98,19 +98,23 @@
             <div class="column">
                 <div class="content">
                     <h4>Frequently Asked Questions:</h4>
-					{#each items as { title, content, photos }, index}
-						<div class="card">
-							<div class="card-content">
-								<div class="content" style="white-space: pre-wrap; word-break: break-word;"><h3>{index + 1}.&nbsp;&nbsp;{title}</h3>
-									{@html content}
-									{#each (photos || []) as photo}
-										<img src={`${getResourcesAPIByID(photo)}`} style="width: 100%" alt="testing">
-									{/each}
+					{#if Array.isArray(items) && items.length > 0}
+						{#each items as { title, content, photos }, index}
+							<div class="card">
+								<div class="card-content">
+									<div class="content" style="white-space: pre-wrap; word-break: break-word;"><h3>{index + 1}.&nbsp;&nbsp;{title}</h3>
+										{@html content}
+										{#each (photos || []) as photo}
+											<img src={`${getResourcesAPIByID(photo)}`} style="width: 100%" alt="testing">
+										{/each}
+									</div>
 								</div>
 							</div>
-						</div>
-						<br>
-					{/each}
+							<br>
+						{/each}
+					{:else}
+						<p>Loading...</p>
+					{/if}
                 </div>
             </div>
         </div>

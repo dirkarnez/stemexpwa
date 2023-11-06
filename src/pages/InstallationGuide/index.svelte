@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import { FakeFetch, WrappedFetch } from "../../utils/fetch";
+    import Loading from "../../components/Loading/index.svelte";
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
@@ -105,7 +106,7 @@
 					</div>
 				{/each}
             {:else}
-                    <p>Loading</p>
+                <Loading/>
 			{/if}
 		</div>
     </Route>

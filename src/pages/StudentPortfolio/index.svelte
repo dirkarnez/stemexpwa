@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte";
+    import Loading from "../../components/Loading/index.svelte";
 	import { FakeFetch, WrappedFetch } from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
@@ -24,12 +25,12 @@
                 from: "2 Aug 2023",
                 to: "10 Aug 2023",
                 photos: [
-			"9c48e7bd7be111ee9aa006c3bc34e27e",
-			"9c4554d57be111ee9aa006c3bc34e27e",
-			"9c483be67be111ee9aa006c3bc34e27e",
-			"9c421c547be111ee9aa006c3bc34e27e",
-			"9c064aad7be111ee9aa006c3bc34e27e",
-			"9c05abe27be111ee9aa006c3bc34e27e"
+                    "9c48e7bd7be111ee9aa006c3bc34e27e",
+                    "9c4554d57be111ee9aa006c3bc34e27e",
+                    "9c483be67be111ee9aa006c3bc34e27e",
+                    "9c421c547be111ee9aa006c3bc34e27e",
+                    "9c064aad7be111ee9aa006c3bc34e27e",
+                    "9c05abe27be111ee9aa006c3bc34e27e"
                 ],
                 videos: [
                     scratch0,
@@ -43,12 +44,12 @@
                 from: "30 June 2023",
                 to: "5 July 2023",
                 photos: [
-			"9c48e7bd7be111ee9aa006c3bc34e27e",
-			"9c4554d57be111ee9aa006c3bc34e27e",
-			"9c483be67be111ee9aa006c3bc34e27e",
-			"9c421c547be111ee9aa006c3bc34e27e",
-			"9c064aad7be111ee9aa006c3bc34e27e",
-			"9c05abe27be111ee9aa006c3bc34e27e"
+                    "9c48e7bd7be111ee9aa006c3bc34e27e",
+                    "9c4554d57be111ee9aa006c3bc34e27e",
+                    "9c483be67be111ee9aa006c3bc34e27e",
+                    "9c421c547be111ee9aa006c3bc34e27e",
+                    "9c064aad7be111ee9aa006c3bc34e27e",
+                    "9c05abe27be111ee9aa006c3bc34e27e"
                 ],
                 videos: [
                     scratch0,
@@ -153,7 +154,7 @@
                     </svelte:fragment>
                 </Collapsible>
             {:else}
-                <p>Loading...</p>
+                <Loading/>
             {/if}
         </div>
     </div>

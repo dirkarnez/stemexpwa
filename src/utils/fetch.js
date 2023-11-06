@@ -1,7 +1,7 @@
 export const FakeFetch = (p, data) => new Promise(res => {
     setTimeout(() => {
         res(data);
-    }, 2000)
+    }, 500)
 });
 
 export const WrappedFetch = (url, params = {}) => {

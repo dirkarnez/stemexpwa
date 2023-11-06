@@ -25,9 +25,9 @@
 		</div>
 	</div>
 </div>
-<div class="columns">
+<div class="columns is-multiline is-mobile">
 	{#if role == "parent"}
-		<div class="column is-half-desktop is-full-mobile">
+		<div class="column is-half-desktop is-full-tablet is-full-mobile">
 			<div class="columns is-multiline is-mobile">
 				{#each [
 					{ description: "Booked Classes", backgroundColor: "#7e1bf7", routePath: "booked-classes", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock align-middle clock" _ngcontent-neb-c68=""><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`}, 
@@ -37,7 +37,7 @@
 				] as {description, backgroundColor, routePath, svg}}
 					<div class="column is-half">
 						<Link to="/{routePath}">
-							<div class="box has-text-centered p-5" style="background-color: {backgroundColor}; color: white">
+							<div class="box has-text-centered p-5" style="background-color: {backgroundColor}; color: white; height: 100%;">
 								<div class="is-flex is-justify-content-center pb-3" style="width: 100%">
 									<div style="align-items: center;
 										background: #fff;
@@ -57,7 +57,7 @@
 				{/each}
 			</div>
 		</div>
-		<div class="column is-half-desktop is-full-mobile">
+		<div class="column is-half-desktop is-full-tablet is-full-mobile">
 			<div class="box" style="height: 100%;">
 				<div class="content">
 					<h4 class="mb-1">Headquarter Location</h4>
