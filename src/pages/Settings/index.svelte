@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
 	import { FakeFetch } from "../../utils/fetch";
+	import { getResourcesAPIByID } from "../../utils/api"
 
 	let items = [];
 
@@ -97,10 +98,15 @@
             <div class="column">
                 <div class="content">
                     <h4>Frequently Asked Questions:</h4>
-					{#each items as { title, content }, index}
+					{#each items as { title, content, photos }, index}
 						<div class="card">
 							<div class="card-content">
-								<div class="content" style="white-space: pre-wrap; word-break: break-word;"><h3>{index + 1}.&nbsp;&nbsp;{title}</h3>{@html content}</div>
+								<div class="content" style="white-space: pre-wrap; word-break: break-word;"><h3>{index + 1}.&nbsp;&nbsp;{title}</h3>
+									{@html content}
+									{#each (photos || []) as photo}
+										<img src={`${getResourcesAPIByID(photo)}`} style="width: 100%" alt="testing">
+									{/each}
+								</div>
 							</div>
 						</div>
 						<br>
