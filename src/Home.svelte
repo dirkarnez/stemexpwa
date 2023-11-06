@@ -2,12 +2,12 @@
 	import { useLocation, navigate, Route, Router, link } from "svelte-routing";
     import BookedClasses from "./pages/BookedClasses.svelte";
 	import Dashboard from "./pages/Dashboard.svelte";
-	import Installation from "./pages/Installation.svelte";
 	import Settings from "./pages/Settings.svelte";
 	import StudentPortfolio from "./pages/StudentPortfolio/index.svelte";
 	import StemexAcademyCurriculum from "./pages/StemexAcademyCurriculum/index.svelte";
 	import CurriculumManagement from "./pages/CurriculumManagement/index.svelte";
 	
+	import InstallationGuide from "./pages/InstallationGuide/index.svelte";
 	import InstructorSchedule from "./pages/InstructorSchedule.svelte";
 	import LastMinuteOffer from "./pages/LastMinuteOffer.svelte";
 	import UserManagement from "./pages/UserManagement.svelte";
@@ -159,28 +159,28 @@
 			</div>
 		</div> -->
 	<!-- </div> -->
-	<div class="navbar-end">
-		<div class="navbar-item">
-		  <!-- <div class="buttons">
-			<a class="button is-primary" href={`javascript:void(0)`}>
-			  <strong>Sign up</strong>
-			</a>
-			<a class="button is-light" href={`javascript:void(0)`}>
-			  Log in
-			</a>
-		  </div>
-		</div> -->
-		<!-- <div class="image">
-			<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="testing">
-		</div> -->
-		
-		<span>{userName}</span>
-		&nbsp;&nbsp;
-		<span class="icon" style="border-radius: 50%; background: hsl(0, 0%, 96%);">
-			<i class="fa-solid fa-user"></i>
-		</span>
+	<div class="navbar-menu">
+		<div class="navbar-end">
+			<div class="navbar-item">
+			  <!-- <div class="buttons">
+				<a class="button is-primary" href={`javascript:void(0)`}>
+				  <strong>Sign up</strong>
+				</a>
+				<a class="button is-light" href={`javascript:void(0)`}>
+				  Log in
+				</a>
+			  </div>
+			</div> -->
+			<!-- <div class="image">
+				<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="testing">
+			</div> -->
 			
-
+			<span>{userName}</span>
+			&nbsp;&nbsp;
+			<span class="icon" style="border-radius: 50%; background: hsl(0, 0%, 96%);">
+				<i class="fa-solid fa-user"></i>
+			</span>
+		</div>
 	</div>
 </nav>
 
@@ -293,9 +293,7 @@
 					<li>
 						<a class={$location.pathname == `${getHost()}/api/logout` ? "is-active" : "" } href={`javascript:void(0)`} on:click={() => { 
 								if (confirm('Are you sure?')) {
-									debugger;
 									const [ logout, _ ]= WrappedFetchPOST(`/api/logout`, JSON.stringify({}));
-									debugger;
 									logout.then(() => {
 										navigate("/login", {replace: true})
 									})
@@ -325,7 +323,7 @@
 					</Route>
 					
 					<Route path="/student-portfolio" component={StudentPortfolio} />
-					<Route path="/installation-guide" component={Installation} />
+
 					<Route path="/last-minute-offer" component={LastMinuteOffer}/>
 					
 					<Route path="/user-management">
@@ -356,6 +354,11 @@
 					<Route path="/instructor-schedule">
 						<InstructorSchedule role={role} userName={userName}/>
 					</Route>
+
+					<Route path="/installation-guide/*">
+						<InstallationGuide role={role} userName={userName}/>
+					</Route>
+					
 					
 					<Route path="/sales">
 						<div class="columns">
