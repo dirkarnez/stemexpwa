@@ -2,7 +2,7 @@
 	import { useLocation, navigate, Route, Router, link } from "svelte-routing";
     import BookedClasses from "./pages/BookedClasses.svelte";
 	import Dashboard from "./pages/Dashboard.svelte";
-	import Settings from "./pages/Settings.svelte";
+	import Settings from "./pages/Settings/index.svelte";
 	import StudentPortfolio from "./pages/StudentPortfolio/index.svelte";
 	import StemexAcademyCurriculum from "./pages/StemexAcademyCurriculum/index.svelte";
 	import CurriculumManagement from "./pages/CurriculumManagement/index.svelte";
@@ -400,7 +400,9 @@
 							</div>
 						</div>
 					</Route>
-					<Route path="/settings" component={Settings} />
+					<Route path="/settings/*">
+						<Settings/>
+					</Route>
 
 					<Route>
 						<h1>Not found</h1>
