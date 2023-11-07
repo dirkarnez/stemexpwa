@@ -79,20 +79,32 @@
 			{#if Array.isArray(curriculumCategoryCourseDetails.information_entries)}
 				{#each curriculumCategoryCourseDetails.information_entries as { title, content, icon_id }}
 					<div class="box">
-						<article class="media">
+						<!-- <article class="media">
 							<div class="media-left">
 								<figure class="image" style="height: 150px; width: 150px;">
-									<!-- svelte-ignore a11y-missing-attribute -->
-									<img src={ `${getHost()}${icon_id ? `/api/resourses?id=${icon_id}`  :""}`}>
+									
 								</figure>
 							</div>
 							<div class="media-content">
+								
+							</div>
+						</article> -->
+						
+						<div class="columns is-multiline is-mobile">
+							<div class="column is-narrow-desktop is-full-mobile">
+								<div class="columns is-mobile is-centered">
+									<div class="column is-full" style="text-align: center;">
+										<img src={ `${getHost()}${icon_id ? `/api/resourses?id=${icon_id}`  :""}`} style="max-height: 150px" alt="">
+									</div>
+								</div>
+							</div>
+							<div class="column is-full-mobile">
 								<div class="content">
 									<h2>{title}</h2>
 									<p>{content}</p>
 								</div>
 							</div>
-						</article>
+						</div>
 					</div>
 				{/each}
 			{/if}
