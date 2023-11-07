@@ -11,58 +11,50 @@
     import Collapsible from "../../components/Collapsible/index.svelte";
     import Modal from "../../components/Modal/index.svelte";
 	
-    const scratch0 = "https://www.youtube.com/embed/h0GNlnvaL48";
+    // const scratch0 = "https://www.youtube.com/embed/h0GNlnvaL48";
     const scratch1 = "https://www.youtube.com/embed/RkgI3gPpC4w";
-    const scratch2 = "https://www.youtube.com/embed/HaLB9OvXbN8";
+    // const scratch2 = "https://www.youtube.com/embed/HaLB9OvXbN8";
 
     let data = [];
 
     FakeFetch("/api/435").then(a => {
         data = [
             {
-                className: "Coding Minecraft Elementary",
+                className: "Coding Scratch Jr",
                 portfolio: "d8475e8c7bdf11ee9aa006c3bc34e27e",
                 from: "2 Aug 2023",
                 to: "10 Aug 2023",
                 photos: [
-                    "9c48e7bd7be111ee9aa006c3bc34e27e",
-                    "9c4554d57be111ee9aa006c3bc34e27e",
-                    "9c483be67be111ee9aa006c3bc34e27e",
-                    "9c421c547be111ee9aa006c3bc34e27e",
-                    "9c064aad7be111ee9aa006c3bc34e27e",
-                    "9c05abe27be111ee9aa006c3bc34e27e"
+                    "11e29e537bdf11ee9aa006c3bc34e27e"
                 ],
                 videos: [
-                    scratch0,
+                    // scratch0,
                     scratch1,
-                    scratch2
+                    // scratch2
                 ]
             }, 
             {
-                className: "Lego Robotics Advance - EV3",
+                className: "Lego Robotics Advanced - EV3",
                 portfolio: "d8475e8c7bdf11ee9aa006c3bc34e27e",
                 from: "30 June 2023",
                 to: "5 July 2023",
                 photos: [
-                    "9c48e7bd7be111ee9aa006c3bc34e27e",
-                    "9c4554d57be111ee9aa006c3bc34e27e",
-                    "9c483be67be111ee9aa006c3bc34e27e",
-                    "9c421c547be111ee9aa006c3bc34e27e",
-                    "9c064aad7be111ee9aa006c3bc34e27e",
-                    "9c05abe27be111ee9aa006c3bc34e27e"
-                ],
+                    "85ade8027cb511ee9aa006c3bc34e27e",
+                    "85b132a47cb511ee9aa006c3bc34e27e"
+                ]
+                /*,
                 videos: [
                     scratch0,
                     scratch1,
                     scratch2
-                ]
+                ]*/
             }
         ];
 
         data = data.map(dataum => {
             return ({...dataum, 
                 photoGroups: splitArrayToArrayGroups(dataum.photos, 3),
-                videoGroups: splitArrayToArrayGroups(dataum.videos, 3)
+                videoGroups: splitArrayToArrayGroups(dataum.videos, 2)
             })
         })
     });
@@ -124,33 +116,37 @@
                                 </object>
                             </div>
                         </div>
-                        <h4>Videos</h4>
-                        <div class="columns is-multiline is-mobile">
-                            {#each datum.videoGroups as videoGroup}
-                                <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-                                    {#each videoGroup as video}
-                                        <!-- <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
-                                            <img src={`${video}`} style="width: 100%;"  alt="random img">
-                                        </button> -->
-                                        <div class="overflow: hidden; padding-top: 56.25%; position: relative;">
-                                            <iframe src={video} title="YouTube video player" frameborder="0" style="border: none; width: 100%"></iframe>
-                                        </div>
-                                    {/each}
-                                </div>
-                            {/each}
-                        </div>
-                        <h4>Photos</h4>
-                        <div class="columns is-multiline is-mobile">
-                            {#each datum.photoGroups as photoGroup}
-                                <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-                                    {#each photoGroup as photo}
-                                        <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
-                                            <img src={`${getResourcesAPIByID(photo)}`} style="width: 100%;"  alt="random img">
-                                        </button>
-                                    {/each}
-                                </div>
-                            {/each}
-                        </div>
+                        {#if Array.isArray(datum.videoGroups) && datum.videoGroups.length > 0}
+                            <h4>Videos</h4>
+                            <div class="columns is-multiline is-mobile">
+                                {#each datum.videoGroups as videoGroup}
+                                    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+                                        {#each videoGroup as video}
+                                            <!-- <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
+                                                <img src={`${video}`} style="width: 100%;"  alt="random img">
+                                            </button> -->
+                                            <div class="overflow: hidden; padding-top: 56.25%; position: relative;">
+                                                <iframe src={video} title="YouTube video player" frameborder="0" style="border: none; width: 100%; height: 400px;"></iframe>
+                                            </div>
+                                        {/each}
+                                    </div>
+                                {/each}
+                            </div>
+                        {/if}
+                        {#if Array.isArray(datum.photoGroups) && datum.photoGroups.length > 0}
+                            <h4>Photos</h4>
+                            <div class="columns is-multiline is-mobile">
+                                {#each datum.photoGroups as photoGroup}
+                                    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+                                        {#each photoGroup as photo}
+                                            <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
+                                                <img src={`${getResourcesAPIByID(photo)}`} style="width: 100%;"  alt="random img">
+                                            </button>
+                                        {/each}
+                                    </div>
+                                {/each}
+                            </div>
+                        {/if}
                     </svelte:fragment>
                 </Collapsible>
             {:else}
