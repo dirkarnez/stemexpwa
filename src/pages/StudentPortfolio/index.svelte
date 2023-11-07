@@ -10,6 +10,21 @@
     import { splitArrayToArrayGroups } from "../../utils/array";
     import Collapsible from "../../components/Collapsible/index.svelte";
     import Modal from "../../components/Modal/index.svelte";
+
+
+    // import { Document, Page, preferThisHeight, type MultipleOf90 } from 'svelte-pdfjs';
+
+    // let scale = 1;
+    // let num = 1;
+    // let filename = 'tackling-ts-preview-book.pdf';
+    // let max_pages = 1;
+    // let renderTextLayer = false;
+    // let target_height = 500;
+    // let rotation: MultipleOf90 = 0;
+
+
+
+    import PDFViewer from "../../components/PDFViewer/index.svelte";
 	
     // const scratch0 = "https://www.youtube.com/embed/h0GNlnvaL48";
     const scratch1 = "https://www.youtube.com/embed/RkgI3gPpC4w";
@@ -111,9 +126,7 @@
                         <h4>Student Learning Portfolio</h4>
                         <div class="columns is-multiline is-mobile">
                             <div class="column">
-                                <object data={getResourcesAPIByID(datum.portfolio)} type="application/pdf" width="100%" height="500px" title="student learning portfolio">
-                                    <p>Unable to display PDF file. <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">Download</a> instead.</p>
-                                </object>
+                                <PDFViewer url={`/api/resourses?id=${datum.portfolio}`} />
                             </div>
                         </div>
                         {#if Array.isArray(datum.videoGroups) && datum.videoGroups.length > 0}

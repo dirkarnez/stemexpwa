@@ -41,7 +41,7 @@ module.exports = {
 	context: path.resolve(__dirname, "./src"),
 	devtool: isProduction ? false : "inline-source-map",
 	entry: {
-		bundle: ["whatwg-fetch", "./index.ts"]
+		main: "./index.ts"
 	},
 	resolve: {
 		alias: {

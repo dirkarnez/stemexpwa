@@ -4,6 +4,56 @@ export const FakeFetch = (p, data) => new Promise(res => {
     }, 500)
 });
 
+
+export const WrappedFetchData = (url, params = {}) => {
+    // return fetch(
+    //     location.host.includes("localhost") ? 
+    //     `https://localhost${url}`
+    //     :
+    //     url
+    //     , 
+    //     ...params
+    // )
+    const isDev = location.host.includes("localhost");
+
+    var abortController = new AbortController();
+
+    var myHeaders = new Headers();
+    // myHeaders.append("pragma", "no-cache");
+    // myHeaders.append("Cache-Control", "no-cache");
+
+    const input = isDev
+        ?
+        `https://localhost:443${url}`
+        :
+        url;
+
+    const obj = {
+        signal: abortController.signal,
+        headers: myHeaders,
+        credentials: "include",
+        // cache: "no-cache",
+        // credentials: 'same-origin',
+        // redirect: 'follow',
+        // referrerPolicy: 'no-referrer',
+        ...params
+    };
+
+    return [
+        fetch(input, obj)
+            .then(response => {
+                if (response.ok && response.status >= 200 && response.status < 300) {
+                    return response.arrayBuffer()
+                } else {
+                    return response.text().then(a => {
+                        throw a
+                    })
+                }
+            }),
+        abortController
+    ];
+}
+
 export const WrappedFetch = (url, params = {}) => {
     // return fetch(
     //     location.host.includes("localhost") ? 

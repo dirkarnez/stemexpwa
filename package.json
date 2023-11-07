@@ -30,7 +30,7 @@
 		"source-map-loader": "^4.0.1",
 		"string-replace-loader": "^3.1.0",
 		"style-loader": "^0.23.1",
-		"svelte": "^4.0.1",
+		"svelte": "^4.2.2",
 		"svelte-loader": "^3.1.9",
 		"svelte-preprocess": "^5.0.4",
 		"svelte-routing": "^1.11.0",
@@ -55,7 +55,10 @@
 		"felte": "^1.2.12",
 		"jspdf": "^2.5.1",
 		"jspdf-autotable": "^3.5.31",
+		"pdfjs-dist": "^4.0.189",
 		"svelte-forms": "^2.3.1",
+		"svelte-pdf": "^1.0.20",
+		"svelte-pdf-simple": "^2.0.0",
 		"whatwg-fetch": "^3.0.0"
 	}
 }
