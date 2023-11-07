@@ -11,14 +11,15 @@
 	// let location = useLocation();
 
     let wrappedFetchServerFilesPromise = null;
-
-    let files;
+	
 	let fileListOnServer = {total_count: 0};
 
 	
+	let filename = "";
+
 	const filesPerPagination = 20;
 
-	let from = 0;
+	let from = 1;
 
 	let isLoading = false;
 
@@ -46,7 +47,7 @@
 	// });
 	
 	function setPage(i) {
-		from = (i * filesPerPagination); 
+		from = (i * filesPerPagination) + 1; 
 		getFiles();
 	}
 
@@ -186,12 +187,17 @@
 				</figure>
 				<label class="label">File
 					<div class="control">
-						<InputFileContainer>
+						<InputFileContainer filename={filename}>
 							<input
 								class="file-input"
 								type="file"
 								name={files_field_key}
-								on:change={e => handleImageChange(e, dataURI => setFields(file_preview_field_key , dataURI, true))}
+								on:change={e => {
+									handleImageChange(e, dataURI => setFields(file_preview_field_key , dataURI, true));
+									if (!!e.target.files && e.target.files.length == 1) {
+										filename = e.target.files[0].name;
+									}
+								}}
 							/>
 						</InputFileContainer>
 					</div>

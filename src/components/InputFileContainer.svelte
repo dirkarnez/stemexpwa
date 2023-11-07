@@ -1,5 +1,7 @@
-
-<div class="file">
+<script>
+	export let filename;
+</script>
+<div class="file has-name">
 	<label class="file-label">
 		<slot />
 		<span class="file-cta">
@@ -7,6 +9,9 @@
 				<i class="fas fa-upload" />
 			</span>
 			<span class="file-label"> Choose a file… </span>
+		</span>
+		<span class="file-name">
+			{filename}
 		</span>
 	</label>
 </div>
