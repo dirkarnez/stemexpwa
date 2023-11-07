@@ -186,6 +186,7 @@
 
 <section class="section" style="padding: 0rem;">
 	<div class="columns is-gapless">
+		<!-- <div id="sidebar" class="column is-narrow" style="background-color: #222e3c;"> -->
 		<div class="column is-narrow" style="background-color: #222e3c;">
 			<aside class="menu pt-4 pb-4 pl-0" style="max-width: 260px; min-width: 260px;">
 				<ul class="menu-list">
@@ -310,22 +311,29 @@
 			</aside>
 		</div>
 		<div class="column" style="background-color: #f5f7fb; padding: 3rem; border-top: 2px solid rgb(245, 245, 245);">
+		<!-- <div id="main" class="column" style="background-color: #f5f7fb; padding: 3rem; border-top: 2px solid rgb(245, 245, 245);"> -->
             <section class="section">
 				<Router>
 					<Route path="/">
 						<Dashboard role={role} userName={userName}/>
 					</Route>
+
 					<Route path="/booked-classes/*">
 						<BookedClasses/>
 					</Route>
+
 					<Route path="/stemex-academy-curriculum/*">
 						<StemexAcademyCurriculum/>
 					</Route>
 					
-					<Route path="/student-portfolio" component={StudentPortfolio} />
+					<Route path="/student-portfolio">
+						<StudentPortfolio/>
+					</Route>
 
-					<Route path="/last-minute-offer" component={LastMinuteOffer}/>
-					
+					<Route path="/last-minute-offer">
+						<LastMinuteOffer/>
+					</Route>
+						
 					<Route path="/user-management">
 						<UserManagement/>
 					</Route>
@@ -358,7 +366,6 @@
 					<Route path="/installation-guide/*">
 						<InstallationGuide role={role} userName={userName}/>
 					</Route>
-					
 					
 					<Route path="/sales">
 						<div class="columns">

@@ -60,9 +60,26 @@ $menu-label-color:  #e9ecef80;
   border-left: 3px solid transparent;
 }
 
+
+#sidebar  {
+  position: fixed!important;
+  z-index: 5; //should be larger than 4. 4 is for font-awesome
+}
+
+#main {
+  margin-left: 260px;
+}
+
 @import "bulma";
 
+@include mobile {
+  #sidebar {
+    width: 100%;
+  }
+  // Styles applied
+  // below $tablet
 
+}
 
 // @import "bulma-timeline";
 
