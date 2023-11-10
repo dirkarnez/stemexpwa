@@ -18,6 +18,8 @@ Snippets
   </style>
 </svelte:head>
 ```
+
+### Last minutes offer
 ```html
 <!DOCTYPE html>
 <html>
