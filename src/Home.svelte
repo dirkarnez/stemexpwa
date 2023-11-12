@@ -9,7 +9,7 @@
 	
 	import InstallationGuide from "./pages/InstallationGuide/index.svelte";
 	import InstructorSchedule from "./pages/InstructorSchedule.svelte";
-	import LastMinuteOffer from "./pages/LastMinuteOffer.svelte";
+	import LastMinuteOffer from "./pages/LastMinuteOffer/index.svelte";
 	import UserManagement from "./pages/UserManagement.svelte";
 	import ClassManagement from "./pages/ClassManagement/index.svelte";
 	import FileManagement from "./pages/FileManagement/index.svelte";
