@@ -14,6 +14,8 @@ stemexpwa
     - https://www.pushengage.com/microsoft-edge-now-supporting-web-push-notifications/
     - https://github.com/MicrosoftEdge/pushnotifications-demo
     - https://developer.chrome.com/blog/web-push-interop-wins/
-- [ ] [dirkarnez/svelte-nested-sample](https://github.com/dirkarnez/svelte-nested-sample/)
-- [ ] [Last minute offer](snippets.md#last-minutes-offer)
+- [x] [dirkarnez/svelte-nested-sample](https://github.com/dirkarnez/svelte-nested-sample/)
+- [x] [Last minute offer](snippets.md#last-minutes-offer)
     - [**Timeline | CodePen Challenge**](https://codepen.io/havardob/pen/xxPqXdO)
+- [ ] Searching
+    - https://svelte.dev/examples/svelte-component
