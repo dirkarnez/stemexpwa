@@ -50,7 +50,7 @@
 		navigate("/login", { replace: true });
 	});
 
-	let isSideBarOpen = false;
+	let isSideBarOpen = true;
 
 	function toggleSidebar() {
 		isSideBarOpen = !isSideBarOpen;
