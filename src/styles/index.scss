@@ -80,6 +80,14 @@ $menu-label-color:  #e9ecef80;
   // below $tablet
 }
 
+
+@include desktop {
+  .navbar-burger {
+    display: block;
+  }
+}
+
+
 // @import "bulma-timeline";
 
 *
@@ -92,10 +100,71 @@ $menu-label-color:  #e9ecef80;
 
 
 
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+  height: auto !important;
+  overflow-x: hidden;
+  background-color: #f5f7fb;
+}
 
 
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
 
+.my-left-menu {
+  z-index: 10;
+  top: $navbar-height;
+  width: 15rem;
+  bottom: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  left: -15rem;
+  overflow: hidden;
+  position: fixed;
+  transition: left 0.3s ease;
+}
+
+.my-left-menu.open {
+  left: 0;
+}
+
+.my-left-menu.closed {
+  left: -15rem;
+}
+
+.my-main {
+  padding-top: $navbar-height;
+  padding-left: 0;
+  padding-right: 0;
+  height: auto !important;
+  min-height: 0px !important;
+  /* Used in this example to enable scrolling */
+  /*width: 100%;*/
+  transition: margin-left 0.3s ease;
+}
+
+.my-main.closed {
+    margin-left: 15rem;
+}
 
 // body {
 // 	margin: 0;
