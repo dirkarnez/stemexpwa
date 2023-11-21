@@ -319,7 +319,8 @@ main.classList.toggle('closed'); -->
 	</div>
 	<!-- <div>dfsd</div> -->
 </aside>
-<div class={`my-main ${isSideBarOpen ? "closed" : ""}`}>
+<!-- ${isSideBarOpen ? "closed" : ""} -->
+<div class={`my-main`}>
 <!-- <div id="main" class="column" style="background-color: #f5f7fb; padding: 3rem; border-top: 2px solid rgb(245, 245, 245);"> -->
 	<section class="section">
 		<Router>
