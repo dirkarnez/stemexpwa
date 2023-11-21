@@ -61,29 +61,34 @@ $menu-label-color:  #e9ecef80;
 }
 
 
-#sidebar  {
-  position: fixed!important;
-  z-index: 5; //should be larger than 4. 4 is for font-awesome
-}
+// #sidebar  {
+//   position: fixed!important;
+//   z-index: 5; //should be larger than 4. 4 is for font-awesome
+// }
 
-#main {
-  margin-left: 260px;
-}
+// #main {
+//   margin-left: 260px;
+// }
 
 @import "bulma";
 
-@include mobile {
-  #sidebar {
-    width: 100%;
-  }
-  // Styles applied
-  // below $tablet
-}
+// @include mobile {
+//   #sidebar {
+//     width: 100%;
+//   }
+  
+//   // Styles applied
+//   // below $tablet
+// }
 
 
 @include desktop {
   .navbar-burger {
     display: block;
+  }
+  
+  .my-main.closed {
+    margin-left: 15rem;
   }
 }
 
@@ -161,9 +166,6 @@ body {
   transition: margin-left 0.3s ease;
 }
 
-// .my-main.closed {
-//   margin-left: 15rem;
-// }
 
 // body {
 // 	margin: 0;

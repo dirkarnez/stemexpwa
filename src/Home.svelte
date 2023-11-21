@@ -191,10 +191,6 @@
 	</div>
 </nav>
 
-<!-- const sidebar = document.querySelector('.left-menu');
-const main = document.querySelector('.main');
-sidebar.classList.toggle('open');
-main.classList.toggle('closed'); -->
 
 <aside class={`my-left-menu menu ${isSideBarOpen ? "open" : ""}`} style="background-color: #222e3c;">
 	<div style="flex: 1; overflow-y: auto;" class="pt-4 pb-4 pl-0">
@@ -320,9 +316,8 @@ main.classList.toggle('closed'); -->
 	</div>
 	<!-- <div>dfsd</div> -->
 </aside>
-<!-- ${isSideBarOpen ? "closed" : ""} -->
-<div class={`my-main`}>
-<!-- <div id="main" class="column" style="background-color: #f5f7fb; padding: 3rem; border-top: 2px solid rgb(245, 245, 245);"> -->
+
+<div class={`my-main ${isSideBarOpen ? "closed" : ""}`}>
 	<section class="section">
 		<Router>
 			<Route path="/">
