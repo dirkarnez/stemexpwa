@@ -87,8 +87,12 @@ $menu-label-color:  #e9ecef80;
     display: block;
   }
   
-  .my-main.closed {
+  .my-main {
     margin-left: 15rem;
+  }
+
+  .my-left-menu {
+    left: 0;
   }
 }
 
@@ -148,12 +152,15 @@ body {
 }
 
 .my-left-menu.open {
-  left: 0;
+  left: 0 !important;
 }
 
 .my-left-menu.closed {
-  left: -15rem;
+  left: -15rem !important;
 }
+
+
+@import "my-burger.scss";
 
 .my-main {
   padding-top: $navbar-height;
