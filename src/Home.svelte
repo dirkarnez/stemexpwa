@@ -118,7 +118,7 @@
 				href={`javascript:void(0);`}
 				on:click={toggleSidebar}
 				role="button"
-				class={`navbar-burger my-burger ${isSideBarOpen ? "open" : ""}`}
+				class={`navbar-burger my-burger ${isSideBarOpen ? "is-active" : ""}`}
 				aria-label="menu"
 				aria-expanded="false">
 				<span aria-hidden="true" />
