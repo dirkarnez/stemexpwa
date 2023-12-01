@@ -84,61 +84,67 @@
 <div class="columns">
 	<div class="column">
 		<div class="content">
-			<div class="box">
-					{#await getUsers}
-						<p>...waiting</p>
-					{:then _}
-						<button class="button is-primary" on:click={() => {
-							users.push({UserName: "", ID: [] });
-							i = users.length - 1;
-						}}>Add New User</button>
-						<br/>
-						<table class="table">
-							<thead>
-								<tr>
-									<th>User</th>
-									<th>Role</th>
-									<th>Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								{#each users as user, j}
-									{#if i == j }
-										<tr>
-											<td><input class="input" type="text" bind:value={name} /></td>
-											<td>
-												<div class="select">
-													<select bind:value={k}>
-														<option value={-1}>prospect</option>
-														{#each roles as role, m}
-															<option value={m}>{role.Name}</option>
-														{/each}
-													</select>
-												</div>
-											</td>
-											<td>
-												<button class="button is-primary" on:click={() => update()}>Save</button>
-												<button class="button is-primary" on:click={() => {i = NaN;}}>Cancel</button>
-											</td>
-										</tr>
-									{:else}
-										<tr>
-											<td>{user.UserName}</td>
-											<td>{!!user.Role ? user.Role.Name : "prospect"}</td>
-											<td>
-												<button class="button is-primary" on:click={() => {i = j}} disabled={!isNaN(i) && i != j}>Edit</button>
-												<button class="button is-primary" on:click={() => {i = j}} disabled={!isNaN(i) && i != j}>Delete</button>
-											</td>
-										</tr>
-									{/if}
-								{/each}
-							</tbody>
-						</table>
-					{:catch error}
-						<p style="color: red">{error.message}</p>
-					{/await}
-	
-			</div>
+			<Router>
+				<Route path="/add">
+					hi
+				</Route>
+				<Route path="/">
+					<div class="box">
+						{#await getUsers}
+							<p>...waiting</p>
+						{:then _}
+						<a class="button is-primary is-pulled-right" href={`${$location.pathname}/add`} use:link>Add New User</a>
+
+							<br/>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>User</th>
+										<th>Role</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									{#each users as user, j}
+										{#if i == j }
+											<tr>
+												<td><input class="input" type="text" bind:value={name} /></td>
+												<td>
+													<div class="select">
+														<select bind:value={k}>
+															<option value={-1}>prospect</option>
+															{#each roles as role, m}
+																<option value={m}>{role.Name}</option>
+															{/each}
+														</select>
+													</div>
+												</td>
+												<td>
+													<button class="button is-primary" on:click={() => update()}>Save</button>
+													<button class="button is-primary" on:click={() => {i = NaN;}}>Cancel</button>
+												</td>
+											</tr>
+										{:else}
+											<tr>
+												<td>{user.UserName}</td>
+												<td>{!!user.Role ? user.Role.Name : "prospect"}</td>
+												<td>
+													<button class="button is-primary" on:click={() => {i = j}} disabled={!isNaN(i) && i != j}>Edit</button>
+													<button class="button is-primary" on:click={() => {i = j}} disabled={!isNaN(i) && i != j}>Delete</button>
+												</td>
+											</tr>
+										{/if}
+									{/each}
+								</tbody>
+							</table>
+						{:catch error}
+							<p style="color: red">{error.message}</p>
+						{/await}
+
+				</div>
+				</Route>
+			</Router>
+
 		</div>
 	</div>
 </div>

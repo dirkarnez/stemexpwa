@@ -340,7 +340,7 @@
 				<LastMinuteOffer/>
 			</Route>
 				
-			<Route path="/user-management">
+			<Route path="/user-management/*">
 				<UserManagement/>
 			</Route>
 
