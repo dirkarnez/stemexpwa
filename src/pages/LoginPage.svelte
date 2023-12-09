@@ -1,8 +1,8 @@
 <script>
 	import stemex_icon from "../assets/images/stemex_icon.png";
 	import AppBackground from "../assets/images/AppBackground.png";
-	import { form, field, defaultFieldOptions } from "svelte-forms";
-	import { required } from "svelte-forms/validators";
+	// import { form, field, defaultFieldOptions } from "svelte-forms";
+	// import { required } from "svelte-forms/validators";
 	import { navigate } from "svelte-routing";
 	import { WrappedFetch } from "../utils/fetch";
 

@@ -33,7 +33,6 @@
 	const blog_entries_field_key = "blog_entries";
 	const blog_entries_external_url_field_key = "external_url";
 	const blog_entries_title_field_key = "title";
-	
 
 	const dispatch = createEventDispatcher();
 
@@ -69,7 +68,7 @@
 			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", formData);
 			wrappedFetchPromise
 			.then(() => {
-				alert("OK")
+				alert("OK");
 				dispatch('done');
 			})
 			.catch(err => {
