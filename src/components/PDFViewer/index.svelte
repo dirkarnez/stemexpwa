@@ -6,7 +6,7 @@
 
 <script>
 	import { onMount } from 'svelte';
-	import PdfViewer from 'svelte-pdf';
+	// import PdfViewer from 'svelte-pdf';
 	import { WrappedFetchData } from '../../utils/fetch';
 
 
@@ -179,11 +179,11 @@
 
 </script>
 
-{#if !!data}
+<!-- {#if !!data}
 <div style="width: 100%">
     <PdfViewer data={data}/>
 </div>
-{/if}
+{/if} -->
 
 <!-- 
 

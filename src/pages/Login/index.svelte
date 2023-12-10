@@ -1,41 +1,48 @@
 <script>
-	import stemex_icon from "../assets/images/stemex_icon.png";
-	import AppBackground from "../assets/images/AppBackground.png";
+	import stemex_icon from "../../assets/images/stemex_icon.png";
+	import AppBackground from "../../assets/images/AppBackground.png";
 	// import { form, field, defaultFieldOptions } from "svelte-forms";
 	// import { required } from "svelte-forms/validators";
 	import { navigate } from "svelte-routing";
-	import { WrappedFetch } from "../utils/fetch";
+	import { WrappedFetch } from "../../utils/fetch";
+	import { createForm } from 'felte';
 
-	const userName = field("user_name", "", [required()], {
-		...defaultFieldOptions,
-		validateOnChange: false
-	});
-	
-	const password = field("password", "", [required()], {
-		...defaultFieldOptions,
-		validateOnChange: false
-	});
-	
-	const myForm = form(userName, password);
-
-	function handleSubmit() {
-		myForm.validate().then(() => {
-			if ($myForm.valid) {
+	const { form } = createForm({
+		onSubmit: (values) => {
 				const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/login", {
 					method: "POST",
-					body: JSON.stringify(myForm.summary())
+					body: JSON.stringify(values)
 				});
 
 				wrappedFetchPromise
-					.then(json => {
-						navigate("/", { replace: true });
-					})
-					.catch(e => {
-						alert("fetch error: " + "cannot login");
-					});
-			}
-		});
-	}
+				.then(() => {
+					navigate("/", { replace: true });
+				})
+				.catch(e => {
+					alert("fetch error: " + "cannot login");
+				});
+		}
+	})
+
+	// const userName = field("user_name", "", [required()], {
+	// 	...defaultFieldOptions,
+	// 	validateOnChange: false
+	// });
+	
+	// const password = field("password", "", [required()], {
+	// 	...defaultFieldOptions,
+	// 	validateOnChange: false
+	// });
+	
+
+
+	// function handleSubmit() {
+	// 	myForm.validate().then(() => {
+	// 		if ($myForm.valid) {
+
+	// 		}
+	// 	});
+	// }
 </script>
 
 <svelte:head>
@@ -119,63 +126,63 @@
 								height="132"
 								class="img-fluid" />
 						</div>
-						<form on:submit|preventDefault={handleSubmit}>
+						<form use:form>
 							<div class="field">
-								<label class="label" for="b">User name</label>
+								<label class="label" for="userName">User name</label>
 								<div class="control has-icons-left">
-									{#if $myForm.hasError('user_name.required')}
+									<!-- {#if $myForm.hasError('user_name.required')}
 										<input
 											id="b"
 											class="input is-danger"
 											type="text"
 											placeholder="Enter your user name"
 											bind:value={$userName.value} />
-									{:else}
+									{:else} -->
 										<input
-											id="b"
+											id="userName"
 											class="input"
+											name="user_name"
 											type="text"
-											placeholder="Enter your user name"
-											bind:value={$userName.value} />
-									{/if}
+											placeholder="Enter your user name"/>
+									<!-- {/if} -->
 									<span class="icon is-small is-left">
 										<i class="fas fa-user" />
 									</span>
 								</div>
-								{#if $myForm.hasError('user_name.required')}
+								<!-- {#if $myForm.hasError('user_name.required')}
 									<p class="help is-danger">User Name is required</p>
-								{/if}
+								{/if} -->
 							</div>
 							<div class="field">
-								<label class="label" for="c">Password</label>
+								<label class="label" for="password">Password</label>
 								<div class="control has-icons-left">
-									{#if $myForm.hasError('password.required')}
+									<!-- {#if $myForm.hasError('password.required')}
 										<input
 											id="c"
 											class="input is-danger"
 											type="password"
 											placeholder="Enter your password"
 											bind:value={$password.value} />
-									{:else}
+									{:else} -->
 										<input
-											id="c"
+											id="password"
 											class="input"
 											type="password"
-											placeholder="Enter your password"
-											bind:value={$password.value} />
-									{/if}
+											name="password"
+											placeholder="Enter your password"/>
+									<!-- {/if} -->
 									<span class="icon is-small is-left">
 										<i class="fas fa-key" />
 									</span>
 								</div>
-								{#if $myForm.hasError('password.required')}
+								<!-- {#if $myForm.hasError('password.required')}
 									<p class="help is-danger">Password is required</p>
-								{/if}
+								{/if} -->
 							</div>
 
 							<div class="field">
 								<div class="control">
-									<button class="button is-primary">Submit</button>
+									<button class="button is-primary" type="submit">Submit</button>
 								</div>
 							</div>
 						</form>

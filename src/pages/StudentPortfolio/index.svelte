@@ -24,7 +24,7 @@
 
 
 
-    import PDFViewer from "../../components/PDFViewer/index.svelte";
+    // import PDFViewer from "../../components/PDFViewer/index.svelte";
 	
     // const scratch0 = "https://www.youtube.com/embed/h0GNlnvaL48";
     const scratch1 = "https://www.youtube.com/embed/RkgI3gPpC4w";
@@ -126,7 +126,7 @@
                         <h4>Student Learning Portfolio</h4>
                         <div class="columns is-multiline is-mobile">
                             <div class="column">
-                                <PDFViewer url={`/api/resourses?id=${datum.portfolio}`} />
+                                123<!-- <PDFViewer url={`/api/resourses?id=${datum.portfolio}`} /> -->
                             </div>
                         </div>
                         {#if Array.isArray(datum.videoGroups) && datum.videoGroups.length > 0}
