@@ -114,7 +114,7 @@
 														<select bind:value={k}>
 															<option value={-1}>prospect</option>
 															{#each roles as role, m}
-																<option value={m}>{role.Name}</option>
+																<option value={m}>{role["name"]}</option>
 															{/each}
 														</select>
 													</div>
@@ -126,8 +126,8 @@
 											</tr>
 										{:else}
 											<tr>
-												<td>{user.UserName}</td>
-												<td>{!!user.Role ? user.Role.Name : "prospect"}</td>
+												<td>{user["user_name"]}</td>
+												<td>{!!user["role"] ? user["role"]["name"] : "prospect"}</td>
 												<td>
 													<button class="button is-primary" on:click={() => {i = j}} disabled={!isNaN(i) && i != j}>Edit</button>
 													<button class="button is-primary" on:click={() => {i = j}} disabled={!isNaN(i) && i != j}>Delete</button>

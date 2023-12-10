@@ -144,7 +144,7 @@
 			<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
 				<div style="margin-top: 1.2rem; position:relative;">
 					<Link to={`${$location.pathname}/add`}>
-						<div class="card is-flex is-flex-direction-row" style={`border: 2px dashed #0087F7; border-radius: 5px;`}>
+						<div class="card" style={`border: 2px dashed #0087F7; border-radius: 5px;`}>
 							<!-- <div class="card-image">
 								<figure class="image is-96x96">
 								<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/ /* /api/resourses?id=23*/  getResourcesAPIByID(icon_id)}
@@ -153,11 +153,15 @@
 								</figure>
 							</div> -->
 							<div class="card-content pt-0 pb-0">
-								<div class="content" style="height: 96px;width: 100%;">
-									<div class="is-flex is-flex-direction-row is-align-items-center pt-1 pb-1" style="height: 100%; width: 100%;">
-										<p style="text-align: center;" class="is-size-5 is-size-6-tablet has-text-weight-semibold">+</p>
-									</div>
+								<div class="content is-flex is-align-items-center is-justify-content-center" style="height: 96px; width: 100%;">
+									Add
 								</div>
+
+								<!-- <div class="content" style="height: 96px;width: 100%;">
+									<div class="is-flex is-flex-direction-row is-align-items-center pt-1 pb-1" style="height: 100%; width: 100%;">
+										<p style="text-align: center;" class="is-size-5 is-size-6-tablet has-text-weight-semibold"></p>
+									</div>
+								</div> -->
 							</div>
 						</div>
 					</Link>

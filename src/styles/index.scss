@@ -84,9 +84,9 @@ $menu-label-color:  #e9ecef80;
 
 // when in desktop
 @include desktop {
-  .navbar-burger {
-    display: block;
-  }
+  // .navbar-burger {
+  //   display: block;
+  // }
   
   .my-main {
     margin-left: 15rem;

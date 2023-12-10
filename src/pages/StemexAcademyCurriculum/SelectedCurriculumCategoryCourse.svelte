@@ -63,13 +63,13 @@
 			<div class="column is-full-desktop is-half-tablet is-full-mobile">
 				<div class="content">
 					<h4>Our blog</h4>
-					<p>
-						{#if Array.isArray(curriculumCategoryCourseDetails.blog_entries)}
-							{#each curriculumCategoryCourseDetails.blog_entries as { external_url, title }}
-								<a href={external_url} target="_blank">{title}</a><br />
-							{/each}
-						{/if}
-					</p>
+					{#if Array.isArray(curriculumCategoryCourseDetails.blog_entries)}
+						{#each curriculumCategoryCourseDetails.blog_entries as { external_url, title }}
+						<p>
+							<a href={external_url} target="_blank">{title}</a>
+						</p>
+						{/each}
+					{/if}
 				</div>
 			</div>
 		</div>

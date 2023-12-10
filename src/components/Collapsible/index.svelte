@@ -1,10 +1,8 @@
 <script>
     import CollapsibleCard from "./CollapsibleCard.svelte";
-    import { getResourcesAPIByID } from "../../utils/api";
 
     export let data = [];
     
-
     let expanding = NaN;
 
     const showCollapse = i => {
