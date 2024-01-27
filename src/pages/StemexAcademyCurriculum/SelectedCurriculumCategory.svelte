@@ -3,7 +3,7 @@
 	import { WrappedFetch } from "../../utils/fetch";
     import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link } from "svelte-routing";
-    import { getHost } from "../../utils/api";
+    import { getResourcesAPIByID } from "../../utils/api";
     import SelectedCurriculumCategoryCourse from "./SelectedCurriculumCategoryCourse.svelte"
     
     //import elementry1 from "../assets/images/schedule-details/codingMineCraftElementry/elementry1.png"
@@ -65,7 +65,7 @@
                             <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
                                 <div class="card-image">
                                     <figure class="image is-96x96">
-                                        <img src={ `${getHost()}${icon_id ? `/api/resourses?id=${icon_id}`  :""}`}
+                                        <img src={getResourcesAPIByID(icon_id)}
                                             style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
                                             alt="Placeholder">
                                     </figure>

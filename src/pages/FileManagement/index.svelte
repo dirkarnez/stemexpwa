@@ -3,7 +3,7 @@
 	import { /*useLocation,*/ Route, Router } from "svelte-routing";
 	import InputFileContainer from "../../components/InputFileContainer.svelte"
     import { WrappedFetch, WrappedFetchPOSTMultipart } from "../../utils/fetch";
-	import { getHost } from "../../utils/api";
+	import { getResourcesAPIByID } from "../../utils/api";
 	import { handleImageChange } from "../../utils/file";
 	import { createForm } from 'felte';
     // import { form, field, defaultFieldOptions  } from "svelte-forms";
@@ -119,7 +119,7 @@
 								<div class="card-image">
 									<button class="image is-96x96" style="outline: none; border: none; cursor: pointer" on:click={() => { navigator.clipboard.writeText(`${id}`).then(() => alert("copied"))}}>
 										<img
-											src={ `${getHost()}${id ? `/api/resourses?id=${id}`  :""}`}
+											src={getResourcesAPIByID(id)}
 											style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;"
 											alt="Placeholder"
 										/>

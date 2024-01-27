@@ -78,7 +78,6 @@
     let openModal = false;
 	// const currentPath = $location.pathname;
 
-   // https://localhost/api/resourses?id=
 </script>
 
 <!-- <Router>
@@ -126,7 +125,7 @@
                         <h4>Student Learning Portfolio</h4>
                         <div class="columns is-multiline is-mobile">
                             <div class="column">
-                                123<!-- <PDFViewer url={`/api/resourses?id=${datum.portfolio}`} /> -->
+                                123
                             </div>
                         </div>
                         {#if Array.isArray(datum.videoGroups) && datum.videoGroups.length > 0}

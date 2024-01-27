@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-	import { getHost } from "../../utils/api";
+	import { getResourcesAPIByID } from "../../utils/api";
   //import codingMinecraft from "../assets/images/upcoming-schedule/codingMinecraft/Level 1-min.png";
   import { FakeFetch } from "../../utils/fetch";
 
@@ -128,7 +128,7 @@
 																		<!-- <div class="card is-flex is-flex-direction-row">
 																			<div class="card-image">
 																				<figure class="image is-96x96">
-																					<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/ /* /api/resourses?id=23*/  `${getHost()}${`/api/resourses?id=${id}` }`}
+																					<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/  }
 																						style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
 																						alt="Placeholder">
 																				</figure>
@@ -158,7 +158,7 @@
 																				<div class="column is-narrow-desktop is-full-mobile">
 																					<div class="columns is-mobile is-centered">
 																						<div class="column is-full" style="text-align: center;">
-																							<img src={ `${getHost()}${icon_id ? `/api/resourses?id=${icon_id}`  :""}`} style="max-height: 150px" alt="">
+																							<img src={getResourcesAPIByID(icon_id)} style="max-height: 150px" alt="">
 																						</div>
 																					</div>
 																				</div>

@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import { WrappedFetch } from "../../utils/fetch";
 	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
-	import { getHost } from "../../utils/api";
+	import { getResourcesAPIByID } from "../../utils/api";
     
     //import elementry1 from "../assets/images/schedule-details/codingMineCraftElementry/elementry1.png"
 
@@ -94,7 +94,7 @@
 							<div class="column is-narrow-desktop is-full-mobile">
 								<div class="columns is-mobile is-centered">
 									<div class="column is-full" style="text-align: center;">
-										<img src={ `${getHost()}${icon_id ? `/api/resourses?id=${icon_id}`  :""}`} style="max-height: 150px" alt="">
+										<img src={getResourcesAPIByID(icon_id)} style="max-height: 150px" alt="">
 									</div>
 								</div>
 							</div>
