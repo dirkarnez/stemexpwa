@@ -27,7 +27,7 @@
 
 	const getFiles = () => {
 		isLoading = true;
-        const [ _wrappedFetchServerFilesPromise, abort ] = WrappedFetch(`/api/files?from=${from}&to=${from + filesPerPagination}`)
+        const [ _wrappedFetchServerFilesPromise, abort ] = WrappedFetch(`/api/resourse-list?from=${from}&to=${from + filesPerPagination}`)
         wrappedFetchServerFilesPromise = _wrappedFetchServerFilesPromise;
 		wrappedFetchServerFilesPromise.then(data => {
 			fileListOnServer = data;

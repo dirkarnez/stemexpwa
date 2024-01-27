@@ -4,7 +4,7 @@
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router } from "svelte-routing";
 	import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
-	import { getHost } from "../../utils/api";
+	import { getResourcesAPIByID } from "../../utils/api";
 	
 	let location = useLocation();
 
