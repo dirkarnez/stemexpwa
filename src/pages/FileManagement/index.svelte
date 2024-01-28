@@ -111,7 +111,7 @@
 				<p>Loading</p>
 			{:else}
 				{#if !!fileListOnServer}
-					{#each [...(Array.isArray(fileListOnServer.files) ? fileListOnServer.files : [])] as { id, original_physical_file_name }, index}
+					{#each [...(Array.isArray(fileListOnServer.files) ? fileListOnServer.files : [])] as { id, file_name_uploaded }, index}
 						<div
 							class="column is-one-third-desktop is-half-tablet is-full-mobile"
 						>
@@ -137,7 +137,7 @@
 											>
 												{original_physical_file_name}
 											</p> -->
-											{original_physical_file_name}
+											{file_name_uploaded}
 										</div>
 									</div>
 								</div>
