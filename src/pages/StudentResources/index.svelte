@@ -166,20 +166,27 @@
                                 {/each}
                             </div>
                         {/if}
-                        {#if Array.isArray(datum.photoGroups) && datum.photoGroups.length > 0 && datum.photoGroups.some(photoGroup => Array.isArray(photoGroup) && photoGroup.length > 0)}
                             <h4>Class photos</h4>
+                            
                             <div class="columns is-multiline is-mobile">
-                                {#each datum.photoGroups as photoGroup}
-                                    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-                                        {#each photoGroup as photo}
-                                            <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
-                                                <img src={`${getResourcesAPIByID(photo)}`} style="width: 100%;"  alt="random img">
-                                            </button>
-                                        {/each}
-                                    </div>
-                                {/each}
+                                
+                                {#if Array.isArray(datum.photoGroups) && datum.photoGroups.length > 0 && datum.photoGroups.some(photoGroup => Array.isArray(photoGroup) && photoGroup.length > 0)}
+                                    {#each datum.photoGroups as photoGroup}
+                                        <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+                                            {#each photoGroup as photo}
+                                                <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
+                                                    <img src={`${getResourcesAPIByID(photo)}`} style="width: 100%;"  alt="random img">
+                                                </button>
+                                            {/each}
+                                        </div>
+                                    {/each}
+                                {:else}
+                                <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+                                    None
+                                </div>
+                                {/if}
                             </div>
-                        {/if}
+                   
                     </svelte:fragment>
                 </Collapsible>
             {:else}
