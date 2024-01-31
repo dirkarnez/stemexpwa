@@ -80,4 +80,6 @@
     });
 </script>
 
-<p>{@html svg.node().outerHTML}</p>
+{#if !!svg}
+{@html svg.node().outerHTML}
+{/if}
