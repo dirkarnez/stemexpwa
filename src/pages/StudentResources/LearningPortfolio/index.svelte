@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
-
+	import * as d3 from 'd3';
+    
     const fakeFetch = Promise.resolve([{
         name: "knowledge",
         count: 13
