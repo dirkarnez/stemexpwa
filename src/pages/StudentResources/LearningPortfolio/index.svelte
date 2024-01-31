@@ -16,12 +16,8 @@
     const w = 200;
     const h = 200;
     const r = 100;
-    
-    import { createEventDispatcher } from 'svelte';
 
     let svg;
-
-
 
 	onMount(() => {
         fakeFetch
