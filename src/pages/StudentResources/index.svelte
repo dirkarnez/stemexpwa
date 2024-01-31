@@ -147,7 +147,7 @@
 						<h4>Learning Portfolio</h4>
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
-                                <LearningPortfolio on:message={(e) => downloadLink = e.detail;}/>
+                                <LearningPortfolio on:message={(e) => { downloadLink = e.detail; }}/>
                             </div>
 						</div>
 
