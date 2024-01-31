@@ -110,7 +110,7 @@
             }
         };
 
-        var pdfKitDoc = printer.createPdfKitDocument(docDefinition);
+        var pdfKitDoc = pdfmake.createPdf(docDefinition);
 
     }
 </script>
