@@ -59,7 +59,7 @@
 				portfolio: "d8475e8c7bdf11ee9aa006c3bc34e27e",
 				from: "2 Aug 2023",
 				to: "10 Aug 2023",
-				photos: ["11e29e537bdf11ee9aa006c3bc34e27e"],
+				photos: ["0bd1f6a9c03711ee9aa006c3bc34e27e"],
 				videos: [
 					// scratch0,
 					scratch1,
@@ -72,8 +72,8 @@
 				from: "30 June 2023",
 				to: "5 July 2023",
 				photos: [
-					"85ade8027cb511ee9aa006c3bc34e27e",
-					"85b132a47cb511ee9aa006c3bc34e27e",
+					"0bd1f6a9c03711ee9aa006c3bc34e27e",
+					"0bd1f6a9c03711ee9aa006c3bc34e27e",
 				],
 				/*,
                 videos: [
