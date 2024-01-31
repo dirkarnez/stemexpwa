@@ -40,7 +40,6 @@
 
             //var target = d3.select(`#here`);
             const svg = d3.create("svg")
-                .append("svg:svg")
                 .attr("viewBox", [0, 0, width, height])
                 .attr("width", width)
                 .attr("height", height)
