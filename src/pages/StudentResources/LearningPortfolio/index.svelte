@@ -24,3 +24,4 @@
 
 
 </script>
+<div bind:this={svgContainer} width={32} height={32} />
