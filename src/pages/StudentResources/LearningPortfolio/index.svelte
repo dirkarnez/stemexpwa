@@ -73,15 +73,10 @@
                 .attr("transform", `translate(${marginLeft},0)`)
                 .call(d3.axisLeft(y))
                 .call(g => g.select(".domain").remove());
-
-            d3.select();
-            debugger;
-            
-
         });
     });
 </script>
 
 {#if !!svg}
-{@html svg.node().outerHTML}
+    {@html svg.node().outerHTML}
 {/if}
