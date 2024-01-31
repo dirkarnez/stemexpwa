@@ -96,6 +96,9 @@
 	let location = useLocation();
 
 	let openModal = false;
+
+    let downloadLink = "";
+    
 	// const currentPath = $location.pathname;
 </script>
 
