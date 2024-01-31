@@ -144,7 +144,7 @@
 						<h4>Learning Portfolio</h4>
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
-                                <LearningPortfolio/>
+                                <LearningPortfolio downloadLink={}/>
                             </div>
 						</div>
 
