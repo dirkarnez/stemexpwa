@@ -17,7 +17,7 @@
     const h = 200;
     const r = 100;
 
-	export let downloadLink;
+    $: 	export downloadLink = 10 ;
     let svg;
 
 
