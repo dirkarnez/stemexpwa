@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-    import pdfmake from 'pdfmake';
+    import * as pdfmake from 'pdfmake';
     
     const fakeFetch = Promise.resolve([{
         name: "knowledge",
@@ -109,7 +109,7 @@
                 }
             }
         };
-
+debugger;
         var pdfKitDoc = pdfmake.createPdf(docDefinition);
 
     }
