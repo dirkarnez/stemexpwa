@@ -20,7 +20,7 @@
     export let downloadLink = 10 ;
     
     $: if (!!svg) {
-        downloadLink = 
+        downloadLink = URL.createObjectURL(new Blob([svg.node().outerHTML], { type: "image/svg+xml;charset=utf-8" }));
 	}
 
     let svg;
