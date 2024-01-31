@@ -166,7 +166,7 @@
                                 {/each}
                             </div>
                         {/if}
-                        {#if Array.isArray(datum.photoGroups) && datum.photoGroups.length > 0}
+                        {#if Array.isArray(datum.photoGroups) && datum.photoGroups.length > 0 && datum.photoGroups.some(photoGroup => Array.isArray(photoGroup) && photoGroup.length > 0)}
                             <h4>Photos</h4>
                             <div class="columns is-multiline is-mobile">
                                 {#each datum.photoGroups as photoGroup}
