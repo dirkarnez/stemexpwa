@@ -98,7 +98,7 @@
 	let openModal = false;
 
     let downloadLink = "";
-    
+
 	// const currentPath = $location.pathname;
 </script>
 
@@ -147,7 +147,7 @@
 						<h4>Learning Portfolio</h4>
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
-                                <LearningPortfolio />
+                                <LearningPortfolio on:message={(e) => downloadLink = e.detail;}/>
                             </div>
 						</div>
 
