@@ -79,8 +79,8 @@
             //     bolditalics: 'fonts/Roboto-MediumItalic.ttf'
             // }
         };
-        
-        var printer = new pdfmake.printer(fontDescriptors);
+        var pdf = pdfmake.(docDefinition);
+        var printer = new pdfmake.addFont(fontDescriptors);
  
         var docDefinition = {
             info: {
