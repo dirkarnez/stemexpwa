@@ -20,7 +20,7 @@
 
 	onMount(() => {
         fakeFetch
-        .then(json => {
+        .then(data => {
             const width = 928;
             const height = 500;
             const marginTop = 20;
