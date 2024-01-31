@@ -37,9 +37,8 @@
                 .range([height - marginBottom, marginTop]);
 
             //var target = d3.select(`#here`);
-
-            var svg = d3.select(`#here`)
-                //var svg = d3.create("svg")
+            const svg = d3
+                .select(el)
                 .append("svg:svg")
                 .attr("viewBox", [0, 0, width, height])
                 .attr("width", width)
