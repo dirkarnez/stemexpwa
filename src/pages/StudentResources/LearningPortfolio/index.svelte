@@ -69,7 +69,8 @@
                 .call(d3.axisLeft(y))
                 .call(g => g.select(".domain").remove());
 
-            d3.select(svgContainer).append(svg)
+            d3.select(svgContainer);
+            debugger;
             
 //             URL.createObjectURL(
 //  new Blob([svg.node().outerHTML], {
