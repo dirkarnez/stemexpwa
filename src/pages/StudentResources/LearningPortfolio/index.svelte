@@ -16,20 +16,8 @@
     const w = 200;
     const h = 200;
     const r = 100;
-
-    export let downloadLink = 10 ;
     
     import { createEventDispatcher } from 'svelte';
-
-    const dispatch = createEventDispatcher();
-
-    function sayHello() {
-        dispatch('message', URL.createObjectURL(new Blob([svg.node().outerHTML], { type: "image/svg+xml;charset=utf-8" })));
-    }
-
-    $: if (!!svg) {
-        downloadLink = ;
-	}
 
     let svg;
 
