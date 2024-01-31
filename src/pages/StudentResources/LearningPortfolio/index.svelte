@@ -155,6 +155,6 @@
 
 {#if !!svg}
     {@html svg.node().outerHTML}
-    <a href={URL.createObjectURL(new Blob([svg.node().outerHTML], { type: "image/svg+xml;charset=utf-8" }))} target="_blank">download</a>
-    <button on:click={a()}>d</button>
+    <a href={`javascript:void 0`} on:click={a()}>download</a>
+    <button>d</button>
 {/if}
