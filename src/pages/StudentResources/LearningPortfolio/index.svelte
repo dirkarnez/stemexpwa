@@ -80,6 +80,7 @@
             // }
         };
 
+        debugger;
         pdfmake.addFonts(fontDescriptors);
  
         var docDefinition = {
