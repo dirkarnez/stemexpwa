@@ -69,7 +69,7 @@
                 .call(d3.axisLeft(y))
                 .call(g => g.select(".domain").remove());
 
-            d3.select(svgContainer);
+            d3.select();
             debugger;
             
 //             URL.createObjectURL(
@@ -80,4 +80,4 @@
     });
 </script>
 
-<div bind:this={svgContainer}/>
+<p>{@html svg.node().outerHTML}</p>
