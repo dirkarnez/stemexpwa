@@ -80,8 +80,6 @@
             // }
         };
 
-        debugger;
-        pdfmake.addFonts(fontDescriptors);
  
         var docDefinition = {
             info: {
@@ -110,8 +108,7 @@
                 }
             }
         };
-debugger;
-        var pdfKitDoc = pdfmake.createPdf(docDefinition);
+        var pdfKitDoc = pdfmake.createPdf(docDefinition, {}, fontDescriptors);
 
     }
 </script>
