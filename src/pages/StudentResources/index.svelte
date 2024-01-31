@@ -181,9 +181,9 @@
                                         </div>
                                     {/each}
                                 {:else}
-                                <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-                                    None
-                                </div>
+                                    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+                                        None
+                                    </div>
                                 {/if}
                             </div>
                    
