@@ -18,6 +18,7 @@
     const r = 100;
 
 	let svgContainer;
+    let svg;
 
 	onMount(() => {
         fakeFetch
@@ -39,7 +40,7 @@
                 .range([height - marginBottom, marginTop]);
 
             //var target = d3.select(`#here`);
-            const svg = d3.create("svg")
+            svg = d3.create("svg")
                 .attr("viewBox", [0, 0, width, height])
                 .attr("width", width)
                 .attr("height", height)
@@ -65,7 +66,9 @@
                 .attr("transform", `translate(${marginLeft},0)`)
                 .call(d3.axisLeft(y))
                 .call(g => g.select(".domain").remove());
-            debugger;
+
+
+            
         });
     });
 </script>
