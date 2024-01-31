@@ -143,7 +143,9 @@
 					<svelte:fragment slot="content" let:datum>
 						<h4>Learning Portfolio</h4>
 						<div class="columns is-multiline is-mobile">
-							<div class="column">123</div>
+							<div class="column">
+                                <LearningPortfolio/>
+                            </div>
 						</div>
 
 						<h4>Class videos</h4>
