@@ -66,6 +66,7 @@
                 .attr("transform", `translate(${marginLeft},0)`)
                 .call(d3.axisLeft(y))
                 .call(g => g.select(".domain").remove());
+            debugger;
         });
     });
 </script>
