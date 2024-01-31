@@ -156,5 +156,4 @@
 {#if !!svg}
     {@html svg.node().outerHTML}
     <a href={`javascript:void 0`} on:click={a()}>download</a>
-    <button>d</button>
 {/if}
