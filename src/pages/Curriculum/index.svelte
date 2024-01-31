@@ -44,7 +44,7 @@
 		<div class="columns">
 			<div class="column">
 				<div class="content">
-					<h4>Stemex Academy Curriculum</h4>
+					<h4>Curriculum</h4>
 				</div>
 			</div>
 		</div>

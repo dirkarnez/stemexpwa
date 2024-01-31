@@ -3,8 +3,8 @@
     import BookedClasses from "./pages/BookedClasses.svelte";
 	import Dashboard from "./pages/Dashboard.svelte";
 	import Settings from "./pages/Settings/index.svelte";
-	import StudentPortfolio from "./pages/StudentPortfolio/index.svelte";
-	import StemexAcademyCurriculum from "./pages/StemexAcademyCurriculum/index.svelte";
+	import StudentResources from "./pages/StudentResources/index.svelte";
+	import Curriculum from "./pages/Curriculum/index.svelte";
 	import CurriculumManagement from "./pages/CurriculumManagement/index.svelte";
 	
 	import InstallationGuide from "./pages/InstallationGuide/index.svelte";
@@ -32,13 +32,14 @@
 	// area.use(render);
 
 	let location = useLocation();
+
     // if (Math.random() > 0.5) {
 	// 	navigate("/login", { replace: true });
     // }
 
 	let role = "";
 	let userName = "";
-	 
+
 	// this may return 403
 	const [ wrappedFetchPromise, abort ] = WrappedFetch("/api/init")
 	wrappedFetchPromise
@@ -97,7 +98,6 @@
 	<!-- <Route path="/dashboard" component={Dashboard} />
 	<Route path="/installation" component={Installation} />
 	<Route path="/settings" component={Settings} />
-	<Route path="/student-portfolio" component={StudentPortfolio} />
 
 
  <nav>
@@ -109,8 +109,8 @@
 	<Link to="/dashboard">Dashboard</Link>
 	<Link to="/installation">Installation</Link>
 	<Link to="/settings">Settings</Link>
-	<Link to="/student-portfolio">StudentPortfolio</Link>
 </nav> -->
+{#if !!role}
 <nav class="navbar" aria-label="main navigation" style="box-shadow: 0 0 2rem #2125291a;">
 	<div class="navbar-brand">
 		<div class="navbar-start">
@@ -208,34 +208,34 @@
 		<ul class="menu-list">
 			{#if role == "parent"}
 				<li>
-					<a class={$location.pathname.includes("/booked-classes") ? "is-active" : "" } href="/booked-classes" use:link>
+					<a class={$location.pathname == "/booked-classes" ? "is-active" : "" } href="/booked-classes" use:link>
 						<i class="fas fa-user" />&nbsp;&nbsp;Booked Classes
 					</a>
 				</li>
 				<li>
-					<a class={$location.pathname.includes("/student-portfolio") ? "is-active" : "" } href="/student-portfolio" use:link>
-						<i class="fas fa-award"></i>&nbsp;&nbsp;Student Portfolio
+					<a class={$location.pathname ==  "/student-resources" ? "is-active" : "" } href="/student-resources" use:link>
+						<i class="fas fa-award"></i>&nbsp;&nbsp;Student Resources
 					</a>
 				</li>
 			{/if}
 			<li>
-				<a class={$location.pathname.includes("/last-minute-offer") ? "is-active" : "" } href="/last-minute-offer" use:link>
+				<a class={$location.pathname ==  "/last-minute-offer" ? "is-active" : "" } href="/last-minute-offer" use:link>
 					<i class="fa-regular fa-clock"></i>&nbsp;&nbsp;Last Minute Offer
 				</a>
 			</li>
 			<li>
-				<a class={$location.pathname.includes("/stemex-academy-curriculum") ? "is-active" : "" } href="/stemex-academy-curriculum" use:link>
-					<i class="fa-solid fa-book-open"></i>&nbsp;&nbsp;Stemex Academy Curriculum
+				<a class={$location.pathname ==  "/curriculum" ? "is-active" : "" } href="/curriculum" use:link>
+					<i class="fa-solid fa-book-open"></i>&nbsp;&nbsp;Curriculum
 				</a>
 			</li>
 			{#if role == "parent"}
 			<li>
-				<a class={$location.pathname.includes("/installation-guide") ? "is-active" : "" } href="/installation-guide" use:link>
+				<a class={$location.pathname ==  "/installation-guide" ? "is-active" : "" } href="/installation-guide" use:link>
 					<i class="fa-solid fa-cloud-arrow-down"></i>&nbsp;&nbsp;Installation Guide
 				</a>
 			</li>
 			<li>
-				<a class={$location.pathname.includes("/settings") ? "is-active" : "" } href="/settings" use:link>
+				<a class={$location.pathname ==  "/settings" ? "is-active" : "" } href="/settings" use:link>
 					<i class="fa-solid fa-gear"></i>&nbsp;&nbsp;Settings
 				</a>
 			</li>
@@ -247,49 +247,49 @@
 				<ul class="menu-list">
 					{#if role == "admin" || role == "sales"}
 						<li>
-							<a class={$location.pathname.includes("/statistics") ? "is-active" : "" } href="/statistics" use:link>
+							<a class={$location.pathname ==  "/statistics" ? "is-active" : "" } href="/statistics" use:link>
 								<i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Statistics
 							</a>
 						</li>
 					{/if}
 					{#if role == "admin"}
 						<li>
-							<a class={$location.pathname.includes("/user-management") ? "is-active" : "" } href="/user-management" use:link>
+							<a class={$location.pathname ==  "/user-management" ? "is-active" : "" } href="/user-management" use:link>
 								<i class="fa-solid fa-users"></i>&nbsp;&nbsp;User management
 							</a>
 						</li>
 					{/if}
 					{#if role == "admin"}
 						<li>
-							<a class={$location.pathname.includes("/file-management") ? "is-active" : "" } href="/file-management" use:link>
+							<a class={$location.pathname ==  "/file-management" ? "is-active" : "" } href="/file-management" use:link>
 								<i class="fa-regular fa-folder-open"></i>&nbsp;&nbsp;File management
 							</a>
 						</li>
 					{/if}
 					{#if role == "sales"}
 						<li>
-							<a class={$location.pathname.includes("/client-management") ? "is-active" : "" } href="/client-management" use:link>
+							<a class={$location.pathname ==  "/client-management" ? "is-active" : "" } href="/client-management" use:link>
 								<i class="fa-solid fa-users"></i>&nbsp;&nbsp;Client management
 							</a>
 						</li>
 					{/if}
 					{#if role == "admin"}
 						<li>
-							<a class={$location.pathname.includes("/class-management") ? "is-active" : "" } href="/class-management" use:link>
+							<a class={$location.pathname ==  "/class-management" ? "is-active" : "" } href="/class-management" use:link>
 								<i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;Class management
 							</a>
 						</li>
 					{/if}
 					{#if role == "admin"}
 						<li>
-							<a class={$location.pathname.includes("/curriculum-management") ? "is-active" : "" } href="/curriculum-management" use:link>
+							<a class={$location.pathname ==  "/curriculum-management" ? "is-active" : "" } href="/curriculum-management" use:link>
 								<i class="fa-solid fa-flask"></i>&nbsp;&nbsp;Curriculum management
 							</a>
 						</li>
 					{/if}
 					{#if role == "instructor"}
 						<li>
-							<a class={$location.pathname.includes("/instructor-schedule") ? "is-active" : "" } href="/instructor-schedule" use:link>
+							<a class={$location.pathname ==  "/instructor-schedule" ? "is-active" : "" } href="/instructor-schedule" use:link>
 								<i class="fa-regular fa-calendar-days"></i>&nbsp;&nbsp;Instructor Schedule
 							</a>
 						</li>
@@ -328,12 +328,12 @@
 				<BookedClasses/>
 			</Route>
 
-			<Route path="/stemex-academy-curriculum/*">
-				<StemexAcademyCurriculum/>
+			<Route path="/curriculum/*">
+				<Curriculum/>
 			</Route>
 			
-			<Route path="/student-portfolio">
-				<StudentPortfolio/>
+			<Route path="/student-resources">
+				<StudentResources/>
 			</Route>
 
 			<Route path="/last-minute-offer">
@@ -423,3 +423,4 @@
 		</Router>
 	</section>
 </div>
+{/if}

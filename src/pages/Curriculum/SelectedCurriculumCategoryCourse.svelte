@@ -33,7 +33,7 @@
     <div class="column">
         <div class="content">
             <p>
-                <a href={!!previousPath ? previousPath : "/stemex-academy-curriculum"} class="button is-danger" use:link>
+                <a href={!!previousPath ? previousPath : "/curriculum"} class="button is-danger" use:link>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left align-middle" _ngcontent-drd-c75=""><polyline points="15 18 9 12 15 6"></polyline></svg>
                     Back
                 </a>
