@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-    import * as d3 from 'pdfmake';
-
+    import * as pdfmake from 'pdfmake';
+    
     const fakeFetch = Promise.resolve([{
         name: "knowledge",
         count: 13
