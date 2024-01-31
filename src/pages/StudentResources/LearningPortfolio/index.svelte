@@ -1,7 +1,7 @@
 <script>
-    const w = 200,
-    h = 200,
-    r = 100;
+    const w = 200;
+    const h = 200;
+    const r = 100;
 
     const fakeFetch = Promise.resolve(data = [{
         name: "knowledge",
