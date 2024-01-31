@@ -80,7 +80,7 @@
             }
         };
         
-        var printer = new pdfmake.PdfPrinter(fontDescriptors);
+        var printer = new PdfPrinter(fontDescriptors);
  
         var docDefinition = {
             info: {
