@@ -17,7 +17,7 @@
     const h = 200;
     const r = 100;
 
-	let svgContainer;
+	export let svgContainer;
     let svg;
 
 
