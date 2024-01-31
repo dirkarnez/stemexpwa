@@ -175,9 +175,7 @@
                                     >
                                         None
                                     </div>
-
                                 {/if}
-
 							</div>
 						{/if}
 						<h4>Class photos</h4>
