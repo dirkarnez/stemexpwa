@@ -15,8 +15,8 @@
     const w = 200;
     const h = 200;
     const r = 100;
-    
-	let canvas;
+
+	let svgContainer;
 
 	onMount(() => {
     });
