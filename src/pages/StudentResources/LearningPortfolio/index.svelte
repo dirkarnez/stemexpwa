@@ -20,8 +20,7 @@
     export let downloadLink = 10 ;
     
     $: if (!!svg) {
-		alert(`count is dangerously high!`);
-		count = 9;
+        downloadLink = 
 	}
 
     let svg;
@@ -78,10 +77,7 @@
             d3.select();
             debugger;
             
-//             URL.createObjectURL(
-//  new Blob([svg.node().outerHTML], {
-//                 type: "image/svg+xml;charset=utf-8"
-//             }))
+
         });
     });
 </script>
