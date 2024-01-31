@@ -19,9 +19,8 @@
 	let svgContainer;
 
 	onMount(() => {
+        
     });
-
-
-
 </script>
-<div bind:this={svgContainer} width={32} height={32} />
+
+<div bind:this={svgContainer}/>
