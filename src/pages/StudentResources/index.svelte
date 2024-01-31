@@ -149,7 +149,7 @@
                                 123
                             </div>
                         </div>
-                        {#if Array.isArray(datum.videoGroups) && datum.videoGroups.length > 0}
+                        {#if Array.isArray(datum.videoGroups) && datum.videoGroups.length > 0 && datum.videoGroups.some(videoGroup => Array.isArray(videoGroup) && videoGroup.length > 0)}
                             <h4>Videos</h4>
                             <div class="columns is-multiline is-mobile">
                                 {#each datum.videoGroups as videoGroup}
