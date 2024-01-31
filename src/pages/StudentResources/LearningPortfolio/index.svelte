@@ -27,6 +27,7 @@
             const marginRight = 0;
             const marginBottom = 30;
             const marginLeft = 40;
+            
             const x = d3.scaleBand()
                 .domain(d3.sort(data, d => -d.count).map(d => d.name))
                 .range([marginLeft, width - marginRight])
