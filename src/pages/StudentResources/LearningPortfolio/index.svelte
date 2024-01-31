@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-    
+
     const fakeFetch = Promise.resolve([{
         name: "knowledge",
         count: 13
@@ -39,8 +39,7 @@
                 .range([height - marginBottom, marginTop]);
 
             //var target = d3.select(`#here`);
-            const svg = d3
-                .select(svgContainer)
+            const svg = d3.create("svg")
                 .append("svg:svg")
                 .attr("viewBox", [0, 0, width, height])
                 .attr("width", width)
