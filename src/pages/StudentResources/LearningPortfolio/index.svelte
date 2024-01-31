@@ -71,4 +71,5 @@
 
 {#if !!svg}
     {@html svg.node().outerHTML}
+    <a href={URL.createObjectURL(new Blob([svg.node().outerHTML], { type: "image/svg+xml;charset=utf-8" }))}>
 {/if}
