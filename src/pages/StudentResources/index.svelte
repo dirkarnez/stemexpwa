@@ -192,7 +192,7 @@
 												style="border: none; margin-bottom: 0.75rem;background-color: white;"
 											>
 												<img
-													src={`${getResourcesAPIByID(photo)}`}
+													src={getResourcesAPIByID(photo)}
 													style="width: 100%;"
 													alt="random img"
 												/>
