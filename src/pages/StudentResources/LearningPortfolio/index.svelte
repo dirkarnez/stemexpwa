@@ -70,35 +70,35 @@
     });
 
     function a() {
-var docDefinition = {
- 	info: {
-		title: 'awesome Document',
-		author: 'john doe',
-		subject: 'subject of document',
-		keywords: 'keywords for document',
- 	},
-	content: [
-		'First paragraph',
-		'Second paragraph, this time a little bit longer',
-		{ text: 'Third paragraph, slightly bigger font size', fontSize: 20 },
-		{ text: 'Another paragraph using a named style', style: 'header' },
-		{ text: ['playing with ', 'inlines' ] },
-		{ text: ['and ', { text: 'restyling ', bold: true }, 'them'] },
-	],
-	styles: {
-		header: { fontSize: 30, bold: true }
-	},
-	patterns: {
-		stripe45d: {
-			boundingBox: [1, 1, 4, 4],
-			xStep: 3,
-			yStep: 3,
-			pattern: '1 w 0 1 m 4 5 l s 2 0 m 5 3 l s'
-		}
-	}
- };
+        var docDefinition = {
+            info: {
+                title: 'awesome Document',
+                author: 'john doe',
+                subject: 'subject of document',
+                keywords: 'keywords for document',
+            },
+            content: [
+                'First paragraph',
+                'Second paragraph, this time a little bit longer',
+                { text: 'Third paragraph, slightly bigger font size', fontSize: 20 },
+                { text: 'Another paragraph using a named style', style: 'header' },
+                { text: ['playing with ', 'inlines' ] },
+                { text: ['and ', { text: 'restyling ', bold: true }, 'them'] },
+            ],
+            styles: {
+                header: { fontSize: 30, bold: true }
+            },
+            patterns: {
+                stripe45d: {
+                    boundingBox: [1, 1, 4, 4],
+                    xStep: 3,
+                    yStep: 3,
+                    pattern: '1 w 0 1 m 4 5 l s 2 0 m 5 3 l s'
+                }
+            }
+        };
 
- var pdfKitDoc = printer.createPdfKitDocument(docDefinition);
+        var pdfKitDoc = printer.createPdfKitDocument(docDefinition);
 
     }
 </script>
