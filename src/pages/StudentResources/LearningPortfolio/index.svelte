@@ -110,6 +110,7 @@
         };
         var pdfKitDoc = pdfmake.createPdf(docDefinition, {}, fontDescriptors);
         debugger;
+        pdfKitDoc.download();
 
     }
 </script>
