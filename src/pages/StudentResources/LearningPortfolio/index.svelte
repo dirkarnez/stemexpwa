@@ -72,12 +72,12 @@
     function a() {
 
         var fontDescriptors = {
-            Roboto: {
-                normal: 'fonts/Roboto-Regular.ttf',
-                bold: 'fonts/Roboto-Medium.ttf',
-                italics: 'fonts/Roboto-Italic.ttf',
-                bolditalics: 'fonts/Roboto-MediumItalic.ttf'
-            }
+            // Roboto: {
+            //     normal: 'fonts/Roboto-Regular.ttf',
+            //     bold: 'fonts/Roboto-Medium.ttf',
+            //     italics: 'fonts/Roboto-Italic.ttf',
+            //     bolditalics: 'fonts/Roboto-MediumItalic.ttf'
+            // }
         };
         
         var printer = new PdfPrinter(fontDescriptors);
