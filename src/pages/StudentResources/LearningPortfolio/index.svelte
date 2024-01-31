@@ -20,6 +20,8 @@
 	let svgContainer;
     let svg;
 
+
+
 	onMount(() => {
         fakeFetch
         .then(data => {
@@ -67,8 +69,12 @@
                 .call(d3.axisLeft(y))
                 .call(g => g.select(".domain").remove());
 
-
+            d3.select(svgContainer).append(svg)
             
+//             URL.createObjectURL(
+//  new Blob([svg.node().outerHTML], {
+//                 type: "image/svg+xml;charset=utf-8"
+//             }))
         });
     });
 </script>
