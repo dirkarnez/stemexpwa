@@ -72,12 +72,14 @@
     function a() {
 
         var fontDescriptors = {
-            // Roboto: {
-            //     normal: 'fonts/Roboto-Regular.ttf',
-            //     bold: 'fonts/Roboto-Medium.ttf',
-            //     italics: 'fonts/Roboto-Italic.ttf',
-            //     bolditalics: 'fonts/Roboto-MediumItalic.ttf'
-            // }
+            // download default Roboto font from cdnjs.com
+            Balsamiq: {
+                normal: 'https://db.onlinewebfonts.com/t/6fa8408b1af234380e3d6860b3d7f417.ttf'
+                //  ,
+                //  bold: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Medium.ttf',
+                //  italics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Italic.ttf',
+                //  bolditalics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-MediumItalic.ttf'
+            }
         };
 
  
