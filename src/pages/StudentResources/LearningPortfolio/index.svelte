@@ -18,7 +18,8 @@
     const r = 100;
 
     export let downloadLink = 10 ;
-    $: if (count >= 10) {
+    
+    $: if (!!svg) {
 		alert(`count is dangerously high!`);
 		count = 9;
 	}
