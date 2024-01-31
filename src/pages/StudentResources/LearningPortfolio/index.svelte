@@ -1,4 +1,10 @@
 <script>
+	import { onMount } from 'svelte';
+
+	let canvas;
+
+	onMount(() => {
+    });
     const w = 200;
     const h = 200;
     const r = 100;
