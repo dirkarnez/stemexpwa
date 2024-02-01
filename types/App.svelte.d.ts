@@ -1,6 +1,6 @@
 
 import { SvelteComponent } from "svelte";
 
-declare module "src/App.svelte" {
+declare module "./App.svelte" {
     export default SvelteComponent;
  }
