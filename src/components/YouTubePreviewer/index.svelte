@@ -13,5 +13,23 @@
 		real = "";
 	}
 </script>
-<iframe width="420" height="345" src={!!real ? real : ""} title="preview"></iframe>
+<style>
+	div {
+		overflow: hidden;
+		padding-top: 56.25%;
+		position: relative;
+	}
+
+	iframe {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+</style>
+<div>
+	<iframe width="420" height="345" src={!!real ? real : ""} title="preview"></iframe>
+</div>
+
 <input bind:value={name} placeholder="enter youtube URL" />
