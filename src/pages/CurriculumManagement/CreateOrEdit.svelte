@@ -332,9 +332,10 @@
 		<section class="hero">
 			<h2 class="subtitle">YouTube videos</h2>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+				<YouTubePreviewer/>
 				<div class="columns">
 					<div class="column">
-						<YouTubePreviewer/>
+						
 					</div>
 					<div class="column">
 						<div class="box">
@@ -377,7 +378,6 @@
 						</div>
 					</div>
 				</div>
-				
 			{/each}
 			<button type="button" class="button is-primary is-light" on:click={addYouTubeVideo(($data.youtube_video_entries || []).length)}>
 				Add new
