@@ -149,8 +149,8 @@
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
 								{#each datum.videoGroups as videoGroup}
-							
-							{/each}
+									<a href={"https://www.google.com/"}
+								{/each}
                             </div>
 						</div>
 
