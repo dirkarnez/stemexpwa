@@ -117,7 +117,7 @@
 						>
 							<div class="card is-flex is-flex-direction-row">
 								<div class="card-image">
-									<button class="image is-96x96" style="outline: none; border: none; cursor: pointer" on:click={() => { navigator.clipboard.writeText(`${id}`).then(() => alert("copied"))}}>
+									<button class="image is-96x96" style="outline: none; border: none; cursor: pointer; overflow: hidden;" on:click={() => { navigator.clipboard.writeText(`${id}`).then(() => alert("copied"))}}>
 										<img
 											src={getResourcesAPIByID(id)}
 											style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;"
