@@ -106,6 +106,7 @@
 	}
 
 	let partners = [];
+
     onMount(() => {
 		const [  _wrappedFetchPartners ] = WrappedFetch(`/api/partners`);
 		_wrappedFetchPartners.then(data => {
@@ -118,6 +119,7 @@
 			setFields(parent_id_key, parentId, true);
 		} else {
 			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
+			
 			_wrappedFetchCurriculumEntry.then(_data => {
 				setFields(id_field_key, _data[id_field_key], true);
 				setFields(description_field_key, _data[description_field_key], true);
