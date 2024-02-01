@@ -27,3 +27,4 @@ stemexpwa
     - ```html
       <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
       ```
+    - https://stackoverflow.com/questions/22726941/youtube-api-get-current-video-title
