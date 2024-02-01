@@ -35,10 +35,8 @@
 		</div>
 	</div>
 	<div class="column">
+		<input bind:value={name} placeholder="enter youtube URL" />
 	</div>
 </div>	
-<div>
-	
-</div>
 
-<input bind:value={name} placeholder="enter youtube URL" />
+
