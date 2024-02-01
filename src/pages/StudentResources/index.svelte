@@ -93,6 +93,7 @@
 			};
 		});
 	});
+	
 	let location = useLocation();
 
 	let openModal = false;
