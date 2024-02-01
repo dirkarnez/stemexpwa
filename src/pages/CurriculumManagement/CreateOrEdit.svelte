@@ -333,6 +333,7 @@
 			<h2 class="subtitle">YouTube videos</h2>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 				<YouTubePreviewer/>
+				
 				<div class="columns">
 					<div class="column">
 						
