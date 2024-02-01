@@ -1,5 +1,5 @@
 import type { SvelteComponent } from "svelte";
 
-declare module "./App.svelte" {
+declare module "./src/App.svelte" {
     export default SvelteComponent;
  }
