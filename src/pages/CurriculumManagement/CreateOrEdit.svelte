@@ -108,6 +108,7 @@
 	let partners = [];
 
     onMount(() => {
+		debugger;
 		const [  _wrappedFetchPartners ] = WrappedFetch(`/api/partners`);
 		_wrappedFetchPartners.then(data => {
 			partners = data;
