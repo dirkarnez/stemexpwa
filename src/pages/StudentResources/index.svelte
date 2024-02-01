@@ -145,6 +145,14 @@
 						{datum.className}&nbsp;(Joined at&nbsp{datum.from}&nbsp;to&nbsp;{datum.to})
 					</svelte:fragment>
 					<svelte:fragment slot="content" let:datum>
+						<h4>Lesson notes</h4>
+						<div class="columns is-multiline is-mobile">
+							<div class="column">
+                                <LearningPortfolio/>
+                            </div>
+						</div>
+
+
 						<h4>Learning Portfolio</h4>
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
