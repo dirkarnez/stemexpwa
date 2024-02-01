@@ -23,8 +23,7 @@ stemexpwa
     - [**Timeline | CodePen Challenge**](https://codepen.io/havardob/pen/xxPqXdO)
 - [ ] Searching
     - https://svelte.dev/examples/svelte-component
-- [ ] 
-    ```html
-<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-    ```
+- [ ] YT
+    - ```html
+      <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      ```
