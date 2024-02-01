@@ -274,7 +274,7 @@
 					class="input"
 					type="hidden"
 					name={parent_id_key}
-					bind:value={$data[description_field_key]}
+					bind:value={$data[parent_id_key]}
 					required={true}
 				/>
 			</div>
