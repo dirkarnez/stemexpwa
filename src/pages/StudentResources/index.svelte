@@ -60,7 +60,7 @@
 				portfolio: "d8475e8c7bdf11ee9aa006c3bc34e27e",
 				from: "2 Aug 2023",
 				to: "10 Aug 2023",
-				photos: ["49d80fbbc10011ee9aa006c3bc34e27e"],
+				photos: ["704b92e7c10011ee9aa006c3bc34e27e"],
 				videos: [
 					// scratch0,
 					scratch1,
