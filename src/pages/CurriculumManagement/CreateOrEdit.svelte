@@ -484,6 +484,36 @@
 								Add new
 							</button>
 						</div>
+						<h2 class="subtitle">Student notes</h2>
+						{#each $data.information_entries || [] as information_entry, index}
+							<div class="box">
+								<label class="label">#{index + 1}
+									{#if index > 0}
+										<button type="button" class="is-danger button delete" style="height: 1rem; vertical-align: middle;position: absolute; top: 0; right: 0;" on:click={removeInformationEntry(index)}>
+											x
+										</button>
+									{/if}
+									<br><br>
+									<div class="field">
+										<div class="control">
+											<label class="label">File
+												<InputFileContainer>
+													<input
+														class="file-input"
+														type="file"
+														name="{information_entries_field_key}.{index}.{information_entries_icon_file_field_key}"
+														on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_field_key}.${index}.${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+													/>
+												</InputFileContainer> 
+											</label>
+										</div>
+									</div>
+								</label>
+							</div>
+						{/each}
+						<button type="button" class="button is-primary is-light" on:click={addInformationEntry(($data.information_entries || []).length)}>
+							Add new
+						</button>
 
 
 
