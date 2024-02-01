@@ -298,7 +298,7 @@
 
 	{#if shouldBeACourse || toBeACourse}
 		<section class="hero">
-			<h2 class="subtitle">Curriculum Plan</h2>
+			<h2 class="subtitle">Curriculum plan</h2>
 			{#each $data.information_entries || [] as information_entry, index}
 				<div class="box">
 					<label class="label">#{index + 1}
