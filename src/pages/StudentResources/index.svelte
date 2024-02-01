@@ -148,7 +148,7 @@
 						<h4>Lesson notes</h4>
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
-                                <LearningPortfolio/>
+									
                             </div>
 						</div>
 
