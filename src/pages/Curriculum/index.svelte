@@ -55,7 +55,7 @@
 						<Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
 							<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
 								<div class="card-image">
-									<figure class="image is-96x96">
+									<figure class="image is-96x96" style="overflow: hidden;">
 										<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/  getResourcesAPIByID(icon_id)}
 											style="border-top-left-radius: 0.25rem; border-top-right-radius: 0; border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0;" 
 											alt="Placeholder">
