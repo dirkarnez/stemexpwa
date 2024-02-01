@@ -127,9 +127,9 @@
     <br>
     <button class="button is-link" on:click={a}>
         <span class="icon is-small">
-        <i class="fa fa-download"></i>
+            <i class="fa fa-download"></i>
         </span>
-          &nbsp;&nbsp;
+        &nbsp;&nbsp;
         Download portfolio as PDF
     </button>
 {/if}
