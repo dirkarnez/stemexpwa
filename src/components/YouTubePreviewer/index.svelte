@@ -29,7 +29,7 @@
 	}
 </style>
 <div>
-	<iframe width="420" height="345" src={!!real ? real : ""} title="preview"></iframe>
+	<iframe src={!!real ? real : ""} title="preview"></iframe>
 </div>
 
 <input bind:value={name} placeholder="enter youtube URL" />
