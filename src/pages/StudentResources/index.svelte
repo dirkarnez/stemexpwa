@@ -149,7 +149,7 @@
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
 								{#each Array(8).fill("testing") as url, i}
-									<a href={"https://www.google.com/"}>Lesson {i + 1}
+									<a href={"https://www.google.com/"} target="_blank">Lesson {i + 1}
 										<span class="icon is-small">
 											<i class="fa fa-download"></i>
 										</span>
