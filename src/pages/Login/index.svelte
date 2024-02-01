@@ -54,6 +54,7 @@
 			min-height: 100vh;
 			height: 100%;
 			width: 100%;
+			overflow-y: hidden;
 		}
 
 		#login {
@@ -108,7 +109,7 @@
 	id="login"
 	style={`background: linear-gradient(to top,#222e3c,rgba(0,0,0,.7)),url(${AppBackground}); background-size: cover;`}>
 	<div
-		class="columns is-centered has-text-centered"
+		class="columns is-centered has-text-centered mt-4 mb-4"
 		style="width: 100%; max-width: 1024px">
 		<div class="column is-full-mobile is-half-desktop is-half-tablet">
 			<h1 class="title" style="color: white">STEMex Academy</h1>
