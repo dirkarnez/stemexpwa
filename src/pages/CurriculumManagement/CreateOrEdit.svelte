@@ -228,11 +228,12 @@
 
 <form use:form enctype="multipart/form-data">
 	<input
-					class="input"
-					type="hidden"
-					name={parent_id_key}
-					bind:value={$data[parent_id_key]}
-				/>
+		class="input"
+		type="hidden"
+		name={parent_id_key}
+		bind:value={$data[parent_id_key]}
+	/>
+	
 	<div class="field">
 		<figure class="image is-128x128">
 			<img
