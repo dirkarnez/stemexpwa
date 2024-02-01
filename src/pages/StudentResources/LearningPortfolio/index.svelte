@@ -98,7 +98,7 @@
 			table: {
 				widths: ['*', 'auto'],
 				body: [
-					['This is a stadr-sized column. The next column over, an auto-sized column, will wrap to accomodate all the text in this cell.',{/*image: 'sampleImage.jpg',fit: [100, 100]*/}],
+					['This is a star-sized column. The next column over, an auto-sized column, will wrap to accomodate all the text in this cell.',{/*image: 'sampleImage.jpg',fit: [100, 100]*/}],
 					[
 						'row 3',
 						{
