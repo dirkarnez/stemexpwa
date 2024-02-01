@@ -110,7 +110,7 @@
 	<div
 		class="columns is-centered has-text-centered"
 		style="width: 100%; max-width: 1024px">
-		<div class="column is-full-mobile is-half-desktop">
+		<div class="column is-full-mobile is-half-desktop is-half-tablet">
 			<h1 class="title" style="color: white">STEMex Academy</h1>
 			<h2 class="subtitle" style="color: white">
 				Sign in to your account to continue
