@@ -1,3 +1,3 @@
-declare module "./src/App.svelte" {
+declare module "../src/App.svelte" {
     export default SvelteComponent;
  }
