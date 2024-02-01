@@ -113,7 +113,7 @@
 	],
 	 defaultStyle: {
         font:   "Balsamiq",
-        color: "#aaa"
+        color: "#222"
       }
 };
         var pdfKitDoc = pdfmake.createPdf(docDefinition, {}, fontDescriptors);
