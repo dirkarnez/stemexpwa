@@ -89,10 +89,10 @@
 			style: 'tableExample',
 			layout: {
 			     hLineColor: function (i) {
-                  return '#aaa';
+                  return '#676767';
                 },
                 vLineColor: function (i) {
-                  return '#aaa';
+                  return '#676767';
                 }
 			},
 			table: {
@@ -113,7 +113,7 @@
 	],
 	 defaultStyle: {
         font:   "Balsamiq",
-        color: "#222"
+        color: "#676767"
       }
 };
         var pdfKitDoc = pdfmake.createPdf(docDefinition, {}, fontDescriptors);
