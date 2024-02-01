@@ -330,6 +330,20 @@
 		<section class="hero">
 			<h2 class="subtitle">YouTube videos</h2>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+			<div class="columns">
+				<div class="column">
+				  First column
+				</div>
+				<div class="column">
+				  Second column
+				</div>
+				<div class="column">
+				  Third column
+				</div>
+				<div class="column">
+				  Fourth column
+				</div>
+			  </div>
 				<div class="box">
 					<label class="label" style="position: relative;">#{index + 1}
 						{#if index > 0}
