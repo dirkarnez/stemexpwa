@@ -218,11 +218,11 @@
 					</a>
 				</li>
 			{/if}
-			<li>
+			<!-- <li>
 				<a class={$location.pathname ==  "/last-minute-offer" ? "is-active" : "" } href="/last-minute-offer" use:link>
 					<i class="fa-regular fa-clock"></i>&nbsp;&nbsp;Last Minute Offer
 				</a>
-			</li>
+			</li> -->
 			<li>
 				<a class={$location.pathname ==  "/curriculum" ? "is-active" : "" } href="/curriculum" use:link>
 					<i class="fa-solid fa-book-open"></i>&nbsp;&nbsp;Curriculum
@@ -336,10 +336,10 @@
 				<StudentResources/>
 			</Route>
 
-			<Route path="/last-minute-offer">
+			<!-- <Route path="/last-minute-offer">
 				<LastMinuteOffer/>
 			</Route>
-				
+				 -->
 			<Route path="/user-management/*">
 				<UserManagement/>
 			</Route>
