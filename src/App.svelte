@@ -1,15 +1,17 @@
 <script lang="ts">
-
+	// import { Router, Route } from "svelte-routing";
+	// import Home from "./Home.svelte";
+	// import LoginPage from "./pages/Login/index.svelte";
 </script>
 
-<Router>
+<!-- <Router>
 	<Route path="/login">
 		<LoginPage/>
 	</Route>
 	<Route path="/*">
 		<Home/>
 	</Route>
-</Router>
+</Router> -->
 
 <!-- 
   "/"
