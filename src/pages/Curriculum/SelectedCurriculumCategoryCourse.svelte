@@ -101,6 +101,7 @@
 								<div class="content">
 									<h2>{title}</h2>
 									<p>{content}</p>
+									<a class="is-link" href={`javascript:void(0)`}>Join now</a>
 								</div>
 							</div>
 						</div>
