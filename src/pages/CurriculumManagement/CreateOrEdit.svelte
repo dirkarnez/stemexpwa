@@ -266,6 +266,21 @@
 		</label>
 	</div>
 
+
+	<div class="field">
+		<label class="label">Description
+			<div class="control">
+				<input
+					class="input"
+					type="text"
+					name={parent_id_key}
+					bind:value={$data[description_field_key]}
+					required={true}
+				/>
+			</div>
+		</label>
+	</div>
+
 	<div class="field">
 		<label class="label" for="select-accessible">Accessible to
 			<div class="notification ex3 p-2" id="select-accessible">
