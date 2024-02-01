@@ -10,6 +10,7 @@
     videoJs(video, options);
   });
 </script>
+
 <div style="width: 100%">
   <video bind:this={video} 
     controls
