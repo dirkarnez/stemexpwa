@@ -1,4 +1,4 @@
-declare module <library exact name> {
+declare module "./" {
     export class <class name> {
        constructor();
  
