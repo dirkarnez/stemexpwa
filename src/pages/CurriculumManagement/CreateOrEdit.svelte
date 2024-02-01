@@ -439,7 +439,7 @@
 						</div>
 						<div class="field">
 							<div class="control">
-								<label class="label">Content
+								<label class="label">Description
 									<textarea
 										class="textarea"
 										type="text"
