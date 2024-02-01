@@ -1,4 +1,4 @@
-declare module "./" {
+declare module "./App.svelte" {
     export class <class name> {
        constructor();
  
