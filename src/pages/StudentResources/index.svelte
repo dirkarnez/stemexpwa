@@ -11,6 +11,7 @@
 	import Collapsible from "../../components/Collapsible/index.svelte";
 	import Modal from "../../components/Modal/index.svelte";
     import LearningPortfolio from "./LearningPortfolio/index.svelte";
+	import VideoPlayer from  "../../components/VideoPlayer/index.svelte";
 
 	// import stemexIcon from "./assets/images/stemex_icon.png";
 	// import SmartCity from "../assets/images/upcoming-schedule/Smart City/Level 1-min.png";
@@ -178,7 +179,7 @@
 											<!-- <button on:click={() => {openModal = true}} style="border: none; margin-bottom: 0.75rem;background-color: white;">
                                                     <img src={`${video}`} style="width: 100%;"  alt="random img">
                                                 </button> -->
-											<div
+											<!-- <div
 												class="overflow: hidden; padding-top: 56.25%; position: relative;"
 											>
 												<iframe
@@ -187,7 +188,9 @@
 													frameborder="0"
 													style="border: none; width: 100%; height: 400px;"
 												></iframe>
-											</div>
+												
+											</div> -->
+											<VideoPlayer/>
 										{/each}
 									</div>
 								{/each}

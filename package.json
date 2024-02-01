@@ -52,6 +52,7 @@
 		"felte": "^1.2.12",
 		"jspdf": "^2.5.1",
 		"jspdf-autotable": "^3.5.31",
-		"pdfmake": "^0.2.9"
+		"pdfmake": "^0.2.9",
+		"video.js": "^8.10.0"
 	}
 }
