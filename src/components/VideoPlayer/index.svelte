@@ -1,13 +1,11 @@
 <script>
   import videoJs from "video.js";
 	import { onMount } from 'svelte';
-
-  var options = {};
-
+  
 	let video;
 
   onMount(() => {
-    videoJs(video, options);
+    videoJs(video, {});
   });
 </script>
 
