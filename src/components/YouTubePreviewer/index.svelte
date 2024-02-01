@@ -14,7 +14,7 @@
 	}
 </script>
 <style>
-	div {
+	.iframe-container {
 		overflow: hidden;
 		padding-top: 56.25%;
 		position: relative;
@@ -28,8 +28,17 @@
 		width: 100%;
 	}
 </style>
+<div class="columns">
+	<div class="column">
+		<div class="iframe-container">
+			<iframe src={!!real ? real : ""} title="preview"></iframe>
+		</div>
+	</div>
+	<div class="column">
+	</div>
+</div>	
 <div>
-	<iframe src={!!real ? real : ""} title="preview"></iframe>
+	
 </div>
 
 <input bind:value={name} placeholder="enter youtube URL" />
