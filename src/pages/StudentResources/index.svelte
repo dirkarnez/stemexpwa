@@ -73,8 +73,8 @@
 				from: "30 June 2023",
 				to: "5 July 2023",
 				photos: [
-					"49d80fbbc10011ee9aa006c3bc34e27e",
-					"49d80fbbc10011ee9aa006c3bc34e27e",
+					"704b92e7c10011ee9aa006c3bc34e27e",
+					"704b92e7c10011ee9aa006c3bc34e27e",
 				],
 				/*,
                 videos: [
