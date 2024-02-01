@@ -272,7 +272,7 @@
 			<div class="control">
 				<input
 					class="input"
-					type="text"
+					type="hidden"
 					name={parent_id_key}
 					bind:value={$data[description_field_key]}
 					required={true}
