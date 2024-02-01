@@ -425,7 +425,7 @@
 						</div>
 						<div class="field">
 							<div class="control">
-								<label class="label">Title
+								<label class="label">Class name
 									<input
 										class="input"
 										type="text"
