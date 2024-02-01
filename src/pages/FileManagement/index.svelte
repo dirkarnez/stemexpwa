@@ -177,7 +177,7 @@
 
 		<form use:form enctype="multipart/form-data">
 			<div class="field">
-				<figure class="image is-128x128">
+				<figure class="image is-128x128" style="overflow: hidden;">
 					<img
 						src={$data[file_preview_field_key]
 							? $data[file_preview_field_key]
