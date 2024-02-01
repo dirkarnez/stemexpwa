@@ -154,6 +154,7 @@
 											<i class="fa fa-download"></i>
 										</span>
 									</a>
+									<br>
 								{/each}
                             </div>
 						</div>
