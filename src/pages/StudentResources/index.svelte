@@ -148,8 +148,8 @@
 						<h4>Lesson notes</h4>
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
-								{#each datum.videoGroups as videoGroup}
-									<a href={"https://www.google.com/"}
+								{#each Array(8).fill("testing") as url, i}
+									<a href={"https://www.google.com/"}></a>
 								{/each}
                             </div>
 						</div>
