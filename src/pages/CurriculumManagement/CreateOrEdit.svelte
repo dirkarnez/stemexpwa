@@ -332,7 +332,7 @@
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 				<div class="columns">
 					<div class="column">
-					First column
+						<YouTubePreviewer/>
 					</div>
 					<div class="column">
 						<div class="box">
