@@ -9,6 +9,8 @@
 	import { isNullOrEmpty } from "../../utils/strings";
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
+	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
+	
 
     //import { WrappedFetch } from "../../utils/fetch";
 
