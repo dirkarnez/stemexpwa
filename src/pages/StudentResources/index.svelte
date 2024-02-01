@@ -112,7 +112,7 @@
 <div class="columns">
 	<div class="column">
 		<div class="content">
-			<h4>Student Portfolio</h4>
+			<h4>Student Resources</h4>
 		</div>
 	</div>
 </div>
