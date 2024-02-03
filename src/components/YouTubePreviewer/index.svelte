@@ -43,9 +43,9 @@
 	}
 
 	function on() {
-		debugger;
-				videoTitle = player.getIframe().title;
-				debugger;
+	debugger;
+			videoTitle = player.getIframe().title;
+			debugger;
 	}
 
 	onMount(() => {
