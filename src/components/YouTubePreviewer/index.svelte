@@ -3,11 +3,6 @@
 </svelte:head>
 
 <script>
-	// 
-	// let real;
-
-
-
 	import { onMount } from 'svelte';
 
 	let urlInput = '';
