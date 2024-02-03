@@ -50,9 +50,6 @@
 		} else {
 			window.onYouTubeIframeAPIReady = load;
 		}
-	}
-
-
 	});
 </script>
 
