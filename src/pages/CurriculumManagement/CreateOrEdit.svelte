@@ -433,7 +433,7 @@
 										Presentation notes
 									</div>
 									<div class="column is-three-quarters">
-										<a href="google.com" class="is-underlined">terms and conditions</a>
+										<a href="google.com" class="is-underlined">App Inventor Introductory [L2 -HelloPurr].pptx</a>
 										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
 										</button>
@@ -442,7 +442,7 @@
 										Student notes
 									</div>
 									<div class="column is-three-quarters">
-										<a href="google.com" class="is-underlined">terms and conditions</a>
+										<a href="google.com" class="is-underlined">App Inventor Intro _Lesson2_Student Notes.pdf</a>
 										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
 										</button>
@@ -451,7 +451,17 @@
 										Misc. teaching materials<br/>(e.g. source code)
 									</div>
 									<div class="column is-three-quarters">
-										<a href="google.com" class="is-underlined">terms and conditions</a>
+										<a href="google.com" class="is-underlined">HelloPurr.aia</a>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+											x
+										</button>
+										<br/>
+										<a href="google.com" class="is-underlined">kitty.png</a>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+											x
+										</button>
+										<br/>
+										<a href="google.com" class="is-underlined">meow.mp3</a>
 										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
 										</button>
