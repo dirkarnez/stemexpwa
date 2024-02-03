@@ -335,7 +335,12 @@
 														/>
 									</div>
 								<div class="column is-half">
-								
+									<input
+									class="input"
+									type="text"
+									placeholder="URL of the video"
+									required={true}
+								/>
 									
 								</div>
 					
