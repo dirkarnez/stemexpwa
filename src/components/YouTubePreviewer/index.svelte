@@ -38,8 +38,14 @@
 
 	// export let initialVideoId = '';
 
-	function onPlayerReady(event) {
+	function onPlayerReady() {
 		isReady = true;
+	}
+
+	function on() {
+		debugger;
+				videoTitle = player.getIframe().title;
+				debugger;
 	}
 
 	onMount(() => {
