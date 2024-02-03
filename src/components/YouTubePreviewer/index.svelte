@@ -86,7 +86,7 @@
 						placeholder="URL of the video"
 						required={true}
 					/>
-					<br>
+					<br/>
 					<div class="iframe-container">
 						<div bind:this={container}/>
 					</div>
