@@ -311,31 +311,33 @@
 				</div>
 				<div class="field">
 					<p class="label">YouTube videos</p>
-					<div class="columns">
-						<div class="column">
-						  <p class="bd-notification is-info">First column</p>
-						  <div class="columns is-mobile">
-							<div class="column">
-							  <p class="bd-notification is-info">First nested column</p>
-							</div>
-							<div class="column">
-							  <p class="bd-notification is-info">Second nested column</p>
-							</div>
-						  </div>
+					<div class="columns is-multiline is-mobile">
+						<div class="column is-one-quarter">
+						  <code>is-one-quarter</code>
+						</div>
+						<div class="column is-one-quarter">
+						  <code>is-one-quarter</code>
+						</div>
+						<div class="column is-one-quarter">
+						  <code>is-one-quarter</code>
+						</div>
+						<div class="column is-one-quarter">
+						  <code>is-one-quarter</code>
+						</div>
+						<div class="column is-half">
+						  <code>is-half</code>
+						</div>
+						<div class="column is-one-quarter">
+						  <code>is-one-quarter</code>
+						</div>
+						<div class="column is-one-quarter">
+						  <code>is-one-quarter</code>
+						</div>
+						<div class="column is-one-quarter">
+						  <code>is-one-quarter</code>
 						</div>
 						<div class="column">
-						  <p class="bd-notification is-danger">Second column</p>
-						  <div class="columns is-mobile">
-							<div class="column is-half">
-							  <p class="bd-notification is-danger">50%</p>
-							</div>
-							<div class="column">
-							  <p class="bd-notification is-danger">Auto</p>
-							</div>
-							<div class="column">
-							  <p class="bd-notification is-danger">Auto</p>
-							</div>
-						  </div>
+						  Auto
 						</div>
 					  </div>
 					<!-- {#each $data.youtube_video_entries || [] as youtube_video_entry, index}
