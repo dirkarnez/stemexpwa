@@ -5,7 +5,6 @@
 <script>
 	import { onMount } from 'svelte';
 
-	let urlInput = '';
 	let videoId = '';
 	export let videoURL = '';
 	// let videoTitle = '';
