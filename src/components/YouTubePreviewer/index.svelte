@@ -12,6 +12,7 @@
 
 	let urlInput = '';
 	let videoId = '';
+	let videoURL = '';
 	let videoTitle = '';
 	let isReady = false;
 
