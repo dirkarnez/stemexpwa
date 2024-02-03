@@ -388,7 +388,7 @@
 									</div>
 									<div class="column is-three-quarters">
 										<a href="google.com" class="is-underlined">terms and conditions</a>
-										<button type="button" class="is-danger button delete" style="height: 1rem; vertical-align: middle;position: absolute; top: 0; right: 0;" on:click={removeBlogEntry(0)}>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
 										</button>
 									</div>
