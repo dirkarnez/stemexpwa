@@ -346,7 +346,7 @@
 					</div>
 				</div>
 				<div class="field">
-					<p class="label">Blog entries</p>
+					<p class="label">Classes</p>
 					<div class="columns is-multiline is-mobile">
 						{#each $data.blog_entries || [] as blog_entry, index}
 									<div class="column is-half">
