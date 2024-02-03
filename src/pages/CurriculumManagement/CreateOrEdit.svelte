@@ -359,7 +359,7 @@
 						<input
 							class="input"
 							type="text"
-							placeholder="URL of the video"
+							placeholder="Class name (A? B?)"
 							required={true}
 						/>
 						<!-- <div class="field">
