@@ -309,10 +309,23 @@
 						</div>
 					</label>
 				</div>
+
+				<div class="field">
+					<label class="label">YouTube videos
+						<div class="control">
+							{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+								<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
+							{/each}
+
+						</div>
+					</label>
+				</div>
+
+
 			</div>
 		</section>
-		<section class="hero">
-			<h2 class="subtitle">YouTube videos</h2>
+		<!-- <section class="hero">
+			<h2 class="subtitle"></h2>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 				<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
 				
@@ -365,7 +378,7 @@
 			<button type="button" class="button is-primary is-light" on:click={addYouTubeVideo(($data.youtube_video_entries || []).length)}>
 				Add new
 			</button>
-		</section>
+		</section> -->
 		<section class="hero">
 			<h2 class="subtitle">Blog entries</h2>
 			{#each $data.blog_entries || [] as blog_entry, index}
