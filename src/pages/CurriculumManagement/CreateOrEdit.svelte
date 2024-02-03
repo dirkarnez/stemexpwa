@@ -330,16 +330,13 @@
 										<input
 															class="input"
 															type="text"
-															bind:value={videoURL}
 															placeholder="URL of the video"
 															required={true}
 														/>
 									</div>
 								<div class="column is-half">
 								
-										<div class="iframe-container">
-											<div bind:this={container}/>
-										</div>
+									
 								</div>
 					
 						{/each}
