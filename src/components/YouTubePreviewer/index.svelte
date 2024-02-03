@@ -44,7 +44,7 @@
 	}
 
 	function onPlayerStateChange(event) {
-		videoTitle = event.target.getIframe().title;
+		videoTitle = event.target.getVideoData().title;
 		videoURL = event.target.getVideoUrl();
 		debugger;
 	}
