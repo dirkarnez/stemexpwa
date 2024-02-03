@@ -396,7 +396,7 @@
 										actions
 									</div>
 									<div class="column is-one-quarter">
-										Misc files<br/>(e.g. source code)
+										misc teaching materials<br/>(e.g. source code)
 									</div>
 									<div class="column is-three-quarters">
 										actions
