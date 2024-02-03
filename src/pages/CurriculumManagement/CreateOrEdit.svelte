@@ -312,22 +312,11 @@
 				<div class="field">
 					<p class="label">YouTube videos</p>
 					<div class="columns is-multiline is-mobile">
-						<div class="column is-three-quarters">
-						  <code>is-one-quarter</code>
-						</div>
-						<div class="column is-one-quarter">
-						  Auto
-						</div>
-						<div class="column is-three-quarters">
-							<code>is-one-quarter</code>
-						</div>
-						<div class="column is-one-quarter">
-							Auto
-						</div>
-					  </div>
-					<!-- {#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
-					{/each} -->
+					{/each}
+					  </div>
+					<!--  -->
 				</div>
 			</div>
 		</section>
