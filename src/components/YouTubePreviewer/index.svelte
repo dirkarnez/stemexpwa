@@ -85,27 +85,8 @@
 						/>
 	</div>
 <div class="column is-one-quarter">
-	Auto
-</div>
 
-
-<div class="columns">
-	<div class="column">
-		<div class="field">
-			<div class="control">
-				<label class="label">URL
-					
-					<div class="columns mt-1">
-						<div class="column is-three-fifths">
-							<div class="iframe-container">
-								<div bind:this={container}/>
-							</div>
-						</div>
-					</div>
-				</label>
-			</div>
+		<div class="iframe-container">
+			<div bind:this={container}/>
 		</div>
-	</div>
-</div>	
-
-
+</div>
