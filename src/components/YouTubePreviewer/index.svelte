@@ -34,6 +34,7 @@
 	// export let initialVideoId = '';
 
 	function onPlayerReady(event) {
+		isReady = true;
 		alert(event.target.getIframe().title);
 	}
 
