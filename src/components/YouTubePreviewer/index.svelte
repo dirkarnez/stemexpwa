@@ -51,7 +51,8 @@
 				// videoId: videoId,
 				playerVars: { autoplay: 1 },
 				events: {
-					'onReady': onPlayerReady 
+					'onReady': onPlayerReady,
+					'on': on
 				}
 			});
 		}
