@@ -356,7 +356,12 @@
 						{/each}
 					</div> -->
 					<div class="box">
-						I'm in a box.
+						<input
+						class="input"
+						type="text"
+						placeholder="URL of the video"
+						required={true}
+					/>
 					  </div>
 					  <div class="box">
 						I'm in a box.
