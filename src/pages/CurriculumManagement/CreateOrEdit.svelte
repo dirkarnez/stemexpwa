@@ -312,11 +312,10 @@
 				<div class="field">
 					<p class="label">YouTube videos</p>
 					<div class="columns is-multiline is-mobile">
-{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
-						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
-					{/each}
+						{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+							<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
+						{/each}
 					  </div>
-					<!--  -->
 				</div>
 			</div>
 		</section>
