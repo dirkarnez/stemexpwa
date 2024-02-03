@@ -32,6 +32,7 @@
 	function onPlayerReady(event) {
 		alert(event.target.getIframe().title);
 	}
+	
 	onMount(() => {
 		function load() {
 			player = new window["YT"].Player(container, {
