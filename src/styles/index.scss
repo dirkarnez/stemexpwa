@@ -332,3 +332,13 @@ $timeline-grey-500: #3d3d3d;
 // .button:hover {
 //   background-color: $timeline-grey-200;
 // }
+
+
+/* respsonsive iframe */
+iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

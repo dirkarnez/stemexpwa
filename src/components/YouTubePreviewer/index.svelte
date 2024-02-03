@@ -1,41 +1,63 @@
 <script>
-	let name = '';
-	let real;
+	// 
+	// let real;
 
-	$: if (!!name) {
-		const matched = name.match(/.*watch\?v=([^&]+).*/);
+
+
+	import { onMount } from 'svelte';
+
+	let urlInput = '';
+	let videoId = '';
+
+	$: if (!!urlInput) {
+		const matched = urlInput.match(/.*watch\?v=([^&]+).*/);
 		if (Array.isArray(matched) && matched.length == 2) {
-			real = `https://www.youtube.com/embed/${matched[1]}`;
+			videoId = `${matched[1]}`;
 		} else {
-			real = "";
+			videoId = "";
 		}
 	} else {
-		real = "";
+		videoId = "";
 	}
+	
+	let container;
+	let player;
+
+	// export let initialVideoId = '';
+
+	function onPlayerReady(event) {
+		alert(event.target.getIframe().title);
+	}
+	onMount(() => {
+				player = new YT.Player(container, {
+						height: '100%',
+						width: '100%',
+						videoId: videoId,
+						playerVars: { autoplay: 1 },
+					events: {
+						'onReady': onPlayerReady 
+					}
+
+				});
+	});
 </script>
+<svelte:head>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</svelte:head>
 <style>
 	.iframe-container {
 		overflow: hidden;
 		padding-top: 56.25%;
 		position: relative;
 	}
-
-	iframe {
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-	}
 </style>
 <div class="columns">
 	<div class="column">
-		<div class="iframe-container">
-			<iframe src={!!real ? real : ""} title="preview"></iframe>
-		</div>
+		<div class="iframe-container" bind:this={container}  />
+			<!-- <iframe src={!!real ? real : ""} title="preview"></iframe> -->
 	</div>
 	<div class="column">
-		<input bind:value={name} placeholder="enter youtube URL" />
+		<input bind:value={urlInput} placeholder="enter youtube URL" />
 	</div>
 </div>	
 
