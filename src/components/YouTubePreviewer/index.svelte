@@ -13,7 +13,7 @@
 	let urlInput = '';
 	let videoId = '';
 
-	$: if (!!urlInput) {
+	$: if (!!player && !!urlInput) {
 		const matched = urlInput.match(/.*watch\?v=([^&]+).*/);
 		if (Array.isArray(matched) && matched.length == 2) {
 			videoId = `${matched[1]}`;
