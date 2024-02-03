@@ -89,10 +89,8 @@
 					<br/>
 					<div class="columns">
 						<div class="column is-three-fifths">
-							<div class="">
-								<div class="iframe-container">
-									<div bind:this={container}/>
-								</div>
+							<div class="iframe-container">
+								<div bind:this={container}/>
 							</div>
 						</div>
 					</div>
