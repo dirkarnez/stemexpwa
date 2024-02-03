@@ -85,7 +85,7 @@
 	/>
 </div>
 <div class="column is-one-quarter">
-	<!-- <div class="iframe-container">
+	<div class="iframe-container">
 		<div bind:this={container}/>
-	</div> -->
+	</div>
 </div>
