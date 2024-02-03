@@ -381,7 +381,7 @@
 							<div class="column is-one-quarter">
 								Lesson 1
 							</div>
-							<div class="column">
+							<div class="column  is-three-quarters">
 								<div class="columns is-multiline is-mobile">
 									<div class="column is-one-quarter">
 										Presentation notes
