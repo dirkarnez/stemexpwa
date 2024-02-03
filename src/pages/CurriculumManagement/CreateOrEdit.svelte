@@ -384,7 +384,7 @@
 							<div class="column">
 								<div class="columns is-multiline is-mobile">
 									<div class="column is-one-quarter">
-										File
+										Presentation
 									</div>
 									<div class="column">
 										actions
