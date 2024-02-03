@@ -349,7 +349,7 @@
 					<p class="label">Classes</p>
 					<div class="columns is-multiline is-mobile">
 						{#each $data.blog_entries || [] as blog_entry, index}
-									<div class="column is-quarter">
+									<div class="column is-one-quarter">
 										A
 									</div>
 								<div class="column is-half">
