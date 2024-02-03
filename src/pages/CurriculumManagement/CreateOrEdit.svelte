@@ -387,19 +387,19 @@
 										Presentation notes
 									</div>
 									<div class="column is-three-quarters">
-										actions
+										<a href="google.com">terms and conditions</a>
 									</div>
 									<div class="column is-one-quarter">
 										Student notes
 									</div>
 									<div class="column is-three-quarters">
-										actions
+										<a href="google.com">terms and conditions</a>
 									</div>
 									<div class="column is-one-quarter">
 										Misc. teaching materials<br/>(e.g. source code)
 									</div>
 									<div class="column is-three-quarters">
-										actions
+										<a href="google.com">terms and conditions</a>
 									</div>
 								</div>
 							</div>
