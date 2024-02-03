@@ -35,6 +35,7 @@
 
 	function onPlayerReady(event) {
 		isReady = true;
+		debugger;
 		alert(event.target.getIframe().title);
 	}
 
