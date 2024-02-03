@@ -333,10 +333,10 @@
 						<div class="column is-one-quarter">
 						  <code>is-one-quarter</code>
 						</div>
-						<div class="column is-one-quarter">
+						<div class="column">
 						  <code>is-one-quarter</code>
 						</div>
-						<div class="column">
+						<div class="column is-one-quarter">
 						  Auto
 						</div>
 					  </div>
