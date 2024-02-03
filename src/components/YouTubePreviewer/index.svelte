@@ -20,9 +20,11 @@
 			loadVideoById(videoId);
 		} else {
 			videoId = "";
+			loadVideoById(videoId);
 		}
 	} else {
 		videoId = "";
+		loadVideoById(videoId);
 	}
 	
 	let container;
