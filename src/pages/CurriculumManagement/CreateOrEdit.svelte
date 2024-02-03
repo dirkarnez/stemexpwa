@@ -296,7 +296,7 @@
 		<section class="hero">
 			<div class="box">
 				<div class="field">
-				<label class="label">Curriculum plan</label>
+					<label class="label">Curriculum plan</label>
 					<div class="control">
 						<InputFileContainer>
 							<input
