@@ -349,9 +349,23 @@
 					<p class="label">Classes</p>
 					<div class="columns is-multiline is-mobile">
 						{#each $data.blog_entries || [] as blog_entry, index}
-						<div class="box">
-							I'm in a box.
-						  </div>
+									<!-- <div class="column is-one-quarter">
+										A
+									</div>
+								<div class="column is-half">
+									<input
+									class="input"
+									type="text"
+									placeholder="URL of the video"
+									required={true}
+								/>
+								</div> -->
+								<div class="box">
+									I'm in a box.
+								  </div>
+								  <div class="box">
+									I'm in a box.
+								  </div>
 						{/each}
 					</div>
 				</div>
