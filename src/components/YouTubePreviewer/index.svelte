@@ -34,7 +34,7 @@
 	}
 	onMount(() => {
 		debugger;
-		player = new YT.Player(container, {
+		player = new window["YT"].Player(container, {
 				height: '100%',
 				width: '100%',
 				videoId: videoId,
