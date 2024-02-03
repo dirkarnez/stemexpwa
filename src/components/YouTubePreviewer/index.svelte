@@ -29,6 +29,7 @@
 		alert(event.target.getIframe().title);
 	}
 	onMount(() => {
+		debugger;
 		player = new YT.Player(container, {
 				height: '100%',
 				width: '100%',
