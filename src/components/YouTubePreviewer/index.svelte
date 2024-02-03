@@ -83,7 +83,6 @@
 <div class="columns">
 	<div class="column">
 		<div class="iframe-container" bind:this={container}  />
-			<!-- <iframe src={!!real ? real : ""} title="preview"></iframe> -->
 	</div>
 	<div class="column">
 		<input bind:value={urlInput} placeholder="enter youtube URL" />
