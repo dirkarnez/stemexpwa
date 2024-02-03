@@ -378,7 +378,7 @@
 						</div> -->
 
 						<div class="columns is-multiline is-mobile mt-2">
-							<div class="column is-one-quarter">
+							<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 								Lesson 1
 							</div>
 							<div class="column  is-three-quarters">
@@ -424,7 +424,7 @@
 							</div>
 
 
-							<div class="column is-one-quarter" style="background-color: hsl(0deg,0%,95%);">
+							<div class="column is-one-quarter" style="background-color: hsl(0deg,0%,95%); border-bottom: 1px solid hsl(0deg,0%,86%);">
 								Lesson 2
 							</div>
 							<div class="column  is-three-quarters" style="background-color: hsl(0deg,0%,95%);">
