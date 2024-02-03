@@ -92,7 +92,6 @@
 							<div bind:this={container}/>
 						</div>
 					</div>
-
 				</label>
 			</div>
 		</div>
