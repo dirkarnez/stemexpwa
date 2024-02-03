@@ -124,7 +124,7 @@
 			setFields(parent_id_key, parentId, true);
 		} else {
 			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
-			
+
 			_wrappedFetchCurriculumEntry.then(_data => {
 				setFields({
 					[id_field_key]: _data[id_field_key],
@@ -294,12 +294,11 @@
 
 	{#if toBeACourse}
 		<section class="hero">
-			<h2 class="subtitle">Curriculum plan</h2>
 			<div class="box">
 				<label class="label">
 					<div class="field">
 						<div class="control">
-							<label class="label">File
+							<label class="label">			<h2 class="subtitle">Curriculum plan</h2>
 								<InputFileContainer>
 									<input
 										class="file-input"
