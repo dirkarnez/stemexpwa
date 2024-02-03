@@ -8,7 +8,7 @@
 	let urlInput = '';
 	let videoId = '';
 	export let videoURL = '';
-	let videoTitle = '';
+	// let videoTitle = '';
 	let isReady = false;
 
 	$: if (isReady === true) {
