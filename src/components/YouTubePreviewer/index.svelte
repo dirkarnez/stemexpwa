@@ -46,12 +46,10 @@
 	function onPlayerStateChange(event) {
 		videoTitle = event.target.getVideoData().title;
 		videoURL = `https://www.youtube.com/watch?v=${event.target.getVideoData().video_id}`
-		debugger;
 	}
 
 	onMount(() => {
 		function load() {
-			debugger;
 			player = new window.YT.Player(container, {
 				height: '100%',
 				width: '100%',
