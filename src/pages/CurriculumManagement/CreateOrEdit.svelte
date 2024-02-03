@@ -377,7 +377,7 @@
 							</label>
 						</div> -->
 
-						<div class="columns is-multiline is-mobile">
+						<div class="columns is-multiline is-mobile mt-2">
 							<div class="column is-one-quarter">
 								Lesson 1
 							</div>
