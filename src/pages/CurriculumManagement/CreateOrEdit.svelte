@@ -315,7 +315,7 @@
 		<section class="hero">
 			<h2 class="subtitle">YouTube videos</h2>
 			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
-				<YouTubePreviewer youtube_video_entry={youtube_video_entry}}/>
+				<YouTubePreviewer url={youtube_video_entry.url}/>
 				
 				<!-- <div class="columns">
 					<div class="column">
@@ -351,7 +351,7 @@
 												class="input"
 												type="text"
 												name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_url_field_key}"
-												bind:value={youtube_video_entry.url}
+												bind:value=
 												placeholder="URL of the video"
 												required={true}
 											/>
