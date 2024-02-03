@@ -310,16 +310,9 @@
 					</label>
 				</div>
 
-				<div class="field">
-				
-						<div class="control">
-							{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
-								<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
-							{/each}
-
-						</div>
-				
-				</div>
+				{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+					<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
+				{/each}
 			</div>
 		</section>
 	
