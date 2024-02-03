@@ -345,6 +345,29 @@
 						{/each}
 					</div>
 				</div>
+				<div class="field">
+					<p class="label">Blog entries</p>
+					<div class="columns is-multiline is-mobile">
+						{#each $data.blog_entries || [] as blog_entry, index}
+									<div class="column is-half">
+										<input
+															class="input"
+															type="text"
+															placeholder="URL of the video"
+															required={true}
+														/>
+									</div>
+								<div class="column is-half">
+									<input
+									class="input"
+									type="text"
+									placeholder="URL of the video"
+									required={true}
+								/>
+								</div>
+						{/each}
+					</div>
+				</div>
 			</div>
 		</section>
 <!-- 	
