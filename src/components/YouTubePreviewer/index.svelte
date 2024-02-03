@@ -59,7 +59,7 @@
 				playerVars: { autoplay: 1 },
 				events: {
 					'onReady': onPlayerReady,
-					'onPlayerStateChange': onPlayerStateChange
+					'onStateChange': onPlayerStateChange
 				}
 			});
 		}
