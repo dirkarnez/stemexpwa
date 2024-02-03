@@ -33,17 +33,25 @@
 		alert(event.target.getIframe().title);
 	}
 	onMount(() => {
-		debugger;
-		player = new window["YT"].Player(container, {
+		function load() {
+			player = new window["YT"].Player(container, {
 				height: '100%',
 				width: '100%',
 				videoId: videoId,
 				playerVars: { autoplay: 1 },
-			events: {
-				'onReady': onPlayerReady 
-			}
+				events: {
+					'onReady': onPlayerReady 
+				}
+			});
+		}
 
-		});
+	}
+
+if (window.YT) {
+	load();
+} else {
+	window.onYouTubeIframeAPIReady = load;
+}
 	});
 </script>
 
