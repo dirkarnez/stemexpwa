@@ -438,10 +438,10 @@
 											x
 										</button>
 									</div>
-									<div class="column is-one-quarter">
+									<div class="column is-one-quarter" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										Student notes
 									</div>
-									<div class="column is-three-quarters">
+									<div class="column is-three-quarters" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										<a href="google.com" class="is-underlined">App Inventor Intro _Lesson2_Student Notes.pdf</a>
 										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
