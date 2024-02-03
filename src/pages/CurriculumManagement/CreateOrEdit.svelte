@@ -299,14 +299,14 @@
 					<div class="field">
 						<div class="control">
 							<label class="subtitle">Curriculum plan		
-							<InputFileContainer>
-								<input
-									class="file-input"
-									type="file"
-									name="{information_entries_icon_file_field_key}"
-									on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
-								/>
-							</InputFileContainer> 
+								<InputFileContainer>
+									<input
+										class="file-input"
+										type="file"
+										name="{information_entries_icon_file_field_key}"
+										on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+									/>
+								</InputFileContainer> 
 							</label>
 						</div>
 					</div>
