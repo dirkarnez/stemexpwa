@@ -386,19 +386,19 @@
 									<div class="column is-one-quarter">
 										Presentation notes
 									</div>
-									<div class="column">
+									<div class="column is-three-quarters">
 										actions
 									</div>
 									<div class="column is-one-quarter">
 										Student notes
 									</div>
-									<div class="column">
+									<div class="column is-three-quarter">
 										actions
 									</div>
 									<div class="column is-one-quarter">
 										Misc files (teaching materials like source code)
 									</div>
-									<div class="column">
+									<div class="column is-three-quarter">
 										actions
 									</div>
 								</div>
