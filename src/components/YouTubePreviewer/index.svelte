@@ -21,6 +21,9 @@
 			if (Array.isArray(matched) && matched.length == 2) {
 				videoId = `${matched[1]}`;
 				player.loadVideoById(videoId);
+				debugger;
+				videoTitle = player.getIframe().title;
+				debugger;
 			} else {
 				videoId = "";
 				player.loadVideoById(videoId);
