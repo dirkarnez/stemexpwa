@@ -79,7 +79,19 @@
 		</div>
 	</div>
 	<div class="column">
-		<input bind:value={videoURL} placeholder="enter youtube URL" />
+		<div class="field">
+			<div class="control">
+				<label class="label">URL
+					<input
+						class="input"
+						type="text"
+						bind:value={videoURL}
+						placeholder="URL of the video"
+						required={true}
+					/>
+				</label>
+			</div>
+		</div>
 	</div>
 </div>	
 
