@@ -37,7 +37,7 @@
 			player = new window["YT"].Player(container, {
 				height: '100%',
 				width: '100%',
-				videoId: videoId,
+				// videoId: videoId,
 				playerVars: { autoplay: 1 },
 				events: {
 					'onReady': onPlayerReady 
