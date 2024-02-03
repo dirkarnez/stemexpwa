@@ -45,7 +45,8 @@
 
 	function onPlayerStateChange(event) {
 		videoTitle = event.target.getVideoData().title;
-		videoURL = event.target.getVideoData().video_id
+		videoURL = `https://www.youtube.com/watch?v=${event.target.getVideoData().video_id}`
+		
 		debugger;
 	}
 
