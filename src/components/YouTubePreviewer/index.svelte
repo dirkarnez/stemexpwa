@@ -44,10 +44,9 @@
 	}
 
 	function onPlayerStateChange(event) {
-	debugger;
-			videoTitle = event.target.getIframe().title;
-			videoURL = event.target.getVideoUrl();
-			debugger;
+		videoTitle = event.target.getIframe().title;
+		videoURL = event.target.getVideoUrl();
+		debugger;
 	}
 
 	onMount(() => {
