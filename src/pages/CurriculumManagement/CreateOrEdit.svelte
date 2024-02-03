@@ -397,12 +397,18 @@
 									</div>
 									<div class="column is-three-quarters">
 										<a href="google.com" class="is-underlined">terms and conditions</a>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+											x
+										</button>
 									</div>
 									<div class="column is-one-quarter">
 										Misc. teaching materials<br/>(e.g. source code)
 									</div>
 									<div class="column is-three-quarters">
 										<a href="google.com" class="is-underlined">terms and conditions</a>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+											x
+										</button>
 									</div>
 								</div>
 							</div>
