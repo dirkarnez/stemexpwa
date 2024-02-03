@@ -341,9 +341,7 @@
 									placeholder="URL of the video"
 									required={true}
 								/>
-									
 								</div>
-					
 						{/each}
 					</div>
 				</div>
