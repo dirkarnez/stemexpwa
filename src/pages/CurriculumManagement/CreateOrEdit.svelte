@@ -124,7 +124,7 @@
 			setFields(parent_id_key, parentId, true);
 		} else {
 			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
-			debugger;
+			
 			_wrappedFetchCurriculumEntry.then(_data => {
 				setFields({
 					[id_field_key]: _data[id_field_key],
