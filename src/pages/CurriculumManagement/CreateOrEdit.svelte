@@ -296,7 +296,7 @@
 		<section class="hero">
 			<div class="box">
 				<div class="field">
-					<label class="label">Curriculum plan
+					<label class="label">Curriculum plan</label>
 						<div class="control">
 							<InputFileContainer>
 								<input
@@ -307,7 +307,6 @@
 								/>
 							</InputFileContainer> 
 						</div>
-					</label>
 				</div>
 
 				{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
