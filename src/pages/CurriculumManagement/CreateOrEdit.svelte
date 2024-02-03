@@ -310,7 +310,7 @@
 					</label>
 				</div>
 				<div class="field">
-					<label class="label">Curriculum plan</label>
+					<h2>Curriculum plan</h2>
 					{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
 					{/each}
