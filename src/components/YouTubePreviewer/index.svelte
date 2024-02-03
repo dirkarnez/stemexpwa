@@ -12,6 +12,7 @@
 
 	let urlInput = '';
 	let videoId = '';
+	let isReady = false;
 
 	$: if (!!player && !!urlInput) {
 		const matched = urlInput.match(/.*watch\?v=([^&]+).*/);
