@@ -45,13 +45,14 @@
 			});
 		}
 
+		if (window.YT) {
+			load();
+		} else {
+			window.onYouTubeIframeAPIReady = load;
+		}
 	}
 
-if (window.YT) {
-	load();
-} else {
-	window.onYouTubeIframeAPIReady = load;
-}
+
 	});
 </script>
 
