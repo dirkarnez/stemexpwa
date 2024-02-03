@@ -43,6 +43,7 @@
 	}
 
 	onMount(() => {
+		debugger;
 		function load() {
 			player = new window.YT.Player(container, {
 				height: '100%',
