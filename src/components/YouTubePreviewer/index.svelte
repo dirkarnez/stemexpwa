@@ -12,6 +12,7 @@
 
 	let urlInput = '';
 	let videoId = '';
+	let videoTitle = '';
 	let isReady = false;
 
 	$: if (isReady === true) {
