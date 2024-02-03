@@ -311,14 +311,14 @@
 				</div>
 
 				<div class="field">
-					<label class="label">YouTube videos
+				
 						<div class="control">
 							{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 								<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
 							{/each}
 
 						</div>
-					</label>
+				
 				</div>
 			</div>
 		</section>
