@@ -14,7 +14,7 @@
 	let videoId = '';
 	let isReady = false;
 
-	$: if (!isReady) {
+	$: if (isReady === true) {
 		if(!!urlInput) {
 			const matched = urlInput.match(/.*watch\?v=([^&]+).*/);
 			if (Array.isArray(matched) && matched.length == 2) {
