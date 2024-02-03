@@ -315,6 +315,11 @@
 						{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 							<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
 						{/each}
+						<div class="column">
+							<button type="button" class="button is-primary is-light" on:click={addBlogEntry(($data.blog_entries || []).length)}>
+								Add new
+							</button>
+						</div>
 					  </div>
 				</div>
 			</div>
