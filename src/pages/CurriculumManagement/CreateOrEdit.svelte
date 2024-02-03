@@ -350,7 +350,7 @@
 					<div class="columns is-multiline is-mobile">
 						{#each $data.blog_entries || [] as blog_entry, index}
 									<div class="column is-quarter">
-										<Lesson 
+										
 									</div>
 								<div class="column is-half">
 									<input
