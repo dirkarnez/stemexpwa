@@ -45,7 +45,7 @@
 
 	function onPlayerStateChange(event) {
 		videoTitle = event.target.getVideoData().title;
-		videoURL = event.target.getVideoUrl();
+		videoURL = event.target.getVideoData().video_id
 		debugger;
 	}
 
