@@ -362,7 +362,7 @@
 							placeholder="URL of the video"
 							required={true}
 						/>
-						<div class="field">
+						<!-- <div class="field">
 							<label class="label">Curriculum plan
 								<div class="control">
 									<InputFileContainer>
@@ -375,8 +375,16 @@
 									</InputFileContainer> 
 								</div>
 							</label>
-						</div>
+						</div> -->
 
+						<div class="columns is-multiline is-mobile">
+							<div class="column is-one-quarter">
+								A
+							</div>
+							<div class="column">
+								A
+							</div>
+						</div>
 						
 					  </div>
 					  <div class="box">
