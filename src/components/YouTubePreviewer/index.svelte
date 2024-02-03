@@ -26,7 +26,9 @@
 			}
 		} else {
 			videoId = "";
-			player.loadVideoById(videoId);
+			if (!!player) {
+				player.loadVideoById(videoId);
+			}
 		}
 	} 
 	
