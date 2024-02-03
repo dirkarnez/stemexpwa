@@ -126,13 +126,13 @@
 			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
 			debugger;
 			_wrappedFetchCurriculumEntry.then(_data => {
-				setFields(	let initialValues = {
-		email: '',
-		name: '',
-	}
-					
+				setFields({
+					id_field_key: '',
+					name: '',
+				}
+								
 				
-				id_field_key, _data[id_field_key], true);
+				, _data[id_field_key], true);
 				setFields(description_field_key, _data[description_field_key], true);
 				setFields(icon_id_key, _data[icon_id_key], true);
 				setFields(parent_id_key, _data[parent_id_key], true);
