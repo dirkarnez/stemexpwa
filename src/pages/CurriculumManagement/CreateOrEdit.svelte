@@ -312,27 +312,6 @@
 				<div class="field">
 					<p class="label">YouTube videos</p>
 					<div class="columns is-multiline is-mobile">
-						<div class="column is-one-quarter">
-						  <code>is-one-quarter</code>
-						</div>
-						<div class="column is-one-quarter">
-						  <code>is-one-quarter</code>
-						</div>
-						<div class="column is-one-quarter">
-						  <code>is-one-quarter</code>
-						</div>
-						<div class="column is-one-quarter">
-						  <code>is-one-quarter</code>
-						</div>
-						<div class="column is-half">
-						  <code>is-half</code>
-						</div>
-						<div class="column is-one-quarter">
-						  <code>is-one-quarter</code>
-						</div>
-						<div class="column is-one-quarter">
-						  <code>is-one-quarter</code>
-						</div>
 						<div class="column">
 						  <code>is-one-quarter</code>
 						</div>
