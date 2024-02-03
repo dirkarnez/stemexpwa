@@ -298,7 +298,8 @@
 				<label class="label">
 					<div class="field">
 						<div class="control">
-							<label class="label">			<h2 class="subtitle">Curriculum plan</h2>
+							<h2 class="subtitle">Curriculum plan</h2>
+							<label class="label">			
 								<InputFileContainer>
 									<input
 										class="file-input"
