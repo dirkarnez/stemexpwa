@@ -324,13 +324,33 @@
 				</div>
 				<div class="field">
 					<p class="label">Blog entries</p>
+					<div class="columns is-multiline is-mobile">
+						{#each $data.blog_entries || [] as blog_entry, index}
+									<div class="column is-half">
+										<input
+															class="input"
+															type="text"
+															bind:value={videoURL}
+															placeholder="URL of the video"
+															required={true}
+														/>
+									</div>
+								<div class="column is-half">
+								
+										<div class="iframe-container">
+											<div bind:this={container}/>
+										</div>
+								</div>
+					
+						{/each}
+					</div>
 				</div>
 			</div>
 		</section>
 <!-- 	
 		<section class="hero">
 			<h2 class="subtitle"></h2>
-			{#each $data.blog_entries || [] as blog_entry, index}
+			
 				<div class="box">
 					<label class="label">#{index + 1}
 						{#if index > 0}
