@@ -17,14 +17,14 @@
 		const matched = urlInput.match(/.*watch\?v=([^&]+).*/);
 		if (Array.isArray(matched) && matched.length == 2) {
 			videoId = `${matched[1]}`;
-			loadVideoById(videoId);
+			player.loadVideoById(videoId);
 		} else {
 			videoId = "";
-			loadVideoById(videoId);
+			player.loadVideoById(videoId);
 		}
 	} else {
 		videoId = "";
-		loadVideoById(videoId);
+		player.loadVideoById(videoId);
 	}
 	
 	let container;
