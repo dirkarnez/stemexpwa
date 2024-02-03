@@ -76,11 +76,6 @@
 </style>
 <div class="columns">
 	<div class="column">
-		<div class="iframe-container">
-			<div bind:this={container}/>
-		</div>
-	</div>
-	<div class="column">
 		<div class="field">
 			<div class="control">
 				<label class="label">URL
@@ -91,6 +86,10 @@
 						placeholder="URL of the video"
 						required={true}
 					/>
+					<br>
+					<div class="iframe-container">
+						<div bind:this={container}/>
+					</div>
 				</label>
 			</div>
 		</div>
