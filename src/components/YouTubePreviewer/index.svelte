@@ -74,7 +74,9 @@
 </style>
 <div class="columns">
 	<div class="column">
-		<div class="iframe-container" bind:this={container}  />
+		<div class="iframe-container">
+			<div bind:this={container}/>
+		</div>
 	</div>
 	<div class="column">
 		<input bind:value={videoURL} placeholder="enter youtube URL" />
