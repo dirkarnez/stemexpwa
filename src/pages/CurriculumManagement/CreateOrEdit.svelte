@@ -309,10 +309,12 @@
 						</div>
 					</label>
 				</div>
-
-				{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
-					<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
-				{/each}
+				<div class="field">
+					<label class="label">Curriculum plan</label>
+					{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
+					{/each}
+				</div>
 			</div>
 		</section>
 	
