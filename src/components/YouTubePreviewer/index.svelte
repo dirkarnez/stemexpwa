@@ -45,7 +45,7 @@
 			});
 		}
 
-		if (window.YT) {
+		if (window["YT"]) {
 			load();
 		} else {
 			window.onYouTubeIframeAPIReady = load;
