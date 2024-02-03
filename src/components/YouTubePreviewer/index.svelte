@@ -44,7 +44,8 @@
 
 	onMount(() => {
 		function load() {
-			player = new window["YT"].Player(container, {
+			debugger;
+			player = new window.YT.Player(container, {
 				height: '100%',
 				width: '100%',
 				// videoId: videoId,
