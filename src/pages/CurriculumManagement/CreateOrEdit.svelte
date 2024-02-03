@@ -379,7 +379,7 @@
 
 						<div class="columns is-multiline is-mobile">
 							<div class="column is-one-quarter">
-								A
+								Lesson 1
 							</div>
 							<div class="column">
 								A
