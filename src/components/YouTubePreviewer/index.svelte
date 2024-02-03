@@ -46,6 +46,7 @@
 	function on() {
 	debugger;
 			videoTitle = player.getIframe().title;
+			player.getVideoUrl()
 			debugger;
 	}
 
@@ -59,7 +60,7 @@
 				playerVars: { autoplay: 1 },
 				events: {
 					'onReady': onPlayerReady,
-					'on': on
+					'onPlayerStateChange': onPlayerStateChange
 				}
 			});
 		}
