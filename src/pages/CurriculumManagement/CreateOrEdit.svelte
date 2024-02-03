@@ -404,10 +404,6 @@
 								</div>
 							</div>
 						</div>
-						
-					  </div>
-					  <div class="box">
-						I'm in a box.
 					  </div>
 				</div>
 			</div>
