@@ -43,7 +43,7 @@
 		isReady = true;
 	}
 
-	function on() {
+	function onPlayerStateChange(event) {
 	debugger;
 			videoTitle = player.getIframe().title;
 			player.getVideoUrl()
