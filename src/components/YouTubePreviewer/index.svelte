@@ -7,7 +7,7 @@
 
 	let urlInput = '';
 	let videoId = '';
-	let videoURL = '';
+	export let videoURL = '';
 	let videoTitle = '';
 	let isReady = false;
 
