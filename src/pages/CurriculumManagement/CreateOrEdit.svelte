@@ -429,7 +429,7 @@
 							</div>
 							<div class="column  is-three-quarters" style="background-color: hsl(0deg,0%,95%);">
 								<div class="columns is-multiline is-mobile">
-									<div class="column is-one-quarter">
+									<div class="column is-one-quarter" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										Presentation notes
 									</div>
 									<div class="column is-three-quarters">
