@@ -37,10 +37,10 @@
 		isReady = true;
 	}
 
-	// function onPlayerStateChange(event) {
-	// 	videoTitle = event.target.getVideoData().title;
-	// 	videoURL = `https://www.youtube.com/watch?v=${event.target.getVideoData().video_id}`
-	// }
+	function onPlayerStateChange(event) {
+		// videoTitle = event.target.getVideoData().title;
+		videoURL = `https://www.youtube.com/watch?v=${event.target.getVideoData().video_id}`
+	}
 
 	onMount(() => {
 		function load() {
