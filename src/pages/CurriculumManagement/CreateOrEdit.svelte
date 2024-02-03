@@ -297,16 +297,16 @@
 			<div class="box">
 				<div class="field">
 					<label class="label">Curriculum plan</label>
-						<div class="control">
-							<InputFileContainer>
-								<input
-									class="file-input"
-									type="file"
-									name="{information_entries_icon_file_field_key}"
-									on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
-								/>
-							</InputFileContainer> 
-						</div>
+					<div class="control">
+						<InputFileContainer>
+							<input
+								class="file-input"
+								type="file"
+								name="{information_entries_icon_file_field_key}"
+								on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+							/>
+						</InputFileContainer> 
+					</div>
 				</div>
 
 				{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
