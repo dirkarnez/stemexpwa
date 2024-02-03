@@ -86,7 +86,7 @@
 						placeholder="URL of the video"
 						required={true}
 					/>
-					<div class="columns mt-2">
+					<div class="columns mt-1">
 						<div class="column is-three-fifths">
 							<div class="iframe-container">
 								<div bind:this={container}/>
