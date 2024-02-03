@@ -87,9 +87,13 @@
 						required={true}
 					/>
 					<br/>
-					<div class="is-three-fifths">
-						<div class="iframe-container">
-							<div bind:this={container}/>
+					<div class="columns">
+						<div class="column">
+							<div class="is-three-fifths">
+								<div class="iframe-container">
+									<div bind:this={container}/>
+								</div>
+							</div>
 						</div>
 					</div>
 				</label>
