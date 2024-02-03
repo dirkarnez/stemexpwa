@@ -14,19 +14,21 @@
 	let videoId = '';
 	let isReady = false;
 
-	$: if (!isReady && !!urlInput) {
-		const matched = urlInput.match(/.*watch\?v=([^&]+).*/);
-		if (Array.isArray(matched) && matched.length == 2) {
-			videoId = `${matched[1]}`;
-			player.loadVideoById(videoId);
+	$: if (!isReady) {
+		if(!!urlInput) {
+			const matched = urlInput.match(/.*watch\?v=([^&]+).*/);
+			if (Array.isArray(matched) && matched.length == 2) {
+				videoId = `${matched[1]}`;
+				player.loadVideoById(videoId);
+			} else {
+				videoId = "";
+				player.loadVideoById(videoId);
+			}
 		} else {
 			videoId = "";
 			player.loadVideoById(videoId);
 		}
-	} else {
-		videoId = "";
-		player.loadVideoById(videoId);
-	}
+	} 
 	
 	let container;
 	let player;
