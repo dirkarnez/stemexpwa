@@ -74,18 +74,27 @@
 		position: relative;
 	}
 </style>
+
+<div class="column is-three-quarters">
+		<input
+							class="input"
+							type="text"
+							bind:value={videoURL}
+							placeholder="URL of the video"
+							required={true}
+						/>
+	</div>
+<div class="column is-one-quarter">
+	Auto
+</div>
+
+
 <div class="columns">
 	<div class="column">
 		<div class="field">
 			<div class="control">
 				<label class="label">URL
-					<input
-						class="input"
-						type="text"
-						bind:value={videoURL}
-						placeholder="URL of the video"
-						required={true}
-					/>
+					
 					<div class="columns mt-1">
 						<div class="column is-three-fifths">
 							<div class="iframe-container">
