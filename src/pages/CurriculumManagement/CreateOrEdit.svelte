@@ -327,7 +327,7 @@
 				</div>
 			</div>
 		</section>
-	
+<!-- 	
 		<section class="hero">
 			<h2 class="subtitle"></h2>
 			{#each $data.blog_entries || [] as blog_entry, index}
@@ -373,7 +373,7 @@
 			<button type="button" class="button is-primary is-light" on:click={addBlogEntry(($data.blog_entries || []).length)}>
 				Add new
 			</button>
-		</section>
+		</section> -->
 
 		<section class="hero">
 			<h2 class="subtitle">Classes</h2>
