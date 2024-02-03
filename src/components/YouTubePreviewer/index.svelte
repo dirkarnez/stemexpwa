@@ -36,6 +36,7 @@
 	// export let initialVideoId = '';
 
 	function onPlayerReady(event) {
+		debugger;
 		isReady = true;
 		debugger;
 		alert(event.target.getIframe().title);
