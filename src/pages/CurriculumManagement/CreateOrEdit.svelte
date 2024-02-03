@@ -383,28 +383,28 @@
 							</div>
 							<div class="column  is-three-quarters">
 								<div class="columns is-multiline is-mobile">
-									<div class="column is-one-quarter">
+									<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										Presentation notes
 									</div>
-									<div class="column is-three-quarters">
+									<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										<a href="google.com" class="is-underlined">App Inventor Introductory [L1-HelloCodi].pptx</a>
 										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
 										</button>
 									</div>
-									<div class="column is-one-quarter">
+									<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										Student notes
 									</div>
-									<div class="column is-three-quarters">
+									<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										<a href="google.com" class="is-underlined">App Inventor Intro _Lesson1_Student Notes.pdf</a>
 										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
 										</button>
 									</div>
-									<div class="column is-one-quarter">
+									<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										Misc. teaching materials<br/>(e.g. source code)
 									</div>
-									<div class="column is-three-quarters">
+									<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 										<a href="google.com" class="is-underlined">Bee-Sound.mp3</a>
 										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
