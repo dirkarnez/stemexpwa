@@ -320,65 +320,9 @@
 						</div>
 					</label>
 				</div>
-
-
 			</div>
 		</section>
-		<!-- <section class="hero">
-			<h2 class="subtitle"></h2>
-			{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
-				<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
-				
-				<!-- <div class="columns">
-					<div class="column">
-						
-					</div>
-					<div class="column">
-						<div class="box">
-							<label class="label" style="position: relative;">#{index + 1}
-								{#if index > 0}
-									<button type="button" class="is-danger button delete" style="height: 1rem; vertical-align: middle;position: absolute; top: 0; right: 0;" on:click={removeYouTubeVideo(index)}>
-										x
-									</button>
-								{/if}
-								<br><br>
-								<div class="field">
-									<div class="control">
-										<label class="label">Title
-											<input
-												class="input"
-												type="text"
-												name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_title_field_key}"
-												placeholder="Title of the video"
-												bind:value={youtube_video_entry.title}
-												required={true}
-											/>
-										</label>
-									</div>
-								</div>
-								<div class="field">
-									<div class="control">
-										<label class="label">URL
-											<input
-												class="input"
-												type="text"
-												name="{youtube_video_entries_field_key}.{index}.{youtube_video_entries_url_field_key}"
-												bind:value=
-												placeholder="URL of the video"
-												required={true}
-											/>
-										</label>
-									</div>
-								</div>
-							</label>
-						</div>
-					</div>
-				</div> -->
-			{/each}
-			<button type="button" class="button is-primary is-light" on:click={addYouTubeVideo(($data.youtube_video_entries || []).length)}>
-				Add new
-			</button>
-		</section> -->
+	
 		<section class="hero">
 			<h2 class="subtitle">Blog entries</h2>
 			{#each $data.blog_entries || [] as blog_entry, index}
