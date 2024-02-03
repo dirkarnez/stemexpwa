@@ -322,11 +322,14 @@
 						</div>
 					  </div>
 				</div>
+				<div class="field">
+					<p class="label">Blog entries</p>
+				</div>
 			</div>
 		</section>
 	
 		<section class="hero">
-			<h2 class="subtitle">Blog entries</h2>
+			<h2 class="subtitle"></h2>
 			{#each $data.blog_entries || [] as blog_entry, index}
 				<div class="box">
 					<label class="label">#{index + 1}
