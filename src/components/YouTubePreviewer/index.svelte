@@ -87,9 +87,12 @@
 						required={true}
 					/>
 					<br/>
-					<div class="iframe-container">
-						<div bind:this={container}/>
+					<div class="is-three-fifths">
+						<div class="iframe-container">
+							<div bind:this={container}/>
+						</div>
 					</div>
+
 				</label>
 			</div>
 		</div>
