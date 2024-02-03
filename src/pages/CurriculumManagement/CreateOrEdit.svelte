@@ -382,7 +382,14 @@
 								Lesson 1
 							</div>
 							<div class="column">
-								A
+								<div class="columns is-multiline is-mobile">
+									<div class="column is-one-quarter">
+										Lesson 1
+									</div>
+									<div class="column">
+										A
+									</div>
+								</div>
 							</div>
 						</div>
 						
