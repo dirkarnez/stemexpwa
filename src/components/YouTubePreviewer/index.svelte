@@ -29,16 +29,16 @@
 		alert(event.target.getIframe().title);
 	}
 	onMount(() => {
-				player = new YT.Player(container, {
-						height: '100%',
-						width: '100%',
-						videoId: videoId,
-						playerVars: { autoplay: 1 },
-					events: {
-						'onReady': onPlayerReady 
-					}
+		player = new YT.Player(container, {
+				height: '100%',
+				width: '100%',
+				videoId: videoId,
+				playerVars: { autoplay: 1 },
+			events: {
+				'onReady': onPlayerReady 
+			}
 
-				});
+		});
 	});
 </script>
 <svelte:head>
