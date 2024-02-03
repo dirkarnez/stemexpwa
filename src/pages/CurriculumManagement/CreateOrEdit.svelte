@@ -384,10 +384,10 @@
 							<div class="column">
 								<div class="columns is-multiline is-mobile">
 									<div class="column is-one-quarter">
-										Lesson 1
+										File
 									</div>
 									<div class="column">
-										A
+										actions
 									</div>
 								</div>
 							</div>
