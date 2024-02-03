@@ -387,41 +387,6 @@
 										Presentation notes
 									</div>
 									<div class="column is-three-quarters">
-										<a href="google.com" class="is-underlined">terms and conditions</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-									<div class="column is-one-quarter">
-										Student notes
-									</div>
-									<div class="column is-three-quarters">
-										<a href="google.com" class="is-underlined">terms and conditions</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-									<div class="column is-one-quarter">
-										Misc. teaching materials<br/>(e.g. source code)
-									</div>
-									<div class="column is-three-quarters">
-										<a href="google.com" class="is-underlined">terms and conditions</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="column is-one-quarter">
-								Lesson 2
-							</div>
-							<div class="column  is-three-quarters">
-								<div class="columns is-multiline is-mobile">
-									<div class="column is-one-quarter">
-										Presentation notes
-									</div>
-									<div class="column is-three-quarters">
 										<a href="google.com" class="is-underlined">App Inventor Introductory [L1-HelloCodi].pptx</a>
 										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 											x
@@ -457,6 +422,43 @@
 									</div>
 								</div>
 							</div>
+
+
+							<div class="column is-one-quarter">
+								Lesson 2
+							</div>
+							<div class="column  is-three-quarters">
+								<div class="columns is-multiline is-mobile">
+									<div class="column is-one-quarter">
+										Presentation notes
+									</div>
+									<div class="column is-three-quarters">
+										<a href="google.com" class="is-underlined">terms and conditions</a>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+											x
+										</button>
+									</div>
+									<div class="column is-one-quarter">
+										Student notes
+									</div>
+									<div class="column is-three-quarters">
+										<a href="google.com" class="is-underlined">terms and conditions</a>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+											x
+										</button>
+									</div>
+									<div class="column is-one-quarter">
+										Misc. teaching materials<br/>(e.g. source code)
+									</div>
+									<div class="column is-three-quarters">
+										<a href="google.com" class="is-underlined">terms and conditions</a>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+											x
+										</button>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					  </div>
 				</div>
