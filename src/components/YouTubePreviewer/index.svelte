@@ -17,6 +17,7 @@
 		const matched = urlInput.match(/.*watch\?v=([^&]+).*/);
 		if (Array.isArray(matched) && matched.length == 2) {
 			videoId = `${matched[1]}`;
+			loadVideoById(videoId);
 		} else {
 			videoId = "";
 		}
@@ -32,7 +33,7 @@
 	function onPlayerReady(event) {
 		alert(event.target.getIframe().title);
 	}
-	
+
 	onMount(() => {
 		function load() {
 			player = new window["YT"].Player(container, {
