@@ -320,10 +320,10 @@
 						</div>
 						<div class="column is-three-quarters">
 							<code>is-one-quarter</code>
-						  </div>
-						  <div class="column is-one-quarter">
+						</div>
+						<div class="column is-one-quarter">
 							Auto
-						  </div>
+						</div>
 					  </div>
 					<!-- {#each $data.youtube_video_entries || [] as youtube_video_entry, index}
 						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
