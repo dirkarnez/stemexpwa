@@ -295,22 +295,19 @@
 	{#if toBeACourse}
 		<section class="hero">
 			<div class="box">
-				<label class="label">
-					<div class="field">
-						<div class="control">
-							<label class="label">Curriculum plan		
-								<InputFileContainer>
-									<input
-										class="file-input"
-										type="file"
-										name="{information_entries_icon_file_field_key}"
-										on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
-									/>
-								</InputFileContainer> 
-							</label>
-						</div>
+				<div class="field">
+				<label class="label">Curriculum plan</label>
+					<div class="control">
+						<InputFileContainer>
+							<input
+								class="file-input"
+								type="file"
+								name="{information_entries_icon_file_field_key}"
+								on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+							/>
+						</InputFileContainer> 
 					</div>
-				</label>
+				</div>
 			</div>
 		</section>
 		<section class="hero">
