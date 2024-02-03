@@ -357,11 +357,27 @@
 					</div> -->
 					<div class="box">
 						<input
-						class="input"
-						type="text"
-						placeholder="URL of the video"
-						required={true}
-					/>
+							class="input"
+							type="text"
+							placeholder="URL of the video"
+							required={true}
+						/>
+						<div class="field">
+							<label class="label">Curriculum plan
+								<div class="control">
+									<InputFileContainer>
+										<input
+											class="file-input"
+											type="file"
+											name="{information_entries_icon_file_field_key}"
+											on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+										/>
+									</InputFileContainer> 
+								</div>
+							</label>
+						</div>
+
+						
 					  </div>
 					  <div class="box">
 						I'm in a box.
