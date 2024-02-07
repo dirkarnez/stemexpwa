@@ -292,7 +292,9 @@
 	<br>
 	<br>
 
+	  
 	{#if toBeACourse}
+
 		<section class="hero">
 			<div class="box">
 				<div class="field">
@@ -345,6 +347,8 @@
 						{/each}
 					</div>
 				</div>
+
+				
 				<div class="field">
 					<p class="label">Classes</p>
 					<!-- <div class="columns is-multiline is-mobile">
@@ -522,7 +526,7 @@
 			</button>
 		</section> -->
 
-		<section class="hero">
+		<!-- <section class="hero">
 			<h2 class="subtitle">Classes</h2>
 			{#each $data.information_entries || [] as information_entry, index}
 				<div class="box">
@@ -657,7 +661,7 @@
 			<button type="button" class="button is-primary is-light" on:click={addInformationEntry(($data.information_entries || []).length)}>
 				Add new
 			</button>
-		</section>
+		</section> -->
 	{/if}
 
 	<div class="field is-grouped">
