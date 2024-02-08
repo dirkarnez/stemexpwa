@@ -469,7 +469,7 @@
 										</div>
 				
 				
-										<div class="column is-one-quarter" style="background-color: hsl(0deg,0%,95%);">
+										<!-- <div class="column is-one-quarter" style="background-color: hsl(0deg,0%,95%);">
 											Lesson 2
 										</div>
 										<div class="column  is-three-quarters" style="background-color: hsl(0deg,0%,95%);">
@@ -512,7 +512,7 @@
 													</button>
 												</div>
 											</div>
-										</div>
+										</div> -->
 				
 									</div>
 								  </div>
