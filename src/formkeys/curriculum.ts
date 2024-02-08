@@ -5,7 +5,6 @@ export const icon_file_field_key = "icon_file";
 export const icon_file_preview_field_key = "icon_file_preview";
 export const id_field_key = "id";
 
-
 export const youtube_video_entries_field_key = "youtube_video_entries";
 export const youtube_video_entries_title_field_key = "title";
 export const youtube_video_entries_url_field_key = "url";
