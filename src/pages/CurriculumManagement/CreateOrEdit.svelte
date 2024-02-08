@@ -412,6 +412,14 @@
 													<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 														x
 													</button>
+													<InputFileContainer>
+														<input
+															class="file-input"
+															type="file"
+															name="{information_entries_icon_file_field_key}"
+															
+														/>
+													</InputFileContainer> 
 												</div>
 												<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 													Student notes
