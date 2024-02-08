@@ -143,6 +143,11 @@
                     </div>
                 </label>
             </div> -->
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary">Save</button>
+                </div>
+            </div>
         </form>
     </div>
   </div>
