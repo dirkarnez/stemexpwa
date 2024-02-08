@@ -124,7 +124,7 @@
 											</div>
 										</div>
 									</div> -->
-									<div class="box"  style={`background-color: ${colors[index % colors.length]}`}>
+									<div class="box" style={`background-color: ${colors[index % colors.length]}`}>
 										<div class="columns is-multiline is-mobile">
 											<div class="column is-narrow-desktop is-full-mobile">
 												<div class="columns is-mobile is-centered">
