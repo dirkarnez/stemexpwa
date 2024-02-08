@@ -69,7 +69,7 @@
                             class="input"
                             type="hidden"
                             name={curriculumFormKeys.parent_id_key}
-                            bind:value={$data[parent_id_key]}
+                            bind:value={$data[curriculumFormKeys.parent_id_key]}
                         />
                     </div>
                 </label>
@@ -77,7 +77,7 @@
             <div class="field">
                 <figure class="image is-128x128">
                     <img
-                        src={$data[icon_id_key]
+                        src={$data[curriculumFormKeys.icon_id_key]
                             ? getResourcesAPIByID($data[icon_id_key])
                             : 
                             $data[icon_file_preview_field_key]
