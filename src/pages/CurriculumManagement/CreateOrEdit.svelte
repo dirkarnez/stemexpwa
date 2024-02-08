@@ -332,7 +332,7 @@
 									<input
 										class="input"
 										type="text"
-										placeholder="URL of the video"
+										placeholder="URL"
 										required={true}
 									/>
 								</div>
