@@ -377,7 +377,7 @@
 											/>
 										</div>
 										<div class="column is-one-quarter">
-											<a type="button" class="is-danger is-text" on:click={removeBlogEntry(0)}>
+											<a class="is-danger is-text" on:click={removeBlogEntry(0)}>
 												delete this class
 											</a>
 										</div>
