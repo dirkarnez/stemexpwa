@@ -277,15 +277,7 @@
 		</label>
 	</div> -->
 
-	<label>
-		<input type="checkbox" bind:checked={toBeACourse} />
-		This item is a course
-	</label>
-	<br>
-	<br>
 
-	  
-	{#if toBeACourse}
 
 		<section class="hero">
 			<div class="box">
@@ -654,7 +646,6 @@
 				Add new
 			</button>
 		</section> -->
-	{/if}
 
 	<div class="field is-grouped">
 		<div class="control">
