@@ -377,12 +377,9 @@
 											/>
 										</div>
 										<div class="column is-one-quarter">
-											<input
-												class="input"
-												type="text"
-												placeholder="Class name (A? B?)"
-												required={true}
-											/>
+											<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+												x
+											</button>
 										</div>
 									</div>
 
