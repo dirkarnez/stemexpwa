@@ -352,7 +352,7 @@
 							</div>
 					{/each}
 					<div class="column">
-						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data[youtube_video_entries_field_key] || []).length)}>
+						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[blog_entries_field_key] || []).length)}>
 							Add new
 						</button>
 					</div>
