@@ -178,7 +178,7 @@
 										<a class="is-text is-underlined" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>
 									</p>
 									<p>
-										, or
+										or
 									</p>
 									<p>
 										<a class="is-text is-underlined" href={`${$location.pathname}/new-course-type`} use:link>add a new course type here</a>
