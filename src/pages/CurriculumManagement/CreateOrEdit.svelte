@@ -376,6 +376,14 @@
 												required={true}
 											/>
 										</div>
+										<div class="column is-one-quarter">
+											<input
+												class="input"
+												type="text"
+												placeholder="Class name (A? B?)"
+												required={true}
+											/>
+										</div>
 									</div>
 
 									<!-- <div class="field">
