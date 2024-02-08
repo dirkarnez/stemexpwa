@@ -15,14 +15,14 @@
 	
 
     //import { WrappedFetch } from "../../utils/fetch";
-    
+
     const { form, data, setFields, addField, unsetField } = createForm({ 
         onSubmit: (_, context) => {
 			const formData = new FormData(context.event.target);
             console.log(JSON.stringify(formData));
             debugger;
 
-			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", formData);
+			const [  wrappedFetchPromise, abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", formData);
 			wrappedFetchPromise
 			.then(() => {
 				alert("OK");
