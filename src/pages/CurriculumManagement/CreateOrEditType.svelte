@@ -14,8 +14,7 @@
     import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 	
 
-    import { WrappedFetch } from "../../utils/fetch";
-    
+
 	let partners = [];
 
     onMount(() => {
