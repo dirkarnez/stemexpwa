@@ -362,14 +362,19 @@
 			
 			<div class="field">
 				<p class="label">Classes</p>
-				<!-- <div class="columns is-multiline is-mobile">
-					{#each $data.blog_entries || [] as blog_entry, index}
+				<div class="columns is-multiline is-mobile">
+					{#each $data[blog_entries_field_key] || [] as blog_entry, index}
 							<div class="column is-one-quarter">
 								A
 							</div>
 
 					{/each}
-				</div> -->
+				</div>
+
+
+
+
+
 				<div class="box">
 					<input
 						class="input"
