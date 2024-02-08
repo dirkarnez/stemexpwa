@@ -240,7 +240,7 @@
 		<div class="box">
 			<form use:form enctype="multipart/form-data">
 				<div class="field">
-					<label class="label">
+					<label class="label">Icon
 						<div class="control">
 							<input
 								class="input"
@@ -251,7 +251,7 @@
 						</div>
 					</label>
 				</div>
-				
+
 				<div class="field">
 					<figure class="image is-128x128">
 						<img
@@ -265,7 +265,7 @@
 							alt=""
 						/>
 					</figure>
-					<label class="label">Icon
+					<label class="label">
 						<div class="control">
 							<InputFileContainer>
 								<input
