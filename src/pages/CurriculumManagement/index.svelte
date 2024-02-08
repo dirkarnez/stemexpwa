@@ -167,9 +167,9 @@
 			{/if}
 			<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
 				<div style="margin-top: 1.2rem; position:relative;">
-					<div class="box"  style={`border: 2px dashed #0087F7; border-radius: 5px; background-color: unset;`}>
+					<div class="box"  style={`border: 2px dashed #0087F7; border-radius: 5px; background-color: unset;height: 100%; width: 100%;`}>
 						<div class="content" style={`height: 96px; width: 100%;`}>
-							<div class="is-flex is-align-items-center is-justify-content-center buttons" style="height: 100%; width: 100%;">
+							<div class="is-flex is-align-items-center is-justify-content-center buttons">
 								<a class="button is-text" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>
 								<a class="button is-text" href={`${$location.pathname}/new-course-type`} use:link>add a new course type here</a>
 							</div>
