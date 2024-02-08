@@ -15,7 +15,16 @@
 	
 
     //import { WrappedFetch } from "../../utils/fetch";
+	let partners = [];
 
+    onMount(() => {
+		debugger;
+		const [  _wrappedFetchPartners ] = WrappedFetch(`/api/partners`);
+		_wrappedFetchPartners.then(data => {
+			partners = data;
+		});
+    });
+    
     const { form, data, setFields, addField, unsetField } = createForm({ 
         onSubmit: (_, context) => {
 			const formData = new FormData(context.event.target);
