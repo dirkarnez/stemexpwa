@@ -50,6 +50,7 @@
                         />
                     </div>
                 </label>
+            </div>
             
             <div class="field">
                 <figure class="image is-128x128">
