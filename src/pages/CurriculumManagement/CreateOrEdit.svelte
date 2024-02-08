@@ -486,7 +486,7 @@
 					{/each}
 					<div class="column">
 						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[blog_entries_field_key] || []).length)}>
-							Add new
+							Add new class
 						</button>
 					</div>
 				</div>
