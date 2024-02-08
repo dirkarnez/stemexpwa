@@ -78,10 +78,10 @@
                 <figure class="image is-128x128">
                     <img
                         src={$data[curriculumFormKeys.icon_id_key]
-                            ? getResourcesAPIByID($data[icon_id_key])
+                            ? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
                             : 
-                            $data[icon_file_preview_field_key]
-                            ? $data[icon_file_preview_field_key]
+                            $data[curriculumFormKeys.icon_file_preview_field_key]
+                            ? $data[curriculumFormKeys.icon_file_preview_field_key]
                             : `https://bulma.io/images/placeholders/128x128.png`}
                         alt=""
                     />
@@ -92,7 +92,7 @@
                             <input
                                 class="file-input"
                                 type="file"
-                                name={icon_file_field_key}
+                                name={curriculumFormKeys.icon_file_field_key}
                                 on:change={e => handleImageChange(e, dataURI => setFields(icon_file_preview_field_key , dataURI, true))}
                                 required={true}
                             />
