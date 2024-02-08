@@ -146,19 +146,6 @@
 					<div class="box"  style={`border: 2px dashed #0087F7; border-radius: 5px; background-color: unset;`}>
 						<div class="content" style="height: 96px; width: 100%;">
 							<div class="is-flex is-align-items-center is-justify-content-center buttons" style="height: 100%; width: 100%;">
-								<!-- <p style="color: white; text-align: center;" class="is-size-5 is-size-6-tablet has-text-weight-semibold">
-									<Link to={`${$location.pathname}/add2`}>
-										<div class="content is-flex is-align-items-center is-justify-content-center">
-											Add
-										</div>
-									</Link>
-
-									<Link to={`${$location.pathname}/add`}>
-										<div class="content is-flex is-align-items-center is-justify-content-center">
-											Add
-										</div>
-									</Link>
-								</p> -->
 								<a class="button is-text" href={`/new-course`} use:link>add a new course here</a>
 								<a class="button is-text" href={`/new-course-type`} use:link>add a new course type here</a>
 							</div>
