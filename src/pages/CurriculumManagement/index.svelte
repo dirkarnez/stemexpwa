@@ -6,7 +6,6 @@
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import CreateOrEdit from "./CreateOrEdit.svelte";
 	import CreateOrEditType from "./CreateOrEditType.svelte";
-	
 	import Index from "./index.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { isNullOrEmpty } from "../../utils/strings";
