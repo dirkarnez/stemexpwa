@@ -1,11 +1,17 @@
 
 <form use:form enctype="multipart/form-data">
-	<input
-		class="input"
-		type="hidden"
-		name={parent_id_key}
-		bind:value={$data[parent_id_key]}
-	/>
+
+    <div class="field">
+		<label class="label">Description
+			<div class="control">
+                    <input
+                    class="input"
+                    type="hidden"
+                    name={parent_id_key}
+                    bind:value={$data[parent_id_key]}
+                />
+			</div>
+		</label>
 	
 	<div class="field">
 		<figure class="image is-128x128">
