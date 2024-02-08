@@ -11,7 +11,7 @@
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
 	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
-    import * as a from "../../formkeys/curriculum.ts";
+    import * as curriculum from "../../formkeys/curriculum.ts";
 	
 
     //import { WrappedFetch } from "../../utils/fetch";
