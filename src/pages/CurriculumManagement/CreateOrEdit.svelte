@@ -367,12 +367,17 @@
 					{#each $data[blog_entries_field_key] || [] as blog_entry, index}
 							<div class="column is-full">
 								<div class="box">
-									<input
-										class="input"
-										type="text"
-										placeholder="Class name (A? B?)"
-										required={true}
-									/>
+									<div class="columns">
+										<div class="column is-three-quarters">
+											<input
+												class="input"
+												type="text"
+												placeholder="Class name (A? B?)"
+												required={true}
+											/>
+										</div>
+									</div>
+
 									<!-- <div class="field">
 										<label class="label">Curriculum plan
 											<div class="control">
