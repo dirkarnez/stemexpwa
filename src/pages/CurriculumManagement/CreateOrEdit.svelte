@@ -230,7 +230,7 @@
 		</label>
 	</div> -->
 
-<div class="columns  is-multiline">
+<div class="columns is-multiline">
 	<div class="column">
 		<div class="content">
 			<h4>Curriculum</h4>
