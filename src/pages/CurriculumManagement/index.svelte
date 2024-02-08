@@ -128,7 +128,7 @@
 
 									<div class="box m-0 p-0" style={`background-color: ${colors[index % colors.length]}; height: 96px; width: 100%;`}>
 										<div class="columns m-0 p-0">
-											<div class="column is-narrow-desktop m-0 p-0">
+											<div class="column is-narrow m-0 p-0">
 												<img src={getResourcesAPIByID(icon_id)} style={`max-height: 96px;`} alt="">
 											</div>
 											<div class="column is-full-mobile">
