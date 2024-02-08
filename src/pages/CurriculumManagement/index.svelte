@@ -160,7 +160,7 @@
 				{/each}
 			{/if}
 			<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-				<div style="margin-top: 1.2rem; position:relative;">
+				<div style="margin-top: 1.5rem; position:relative;">
 					<div class="box"  style={`border: 2px dashed #0087F7; border-radius: 5px; background-color: unset;height: 96px; width: 100%;`}>
 						<div class="content" >
 							<div class="is-flex is-align-items-center is-justify-content-center buttons">
