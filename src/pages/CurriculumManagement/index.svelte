@@ -173,7 +173,7 @@
 					<div class="box m-0 p-0" style={`background-color: unset; border: 2px dashed #0087F7; height: 96px; width: 100%;`}>
 						<div class="columns is-mobile m-0 p-0">
 							<div class={`column is-flex is-align-items-center is-justify-content-center`}>
-								<a class="button is-text" href={`${$location.pathname}/new-course`} use:link>add a new course here</a><br>
+								<a class="button is-text" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>
 								<a class="button is-text" href={`${$location.pathname}/new-course-type`} use:link>add a new course type here</a>
 							</div>
 						</div>
