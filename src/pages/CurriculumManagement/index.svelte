@@ -132,7 +132,7 @@
 												<img src={getResourcesAPIByID(icon_id)} style={`max-height: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px;`} alt="">
 											</div>
 											<div class="column">
-												<div class="content">
+												<div class="content is-flex is-align-items-center">
 													<p>{description}</p>
 												</div>
 											</div>
