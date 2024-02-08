@@ -174,7 +174,7 @@
 						<div class="columns is-mobile m-0 p-0">
 							<div class={`column is-align-items-center is-justify-content-center`}>
 									<a class="is-text is-underlined" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>
-									<a class="is-text" href={`${$location.pathname}/new-course-type`} use:link>add a new course type here</a>
+									<a class="is-text is-underlined" href={`${$location.pathname}/new-course-type`} use:link>add a new course type here</a>
 							</div>
 						</div>
 					</div>
