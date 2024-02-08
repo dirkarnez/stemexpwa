@@ -135,8 +135,8 @@
 											</div>
 											<div class="column is-full-mobile">
 												<div class="content">
+
 													<p>{description}</p>
-													<a class="is-link" href={`javascript:void(0)`}>Join now</a>
 												</div>
 											</div>
 										</div>
