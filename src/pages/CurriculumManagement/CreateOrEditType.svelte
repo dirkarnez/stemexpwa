@@ -75,7 +75,7 @@
     });
 
 </script>
-<form use:form enctype="multipart/form-data">
+<form class="columns" use:form enctype="multipart/form-data">
     <div class="field">
 		<label class="label">Description
 			<div class="control">
