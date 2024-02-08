@@ -324,7 +324,7 @@
 						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
 					{/each}
 					<div class="column">
-						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data.youtube_video_entries || []).length)}>
+						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data.youtube_video_entries || []).length)}>
 							Add new
 						</button>
 					</div>
