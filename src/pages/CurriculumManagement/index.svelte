@@ -101,7 +101,7 @@
 			{#if Array.isArray(curriculum)}
 				{#each curriculum as { description, icon_id, is_course }, index}
 					<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-						<div style="margin-top: 1.2rem; position:relative;">
+						<div style="margin-top: 1.5rem; position:relative;">
 							<div style={`position:absolute;right:0; top: -1.5rem;`}>
 								<a href={`${$location.pathname}/${stringToURLPart(description)}/edit`} use:link><i class="fas fa-pen" style="padding: 0.2rem"></i></a>
 							</div>
