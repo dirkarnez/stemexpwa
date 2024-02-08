@@ -240,7 +240,7 @@
 		<div class="box">
 			<form use:form enctype="multipart/form-data">
 				<div class="field">
-					<label class="label">Description
+					<label class="label">
 						<div class="control">
 							<input
 								class="input"
