@@ -124,6 +124,24 @@
 											</div>
 										</div>
 									</div> -->
+
+
+									<div class="box m-0 p-0" style="background-color: rgb(33, 209, 100);height: 96px;width: 100%;">
+										<div class="columns  m-0 p-0" style="
+										padding: 0;
+										margin: 0;
+									"><div class="column is-narrow-desktop" style="
+										padding: 0;
+										margin: 0;
+									"><img src="https://localhost/api/resourse?id=ad9e5d57c66e11ee9aa006c3bc34e27e" alt="" style="max-height: 96px;"></div> <div class="column">435345435</div></div></div>
+
+
+
+
+
+
+
+
 									<div class="box" style={`background-color: ${colors[index % colors.length]};height: 96px; width: 100%;`}>
 										<div class="columns is-multiline is-mobile">
 											<div class="column is-narrow-desktop is-full-mobile">
