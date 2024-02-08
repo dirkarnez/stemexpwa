@@ -1,4 +1,4 @@
-const description_field_key = "description";
+export const description_field_key = "description";
 const icon_id_key = "icon_id";
 const parent_id_key = "parent_id";
 const icon_file_field_key = "icon_file";
