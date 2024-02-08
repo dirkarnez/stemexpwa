@@ -175,13 +175,10 @@
 							<div class={`column is-narrow is-align-items-center is-justify-content-center`}>
 								<p>
 									<a class="is-text is-underlined" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>
-									<a class="is-text is-underlined" href={`${$location.pathname}/new-course-type`} use:link>add a new course type here</a>
 								</p>
 								<p>
-									<a class="is-text is-underlined" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>
 									<a class="is-text is-underlined" href={`${$location.pathname}/new-course-type`} use:link>add a new course type here</a>
 								</p>
-
 							</div>
 						</div>
 					</div>
