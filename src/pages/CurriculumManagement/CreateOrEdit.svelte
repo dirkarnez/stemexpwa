@@ -108,7 +108,7 @@
 			removeBlogEntry(i);
 		});
 	}
-	
+
     onMount(() => {
 		if (isNullOrEmpty(id)) {
 			setFields(description_field_key, "", true);
@@ -263,7 +263,7 @@
 		</label>
 	</div>
 
-	<div class="field">
+	<!-- <div class="field">
 		<label class="label" for="select-accessible">Accessible to
 			<div class="notification ex3 p-2" id="select-accessible">
 				{#each partners as { full_name }}
@@ -275,7 +275,7 @@
 				<br>
 			</div>
 		</label>
-	</div>
+	</div> -->
 
 	<label>
 		<input type="checkbox" bind:checked={toBeACourse} />
