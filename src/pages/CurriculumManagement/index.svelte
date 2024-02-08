@@ -131,7 +131,7 @@
 											<div class="column is-narrow m-0 p-0">
 												<img src={getResourcesAPIByID(icon_id)} style={`max-height: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px;`} alt="">
 											</div>
-											<div class="column is-flex is-align-items-center">
+											<div class={`column is-flex is-align-items-center is-justify-content-center`}>
 										
 													<p>{description}</p>
 											
