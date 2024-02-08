@@ -363,6 +363,7 @@
 			<div class="field">
 				<p class="label">Classes</p>
 				<div class="columns is-multiline is-mobile">
+					<!-- !!!!!!!!TODO -->
 					{#each $data[blog_entries_field_key] || [] as blog_entry, index}
 							<div class="column is-one-quarter">
 								A
