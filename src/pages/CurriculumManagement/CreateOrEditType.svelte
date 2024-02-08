@@ -56,6 +56,7 @@
 			// 	...tempValues
 			// };
 			const formData = new FormData(context.event.target);
+            console.log(JSON.stringify(formData));
 
 		
 
