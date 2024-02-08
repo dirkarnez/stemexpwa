@@ -42,8 +42,6 @@
     export let id;
 	export let parentId;
 
-	let shouldBeACourse = false;
-	let toBeACourse = false;
     // export let previousPath;
 
     const { form, data, setFields, addField, unsetField } = createForm({ 
