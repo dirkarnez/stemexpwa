@@ -483,15 +483,8 @@
 									</div>
 								  </div>
 							</div>
-
 					{/each}
 				</div>
-
-
-
-
-
-				
 			</div>
 				<div class="field is-grouped">
 					<div class="control">
