@@ -127,9 +127,9 @@
 
 
 									<div class="box m-0 p-0" style={`background-color: ${colors[index % colors.length]}; height: 96px; width: 100%;`}>
-										<div class="columns is-mobile m-0 p-0">
-											<div class="column is-narrow m-0 p-0">
-												<img src={getResourcesAPIByID(icon_id)} style={`max-height: 96px; max-width: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; object-fit: cover; `} alt="">
+										<div class="columns is-mobile m-0 p-0" style={`height: 100%`}>
+											<div class="column is-narrow m-0 p-0" style={`height: 100%`}>
+												<img src={getResourcesAPIByID(icon_id)} style={`height: 100%; max-width: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; object-fit: cover; `} alt="">
 											</div>
 											<div class={`column is-flex is-align-items-center is-justify-content-center`}>
 												<p>{description}</p>
