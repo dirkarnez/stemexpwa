@@ -256,6 +256,7 @@
 				<div class="field">
 					<figure class="image is-128x128">
 						<img
+							style={`object-fit: cover; height: 100%;`}
 							src={$data[icon_id_key]
 								? getResourcesAPIByID($data[icon_id_key])
 								: 
