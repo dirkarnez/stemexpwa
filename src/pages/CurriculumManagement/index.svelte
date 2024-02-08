@@ -172,8 +172,8 @@
 
 					<div class="box m-0 p-0" style={`background-color: unset; border: 2px dashed #0087F7; height: 96px; width: 100%;`}>
 						<div class="columns is-mobile m-0 p-0">
-							<div class={`column is-narrow is-align-items-center is-justify-content-center`}>
-								<p>
+							<div class={`column is-narrow`}>
+								<p class="is-align-items-center is-justify-content-center">
 									<a class="is-text is-underlined" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>
 								</p>
 								<p>
