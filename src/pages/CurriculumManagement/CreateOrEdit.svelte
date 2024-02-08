@@ -108,16 +108,8 @@
 			removeBlogEntry(i);
 		});
 	}
-
-	let partners = [];
-
+	
     onMount(() => {
-		debugger;
-		const [  _wrappedFetchPartners ] = WrappedFetch(`/api/partners`);
-		_wrappedFetchPartners.then(data => {
-			partners = data;
-		})
-
 		if (isNullOrEmpty(id)) {
 			setFields(description_field_key, "", true);
 			setFields(icon_id_key, "", true);
