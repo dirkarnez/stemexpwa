@@ -327,7 +327,7 @@
 			<div class="field">
 				<p class="label">Blog entries</p>
 				<div class="columns is-multiline is-mobile">
-					{#each $data.blog_entries || [] as blog_entry, index}
+					{#each $data[blog_entries_field_key] || [] as blog_entry, index}
 								<div class="column is-half">
 									<input
 										class="input"
