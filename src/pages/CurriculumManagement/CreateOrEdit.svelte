@@ -125,11 +125,11 @@
 					[blog_entries_external_url_field_key]: "",
 					[blog_entries_title_field_key]: ""
 				}],
-				[youtube_video_entries_field_key]: (Array.isArray(_data[blog_entries_field_key]) && _data[blog_entries_field_key].length > 0) ? _data[blog_entries_field_key] : [{
+				[youtube_video_entries_field_key]: (Array.isArray(_data[youtube_video_entries_field_key]) && _data[youtube_video_entries_field_key].length > 0) ? _data[youtube_video_entries_field_key] : [{
 					[blog_entries_external_url_field_key]: "",
 					[blog_entries_title_field_key]: ""
 				}],
-				[information_entries_field_key]: (Array.isArray(_data[blog_entries_field_key]) && _data[blog_entries_field_key].length > 0) ? _data[blog_entries_field_key] : [{
+				[information_entries_field_key]: (Array.isArray(_data[information_entries_field_key]) && _data[information_entries_field_key].length > 0) ? _data[information_entries_field_key] : [{
 					[blog_entries_external_url_field_key]: "",
 					[blog_entries_title_field_key]: ""
 				}]
