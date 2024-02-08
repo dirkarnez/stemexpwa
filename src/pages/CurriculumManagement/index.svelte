@@ -107,7 +107,7 @@
 							</div>
 							{#if !is_course}
 								<Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
-									<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
+									<div class="box is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
 										<div class="card-image">
 											<figure class="image is-96x96" style="overflow: hidden;">
 											<img 
