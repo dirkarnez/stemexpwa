@@ -119,7 +119,7 @@
 										<div class="card-content pt-0 pb-0">
 											<div class="content" style="height: 96px;width: 100%;">
 											<div class="is-flex is-flex-direction-row is-align-items-center pt-1 pb-1" style="height: 100%; width: 100%">
-												<p style="color: white; text-align: center;" class="is-size-5 is-size-6-tablet has-text-weight-semibold"></p>
+												<p style="text-align: center;" class="is-size-5 is-size-6-tablet has-text-weight-semibold"></p>
 											</div>
 											</div>
 										</div>
@@ -131,7 +131,7 @@
 											<div class="column is-narrow m-0 p-0" style={`height: 100%`}>
 												<img src={getResourcesAPIByID(icon_id)} style={`height: 100%; max-width: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; object-fit: cover; `} alt="">
 											</div>
-											<div class={`column is-flex is-align-items-center is-justify-content-center`}>
+											<div class={`column is-flex is-align-items-center is-justify-content-center is-color-white`}>
 												<p>{description}</p>
 											</div>
 										</div>
