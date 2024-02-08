@@ -38,6 +38,42 @@
 	const blog_entries_external_url_field_key = "external_url";
 	const blog_entries_title_field_key = "title";
 
+    const { form, data, setFields, addField, unsetField } = createForm({ 
+        onSubmit: (values, context) => {
+			// const { 
+			// 	[icon_file_preview_field_key]: undefined,
+			// 	[information_entries_field_key]: [], 
+			// 	...tempValues 
+			// } = { [information_entries_field_key]: (values[information_entries_field_key] || []), ...values};
+
+			// const finalValues = {
+			// 	[information_entries_field_key]: (values[information_entries_field_key] || [])
+			// 		.map(information_entry => {
+			// 			const { [information_entries_icon_file_preview_field_key]: undefined, ...obj  } = information_entry;
+			// 			return ({...obj})
+			// 		}),
+			// 	...tempValues
+			// };
+			const formData = new FormData(context.event.target);
+
+		
+
+			// console.log(finalValues);
+
+			debugger;
+
+			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", formData);
+			wrappedFetchPromise
+			.then(() => {
+				alert("OK");
+				dispatch('done');
+			})
+			.catch(err => {
+				alert(`Not OK: ${err}`)
+			});
+        },
+    });
+
 </script>
 <form use:form enctype="multipart/form-data">
 
