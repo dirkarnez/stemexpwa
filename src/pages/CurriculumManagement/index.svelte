@@ -132,13 +132,10 @@
 												<img src={getResourcesAPIByID(icon_id)} style={`max-height: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px;`} alt="">
 											</div>
 											<div class={`column is-flex is-align-items-center is-justify-content-center`}>
-										
-													<p>{description}</p>
-											
+												<p>{description}</p>
 											</div>
 										</div>
 									</div>
-									
 								</Link>
 							{:else}
 								<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
