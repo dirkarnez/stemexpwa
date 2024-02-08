@@ -54,6 +54,7 @@
             <div class="field">
                 <figure class="image is-128x128">
                     <img
+                        style={`height: 100%; width: 100%; object-fit: cover;`}
                         src={$data[curriculumFormKeys.icon_id_key]
                             ? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
                             : 
