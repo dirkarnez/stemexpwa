@@ -107,7 +107,7 @@
                             class="input"
                             type="text"
                             name={curriculumFormKeys.description_field_key}
-                            bind:value={$data[description_field_key]}
+                            bind:value={$data[curriculumFormKeys.description_field_key]}
                             required={true}
                         />
                     </div>
