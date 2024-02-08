@@ -93,7 +93,7 @@
                                 class="file-input"
                                 type="file"
                                 name={curriculumFormKeys.icon_file_field_key}
-                                on:change={e => handleImageChange(e, dataURI => setFields(icon_file_preview_field_key , dataURI, true))}
+                                on:change={e => handleImageChange(e, dataURI => setFields(curriculumFormKeys.icon_file_preview_field_key , dataURI, true))}
                                 required={true}
                             />
                         </InputFileContainer>
@@ -106,7 +106,7 @@
                         <input
                             class="input"
                             type="text"
-                            name={description_field_key}
+                            name={curriculumFormKeys.description_field_key}
                             bind:value={$data[description_field_key]}
                             required={true}
                         />
