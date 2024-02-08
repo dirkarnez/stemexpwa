@@ -121,7 +121,7 @@
 					[description_field_key]: _data[description_field_key],
 					[icon_id_key]: _data[icon_id_key],
 					[parent_id_key]: _data[parent_id_key],
-					[blog_entries_field_key]: (Array.isArray(_data[blog_entries_field_key]) && _data[blog_entries_field_key] || [{
+					[blog_entries_field_key]: (Array.isArray(_data[blog_entries_field_key]) && _data[blog_entries_field_key].length > 1 || [{
 						[blog_entries_external_url_field_key]: "",
 						[blog_entries_title_field_key]: ""
 					}]),
