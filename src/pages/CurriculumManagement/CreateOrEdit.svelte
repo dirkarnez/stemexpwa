@@ -121,7 +121,9 @@
 					[description_field_key]: _data[description_field_key],
 					[icon_id_key]: _data[icon_id_key],
 					[parent_id_key]: _data[parent_id_key],
-					[blog_entries_field_key]: (_data[blog_entries_field_key] || [{}]),
+					[blog_entries_field_key]: (_data[blog_entries_field_key] || [{
+						
+					}]),
 					[youtube_video_entries_field_key]: (_data[youtube_video_entries_field_key] || []),
 					[information_entries_field_key]: (_data[information_entries_field_key] || [])
 				});
