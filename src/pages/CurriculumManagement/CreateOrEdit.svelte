@@ -108,11 +108,11 @@
 	// }
 
     onMount(() => {
-		if (isNullOrEmpty(id)) {
-			setFields(description_field_key, "", true);
-			setFields(icon_id_key, "", true);
-			setFields(parent_id_key, parentId, true);
-		} else {
+		// if (isNullOrEmpty(id)) {
+		// 	setFields(description_field_key, "", true);
+		// 	setFields(icon_id_key, "", true);
+		// 	setFields(parent_id_key, parentId, true);
+		// } else {
 			const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
 
 			_wrappedFetchCurriculumEntry.then(_data => {
@@ -129,7 +129,7 @@
 					[information_entries_field_key]: (_data[information_entries_field_key] || [])
 				});
 			})
-		}
+		
 
 
 
