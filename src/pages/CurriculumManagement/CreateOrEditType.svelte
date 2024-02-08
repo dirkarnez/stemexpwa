@@ -105,7 +105,7 @@
             <div class="field">
                 <label class="label" for="select-accessible">Accessible to
                     <div class="notification ex3 p-2" id="select-accessible">
-                        {#each partners as { full_name }}
+                        {#each (partners || []) as { full_name }}
                             <label class="checkbox">
                                 <input type="checkbox">&nbsp;&nbsp;{full_name} (and their parents registered this course)
                             </label>
@@ -115,7 +115,7 @@
                     </div>
                 </label>
             </div>
-            
+
             <div class="field is-grouped">
                 <div class="control">
                     <button class="button is-primary">Save</button>
