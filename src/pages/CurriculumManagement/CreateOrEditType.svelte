@@ -19,22 +19,7 @@
 
 
     const { form, data, setFields, addField, unsetField } = createForm({ 
-        onSubmit: (values, context) => {
-
-			// const { 
-			// 	[icon_file_preview_field_key]: undefined,
-			// 	[information_entries_field_key]: [], 
-			// 	...tempValues 
-			// } = { [information_entries_field_key]: (values[information_entries_field_key] || []), ...values};
-
-			// const finalValues = {
-			// 	[information_entries_field_key]: (values[information_entries_field_key] || [])
-			// 		.map(information_entry => {
-			// 			const { [information_entries_icon_file_preview_field_key]: undefined, ...obj  } = information_entry;
-			// 			return ({...obj})
-			// 		}),
-			// 	...tempValues
-			// };
+        onSubmit: (_, context) => {
 			const formData = new FormData(context.event.target);
             console.log(JSON.stringify(formData));
             debugger;
