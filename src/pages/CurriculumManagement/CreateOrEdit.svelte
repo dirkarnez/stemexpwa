@@ -302,6 +302,7 @@
 								type="file"
 								name="{information_entries_icon_file_field_key}"
 								on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+								required={true}
 							/>
 						</InputFileContainer> 
 					</div>
