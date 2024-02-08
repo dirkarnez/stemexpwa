@@ -131,9 +131,8 @@
 											<div class="column is-narrow m-0 p-0">
 												<img src={getResourcesAPIByID(icon_id)} style={`max-height: 96px;`} alt="">
 											</div>
-											<div class="column is-full-mobile">
+											<div class="column">
 												<div class="content">
-
 													<p>{description}</p>
 												</div>
 											</div>
