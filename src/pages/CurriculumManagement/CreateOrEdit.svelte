@@ -81,31 +81,31 @@
     });
 
 	
-	$: if (toBeACourse) {
-		if (($data[youtube_video_entries_field_key] || []).length < 1) {
-			addYouTubeVideo(0)();
-		}
+	// $: if (toBeACourse) {
+	// 	if (($data[youtube_video_entries_field_key] || []).length < 1) {
+	// 		addYouTubeVideo(0)();
+	// 	}
 
-		if (($data[information_entries_field_key] || []).length < 1) {
-			addInformationEntry(0)();
-		}
+	// 	if (($data[information_entries_field_key] || []).length < 1) {
+	// 		addInformationEntry(0)();
+	// 	}
 
-		if (($data[blog_entries_field_key] || []).length < 1) {
-			addBlogEntry(0)();
-		}
-	} else {
-		Array(($data[youtube_video_entries_field_key] || []).length).fill(0).forEach((_, i) => {
-			removeYouTubeVideo(i);
-		});
+	// 	if (($data[blog_entries_field_key] || []).length < 1) {
+	// 		addBlogEntry(0)();
+	// 	}
+	// } else {
+	// 	Array(($data[youtube_video_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+	// 		removeYouTubeVideo(i);
+	// 	});
 
-		Array(($data[information_entries_field_key] || []).length).fill(0).forEach((_, i) => {
-			removeInformationEntry(i);
-		});
+	// 	Array(($data[information_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+	// 		removeInformationEntry(i);
+	// 	});
 
-		Array(($data[blog_entries_field_key] || []).length).fill(0).forEach((_, i) => {
-			removeBlogEntry(i);
-		});
-	}
+	// 	Array(($data[blog_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+	// 		removeBlogEntry(i);
+	// 	});
+	// }
 
     onMount(() => {
 		if (isNullOrEmpty(id)) {
