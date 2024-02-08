@@ -668,9 +668,9 @@
 		padding-top: 2rem;
 		padding-bottom: 2rem;
 	}
-	div.ex3 {
+	/* div.ex3 {
 	  width: 100%;
 	  height: 200px;
 	  overflow-y: auto;
-	}
+	} */
 </style>
