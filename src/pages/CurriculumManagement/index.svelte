@@ -160,7 +160,7 @@
 									</Link>
 								</p> -->
 								<a class="button is-text" href={`/new-course`} use:link>add a new course here</a>
-								<a class="button is-text" href={`/edit`} use:link>add a new course type here</a>
+								<a class="button is-text" href={`/new-course-type`} use:link>add a new course type here</a>
 							</div>
 						</div>
 					</div>
