@@ -14,7 +14,8 @@
     import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 	
 
-    //import { WrappedFetch } from "../../utils/fetch";
+    import { WrappedFetch } from "../../utils/fetch";
+    
 	let partners = [];
 
     onMount(() => {
@@ -24,7 +25,7 @@
 			partners = data;
 		});
     });
-    
+
     const { form, data, setFields, addField, unsetField } = createForm({ 
         onSubmit: (_, context) => {
 			const formData = new FormData(context.event.target);
