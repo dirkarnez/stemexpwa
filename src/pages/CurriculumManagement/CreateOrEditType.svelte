@@ -24,12 +24,6 @@
             console.log(JSON.stringify(formData));
             debugger;
 
-            setFields
-
-			// console.log(finalValues);
-
-			debugger;
-
 			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", formData);
 			wrappedFetchPromise
 			.then(() => {
