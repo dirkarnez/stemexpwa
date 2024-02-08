@@ -670,7 +670,7 @@
 		</section> -->
 
 
-
+<!-- 
 <style>
 	.hero {
 		padding-top: 2rem;
@@ -681,4 +681,4 @@
 	  height: 200px;
 	  overflow-y: auto;
 	} */
-</style>
+</style> -->
