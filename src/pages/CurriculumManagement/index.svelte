@@ -58,7 +58,11 @@
 			</Route>
 		{/each}
 	{/if}
-	<Route path={`/add`}>
+	<Route path={`/new-course`}>
+		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
+		<CreateOrEdit parentId={""} id={""} on:done={init}/> <!---previousPath={currentPath}-->
+	</Route>
+	<Route path={`/new-course-type`}>
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 		<CreateOrEdit parentId={""} id={""} on:done={init}/> <!---previousPath={currentPath}-->
 	</Route>
