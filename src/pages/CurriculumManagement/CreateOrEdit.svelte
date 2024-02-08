@@ -378,7 +378,7 @@
 										</div>
 										<div class="column is-one-quarter is-flex">
 											<button class="button is-primary is-light ml-auto" on:click={removeBlogEntry(0)}>
-												delete this class
+												add new lesson
 											</button>
 											<button class="button is-danger is-light ml-auto" on:click={removeBlogEntry(0)}>
 												delete this class
