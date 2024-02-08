@@ -131,7 +131,7 @@
 											<div class="column is-narrow m-0 p-0" style={`height: 100%`}>
 												<img src={getResourcesAPIByID(icon_id)} style={`height: 100%; max-width: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; object-fit: cover; `} alt="">
 											</div>
-											<div class={`column is-flex is-align-items-center is-justify-content-center is-color-white`}>
+											<div class={`column is-flex is-align-items-center is-justify-content-center has-text-white`}>
 												<p>{description}</p>
 											</div>
 										</div>
