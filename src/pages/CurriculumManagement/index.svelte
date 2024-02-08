@@ -175,7 +175,10 @@
 							<div class={`column`}>
 								<div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
 									<p>
-										<a class="is-text is-underlined" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>, or
+										<a class="is-text is-underlined" href={`${$location.pathname}/new-course`} use:link>add a new course here</a>
+									</p>
+									<p>
+										, or
 									</p>
 									<p>
 										<a class="is-text is-underlined" href={`${$location.pathname}/new-course-type`} use:link>add a new course type here</a>
