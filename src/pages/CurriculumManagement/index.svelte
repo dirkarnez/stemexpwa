@@ -64,7 +64,7 @@
 	</Route>
 	<Route path={`/new-course-type`}>
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-		<CreateOrEdit parentId={""} id={""} on:done={init}/> <!---previousPath={currentPath}-->
+		<CreateOrEditType parentId={""} id={""} on:done={init}/> <!---previousPath={currentPath}-->
 	</Route>
 
 	<Route path="/">
