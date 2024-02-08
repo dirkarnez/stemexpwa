@@ -40,6 +40,7 @@
 
     const { form, data, setFields, addField, unsetField } = createForm({ 
         onSubmit: (values, context) => {
+            debugger;
 			// const { 
 			// 	[icon_file_preview_field_key]: undefined,
 			// 	[information_entries_field_key]: [], 
