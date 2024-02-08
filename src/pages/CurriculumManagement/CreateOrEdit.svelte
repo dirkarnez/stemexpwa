@@ -230,252 +230,260 @@
 		</label>
 	</div> -->
 
-
-
-		<section class="hero">
-			<div class="box">
-				<form use:form enctype="multipart/form-data">
-					<div class="field">
-						<label class="label">Description
-							<div class="control">
-								<input
-									class="input"
-									type="hidden"
-									name={parent_id_key}
-									bind:value={$data[parent_id_key]}
-								/>
-							</div>
-						</label>
-					</div>
-				
-					
-					<div class="field">
-						<figure class="image is-128x128">
-							<img
-								src={$data[icon_id_key]
-									? getResourcesAPIByID($data[icon_id_key])
-									: 
-									$data[icon_file_preview_field_key]
-									? $data[icon_file_preview_field_key]
-									: `https://bulma.io/images/placeholders/128x128.png`}
-								alt=""
-							/>
-						</figure>
-						<label class="label">Icon
-							<div class="control">
-								<InputFileContainer>
-									<input
-										class="file-input"
-										type="file"
-										name={icon_file_field_key}
-										on:change={e => handleImageChange(e, dataURI => setFields(icon_file_preview_field_key , dataURI, true))}
-									/>
-								</InputFileContainer>
-							</div>
-						</label>
-					</div>
-					<div class="field">
-						<label class="label">Description
-							<div class="control">
-								<input
-									class="input"
-									type="text"
-									name={description_field_key}
-									bind:value={$data[description_field_key]}
-									required={true}
-								/>
-							</div>
-						</label>
-					</div>
-
+<div class="columns">
+	<div class="column">
+		<div class="content">
+			<h4>Curriculum</h4>
+		</div>
+	</div>
+	<div class="column">
+		<div class="box">
+			<form use:form enctype="multipart/form-data">
 				<div class="field">
-					<label class="label">Curriculum plan
+					<label class="label">Description
+						<div class="control">
+							<input
+								class="input"
+								type="hidden"
+								name={parent_id_key}
+								bind:value={$data[parent_id_key]}
+							/>
+						</div>
+					</label>
+				</div>
+			
+				
+				<div class="field">
+					<figure class="image is-128x128">
+						<img
+							src={$data[icon_id_key]
+								? getResourcesAPIByID($data[icon_id_key])
+								: 
+								$data[icon_file_preview_field_key]
+								? $data[icon_file_preview_field_key]
+								: `https://bulma.io/images/placeholders/128x128.png`}
+							alt=""
+						/>
+					</figure>
+					<label class="label">Icon
 						<div class="control">
 							<InputFileContainer>
 								<input
 									class="file-input"
 									type="file"
-									name="{information_entries_icon_file_field_key}"
-									on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+									name={icon_file_field_key}
+									on:change={e => handleImageChange(e, dataURI => setFields(icon_file_preview_field_key , dataURI, true))}
 								/>
-							</InputFileContainer> 
+							</InputFileContainer>
 						</div>
 					</label>
 				</div>
 				<div class="field">
-					<p class="label">YouTube videos</p>
-					<div class="columns is-multiline is-mobile">
-						{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
-							<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
-						{/each}
-						<div class="column">
-							<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data.youtube_video_entries || []).length)}>
-								Add new
-							</button>
+					<label class="label">Description
+						<div class="control">
+							<input
+								class="input"
+								type="text"
+								name={description_field_key}
+								bind:value={$data[description_field_key]}
+								required={true}
+							/>
 						</div>
-					  </div>
+					</label>
 				</div>
-				<div class="field">
-					<p class="label">Blog entries</p>
-					<div class="columns is-multiline is-mobile">
-						{#each $data.blog_entries || [] as blog_entry, index}
-									<div class="column is-half">
-										<input
-															class="input"
-															type="text"
-															placeholder="URL of the video"
-															required={true}
-														/>
-									</div>
+
+			<div class="field">
+				<label class="label">Curriculum plan
+					<div class="control">
+						<InputFileContainer>
+							<input
+								class="file-input"
+								type="file"
+								name="{information_entries_icon_file_field_key}"
+								on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+							/>
+						</InputFileContainer> 
+					</div>
+				</label>
+			</div>
+			<div class="field">
+				<p class="label">YouTube videos</p>
+				<div class="columns is-multiline is-mobile">
+					{#each $data.youtube_video_entries || [] as youtube_video_entry, index}
+						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
+					{/each}
+					<div class="column">
+						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data.youtube_video_entries || []).length)}>
+							Add new
+						</button>
+					</div>
+				  </div>
+			</div>
+			<div class="field">
+				<p class="label">Blog entries</p>
+				<div class="columns is-multiline is-mobile">
+					{#each $data.blog_entries || [] as blog_entry, index}
 								<div class="column is-half">
 									<input
-									class="input"
-									type="text"
-									placeholder="URL of the video"
-									required={true}
-								/>
+														class="input"
+														type="text"
+														placeholder="URL of the video"
+														required={true}
+													/>
 								</div>
-						{/each}
-					</div>
+							<div class="column is-half">
+								<input
+								class="input"
+								type="text"
+								placeholder="URL of the video"
+								required={true}
+							/>
+							</div>
+					{/each}
 				</div>
-
-				
-				<div class="field">
-					<p class="label">Classes</p>
-					<!-- <div class="columns is-multiline is-mobile">
-						{#each $data.blog_entries || [] as blog_entry, index}
-								<div class="column is-one-quarter">
-									A
-								</div>
-
-						{/each}
-					</div> -->
-					<div class="box">
-						<input
-							class="input"
-							type="text"
-							placeholder="Class name (A? B?)"
-							required={true}
-						/>
-						<!-- <div class="field">
-							<label class="label">Curriculum plan
-								<div class="control">
-									<InputFileContainer>
-										<input
-											class="file-input"
-											type="file"
-											name="{information_entries_icon_file_field_key}"
-											on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
-										/>
-									</InputFileContainer> 
-								</div>
-							</label>
-						</div> -->
-
-						<div class="columns is-multiline is-mobile mt-2">
-							<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-								Lesson 1
-							</div>
-							<div class="column  is-three-quarters">
-								<div class="columns is-multiline is-mobile">
-									<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										Presentation notes
-									</div>
-									<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										<a href="google.com" class="is-underlined">App Inventor Introductory [L1-HelloCodi].pptx</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-									<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										Student notes
-									</div>
-									<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										<a href="google.com" class="is-underlined">App Inventor Intro _Lesson1_Student Notes.pdf</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-									<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										Misc. teaching materials<br/>(e.g. source code)
-									</div>
-									<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										<a href="google.com" class="is-underlined">Bee-Sound.mp3</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-										<br>
-										<a href="google.com" class="is-underlined">codi.jpg</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-										<br>
-										<a href="google.com" class="is-underlined">HelloCodi.aia</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-								</div>
-							</div>
-
-
-							<div class="column is-one-quarter" style="background-color: hsl(0deg,0%,95%);">
-								Lesson 2
-							</div>
-							<div class="column  is-three-quarters" style="background-color: hsl(0deg,0%,95%);">
-								<div class="columns is-multiline is-mobile">
-									<div class="column is-one-quarter" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										Presentation notes
-									</div>
-									<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										<a href="google.com" class="is-underlined">App Inventor Introductory [L2 -HelloPurr].pptx</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-									<div class="column is-one-quarter" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										Student notes
-									</div>
-									<div class="column is-three-quarters" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-										<a href="google.com" class="is-underlined">App Inventor Intro _Lesson2_Student Notes.pdf</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-									<div class="column is-one-quarter">
-										Misc. teaching materials<br/>(e.g. source code)
-									</div>
-									<div class="column is-three-quarters">
-										<a href="google.com" class="is-underlined">HelloPurr.aia</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-										<br/>
-										<a href="google.com" class="is-underlined">kitty.png</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-										<br/>
-										<a href="google.com" class="is-underlined">meow.mp3</a>
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-											x
-										</button>
-									</div>
-								</div>
-							</div>
-
-						</div>
-					  </div>
-				</div>
-					<div class="field is-grouped">
-						<div class="control">
-							<button class="button is-primary">Save</button>
-						</div>
-					</div>
-				</form>
 			</div>
 
-		</section>
+			
+			<div class="field">
+				<p class="label">Classes</p>
+				<!-- <div class="columns is-multiline is-mobile">
+					{#each $data.blog_entries || [] as blog_entry, index}
+							<div class="column is-one-quarter">
+								A
+							</div>
+
+					{/each}
+				</div> -->
+				<div class="box">
+					<input
+						class="input"
+						type="text"
+						placeholder="Class name (A? B?)"
+						required={true}
+					/>
+					<!-- <div class="field">
+						<label class="label">Curriculum plan
+							<div class="control">
+								<InputFileContainer>
+									<input
+										class="file-input"
+										type="file"
+										name="{information_entries_icon_file_field_key}"
+										on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+									/>
+								</InputFileContainer> 
+							</div>
+						</label>
+					</div> -->
+
+					<div class="columns is-multiline is-mobile mt-2">
+						<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+							Lesson 1
+						</div>
+						<div class="column  is-three-quarters">
+							<div class="columns is-multiline is-mobile">
+								<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									Presentation notes
+								</div>
+								<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									<a href="google.com" class="is-underlined">App Inventor Introductory [L1-HelloCodi].pptx</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+								</div>
+								<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									Student notes
+								</div>
+								<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									<a href="google.com" class="is-underlined">App Inventor Intro _Lesson1_Student Notes.pdf</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+								</div>
+								<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									Misc. teaching materials<br/>(e.g. source code)
+								</div>
+								<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									<a href="google.com" class="is-underlined">Bee-Sound.mp3</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+									<br>
+									<a href="google.com" class="is-underlined">codi.jpg</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+									<br>
+									<a href="google.com" class="is-underlined">HelloCodi.aia</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="column is-one-quarter" style="background-color: hsl(0deg,0%,95%);">
+							Lesson 2
+						</div>
+						<div class="column  is-three-quarters" style="background-color: hsl(0deg,0%,95%);">
+							<div class="columns is-multiline is-mobile">
+								<div class="column is-one-quarter" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									Presentation notes
+								</div>
+								<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									<a href="google.com" class="is-underlined">App Inventor Introductory [L2 -HelloPurr].pptx</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+								</div>
+								<div class="column is-one-quarter" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									Student notes
+								</div>
+								<div class="column is-three-quarters" style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+									<a href="google.com" class="is-underlined">App Inventor Intro _Lesson2_Student Notes.pdf</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+								</div>
+								<div class="column is-one-quarter">
+									Misc. teaching materials<br/>(e.g. source code)
+								</div>
+								<div class="column is-three-quarters">
+									<a href="google.com" class="is-underlined">HelloPurr.aia</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+									<br/>
+									<a href="google.com" class="is-underlined">kitty.png</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+									<br/>
+									<a href="google.com" class="is-underlined">meow.mp3</a>
+									<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										x
+									</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				  </div>
+			</div>
+				<div class="field is-grouped">
+					<div class="control">
+						<button class="button is-primary">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+	
+			
+
 <!-- 	
 		<section class="hero">
 			<h2 class="subtitle"></h2>
