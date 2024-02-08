@@ -376,8 +376,8 @@
 												required={true}
 											/>
 										</div>
-										<div class="column is-one-quarter is-flex ml-auto">
-											<button class="button is-danger" on:click={removeBlogEntry(0)}>
+										<div class="column is-one-quarter is-flex">
+											<button class="button is-danger ml-auto" on:click={removeBlogEntry(0)}>
 												delete this class
 											</button>
 										</div>
