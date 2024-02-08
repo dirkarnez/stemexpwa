@@ -11,7 +11,7 @@
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
 	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
-    import * as curriculum from "../../formkeys/curriculum.ts";
+    import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 	
 
     //import { WrappedFetch } from "../../utils/fetch";
@@ -68,7 +68,7 @@
                             <input
                             class="input"
                             type="hidden"
-                            name={parent_id_key}
+                            name={curriculumFormKeys.parent_id_key}
                             bind:value={$data[parent_id_key]}
                         />
                     </div>
