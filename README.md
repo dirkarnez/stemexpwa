@@ -23,8 +23,11 @@ stemexpwa
     - [**Timeline | CodePen Challenge**](https://codepen.io/havardob/pen/xxPqXdO)
 - [ ] Searching
     - https://svelte.dev/examples/svelte-component
-- [ ] YT
+- [x] YT
     - ```html
       <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
       ```
     - https://stackoverflow.com/questions/22726941/youtube-api-get-current-video-title
+
+- [ ] [Usage - BulmaTagsInput](https://bulma-tagsinput.netlify.app/get-started/usage/)
+- [ ] [Get Started - BulmaBadge](https://bulma-badge.netlify.app/get-started/)
