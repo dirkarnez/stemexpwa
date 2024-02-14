@@ -381,7 +381,7 @@
 												add new lesson
 											</button>
 											<button class="button is-danger is-light ml-auto" on:click={removeBlogEntry(0)}>
-												delete this class
+												delete this level
 											</button>
 										</div>
 									</div>
