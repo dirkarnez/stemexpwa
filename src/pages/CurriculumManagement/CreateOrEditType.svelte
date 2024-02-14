@@ -107,12 +107,14 @@
                 <figure class="image is-128x128">
                     <img
                         style={`height: 100%; width: 100%; object-fit: cover;`}
-                        src={$data[curriculumFormKeys.icon_id_key]
-                            ? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
-                            : 
+                        src={
                             $data[curriculumFormKeys.icon_file_preview_key]
                             ? $data[curriculumFormKeys.icon_file_preview_key]
-                            : `https://bulma.io/images/placeholders/128x128.png`}
+                            : 
+                            $data[curriculumFormKeys.icon_id_key]
+                            ? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
+                            : 
+                            `https://bulma.io/images/placeholders/128x128.png`}
                         alt=""
                     />
                 </figure>
