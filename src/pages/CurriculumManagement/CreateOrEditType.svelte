@@ -128,7 +128,7 @@
                                 on:change={e => handleImageChange(e, (dataURI, filename) => {
                                     setFields({
                                         [curriculumFormKeys.icon_file_preview_key]: dataURI,
-                                        [curriculumFormKeys.icon_file_preview_file_name_key]: filename
+                                        [curriculumFormKeys.icon_file_preview_file_name_key]: "fdf"
                                     }, true);
                                 })}
                                 multiple={false}
