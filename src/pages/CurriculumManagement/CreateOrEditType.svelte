@@ -72,6 +72,8 @@
                 debugger;
                 setFields(initValues);
             });
+        } else {
+            console.log("creating new type")
         }
     });
 
