@@ -128,7 +128,6 @@
                                 on:change={e => handleImageChange(e, (dataURI, filename) => {
                                     setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true);
                                     setFields(curriculumFormKeys.icon_file_preview_file_name_key , dataURI, true);
-                                    
                                 })}
                                 multiple={false}
                                 required={!$data[curriculumFormKeys.icon_id_key]}
