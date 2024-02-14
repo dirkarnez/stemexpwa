@@ -2,8 +2,8 @@
 	export let filename;
 </script>
 
-<div class="file has-name">
-	<label class="file-label" style="width: 100%;">
+<div class="file has-name" style="width: 100%;">
+	<label class="file-label">
 		<slot />
 		<span class="file-cta">
 			<span class="file-icon">
