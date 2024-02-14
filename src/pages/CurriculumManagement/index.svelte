@@ -44,11 +44,8 @@
 
 <Router>
 	{#if Array.isArray(curriculum)}
-		{#each curriculum as { description, icon_id, id, parent_id } }
-			<Route path={`/${stringToURLPart(description)}/edit`}>
-				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<CreateOrEdit parentId={parent_id} id={id} on:done={init}/> <!---previousPath={currentPath}-->
-			</Route>
+		{#each curriculum as { description, icon_id, id, parent_id, is_course } }
+
 			<Route path={`/${stringToURLPart(description)}/*`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 				<Index parentId={id}/> <!---previousPath={currentPath}-->
@@ -57,6 +54,17 @@
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 				<CreateOrEdit parentId={id} id={""}/> <!---previousPath={currentPath}-->
 			</Route>
+			{#if is_course}
+				<Route path={`/${stringToURLPart(description)}/edit`}>
+					<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
+					<CreateOrEdit parentId={parent_id} id={id} on:done={init}/> <!---previousPath={currentPath}-->
+				</Route>
+			{:else}
+				<Route path={`/${stringToURLPart(description)}/edit-course-type`}>
+					<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
+					<CreateOrEditType parentId={parent_id} id={id} on:done={init}/> <!---previousPath={currentPath}-->
+				</Route>	
+			{/if}	
 		{/each}
 	{/if}
 	<Route path={`/new-course`}>
@@ -65,7 +73,8 @@
 	</Route>
 	<Route path={`/new-course-type`}>
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-		<CreateOrEditType parentId={""} id={""} on:done={init}/> <!---previousPath={currentPath}-->
+
+		<CreateOrEditType bind:parentId={parentId} on:done={init}/> <!---previousPath={currentPath}-->
 	</Route>
 
 	<Route path="/">
@@ -103,7 +112,7 @@
 					<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
 						<div style="margin-top: 1.5rem; position:relative;">
 							<div style={`position:absolute;right:0; top: -1.5rem;`}>
-								<a href={`${$location.pathname}/${stringToURLPart(description)}/edit`} use:link><i class="fas fa-pen" style="padding: 0.2rem"></i></a>
+								<a href={`${$location.pathname}/${stringToURLPart(description)}/${is_course ? "edit" : "edit-course-type"}`} use:link><i class="fas fa-pen" style="padding: 0.2rem"></i></a>
 							</div>
 							{#if !is_course}
 								<Link to={`${$location.pathname}/${stringToURLPart(description)}`}>

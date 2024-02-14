@@ -1,4 +1,3 @@
-
 <script>
 	import { onMount, createEventDispatcher } from "svelte";
 	import { WrappedFetch, WrappedFetchPOST, WrappedFetchPOSTMultipart } from "../../utils/fetch";
@@ -14,28 +13,38 @@
     import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 	
 
+    let location = useLocation();
 
+    export let parentId = "";
+    export let id = "";
+    
+    
 	let partners = [];
 
-    onMount(() => {
-		debugger;
-		const [  _wrappedFetchPartners ] = WrappedFetch(`/api/partners`);
-		_wrappedFetchPartners.then(data => {
-			partners = data;
-		});
-    });
-
-    const { form, data, setFields, addField, unsetField } = createForm({ 
+    const { form, data, setFields, addField, unsetField } = createForm({
         onSubmit: (_, context) => {
+            
+            console.log(parentId);
 			const formData = new FormData(context.event.target);
-            console.log(JSON.stringify(formData));
-            debugger;
+            console.log(JSON.stringify([...formData]));
 
-			const [  wrappedFetchPromise, abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", formData);
+            if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {
+                formData.delete(curriculumFormKeys.icon_file_key)
+            }
+
+			const [  wrappedFetchPromise, abort ] = WrappedFetchPOSTMultipart("/api/curriculum-type", formData);
 			wrappedFetchPromise
-			.then(() => {
-				alert("OK");
-				dispatch('done');
+			.then(newData => {
+                alert(`OK!`);
+
+                const reinitValues = {
+                    [curriculumFormKeys.id_key]: newData[curriculumFormKeys.id_key],
+                    [curriculumFormKeys.description_key]: newData[curriculumFormKeys.description_key],
+                    [curriculumFormKeys.icon_id_key]: newData[curriculumFormKeys.icon_id_key],
+                    [curriculumFormKeys.parent_id_key]: newData[curriculumFormKeys.parent_id_key]
+                };
+
+                setFields(reinitValues);
 			})
 			.catch(err => {
 				alert(`Not OK: ${err}`)
@@ -43,23 +52,46 @@
         },
     });
 
+    onMount(() => {
+		debugger;
+		const [  _wrappedFetchPartners ] = WrappedFetch(`/api/partners`);
+		_wrappedFetchPartners.then(data => {
+			partners = data;
+		});
+
+        const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
+
+        _wrappedFetchCurriculumEntry.then(_data => {
+            const initValues = {
+                [curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
+                [curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
+                [curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
+                [curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key]
+            };
+            debugger;
+            setFields(initValues);
+        });
+    });
+
+
+
 </script>
 <div class="columns">
     <div class="column is-full-mobile is-three-quarters-desktop">
 
-        <form  use:form enctype="multipart/form-data">
-            <div class="field">
-                <label class="label">Description
-                    <div class="control">
-                            <input
-                            class="input"
-                            type="hidden"
-                            name={curriculumFormKeys.parent_id_key}
-                            bind:value={$data[curriculumFormKeys.parent_id_key]}
-                        />
-                    </div>
-                </label>
-            </div>
+        <form use:form enctype="multipart/form-data">
+            <input
+                class="input"
+                type="hidden"
+                name={curriculumFormKeys.parent_id_key}
+                bind:value={$data[curriculumFormKeys.parent_id_key]}
+            />
+            <input
+                class="input"
+                type="hidden"
+                name={curriculumFormKeys.icon_id_key}
+                bind:value={$data[curriculumFormKeys.icon_id_key]}
+            />
             
             <div class="field">
                 <figure class="image is-128x128">
@@ -68,8 +100,8 @@
                         src={$data[curriculumFormKeys.icon_id_key]
                             ? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
                             : 
-                            $data[curriculumFormKeys.icon_file_preview_field_key]
-                            ? $data[curriculumFormKeys.icon_file_preview_field_key]
+                            $data[curriculumFormKeys.icon_file_preview_key]
+                            ? $data[curriculumFormKeys.icon_file_preview_key]
                             : `https://bulma.io/images/placeholders/128x128.png`}
                         alt=""
                     />
@@ -80,9 +112,12 @@
                             <input
                                 class="file-input"
                                 type="file"
-                                name={curriculumFormKeys.icon_file_field_key}
-                                on:change={e => handleImageChange(e, dataURI => setFields(curriculumFormKeys.icon_file_preview_field_key , dataURI, true))}
-                                required={true}
+                                name={curriculumFormKeys.icon_file_key}
+                                on:change={e => handleImageChange(e, dataURI => {
+                                    setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true);
+                                })}
+                                multiple={false}
+                                required={!$data[curriculumFormKeys.icon_id_key]}
                             />
                         </InputFileContainer>
                     </div>
@@ -94,8 +129,8 @@
                         <input
                             class="input"
                             type="text"
-                            name={curriculumFormKeys.description_field_key}
-                            bind:value={$data[curriculumFormKeys.description_field_key]}
+                            name={curriculumFormKeys.description_key}
+                            bind:value={$data[curriculumFormKeys.description_key]}
                             required={true}
                         />
                     </div>
