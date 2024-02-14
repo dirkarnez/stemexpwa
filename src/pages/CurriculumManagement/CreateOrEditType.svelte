@@ -89,8 +89,8 @@
             <input
                 class="input"
                 type="hidden"
-                name={curriculumFormKeys.icon_id_key}
-                bind:value={$data[curriculumFormKeys.icon_id_key]}
+                name={curriculumFormKeys.id_key}
+                bind:value={$data[curriculumFormKeys.id_key]}
             />
             <input
                 class="input"
