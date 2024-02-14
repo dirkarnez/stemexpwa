@@ -72,17 +72,7 @@
                 debugger;
                 setFields(initValues);
             });
-        } else {
-            const initValues = {
-                [curriculumFormKeys.id_key]: "",
-                [curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
-                [curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
-                [curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key]
-            };
-            debugger;
-            setFields(initValues);
         }
-
     });
 
 
