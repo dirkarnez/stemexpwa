@@ -124,6 +124,7 @@
                                 type="file"
                                 name={curriculumFormKeys.icon_file_key}
                                 on:change={e => handleImageChange(e, dataURI => {
+                                    debugger;
                                     setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true);
                                 })}
                                 multiple={false}
