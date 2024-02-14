@@ -3,7 +3,7 @@
 </script>
 
 <div class="file has-name">
-	<label class="file-label" style="    width: 100%;">
+	<label class="file-label" style="width: 100%;">
 		<slot />
 		<span class="file-cta">
 			<span class="file-icon">
