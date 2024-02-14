@@ -120,13 +120,14 @@
                 </figure>
                 <label class="label">Icon
                     <div class="control">
-                        <InputFileContainer>
+                        <InputFileContainer filename={$data[curriculumFormKeys.icon_file_preview_file_name_key]}>
                             <input
                                 class="file-input"
                                 type="file"
                                 name={curriculumFormKeys.icon_file_key}
                                 on:change={e => handleImageChange(e, (dataURI, filename) => {
                                     setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true);
+                                    setFields(curriculumFormKeys.icon_file_preview_file_name_key , dataURI, true);
                                 })}
                                 multiple={false}
                                 required={!$data[curriculumFormKeys.icon_id_key]}
