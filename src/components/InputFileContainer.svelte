@@ -11,7 +11,7 @@
 			</span>
 			<span class="file-label">Choose a file...</span>
 		</span>
-		<span class="file-name">
+		<span class="file-name" style="width: 100%;">
 			{!!filename ? filename : ""}
 		</span>
 	</label>
