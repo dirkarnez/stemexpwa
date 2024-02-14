@@ -372,7 +372,7 @@
 											<input
 												class="input"
 												type="text"
-												placeholder="Class name (A? B?)"
+												placeholder="Level name (A? B?)"
 												required={true}
 											/>
 										</div>
