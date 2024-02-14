@@ -126,8 +126,10 @@
                                 type="file"
                                 name={curriculumFormKeys.icon_file_key}
                                 on:change={e => handleImageChange(e, (dataURI, filename) => {
-                                    setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true);
-                                    setFields(curriculumFormKeys.icon_file_preview_file_name_key , filename, true);
+                                    setFields({
+                                        [curriculumFormKeys.icon_file_preview_key]: dataURI,
+                                        [curriculumFormKeys.icon_file_preview_file_name_key]: filename
+                                    }, true);
                                 })}
                                 multiple={false}
                                 required={!$data[curriculumFormKeys.icon_id_key]}
