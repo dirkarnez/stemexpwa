@@ -59,18 +59,21 @@
 			partners = data;
 		});
 
-        const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
+        if (!!id) {
+            const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
 
-        _wrappedFetchCurriculumEntry.then(_data => {
-            const initValues = {
-                [curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
-                [curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
-                [curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
-                [curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key]
-            };
-            debugger;
-            setFields(initValues);
-        });
+            _wrappedFetchCurriculumEntry.then(_data => {
+                const initValues = {
+                    [curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
+                    [curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
+                    [curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
+                    [curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key]
+                };
+                debugger;
+                setFields(initValues);
+            });
+        }
+
     });
 
 
@@ -98,7 +101,7 @@
                 name={curriculumFormKeys.icon_id_key}
                 bind:value={$data[curriculumFormKeys.icon_id_key]}
             />
-            
+
             <div class="field">
                 <figure class="image is-128x128">
                     <img
