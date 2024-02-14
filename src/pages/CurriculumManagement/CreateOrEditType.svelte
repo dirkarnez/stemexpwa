@@ -93,11 +93,11 @@
                 bind:value={$data[curriculumFormKeys.icon_id_key]}
             />
             <input
-            class="input"
-            type="hidden"
-            name={curriculumFormKeys.icon_id_key}
-            bind:value={$data[curriculumFormKeys.icon_id_key]}
-        />
+                class="input"
+                type="hidden"
+                name={curriculumFormKeys.icon_id_key}
+                bind:value={$data[curriculumFormKeys.icon_id_key]}
+            />
             <div class="field">
                 <figure class="image is-128x128">
                     <img
