@@ -409,6 +409,9 @@
 											<div class="columns is-multiline is-mobile">
 												<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 													Presentation notes
+												</div>
+												<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+													<a href="google.com" class="is-underlined">App Inventor Introductory [L1-HelloCodi].pptx</a>
 													<InputFileContainer>
 														<input
 															class="file-input"
@@ -417,9 +420,14 @@
 															on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
 														/>
 													</InputFileContainer> 
-												</div>
-												<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-													<a href="google.com" class="is-underlined">App Inventor Introductory [L1-HelloCodi].pptx</a>
+													<InputFileContainer>
+														<input
+															class="file-input"
+															type="file"
+															name="{information_entries_icon_file_field_key}"
+															on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+														/>
+													</InputFileContainer> 
 													<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 														x
 													</button>
