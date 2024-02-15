@@ -34,3 +34,4 @@ stemexpwa
 - [ ] [Usage - BulmaTagsInput](https://bulma-tagsinput.netlify.app/get-started/usage/)
 - [ ] [Get Started - BulmaBadge](https://bulma-badge.netlify.app/get-started/)
 - [ ] https://github.com/dirkarnez/syncform
+- [ ] encodeURI("dsfs fsd")
