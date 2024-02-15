@@ -43,6 +43,7 @@
 	}
 
 	onMount(init);
+	import { fade } from "svelte/transition";
 </script>
 
 <Router viewtransition="{() => { fn: fade, duration: 500 }}">
