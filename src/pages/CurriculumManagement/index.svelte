@@ -45,7 +45,7 @@
 	onMount(init);
 </script>
 
-<Router>
+<Router viewtransition="{() => { fn: fade, duration: 500 }}">
 	{#if Array.isArray(curriculum)}
 		{#each curriculum as { description, icon_id, id, parent_id, is_course } }
 
