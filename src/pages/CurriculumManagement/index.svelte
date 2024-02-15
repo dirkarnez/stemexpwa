@@ -43,10 +43,9 @@
 	}
 
 	onMount(init);
-	import { fade } from "svelte/transition";
 </script>
 
-<Router viewtransition="{() => { fn: fade, duration: 500 }}">
+<Router>
 	{#if Array.isArray(curriculum)}
 		{#each curriculum as { description, icon_id, id, parent_id, is_course } }
 
