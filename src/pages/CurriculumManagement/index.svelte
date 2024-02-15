@@ -1,8 +1,8 @@
 <script>
-	import { onMount } from "svelte";
+	import { onMount, createEventDispatcher } from "svelte";
 	import { WrappedFetch } from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
-	import { useLocation, Link, Route, Router, link } from "svelte-routing";
+	import { useLocation, Link, Route, Router, link, useRouter } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import CreateOrEdit from "./CreateOrEdit.svelte";
 	import CreateOrEditType from "./CreateOrEditType.svelte";
@@ -13,6 +13,8 @@
 	export let parentId = null;
 
 	let location = useLocation();
+	let router = useRouter();
+	const dispatch = createEventDispatcher();
 	// const currentPath = $location.pathname;
 
 	const colors = [
@@ -36,6 +38,7 @@
 		wrappedFetchCurriculum = _wrappedFetchCurriculum;
 		wrappedFetchCurriculum.then(data => {
 			curriculum = data;
+			debugger;
 		})
 	}
 
@@ -62,7 +65,11 @@
 			{:else}
 				<Route path={`/${stringToURLPart(description)}/edit-course-type`}>
 					<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-					<CreateOrEditType parentId={parent_id} id={id} on:done={init}/> <!---previousPath={currentPath}-->
+					<CreateOrEditType parentId={parent_id} id={id} on:done={() => {
+						debugger;
+						init();
+						dispatch('done', {});
+					}}/> <!---previousPath={currentPath}-->
 				</Route>	
 			{/if}	
 		{/each}
@@ -74,7 +81,11 @@
 	<Route path={`/new-course-type`}>
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 
-		<CreateOrEditType bind:parentId={parentId} on:done={init}/> <!---previousPath={currentPath}-->
+		<CreateOrEditType bind:parentId={parentId} on:done={() => {
+			debugger;
+			init();
+			dispatch('done', {});
+		}}/> <!---previousPath={currentPath}-->
 	</Route>
 
 	<Route path="/">

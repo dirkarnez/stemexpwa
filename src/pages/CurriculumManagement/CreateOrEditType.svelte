@@ -1,7 +1,7 @@
 <script>
 	import { onMount, createEventDispatcher } from "svelte";
 	import { WrappedFetch, WrappedFetchPOST, WrappedFetchPOSTMultipart } from "../../utils/fetch";
-	import { stringToURLPart } from "../../utils/url";
+	import { stringToURLPart, mustMatchThenReplace } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
@@ -12,6 +12,8 @@
 	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
     import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 	
+
+	const dispatch = createEventDispatcher();
 
     let location = useLocation();
 
@@ -45,6 +47,17 @@
                 };
 
                 setFields(reinitValues);
+
+                dispatch('done', {});
+                
+                const newPath = mustMatchThenReplace(
+                    /^(\/curriculum-management)(\/[^\/]+)(\/[^\/]+)?$/ig,
+                    $location.pathname,  
+                    (_, p2, p3, p4) =>  {
+                        return `${[p2, `/${stringToURLPart($data[curriculumFormKeys.description_key])}`, "/edit-course-type"].join("")}`;
+                    });
+                    
+                navigate(newPath, true);
 			})
 			.catch(err => {
 				alert(`Not OK: ${err}`)

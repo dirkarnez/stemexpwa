@@ -9,7 +9,7 @@
 	
 	import InstallationGuide from "./pages/InstallationGuide/index.svelte";
 	import InstructorSchedule from "./pages/InstructorSchedule.svelte";
-	import LastMinuteOffer from "./pages/LastMinuteOffer/index.svelte";
+	// import LastMinuteOffer from "./pages/LastMinuteOffer/index.svelte";
 	import UserManagement from "./pages/UserManagement.svelte";
 	import ClassManagement from "./pages/ClassManagement/index.svelte";
 	import FileManagement from "./pages/FileManagement/index.svelte";
@@ -32,6 +32,8 @@
 	// area.use(render);
 
 	let location = useLocation();
+
+	
 
     // if (Math.random() > 0.5) {
 	// 	navigate("/login", { replace: true });
@@ -56,6 +58,12 @@
 
 	function toggleSidebar() {
 		isSideBarOpen = !isSideBarOpen;
+	}
+
+	let unique = [{}] // every {} is unique, {} === {} evaluates to false
+
+	function restart() {
+		unique = [{}]
 	}
 </script>
 
@@ -358,7 +366,13 @@
 			</Route>
 
 			<Route path="/curriculum-management/*">
-				<CurriculumManagement previousPath={$location.pathname}/>
+				{#each unique as key (key)}
+					<CurriculumManagement on:done={() => {
+						debugger;
+						restart();
+					}}/>
+				{/each}
+
 			</Route>
 
 			<Route path="/statistics">
