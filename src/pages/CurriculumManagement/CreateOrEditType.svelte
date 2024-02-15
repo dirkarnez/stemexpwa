@@ -93,7 +93,26 @@
 
 
 </script>
-<div class="columns">
+<style>
+
+.my-temp {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+</style>
+<div class="columns my-temp">
     <div class="column is-full-mobile is-three-quarters-desktop">
 
         <form use:form enctype="multipart/form-data">
