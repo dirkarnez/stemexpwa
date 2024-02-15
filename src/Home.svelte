@@ -326,7 +326,7 @@
 </aside>
 
 <div class={`my-main ${isSideBarOpen ? "closed" : ""}`}>
-	<section class="section">
+	<section class="section my-temp">
 		<Router>
 			<Route path="/">
 				<Dashboard role={role} userName={userName}/>
@@ -372,7 +372,6 @@
 						restart();
 					}}/>
 				{/each}
-
 			</Route>
 
 			<Route path="/statistics">
@@ -438,3 +437,23 @@
 	</section>
 </div>
 {/if}
+
+
+<style>
+	.my-temp {
+	  animation: fadeInAnimation ease 2s;
+	  animation-iteration-count: 1;
+	  animation-fill-mode: forwards;
+	}
+	
+	
+	@keyframes fadeInAnimation {
+	  0% {
+		  opacity: 0;
+	  }
+	
+	  100% {
+		  opacity: 1;
+	  }
+	}
+	</style>
