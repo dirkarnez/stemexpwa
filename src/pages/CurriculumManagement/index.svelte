@@ -44,6 +44,7 @@
 
 	onMount(init);
 </script>
+<div class="refresh-animated">
 <Router>
 	{#if Array.isArray(curriculum)}
 		{#each curriculum as { description, icon_id, id, parent_id, is_course } }
@@ -223,3 +224,4 @@
 		</div>
 	</Route>
 </Router>
+</div>
