@@ -18,6 +18,8 @@ stemexpwa
         - https://github.com/nico-martin/markdown-editor/blob/main/pwa-assets.config.ts
         - https://github.com/nico-martin/markdown-editor/blob/main/public/sw.js
         - https://github.com/nico-martin/markdown-editor/blob/main/vite.config.ts
+    - [dirkarnez/workbox-cdn-playground](https://github.com/dirkarnez/workbox-cdn-playground)
+        - [dirkarnez.github.io/workbox-cdn-playground](https://dirkarnez.github.io/workbox-cdn-playground) 
 - [x] [dirkarnez/svelte-nested-sample](https://github.com/dirkarnez/svelte-nested-sample/)
 - [x] [Last minute offer](snippets.md#last-minutes-offer)
     - [**Timeline | CodePen Challenge**](https://codepen.io/havardob/pen/xxPqXdO)
