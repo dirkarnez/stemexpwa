@@ -261,7 +261,7 @@
 	}
 
 	function removeLevel(index) {
-		return () => unsetField(`${curriculumFormKeys.blog_entries_key}.${index}`);
+		return () => unsetField(`${curriculumFormKeys.levels_key}.${index}`);
 	}
 
 
