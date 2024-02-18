@@ -659,9 +659,6 @@
 																		}
 																	/>
 																</InputFileContainer>
-																<button type="button" class="is-danger button delete" on:click={() => {/*removeLesson(levelIndex, lessonIndex)*/}}>
-																	x
-																</button>
 															</div>
 														</div>
 														<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
