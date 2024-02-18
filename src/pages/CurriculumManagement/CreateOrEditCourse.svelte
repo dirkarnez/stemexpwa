@@ -63,8 +63,8 @@
 
 			newIndexedArray(blogLength).forEach(i => {
 				if (!(
-					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
-					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
+					!!formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
+					!!formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
 				)) {
 					rj(new Error(`Not OK: Please add at least 1 blog entries`));
 					return;
@@ -85,7 +85,7 @@
 					rj(new Error(`Not OK: Please add at least 1 course level`));
 					return;
 				}
-				const lessonLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length;
+				const lessonLength = (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key] || []).length;
 
 				if (lessonLength < 1) {
 					rj(new Error(`Not OK: Please add at least 1 lesson for every course level`));
