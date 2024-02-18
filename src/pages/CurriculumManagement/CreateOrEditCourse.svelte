@@ -63,14 +63,14 @@
 
 		newIndexedArray(value[curriculumFormKeys.levels_key].length).forEach(i => {
 			if (!(
-				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
+				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`) && 
 				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
 			)) {
 				throw new Error(`Not OK: Please add at least 1 blog entries`);
 			}
 		});
 
-		if (!formData.get(`${curriculumFormKeys.}.0.${curriculumFormKeys.level_name_key}`) ) {
+		if (!formData.get(`${curriculumFormKeys.}.0.${curriculumFormKeys.}`) ) {
 			throw new Error(`Not OK: Please add at least 1 course level`);
 		}
 
