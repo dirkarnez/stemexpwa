@@ -277,7 +277,9 @@
 			);
 	}
 
-	function removeLesson(levelIndex, lessonIndex)
+	function removeLesson(levelIndex, lessonIndex) {
+		
+	}
 	// function removeInformationEntry(index) {
 	// 	return () => unsetField(`${curriculumFormKeys.information_entries_key}.${index}`);
 	// }
