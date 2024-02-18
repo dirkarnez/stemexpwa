@@ -40,8 +40,8 @@
 			formData.delete(curriculumFormKeys.icon_file_key)
 		}
 
-		if (formData.get(curriculumFormKeys.curriculum_plan_id_key).size == 0) {
-			formData.delete(curriculumFormKeys.curriculum_plan_id_key)
+		if (formData.get(curriculumFormKeys.curriculum_plan_file_key).size == 0) {
+			formData.delete(curriculumFormKeys.curriculum_plan_file_key)
 		}
 
 		if (!hasAtLeastOneItemInArray(formData.get(curriculumFormKeys.youtube_video_entries_key))) {
