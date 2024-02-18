@@ -68,10 +68,12 @@
 			)) {
 				throw new Error(`Not OK: Please add at least 1 course level`);
 			}
-
-			newIndexedArray(value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length).forEach(j => {
+			const lessonLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length;
+			
+			if ()
+			newIndexedArray().forEach(j => {
 				if (!(
-					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}`)
+					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.`)
 					/*extra fields here*/
 				)) {
 					throw new Error(`Not OK: Please add at least 1 blog entries`);
