@@ -36,6 +36,10 @@
 	
 
 	function validateFormData(formData) {
+		if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {
+			formData.delete(curriculumFormKeys.icon_file_key)
+		}
+
 		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.youtube_video_entries_key])) {
 			throw new Error(`Not OK: Please add at least 1 YouTube video`);
 		}
