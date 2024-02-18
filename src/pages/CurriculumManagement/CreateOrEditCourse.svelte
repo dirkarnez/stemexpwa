@@ -67,23 +67,23 @@
 					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`)
 					/*extra fields here*/
 				)) {
-					throw new Error(`Not OK: Please add at least 1 course level`);
+					rj(new Error(`Not OK: Please add at least 1 course level`));
 				}
 				const lessonLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length;
 
 				if (lessonLength < 1) {
-					throw new Error(`Not OK: Please add at least 1 lesson for every level`);
+					rj(new Error(`Not OK: Please add at least 1 lesson for every level`));
 				}
 				
 				newIndexedArray(lessonLength).forEach(j => {
 					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].length < 1) {
-						throw new Error(`Not OK: Please add at least 1 presentation notes for every level`);
+						rj(new Error(`Not OK: Please add at least 1 presentation notes for every level`));
 					}
 					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length < 1) {
-						throw new Error(`Not OK: Please add at least 1 student notes for every level`);
+						rj(new Error(`Not OK: Please add at least 1 student notes for every level`));
 					}
 					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length < 1) {
-						throw new Error(`Not OK: Please add at least 1 teacher notes for every level`);
+						rj(new Error(`Not OK: Please add at least 1 teacher notes for every level`));
 					}
 				});
 			});
