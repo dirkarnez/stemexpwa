@@ -290,6 +290,15 @@
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${presentationNoteIndex}`);
 	}
 
+	function removeStudentNote(levelIndex, lessonIndex, studentNoteIndex) {
+		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_student_notes_key}.${presentationNoteIndex}`);
+	}
+
+	function removePresentationNote(levelIndex, lessonIndex, presentationNoteIndex) {
+		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${presentationNoteIndex}`);
+	}
+
+
 	// function removeInformationEntry(index) {
 	// 	return () => unsetField(`${curriculumFormKeys.information_entries_key}.${index}`);
 	// }
