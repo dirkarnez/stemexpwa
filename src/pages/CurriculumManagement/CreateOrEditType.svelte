@@ -75,7 +75,8 @@
             ? 
             _wrappedFetchCurriculumEntry 
             : 
-            Promise.resolve({ [curriculumFormKeys.parent_id_key]: parentId}))
+            Promise.resolve({ [curriculumFormKeys.parent_id_key]: parentId})
+        )
         .then(_data => {
             const initValues = {
                 [curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
