@@ -634,7 +634,18 @@
 																		type="file"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{curriculumFormKeys.lesson_presentation_notes_filee_key}"
 																		
-																		on:change={e => handleImageChange(e, dataURI => setFields(`435`, dataURI, true))}
+																		on:change={e => (file, filename) => {
+																			setFields(
+																				`${curriculumFormKeys.curriculum_plan_file_key}`,
+																				file,
+																				true,
+																			);
+																			setFields(
+																				`${curriculumFormKeys.curriculum_plan_file_name_key}`,
+																				filename,
+																				true,
+																			);
+																		}}
 																	/>
 																</InputFileContainer>
 																<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
