@@ -76,22 +76,15 @@
 			
 			newIndexedArray(lessonLength).forEach(j => {
 				if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].length < 1) {
-
+					throw new Error(`Not OK: Please add at least 1 blog entries`);
 				}
 				if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length < 1) {
-					
+					throw new Error(`Not OK: Please add at least 1 blog entries`);
 				}
 				if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length < 1) {
-					
+					throw new Error(`Not OK: Please add at least 1 blog entries`);
 				}
 				if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_misc_materials_key].length < 1) {
-					
-				}
-
-				if (!(
-					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.`)
-					/*extra fields here*/
-				)) {
 					throw new Error(`Not OK: Please add at least 1 blog entries`);
 				}
 			});
