@@ -385,7 +385,7 @@
 											<button class="button is-primary is-light" on:click={removeBlogEntry(0)}>
 												add new lesson
 											</button>
-											<button class="button is-danger is-light" on:click={removeBlogEntry(0)}>
+											<button class="button is-danger is-light ml-auto" on:click={removeBlogEntry(0)}>
 												delete this level
 											</button>
 										</div>
@@ -548,7 +548,7 @@
 					{/each}
 					<div class="column">
 						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[curriculumFormKeys.blog_entries_key] || []).length)}>
-							Add new level
+							Add new class
 						</button>
 					</div>
 				</div>
