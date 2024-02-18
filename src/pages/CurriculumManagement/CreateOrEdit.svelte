@@ -442,7 +442,7 @@
 										{(() => {
 											const a = $data[curriculumFormKeys.levels_key][levelIndex];
 											debugger;
-										})}
+										})()}
 										{#each ($data[curriculumFormKeys.levels_key][levelIndex] || []) as lesson, lessonIndex}
 											<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 												Lesson 1 {lesson.}
