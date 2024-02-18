@@ -6,7 +6,7 @@
 		WrappedFetchPOSTMultipart,
 	} from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
-	import { HasAtLeastOneItemInArray } from "../../utils/array";
+	import { hasAtLeastOneItemInArray } from "../../utils/array";
 	import {
 		useLocation,
 		Link,
