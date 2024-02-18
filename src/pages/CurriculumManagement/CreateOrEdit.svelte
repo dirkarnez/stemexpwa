@@ -495,7 +495,7 @@
 								<input
 									class="input"
 									type="text"
-									placeholder="URL"
+									placeholder="URL of the blog"
 									required={true}
 								/>
 							</div>
@@ -503,7 +503,7 @@
 								<input
 									class="input"
 									type="text"
-									placeholder="URL of the video"
+									placeholder="Title of the blog"
 									required={true}
 								/>
 							</div>
