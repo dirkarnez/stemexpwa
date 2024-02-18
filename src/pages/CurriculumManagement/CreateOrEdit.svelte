@@ -60,9 +60,13 @@
 				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_student_notes_key])) {
 					throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
 				}
-				if (!hasAtLeastOneItemInArray(presentationNotes)) {
+				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_teacher_notes_key])) {
 					throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
 				}
+				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_student_notes_key])) {
+					throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
+				}
+
 			});
 
 			
