@@ -379,7 +379,7 @@
 									type="file"
 									name="{curriculumFormKeys.information_entries_icon_file_key}"
 									on:change={e => handleImageChange(e, (dataURI, filename) => {
-										setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true);
+										setFields(`${curriculumFormKeys.curriculum_plan_file_name_key}`, dataURI, true);
 									})}
 									required={true}
 								/>
