@@ -194,7 +194,7 @@
 
 
 	function removeBlogEntry(index) {
-		return () => unsetField(`${blog_entries_key}.${index}`);
+		return () => unsetField(`${curriculumFormKeys.blog_entries_key}.${index}`);
 	}
 
 	
