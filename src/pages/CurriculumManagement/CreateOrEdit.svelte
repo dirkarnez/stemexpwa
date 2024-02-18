@@ -222,7 +222,9 @@
 	function addInformationEntry(index) {
 		return () => addField(`${curriculumFormKeys.information_entries_key}`, { 
 			[curriculumFormKeys.information_entries_icon_id_key]: "", 
-			[curriculumFormKeys.information_entries_title_key]: "", [information_entries_content_key]: "" }, index);
+			[curriculumFormKeys.information_entries_title_key]: "", 
+			[curriculumFormKeys.information_entries_content_key]: "" 
+		}, index);
 	}
 </script>
 
