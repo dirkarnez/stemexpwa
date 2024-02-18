@@ -35,7 +35,7 @@
 
 	function validateFormData(formData) {
 		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.youtube_video_entries_key])) {
-			throw `Not OK: Please add at least 1 YouTube video`;
+			throw new Error(`Not OK: Please add at least 1 YouTube video`);
 		}
 
 		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.blog_entries_key])) {
