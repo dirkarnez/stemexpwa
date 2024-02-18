@@ -6,6 +6,6 @@ export const splitArrayToArrayGroups = <T>(array: Array<T>, numOfGroups: number)
     Array(numOfGroups).fill([]),
 );
 
-export const HasAtLeastOneItemInArray =  <T>(array: Array<T>) => {
+export const hasAtLeastOneItemInArray =  <T>(array: Array<T>) => {
     return Array.isArray(array) && array.length > 0;
 }
