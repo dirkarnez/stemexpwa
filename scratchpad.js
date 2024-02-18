@@ -11,7 +11,8 @@ information_entries
     "description": "",
     "icon_id": "",
     "parent_id": "",
-    "youtube_video_entries": "",
+    "youtube_video_entries": [{}],
+    
     "curriculum_plan_id": "",
     "blog_entries": [{
       "title": "",
