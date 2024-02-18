@@ -49,7 +49,8 @@
 				if (!(
 					formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
 				)) {
-					throw new Error(`Not OK: Please add at least 1 YouTube video`);
+					rj(new Error(`Not OK: Please add at least 1 YouTube video`));
+					throw 
 				}
 			});
 
