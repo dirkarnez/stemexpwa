@@ -1,4 +1,6 @@
 <script>
+curriculumFormKeys.</script>
+<script>
 	import { onMount, createEventDispatcher } from "svelte";
 	import {
 		WrappedFetch,
@@ -663,14 +665,14 @@
 															Student notes
 														</div>
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []) as presentationNote, presentationNoteIndex}
-															<div>
-																<a href="google.com" class="is-underlined">{presentationNote}</a>
-																<button type="button" class="is-danger button delete" on:click={() => {}}>
-																	x
-																</button>
-															</div>
-														{/each}
+															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []) as presentationNote, presentationNoteIndex}
+																<div>
+																	<a href="google.com" class="is-underlined">{presentationNote}</a>
+																	<button type="button" class="is-danger button delete" on:click={() => {}}>
+																		x
+																	</button>
+																</div>
+															{/each}
 															<div>
 																<InputFileContainer>
 																	<input
