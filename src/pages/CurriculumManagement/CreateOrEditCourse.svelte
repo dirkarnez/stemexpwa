@@ -278,6 +278,7 @@
 	}
 
 	function removeLesson(levelIndex, lessonIndex) {
+		debugger;
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}`);
 	}
 	
