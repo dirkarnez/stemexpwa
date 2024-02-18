@@ -341,7 +341,7 @@
 
 					<label class="label">Icon
 						<div class="control">
-							<InputFileContainer>
+							<InputFileContainer filename={$data[curriculumFormKeys.icon_file_preview_file_name_key]>
 								<input
 									class="file-input"
 									type="file"
