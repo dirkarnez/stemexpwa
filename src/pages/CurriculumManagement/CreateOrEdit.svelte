@@ -65,7 +65,7 @@
 				return;
 			}
 
-			(values[curriculumFormKeys.levels_key] || []).forEach(level => {
+			(values[curriculumFormKeys.levels_key] || []).every(level => {
 				if (!hasAtLeastOneItemInArray(level[curriculumFormKeys.lessons_key])) {
 					alert(`Not OK: Please add at least 1 course level`);
 					return;
