@@ -443,7 +443,12 @@
 									type="file"
 									name={curriculumFormKeys.curriculum_plan_file_key}
 									on:change={(e) =>
-										handleDocumentChange(e, (filename) => {
+										handleDocumentChange(e, (file, filename) => {
+											setFields(
+												`${curriculumFormKeys.curriculum_plan_file_key}`,
+												file,
+												true,
+											);
 											setFields(
 												`${curriculumFormKeys.curriculum_plan_file_name_key}`,
 												filename,
