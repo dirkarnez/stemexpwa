@@ -5,7 +5,7 @@
 	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
-	import { handleImageChange } from "../../utils/file";
+	import { handleImageChange, handleDocumentChange } from "../../utils/file";
 	import { isNullOrEmpty } from "../../utils/strings";
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
