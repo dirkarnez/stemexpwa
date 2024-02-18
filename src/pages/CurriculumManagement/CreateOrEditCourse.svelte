@@ -206,33 +206,7 @@
 			debugger;
 			setFields(initValues);
 		});
-
-
-		// setFields(blog_entries_key , ($data[] || [{
-		// 	[blog_entries_external_url_key]: "",
-		// 	[blog_entries_title_key]: ""
-		// }]), true);
-
-		// setFields(information_entries_key , ($data[information_entries_key] || [{
-		// 	[information_entries_icon_id_key]: "",
-		// 	[information_entries_title_key]: "",
-		// 	[information_entries_content_key]: ""
-		// }]), true);
 	});
-
-	// function handleImageChange(event, callback) {
-	// 	const file = event.target.files[0];
-
-	// 	if (file) {
-	// 		const reader = new FileReader();
-
-	// 		reader.onload = (event) => {
-	// 			callback(event.target.result);
-	// 		};
-
-	// 		reader.readAsDataURL(file);
-	// 	}
-	// }
 
 	function addYouTubeVideo(index) {
 		return () =>
