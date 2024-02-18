@@ -311,19 +311,7 @@
 	</div>
 </div> -->
 
-<!-- <div class="field">
-		<label class="label" for="select-accessible">Accessible to
-			<div class="notification ex3 p-2" id="select-accessible">
-				{#each partners as { full_name }}
-					<label class="checkbox">
-						<input type="checkbox">&nbsp;&nbsp;{full_name} (and their parents registered this course)
-					</label>
-					<br>
-				{/each}
-				<br>
-			</div>
-		</label>
-	</div> -->
+
 
 <div class="columns is-multiline">
 	<div class="column is-full">
