@@ -1,7 +1,7 @@
 export const id_key = "id";
 export const description_key = "description";
-export const icon_id_key = "icon_id";
 export const parent_id_key = "parent_id";
+export const icon_id_key = "icon_id";
 export const icon_file_key = "icon_file";
 export const icon_file_preview_key = "icon_file_preview";
 export const icon_file_preview_file_name_key = "icon_file_preview_file_name";
@@ -23,6 +23,10 @@ export const curriculum_plan_file_key = "curriculum_plan_file";
 
 export const levels_key = "levels";
 export const level_name_key = "name";
+export const level_icon_id_key = "icon_id";
+export const level_icon_file_key = "icon_file";
+export const level_icon_file_preview_key = "icon_file_preview";
+export const level_icon_file_preview_file_name_key = "icon_file_preview_file_name";
 
 export const lesson_presentation_notes_key = "presentation_notes";
 export const lesson_presentation_note_file_name_key = "name"
