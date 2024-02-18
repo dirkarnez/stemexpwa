@@ -216,7 +216,9 @@
 	}
 
 	function addYouTubeVideo(index) {
-		return () => addField(`${curriculumFormKeys.youtube_video_entries_key}`, { [curriculumFormKeys.youtube_video_entries_url_key]: "", [curriculumFormKeys.youtube_video_entries_url_key]: "" }, index);
+		return () => addField(`${curriculumFormKeys.youtube_video_entries_key}`, { 
+			[curriculumFormKeys.youtube_video_entries_url_key]: "" 
+		}, index);
 	}
 
 
