@@ -394,6 +394,9 @@
 				<div class="columns is-multiline is-mobile">
 					{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
 						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
+						<button class="button is-danger is-light ml-auto" on:click={removeYouTubeVideo(index)}>
+							delete this level
+						</button>
 					{/each}
 					<div class="column">
 						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data[curriculumFormKeys.youtube_video_entries_key] || []).length)}>
