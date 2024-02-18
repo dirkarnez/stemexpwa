@@ -71,14 +71,12 @@
 
 			newIndexedArray(value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length).forEach(i => {
 				if (!(
-				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}`)
-				/*extra fields here*/
-			)) {
-				throw new Error(`Not OK: Please add at least 1 blog entries`);
-			}
+					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}`)
+					/*extra fields here*/
+				)) {
+					throw new Error(`Not OK: Please add at least 1 blog entries`);
+				}
 			});
-
-
 		});
 
 		if (!formData.get(`${curriculumFormKeys.}.0.${curriculumFormKeys.}`) ) {
