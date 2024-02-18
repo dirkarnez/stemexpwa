@@ -517,7 +517,7 @@
 									($data[curriculumFormKeys.blog_entries_key] || []).length,
 								)}
 							>
-								Add new
+								Add new blog
 							</button>
 						</div>
 					</div>
