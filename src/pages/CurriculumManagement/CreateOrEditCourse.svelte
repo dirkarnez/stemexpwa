@@ -588,7 +588,7 @@
 										<div class="columns is-multiline is-mobile mt-2">
 											{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key] || []) as lesson, lessonIndex}
 												<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-													Lesson 1
+													Lesson {lessonIndex} + 1
 												</div>
 												<div class="column  is-three-quarters">
 													<div class="columns is-multiline is-mobile">
