@@ -542,7 +542,7 @@
 										.length,
 								)}
 							>
-								Add new
+								Add new YouTube video
 							</button>
 						</div>
 					</div>
@@ -550,11 +550,13 @@
 				<div class="field">
 					<p class="label">Blog entries</p>
 					<div class="columns is-multiline is-mobile">
-						{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, index}
+						{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, blogIndex}
 							<div class="column is-half">
 								<input
 									class="input"
 									type="text"
+									name={`${curriculumFormKeys.blog_entries_key}.${blogIndex}${}`}
+									
 									placeholder="URL of the blog"
 									required={true}
 								/>
