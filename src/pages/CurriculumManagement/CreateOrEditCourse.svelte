@@ -46,7 +46,9 @@
 
 		newIndexedArray(value[curriculumFormKeys.youtube_video_entries_key].length).forEach(i => {
 			if (!(
-				formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
+				formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`) &&
+				formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`) &&
+				
 			)) {
 				throw new Error(`Not OK: Please add at least 1 YouTube video`);
 			}
