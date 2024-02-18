@@ -641,7 +641,7 @@
 																				true,
 																			);
 																			setFields(
-																				`${curriculumFormKeys.curriculum_plan_file_name_key}`,
+																				`${curriculumFormKeys.levels_key}`,
 																				filename,
 																				true,
 																			);
