@@ -155,9 +155,7 @@
 		*/
 		(!!id
 			?  WrappedFetch(`/api/curriculum-course?id=${id}`)
-			: Promise.resolve({
-					[curriculumFormKeys.parent_id_key]: parentId,
-				})
+			: [Promise.resolve({[curriculumFormKeys.parent_id_key]: parentId}), null]
 		).then((_data) => {
 			const initValues = {
 				[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
