@@ -46,6 +46,10 @@
 			}
 			
 			const youtubeLength = value[curriculumFormKeys.youtube_video_entries_key].length;
+			if (youtubeLength < 1) {
+				rj(new Error(`Not OK: Please add at least 1 YouTube video entries`));
+				return;
+			}
 			newIndexedArray(youtubeLength).forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
