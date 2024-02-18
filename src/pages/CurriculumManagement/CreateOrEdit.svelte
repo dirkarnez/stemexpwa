@@ -204,9 +204,9 @@
 
 	function addLevel(index) {
 		debugger;
-		return () => addField(`${curriculumFormKeys.levels_key}`, { 
-			[curriculumFormKeys.lessons_key]: []
-		}, index);
+		return () => addField(`${curriculumFormKeys.levels_key}`, [{
+			[curriculumFormKeys.lessons_key]: [{}]
+		}], index);
 	}
 	
 	function addLesson(levelIndex, index) {
