@@ -440,6 +440,47 @@
 											</button>
 										</div>
 									</div>
+
+									<div class="field">
+										<figure class="image is-128x128">
+											<img
+												style={`object-fit: cover; height: 100%;`}
+												src={$data[curriculumFormKeys.icon_id_key]
+													? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
+													: 
+													$data[curriculumFormKeys.icon_file_preview_key]
+													? $data[curriculumFormKeys.icon_file_preview_key]
+													: `https://bulma.io/images/placeholders/128x128.png`}
+												alt=""
+											/>
+										</figure>
+										<label class="label">
+											<div class="control">
+												<InputFileContainer>
+													<input
+														class="file-input"
+														type="file"
+														name={curriculumFormKeys.icon_file_key}
+														on:change={e => handleImageChange(e, dataURI => setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true))}
+														required={true}
+													/>
+												</InputFileContainer>
+											</div>
+										</label>
+									</div>
+									<div class="field">
+										<label class="label">Description
+											<div class="control">
+												<input
+													class="input"
+													type="text"
+													name={curriculumFormKeys.description_key}
+													bind:value={$data[curriculumFormKeys.description_key]}
+													required={true}
+												/>
+											</div>
+										</label>
+									</div>
 				
 									<div class="columns is-multiline is-mobile mt-2">
 										{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key] || []) as lesson, lessonIndex}
