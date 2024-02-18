@@ -25,10 +25,7 @@
 
     const { form, data, setFields } = createForm({
         onSubmit: (_, context) => {
-            
-            console.log(parentId);
 			const formData = new FormData(context.event.target);
-            console.log(JSON.stringify([...formData]));
 
             if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {
                 formData.delete(curriculumFormKeys.icon_file_key)
