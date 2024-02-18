@@ -49,34 +49,7 @@ information_entries
   ``````````
   
 				
-  <div class="field">
-  <p class="label">Blog entries</p>
-  <div class="columns is-multiline is-mobile">
-      {#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, index}
-                  <div class="column is-half">
-                      <input
-                          class="input"
-                          type="text"
-                          placeholder="URL"
-                          required={true}
-                      />
-                  </div>
-              <div class="column is-half">
-                  <input
-                  class="input"
-                  type="text"
-                  placeholder="URL of the video"
-                  required={true}
-              />
-              </div>
-      {/each}
-      <div class="column">
-          <button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[curriculumFormKeys.blog_entries_key] || []).length)}>
-              Add new
-          </button>
-      </div>
-  </div>
-</div>
+  
 
 
 <div class="field">
