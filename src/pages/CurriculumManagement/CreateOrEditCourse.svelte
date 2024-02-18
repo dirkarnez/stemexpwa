@@ -71,7 +71,7 @@
 				}
 			});
 
-			const levelLength = value[curriculumFormKeys.levels_key].length;
+			const levelLength = (value[curriculumFormKeys.levels_key] || []).length;
 			if (levelLength < 1) {
 				rj(new Error(`Not OK: Please add at least 1 course level`));
 				return;
