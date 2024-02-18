@@ -420,7 +420,7 @@
 				<p class="label">Levels</p>
 				<div class="columns is-multiline is-mobile">
 					<!-- !!!!!!!!TODO -->
-					{#each ($data[curriculumFormKeys.levels_key] || []) as { name }, levelIndex}
+					{#each ($data[curriculumFormKeys.levels_key] || []) as _, levelIndex}
 							<div class="column is-full">
 								<div class="box">
 									<div class="columns">
