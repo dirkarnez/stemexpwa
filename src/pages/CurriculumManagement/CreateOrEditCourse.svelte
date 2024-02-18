@@ -300,11 +300,8 @@
 
 
 	function removeMiscMaterial(levelIndex, lessonIndex, miscMaterialIndex) {
-		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_teacher_notes_key}.${miscMaterialIndex}`);
+		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_misc_materials_key}.${miscMaterialIndex}`);
 	}
-
-
-	lesson_misc_materials_key
 
 
 	// function removeInformationEntry(index) {
