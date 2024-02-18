@@ -27,6 +27,7 @@ export const level_icon_id_key = "icon_id";
 export const level_icon_file_key = "icon_file";
 export const level_icon_file_preview_key = "icon_file_preview";
 export const level_icon_file_preview_file_name_key = "icon_file_preview_file_name";
+export const level_description_key = "description";
 
 export const lesson_presentation_notes_key = "presentation_notes";
 export const lesson_presentation_note_file_name_key = "name"
