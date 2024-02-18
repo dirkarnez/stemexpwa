@@ -520,9 +520,7 @@
 						{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
 							<YouTubePreviewer
 								name={`${curriculumFormKeys.youtube_video_entries_key}.${index}.${curriculumFormKeys.youtube_video_entries_url_key}`}
-								bind:value={$data[
-									curriculumFormKeys.youtube_video_entries_key
-								][index][curriculumFormKeys.youtube_video_entries_url_key]}
+								bind:value={$data[curriculumFormKeys.youtube_video_entries_key][index][curriculumFormKeys.youtube_video_entries_url_key]}
 							>
 								<br />
 								<br />
