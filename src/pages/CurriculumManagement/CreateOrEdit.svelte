@@ -526,7 +526,7 @@
 																<input
 																	class="file-input"
 																	type="file"
-																	name={curriculumFormKeys.levels_key.levelIndex.}
+																	name={`${curriculumFormKeys.levels_key}.${levelIndex}`}
 																	
 																	on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
 																/>
