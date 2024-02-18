@@ -165,8 +165,6 @@
 			};
 			debugger;
 			setFields(initValues);
-			const a = $data[curriculumFormKeys.levels_key][0];
-		
 		})
 		
 
