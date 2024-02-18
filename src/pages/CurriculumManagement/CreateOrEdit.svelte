@@ -546,9 +546,11 @@
 												</div>
 											</div>
 										</div> -->
-										<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[curriculumFormKeys.blog_entries_key] || []).length)}>
-											Add new lesson
-										</button>
+										<div class="column is-full">
+											<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[curriculumFormKeys.blog_entries_key] || []).length)}>
+												Add new lesson
+											</button>
+										</div>
 									</div>
 								  </div>
 							</div>
