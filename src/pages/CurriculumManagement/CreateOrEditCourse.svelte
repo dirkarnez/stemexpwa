@@ -583,8 +583,7 @@
 															getResourcesAPIByID($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_id_key])
 															: 
 															`https://bulma.io/images/placeholders/128x128.png`
-														)
-														}
+														)}
 													alt=""
 												/>
 											</figure>
