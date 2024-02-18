@@ -43,7 +43,7 @@
 		if (formData.get(curriculumFormKeys.curriculum_plan_id_key).size == 0) {
 			formData.delete(curriculumFormKeys.curriculum_plan_id_key)
 		}
-		
+
 		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.youtube_video_entries_key])) {
 			throw new Error(`Not OK: Please add at least 1 YouTube video`);
 		}
@@ -114,7 +114,7 @@
 					alert(`Not OK: ${err}`);
 				});
 			} catch (e) {
-				
+				alert(e);
 			}
 		},
 	});
