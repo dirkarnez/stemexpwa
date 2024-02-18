@@ -52,7 +52,7 @@
 			throw new Error(`Not OK: Please add at least 1 blog entries`);
 		}
 
-		const levels = values[curriculumFormKeys.levels_key];
+		const levels = formData.get(curriculumFormKeys.levels_key);
 		if (!hasAtLeastOneItemInArray(levels)) {
 			throw new Error(`Not OK: Please add at least 1 course level`);
 		}
