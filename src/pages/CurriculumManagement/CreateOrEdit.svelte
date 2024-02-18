@@ -515,12 +515,14 @@
 														Presentation notes
 													</div>
 													<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-														<div>
-															<a href="google.com" class="is-underlined">App Inventor Introductory [L1-HelloCodi].pptx</a>
-															<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-																x
-															</button>
-														</div>
+														{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key] || []) as lesson, lessonIndex}
+															<div>
+																<a href="google.com" class="is-underlined">App Inventor Introductory [L1-HelloCodi].pptx</a>
+																<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+																	x
+																</button>
+															</div>
+														{/each}
 														<div>
 															<InputFileContainer>
 																<input
