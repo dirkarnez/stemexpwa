@@ -544,6 +544,16 @@
 																x
 															</button>
 														</div>
+														<div>
+															<InputFileContainer>
+																<input
+																	class="file-input"
+																	type="file"
+																	name="{curriculumFormKeys.information_entries_icon_file_key}"
+																	on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
+																/>
+															</InputFileContainer> 
+														</div>
 <!-- 	
 														<br>
 														<a href="google.com" class="is-underlined">codi.jpg</a>
