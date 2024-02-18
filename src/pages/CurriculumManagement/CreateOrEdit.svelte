@@ -48,6 +48,12 @@
 			// 		}),
 			// 	...tempValues
 			// };
+
+			if (!Array.isArray(values[curriculumFormKeys.youtube_video_entries_key]) 
+				||  values[curriculumFormKeys.youtube_video_entries_key].length < 1) {
+				alert(`Not OK: ${err}`);
+				return;
+			}
 			const formData = new FormData(context.event.target);
 
 			// console.log(finalValues);
