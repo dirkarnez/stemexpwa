@@ -616,7 +616,7 @@
 														delete this lesson
 													</button>
 												</div>
-												<div class="column  is-three-quarters">
+												<!-- <div class="column  is-three-quarters">
 													<div class="columns is-multiline is-mobile">
 														<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															Presentation notes
@@ -707,20 +707,9 @@
 																	/>
 																</InputFileContainer> 
 															</div>
-				  <!-- 	
-															<br>
-															<a href="google.com" class="is-underlined">codi.jpg</a>
-															<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-																x
-															</button>
-															<br>
-															<a href="google.com" class="is-underlined">HelloCodi.aia</a>
-															<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-																x
-															</button> -->
 														</div>
 													</div>
-												</div>
+												</div> -->
 											{/each}
 											<div class="column is-full">
 												<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addLesson(levelIndex, ($data[curriculumFormKeys.lessons_key] || []).length)}>
