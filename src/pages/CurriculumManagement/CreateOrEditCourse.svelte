@@ -69,6 +69,8 @@
 				throw new Error(`Not OK: Please add at least 1 course level`);
 			}
 
+			if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length)
+
 			if (!(
 				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}`)
 				/*extra fields here*/
