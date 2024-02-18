@@ -151,7 +151,7 @@
 		// } else {
 
 		const [_wrappedFetchCurriculumEntry] = WrappedFetch(
-			`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`,
+			`/api/curriculum-course?id=${id}&top-level=${!!parentId ? "false" : "true"}`,
 		);
 		/*
 			if parent key only, create empty
