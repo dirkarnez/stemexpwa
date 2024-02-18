@@ -50,6 +50,7 @@
 					formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
 				)) {
 					rj(new Error(`Not OK: Please add at least 1 YouTube video`));
+					return;
 				}
 			});
 
@@ -75,11 +76,13 @@
 					/*extra fields here*/
 				)) {
 					rj(new Error(`Not OK: Please add at least 1 course level`));
+					return;
 				}
 				const lessonLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length;
 
 				if (lessonLength < 1) {
 					rj(new Error(`Not OK: Please add at least 1 lesson for every level`));
+					return;
 				}
 				
 				newIndexedArray(lessonLength).forEach(j => {
