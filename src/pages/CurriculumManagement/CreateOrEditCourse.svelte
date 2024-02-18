@@ -609,9 +609,7 @@
 													Lesson {lessonIndex + 1}
 													<br>
 													<br>
-													<button class="button is-danger is-light" on:click={() => {
-														removeLesson(levelIndex, lessonIndex)
-													}}>
+													<button class="button is-danger is-light" on:click={removeLesson(levelIndex, lessonIndex)}>
 														delete this lesson
 													</button>
 												</div>
