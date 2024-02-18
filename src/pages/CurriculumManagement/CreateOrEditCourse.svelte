@@ -588,7 +588,7 @@
 										<div class="columns is-multiline is-mobile mt-2">
 											{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key] || []) as lesson, lessonIndex}
 												<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-													Lesson {lessonIndex} + 1
+													Lesson {lessonIndex + 1}
 													<br>
 													<button class="button is-danger is-light ml-auto" on:click={removeLevel(levelIndex)}>
 														delete this level
