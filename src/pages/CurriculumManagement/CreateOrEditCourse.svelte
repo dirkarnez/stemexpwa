@@ -278,7 +278,6 @@
 	}
 
 	function removeLesson(levelIndex, lessonIndex) {
-		debugger;
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}`);
 	}
 	
@@ -595,8 +594,11 @@
 													Lesson {lessonIndex + 1}
 													<br>
 													<br>
-													<button class="button is-danger is-light" on:click={removeLesson(levelIndex, lessonIndex)}>
-														delete this lesson!
+													<button class="button is-danger is-light" on:click={() => {
+														debugger;
+														removeLesson(levelIndex, lessonIndex)
+													}}>
+														delete this lesson
 													</button>
 												</div>
 												<div class="column  is-three-quarters">
