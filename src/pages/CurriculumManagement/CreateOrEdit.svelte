@@ -64,14 +64,14 @@
 				alert(`Not OK: Please add at least 1 course level`);
 				return;
 			}
+			
+			if((!values[curriculumFormKeys.levels_key] || []).every(level => hasAtLeastOneItemInArray(level[curriculumFormKeys.lessons_key])))
 
-			(values[curriculumFormKeys.levels_key] || []).every(level => {
-				if (!hasAtLeastOneItemInArray(level[curriculumFormKeys.lessons_key])) {
+
+			if (!hasAtLeastOneItemInArray(level)) {
 					alert(`Not OK: Please add at least 1 course level`);
 					return;
 				}
-			});
-
 			const formData = new FormData(context.event.target);
 
 			// console.log(finalValues);
