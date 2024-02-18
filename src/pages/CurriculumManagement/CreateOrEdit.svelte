@@ -65,6 +65,10 @@
 				return;
 			}
 
+			(values[curriculumFormKeys.levels_key] || []).forEach(element => {
+				
+			});
+
 			const formData = new FormData(context.event.target);
 
 			// console.log(finalValues);
