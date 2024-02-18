@@ -18,7 +18,7 @@ export const blog_entries_title_key = "title";
 
 
 
-
+/* course */
 export const curriculum_plan_file_name_key = "curriculum_plan_file_name";
 export const curriculum_plan_id_key = "curriculum_plan_id";
 export const curriculum_plan_file_key = "curriculum_plan_file";
