@@ -25,6 +25,9 @@ export const levels_key = "levels";
 export const level_name_key = "name";
 
 export const lesson_presentation_notes_key = "presentation_notes";
+export const lesson_presentation_notes_key = "student_notes";
+export const lesson_presentation_notes_key = "teacher_notes";
+export const lesson_presentation_notes_key = "misc_materials";
 
 export const lessons_key = "lessons";
 
