@@ -394,13 +394,11 @@
 				<div class="columns is-multiline is-mobile">
 					{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
 						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}>
-							{#if index > 0}
-								<br>
-								<br>
-								<button class="button is-danger is-light" on:click={removeYouTubeVideo(index)}>
-									delete this youtube video
-								</button>
-							{/if}
+							<br>
+							<br>
+							<button class="button is-danger is-light" on:click={removeYouTubeVideo(index)}>
+								delete this youtube video
+							</button>
 						</YouTubePreviewer>
 					{/each}
 					<div class="column is-full">
