@@ -302,19 +302,6 @@
 	function removeMiscMaterial(levelIndex, lessonIndex, miscMaterialIndex) {
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_misc_materials_key}.${miscMaterialIndex}`);
 	}
-
-
-	// function removeInformationEntry(index) {
-	// 	return () => unsetField(`${curriculumFormKeys.information_entries_key}.${index}`);
-	// }
-
-	// function addInformationEntry(index) {
-	// 	return () => addField(`${curriculumFormKeys.information_entries_key}`, {
-	// 		[curriculumFormKeys.information_entries_icon_id_key]: "",
-	// 		[curriculumFormKeys.information_entries_title_key]: "",
-	// 		[curriculumFormKeys.information_entries_content_key]: ""
-	// 	}, index);
-	// }
 </script>
 
 <!-- <div class="columns">
