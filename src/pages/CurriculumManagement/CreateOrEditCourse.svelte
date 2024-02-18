@@ -22,7 +22,7 @@
 	import { createForm } from "felte";
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
 	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
-	import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
+	import * as curriculumFormKeys from "../../formkeys/curriculum";
 
 	//import { WrappedFetch } from "../../utils/fetch";
 
