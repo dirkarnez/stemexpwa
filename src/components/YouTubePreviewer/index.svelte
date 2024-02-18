@@ -79,6 +79,7 @@
 	<input
 		class="input"
 		type="text"
+		name={name}
 		bind:value={videoURL}
 		placeholder="URL of the video"
 		required={true}
