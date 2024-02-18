@@ -54,14 +54,14 @@
 				}
 			});
 
-			const blogLengh = value[curriculumFormKeys.blog_entries_key].length;
+			const blogLength = value[curriculumFormKeys.blog_entries_key].length;
 			if (blogLengh < 1) {
 				rj(new Error(`Not OK: Please add at least 1 blog entries`));
 				return;
 			}
 
 
-			newIndexedArray(blogLengh).forEach(i => {
+			newIndexedArray(blogLength).forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
