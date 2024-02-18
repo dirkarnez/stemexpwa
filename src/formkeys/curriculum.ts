@@ -17,6 +17,10 @@ export const blog_entries_external_url_key = "external_url";
 export const blog_entries_title_key = "title";
 
 
+
+
+export const curriculum_plan_key = "curriculum_plan";
+
 export const levels_key = "levels";
 export const level_name_key = "name";
 
