@@ -3,13 +3,11 @@
 	import { WrappedFetch, WrappedFetchPOSTMultipart } from "../../utils/fetch";
 	import { stringToURLPart, mustMatchThenReplace } from "../../utils/url";
 	import { useLocation, navigate } from "svelte-routing";
-	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { handleImageChange } from "../../utils/file";
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
     import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
-	
     
 	const dispatch = createEventDispatcher();
 
