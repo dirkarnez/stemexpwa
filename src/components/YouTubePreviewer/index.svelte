@@ -77,7 +77,6 @@
 </style>
 
 <div class="column is-three-quarters">
-
 	<slot/>
 </div>
 <div class="column is-one-quarter">
