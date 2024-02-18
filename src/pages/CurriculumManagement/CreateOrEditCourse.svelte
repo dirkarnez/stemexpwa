@@ -513,7 +513,7 @@
 								</button>
 							</div>
 						{/each}
-						<div class="column">
+						<div class="column is-full">
 							<button
 								type="button"
 								class="button is-primary is-light"
