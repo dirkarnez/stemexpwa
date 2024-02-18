@@ -207,6 +207,7 @@
 	}
 	
 	function addLesson(levelIndex, index) {
+		debugger;
 		return () => addField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}`, 
 		{ 
 			[curriculumFormKeys.blog_entries_external_url_key]: "", 
