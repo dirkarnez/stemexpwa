@@ -566,8 +566,8 @@
 									class="input"
 									type="text"
 									placeholder="Title of the blog"
-									name={`${curriculumFormKeys.blog_entries_key}.${blogIndex}${curriculumFormKeys.blog_entries_external_url_key}`}
-									bind:value={$data[curriculumFormKeys.blog_entries_key][blogIndex][curriculumFormKeys.blog_entries_external_url_key]}
+									name={`${curriculumFormKeys.blog_entries_key}.${blogIndex}${curriculumFormKeys.blog_entries_title_key}`}
+									bind:value={$data[curriculumFormKeys.blog_entries_key][blogIndex][curriculumFormKeys.blog_entries_title_key]}
 									required={true}
 								/>
 							</div>
