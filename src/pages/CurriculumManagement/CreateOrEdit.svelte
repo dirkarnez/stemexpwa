@@ -93,14 +93,15 @@
 					"/api/curriculum-course",
 					formData,
 				);
+				
 				wrappedFetchPromise
-					.then(() => {
-						alert("OK");
-						dispatch("done");
-					})
-					.catch((err) => {
-						alert(`Not OK: ${err}`);
-					});
+				.then(() => {
+					alert("OK");
+					dispatch("done");
+				})
+				.catch((err) => {
+					alert(`Not OK: ${err}`);
+				});
 			} catch (e) {
 				
 			}
