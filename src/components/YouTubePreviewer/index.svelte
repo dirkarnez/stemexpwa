@@ -6,7 +6,7 @@
 	import { onMount } from 'svelte';
 
 	let videoId = '';
-	export let value = '';
+	export let value = "";
 	export let name = "";
 	// let videoTitle = '';
 	let isReady = false;
@@ -18,10 +18,12 @@
 				videoId = `${matched[1]}`;
 				player.loadVideoById(videoId);
 			} else {
+				value = "";
 				videoId = "";
 				player.loadVideoById(videoId);
 			}
 		} else {
+			value = "";
 			videoId = "";
 			if (!!player) {
 				player.loadVideoById(videoId);
