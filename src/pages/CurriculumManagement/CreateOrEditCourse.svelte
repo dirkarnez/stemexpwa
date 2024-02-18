@@ -63,8 +63,8 @@
 
 		newIndexedArray(value[curriculumFormKeys.levels_key].length).forEach(i => {
 			if (!(
-				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`) && 
-				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
+				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`)
+				/*extra fields here*/
 			)) {
 				throw new Error(`Not OK: Please add at least 1 blog entries`);
 			}
