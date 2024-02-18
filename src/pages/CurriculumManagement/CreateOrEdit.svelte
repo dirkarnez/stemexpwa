@@ -221,7 +221,6 @@
 	}
 
 	function addLevel(index) {
-		debugger;
 		return () => addField(`${curriculumFormKeys.levels_key}`, [{
 			[curriculumFormKeys.id_key]: "",
 			[curriculumFormKeys.level_name_key]: "",
