@@ -83,6 +83,7 @@
 		placeholder="URL of the video"
 		required={true}
 	/>
+	<slot/>
 </div>
 <div class="column is-one-quarter">
 	<div class="iframe-container">
