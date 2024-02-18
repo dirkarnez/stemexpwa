@@ -286,6 +286,10 @@
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}`);
 	}
 
+	function removePresentationNote(levelIndex, lessonIndex, presentationNoteIndex) {
+		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}`);
+	}
+
 	// function removeInformationEntry(index) {
 	// 	return () => unsetField(`${curriculumFormKeys.information_entries_key}.${index}`);
 	// }
