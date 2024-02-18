@@ -224,6 +224,8 @@
 		debugger;
 		return () => addField(`${curriculumFormKeys.levels_key}`, [{
 			[curriculumFormKeys.id_key]: "",
+			[curriculumFormKeys.name_key]: "",
+			
 			[curriculumFormKeys.lessons_key]: [{
 				[curriculumFormKeys.blog_entries_external_url_key]: "", 
 				[curriculumFormKeys.blog_entries_title_key]: ""
