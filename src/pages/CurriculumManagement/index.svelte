@@ -34,7 +34,7 @@
 	// export let previousPath;
 
 	const init = () => {
-		const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum-tree` : `/api/curriculum-courses?parent-id=${parentId}`);
+		const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum-tree` : `/api/curriculum-tree?parent-id=${parentId}`);
 		wrappedFetchCurriculum = _wrappedFetchCurriculum;
 		wrappedFetchCurriculum.then(data => {
 			curriculum = data;
