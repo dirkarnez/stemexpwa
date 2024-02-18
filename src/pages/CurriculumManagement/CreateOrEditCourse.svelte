@@ -768,7 +768,7 @@
 																					true,
 																				);
 																				setFields(
-																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_misc_materials_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_name_key}`,
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_misc_materials_key}.${index}.${curriculumFormKeys.lesson_misc_materials_file_name_key}`,
 																					filename,
 																					true,
 																				);
