@@ -628,7 +628,7 @@
 																</div>
 															{/each}
 															<div>
-																<!-- <InputFileContainer>
+																<InputFileContainer filename={$data[curriculumFormKeys.curriculum_plan_file_name_key]}>
 																	<input
 																		class="file-input"
 																		type="file"
@@ -636,7 +636,7 @@
 																		
 																		on:change={e => handleImageChange(e, dataURI => setFields(`435`, dataURI, true))}
 																	/>
-																</InputFileContainer>  -->
+																</InputFileContainer>
 																<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 																	x
 																</button>
