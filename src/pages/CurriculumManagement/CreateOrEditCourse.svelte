@@ -488,7 +488,7 @@
 					<div class="columns is-multiline is-mobile">
 						{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, blogIndex}
 							<div class="column">
-								<div class="columns is-multiline is-mobile">
+								<div class="columns">
 									<div class="column is-half">
 										<input
 											class="input"
