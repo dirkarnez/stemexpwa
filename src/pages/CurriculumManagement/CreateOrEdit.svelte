@@ -395,7 +395,7 @@
 					{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
 						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
 						<button class="button is-danger is-light ml-auto" on:click={removeYouTubeVideo(index)}>
-							delete this youtube <video src=""></video>
+							delete this youtube video
 						</button>
 					{/each}
 					<div class="column">
