@@ -71,7 +71,7 @@
         /*
         you only need `id` for gettting data, `parent id` is just for association
         */
-        const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
+        const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum-course-type?id=${id}`);
         
         (
             !!id 
