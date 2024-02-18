@@ -1,32 +1,43 @@
 <script>
 	import { onMount, createEventDispatcher } from "svelte";
-	import { WrappedFetch, WrappedFetchPOST, WrappedFetchPOSTMultipart } from "../../utils/fetch";
+	import {
+		WrappedFetch,
+		WrappedFetchPOST,
+		WrappedFetchPOSTMultipart,
+	} from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
-	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
+	import {
+		useLocation,
+		Link,
+		Route,
+		Router,
+		link,
+		navigate,
+	} from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { handleImageChange, handleDocumentChange } from "../../utils/file";
 	import { isNullOrEmpty } from "../../utils/strings";
-    import { createForm } from 'felte';
+	import { createForm } from "felte";
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
 	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
 	import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 
-    //import { WrappedFetch } from "../../utils/fetch";
+	//import { WrappedFetch } from "../../utils/fetch";
 
 	const dispatch = createEventDispatcher();
 
-    export let id = "";
-    export let parentId = "";
+	export let id = "";
+	export let parentId = "";
 
-    // export let previousPath;
+	// export let previousPath;
 
-    const { form, data, setFields, addField, unsetField } = createForm({ 
-        onSubmit: (values, context) => {
-			// const { 
+	const { form, data, setFields, addField, unsetField } = createForm({
+		onSubmit: (values, context) => {
+			// const {
 			// 	[icon_file_preview_key]: undefined,
-			// 	[information_entries_key]: [], 
-			// 	...tempValues 
+			// 	[information_entries_key]: [],
+			// 	...tempValues
 			// } = { [information_entries_key]: (values[information_entries_key] || []), ...values};
 
 			// const finalValues = {
@@ -39,24 +50,23 @@
 			// };
 			const formData = new FormData(context.event.target);
 
-		
-
 			// console.log(finalValues);
 
-
-			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-course", formData);
+			const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
+				"/api/curriculum-course",
+				formData,
+			);
 			wrappedFetchPromise
-			.then(() => {
-				alert("OK");
-				dispatch('done');
-			})
-			.catch(err => {
-				alert(`Not OK: ${err}`)
-			});
-        },
-    });
+				.then(() => {
+					alert("OK");
+					dispatch("done");
+				})
+				.catch((err) => {
+					alert(`Not OK: ${err}`);
+				});
+		},
+	});
 
-	
 	// $: if (toBeACourse) {
 	// 	if (($data[youtube_video_entries_key] || []).length < 1) {
 	// 		addYouTubeVideo(0)();
@@ -83,84 +93,87 @@
 	// 	});
 	// }
 
-    onMount(() => {
+	onMount(() => {
 		// if (isNullOrEmpty(id)) {
 		// 	setFields(description_key, "", true);
 		// 	setFields(icon_id_key, "", true);
 		// 	setFields(parent_id_key, parentId, true);
 		// } else {
 
-		const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
+		const [_wrappedFetchCurriculumEntry] = WrappedFetch(
+			`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`,
+		);
 		/*
 			if parent key only, create empty
 		*/
-		(!!id ? 
-		_wrappedFetchCurriculumEntry 
-		: 
-		Promise.resolve({
-			[curriculumFormKeys.parent_id_key]: parentId
-		}))
-		.then(_data => {
+		(!!id
+			? _wrappedFetchCurriculumEntry
+			: Promise.resolve({
+					[curriculumFormKeys.parent_id_key]: parentId,
+				})
+		).then((_data) => {
 			const initValues = {
-				[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key], 
-				[curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
+				[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
+				[curriculumFormKeys.description_key]:
+					_data[curriculumFormKeys.description_key],
 				[curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
-				[curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key],
-				[curriculumFormKeys.youtube_video_entries_key]: (
-					(Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0) 
-					? 
-					_data[curriculumFormKeys.youtube_video_entries_key]
-					:
-					[{
-						[curriculumFormKeys.youtube_video_entries_url_key]: ""
-					}]
-				),
-				[curriculumFormKeys.blog_entries_key]: (
-					(Array.isArray(_data[curriculumFormKeys.blog_entries_key]) && _data[curriculumFormKeys.blog_entries_key].length > 0) 
-					? 
-					_data[curriculumFormKeys.blog_entries_key]
-					:
-					[{
-						[curriculumFormKeys.blog_entries_external_url_key]: "",
-						[curriculumFormKeys.blog_entries_title_key]: ""
-					}]
-				),
-				[curriculumFormKeys.levels_key]: (
-					(Array.isArray(_data[curriculumFormKeys.levels_key]) && _data[curriculumFormKeys.levels_key].length > 0) 
-					? 
-					_data[curriculumFormKeys.levels_key]
-					:
-					[{
-						[curriculumFormKeys.lessons_key]: [{
-							[curriculumFormKeys.blog_entries_external_url_key]: "", 
-							[curriculumFormKeys.blog_entries_title_key]: "" 
-						}]
-					}]
-				)
-
+				[curriculumFormKeys.parent_id_key]:
+					_data[curriculumFormKeys.parent_id_key],
+				[curriculumFormKeys.youtube_video_entries_key]:
+					Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) &&
+					_data[curriculumFormKeys.youtube_video_entries_key].length > 0
+						? _data[curriculumFormKeys.youtube_video_entries_key]
+						: [
+								{
+									[curriculumFormKeys.youtube_video_entries_url_key]: "",
+								},
+							],
+				[curriculumFormKeys.blog_entries_key]:
+					Array.isArray(_data[curriculumFormKeys.blog_entries_key]) &&
+					_data[curriculumFormKeys.blog_entries_key].length > 0
+						? _data[curriculumFormKeys.blog_entries_key]
+						: [
+								{
+									[curriculumFormKeys.blog_entries_external_url_key]: "",
+									[curriculumFormKeys.blog_entries_title_key]: "",
+								},
+							],
+				[curriculumFormKeys.levels_key]:
+					Array.isArray(_data[curriculumFormKeys.levels_key]) &&
+					_data[curriculumFormKeys.levels_key].length > 0
+						? _data[curriculumFormKeys.levels_key]
+						: [
+								{
+									[curriculumFormKeys.lessons_key]: [
+										{
+											[curriculumFormKeys.blog_entries_external_url_key]: "",
+											[curriculumFormKeys.blog_entries_title_key]: "",
+										},
+									],
+								},
+							],
 
 				// 	,
-				// [curriculumFormKeys.youtube_video_entries_key]:	(Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0) 
-				// 	? 
+				// [curriculumFormKeys.youtube_video_entries_key]:	(Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0)
+				// 	?
 				// 	_data[curriculumFormKeys.blog_entries_key] : [{
 				// 		[curriculumFormKeys.blog_entries_external_url_key]: "",
 				// 		[curriculumFormKeys.blog_entries_title_key]: ""
 				// 	}],
-				// [curriculumFormKeys.levels_key]:	(Array.isArray(_data[curriculumFormKeys.levels_key]) && _data[curriculumFormKeys.levels_key].length > 0) 
-				// ? 
+				// [curriculumFormKeys.levels_key]:	(Array.isArray(_data[curriculumFormKeys.levels_key]) && _data[curriculumFormKeys.levels_key].length > 0)
+				// ?
 				// _data[curriculumFormKeys.levels_key] : [{
 				// 	[curriculumFormKeys.id_key]: "",
 				// 	[curriculumFormKeys.blog_entries_external_url_key]: "",
 				// 	[curriculumFormKeys.blog_entries_title_key]: ""
 				// }],
 
-				// [curriculumFormKeys.information_entries_key]: (Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0) 
-				// 	? 
+				// [curriculumFormKeys.information_entries_key]: (Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0)
+				// 	?
 				// 	_data[curriculumFormKeys.youtube_video_entries_key] : [{
 				// 		[curriculumFormKeys.blog_entries_external_url_key]: "",
 				// 		[curriculumFormKeys.blog_entries_title_key]: ""
 				// 	}],
-
 
 				// ,
 				// []: (Array.isArray(_data[youtube_video_entries_key]) && _data[youtube_video_entries_key].length > 0) ? _data[youtube_video_entries_key] : [{
@@ -174,27 +187,23 @@
 			};
 			debugger;
 			setFields(initValues);
-		})
-		
+		});
 
-
-
-		// setFields(youtube_video_entries_key , ($data[youtube_video_entries_key] || [{ 
-		// 	[youtube_video_entries_title_key]: "",  
-		// 	[youtube_video_entries_url_key]: "" 
+		// setFields(youtube_video_entries_key , ($data[youtube_video_entries_key] || [{
+		// 	[youtube_video_entries_title_key]: "",
+		// 	[youtube_video_entries_url_key]: ""
 		// }]), true);
 
 		// setFields(blog_entries_key , ($data[] || [{
-		// 	[blog_entries_external_url_key]: "", 
+		// 	[blog_entries_external_url_key]: "",
 		// 	[blog_entries_title_key]: ""
 		// }]), true);
 
-		// setFields(information_entries_key , ($data[information_entries_key] || [{ 
+		// setFields(information_entries_key , ($data[information_entries_key] || [{
 		// 	[information_entries_icon_id_key]: "",
-		// 	[information_entries_title_key]: "", 
-		// 	[information_entries_content_key]: "" 
+		// 	[information_entries_title_key]: "",
+		// 	[information_entries_content_key]: ""
 		// }]), true);
-
 	});
 
 	// function handleImageChange(event, callback) {
@@ -212,20 +221,31 @@
 	// }
 
 	function addYouTubeVideo(index) {
-		return () => addField(`${curriculumFormKeys.youtube_video_entries_key}`, { 
-			[curriculumFormKeys.youtube_video_entries_url_key]: "" 
-		}, index);
+		return () =>
+			addField(
+				`${curriculumFormKeys.youtube_video_entries_key}`,
+				{
+					[curriculumFormKeys.youtube_video_entries_url_key]: "",
+				},
+				index,
+			);
 	}
 
 	function removeYouTubeVideo(index) {
-		return () => unsetField(`${curriculumFormKeys.youtube_video_entries_key}.${index}`);
+		return () =>
+			unsetField(`${curriculumFormKeys.youtube_video_entries_key}.${index}`);
 	}
 
 	function addBlogEntry(index) {
-		return () => addField(`${curriculumFormKeys.blog_entries_key}`, { 
-			[curriculumFormKeys.blog_entries_external_url_key]: "", 
-			[curriculumFormKeys.blog_entries_title_key]: "" 
-		}, index);
+		return () =>
+			addField(
+				`${curriculumFormKeys.blog_entries_key}`,
+				{
+					[curriculumFormKeys.blog_entries_external_url_key]: "",
+					[curriculumFormKeys.blog_entries_title_key]: "",
+				},
+				index,
+			);
 	}
 
 	function removeBlogEntry(index) {
@@ -233,35 +253,47 @@
 	}
 
 	function addLevel(index) {
-		return () => addField(`${curriculumFormKeys.levels_key}`, [{
-			[curriculumFormKeys.id_key]: "",
-			[curriculumFormKeys.level_name_key]: "",
-			[curriculumFormKeys.lessons_key]: [{
-				[curriculumFormKeys.blog_entries_external_url_key]: "", 
-				[curriculumFormKeys.blog_entries_title_key]: ""
-			}]
-		}], index);
-	}
-	
-	function addLesson(levelIndex, index) {
-		debugger;
-		return () => addField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}`, 
-		{ 
-			[curriculumFormKeys.blog_entries_external_url_key]: "", 
-			[curriculumFormKeys.blog_entries_title_key]: "" 
-		}, index);
+		return () =>
+			addField(
+				`${curriculumFormKeys.levels_key}`,
+				[
+					{
+						[curriculumFormKeys.id_key]: "",
+						[curriculumFormKeys.level_name_key]: "",
+						[curriculumFormKeys.lessons_key]: [
+							{
+								[curriculumFormKeys.blog_entries_external_url_key]: "",
+								[curriculumFormKeys.blog_entries_title_key]: "",
+							},
+						],
+					},
+				],
+				index,
+			);
 	}
 
+	function addLesson(levelIndex, index) {
+		debugger;
+		return () =>
+			addField(
+				`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}`,
+				{
+					[curriculumFormKeys.blog_entries_external_url_key]: "",
+					[curriculumFormKeys.blog_entries_title_key]: "",
+				},
+				index,
+			);
+	}
 
 	// function removeInformationEntry(index) {
 	// 	return () => unsetField(`${curriculumFormKeys.information_entries_key}.${index}`);
 	// }
 
 	// function addInformationEntry(index) {
-	// 	return () => addField(`${curriculumFormKeys.information_entries_key}`, { 
-	// 		[curriculumFormKeys.information_entries_icon_id_key]: "", 
-	// 		[curriculumFormKeys.information_entries_title_key]: "", 
-	// 		[curriculumFormKeys.information_entries_content_key]: "" 
+	// 	return () => addField(`${curriculumFormKeys.information_entries_key}`, {
+	// 		[curriculumFormKeys.information_entries_icon_id_key]: "",
+	// 		[curriculumFormKeys.information_entries_title_key]: "",
+	// 		[curriculumFormKeys.information_entries_content_key]: ""
 	// 	}, index);
 	// }
 </script>
@@ -291,9 +323,7 @@
 	</div>
 </div> -->
 
-
-
-	<!-- <div class="field">
+<!-- <div class="field">
 		<label class="label" for="select-accessible">Accessible to
 			<div class="notification ex3 p-2" id="select-accessible">
 				{#each partners as { full_name }}
@@ -339,28 +369,39 @@
 					<figure class="image is-128x128">
 						<img
 							style={`height: 100%; width: 100%; object-fit: cover;`}
-							src={
-								$data[curriculumFormKeys.icon_file_preview_key]
+							src={$data[curriculumFormKeys.icon_file_preview_key]
 								? $data[curriculumFormKeys.icon_file_preview_key]
-								: 
-								$data[curriculumFormKeys.icon_id_key]
-								? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
-								: 
-								`https://bulma.io/images/placeholders/128x128.png`}
+								: $data[curriculumFormKeys.icon_id_key]
+									? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
+									: `https://bulma.io/images/placeholders/128x128.png`}
 							alt=""
 						/>
 					</figure>
-					<label class="label">Icon
+					<label class="label"
+						>Icon
 						<div class="control">
-							<InputFileContainer filename={$data[curriculumFormKeys.icon_file_preview_file_name_key]}>
+							<InputFileContainer
+								filename={$data[
+									curriculumFormKeys.icon_file_preview_file_name_key
+								]}
+							>
 								<input
 									class="file-input"
 									type="file"
 									name={curriculumFormKeys.icon_file_key}
-									on:change={e => handleImageChange(e, (dataURI, filename) => {
-										setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true);
-										setFields(curriculumFormKeys.icon_file_preview_file_name_key , filename, true);
-									})}
+									on:change={(e) =>
+										handleImageChange(e, (dataURI, filename) => {
+											setFields(
+												curriculumFormKeys.icon_file_preview_key,
+												dataURI,
+												true,
+											);
+											setFields(
+												curriculumFormKeys.icon_file_preview_file_name_key,
+												filename,
+												true,
+											);
+										})}
 									multiple={false}
 									required={!$data[curriculumFormKeys.icon_id_key]}
 								/>
@@ -369,7 +410,8 @@
 					</label>
 				</div>
 				<div class="field">
-					<label class="label">Description
+					<label class="label"
+						>Description
 						<div class="control">
 							<input
 								class="input"
@@ -383,20 +425,30 @@
 				</div>
 
 				<div class="field">
-					<label class="label">Curriculum plan
+					<label class="label"
+						>Curriculum plan
 						<div class="control">
-							<InputFileContainer filename={$data[curriculumFormKeys.curriculum_plan_file_name_key]}>
+							<InputFileContainer
+								filename={$data[
+									curriculumFormKeys.curriculum_plan_file_name_key
+								]}
+							>
 								<input
 									class="file-input"
 									type="file"
-									name="{curriculumFormKeys.curriculum_plan_file_key}"
-									on:change={e => handleDocumentChange(e, (filename) => {
-										setFields(`${curriculumFormKeys.curriculum_plan_file_name_key}`, filename, true);
-									})}
+									name={curriculumFormKeys.curriculum_plan_file_key}
+									on:change={(e) =>
+										handleDocumentChange(e, (filename) => {
+											setFields(
+												`${curriculumFormKeys.curriculum_plan_file_name_key}`,
+												filename,
+												true,
+											);
+										})}
 									multiple={false}
 									required={!$data[curriculumFormKeys.curriculum_plan_id_key]}
 								/>
-							</InputFileContainer> 
+							</InputFileContainer>
 						</div>
 					</label>
 				</div>
@@ -405,16 +457,31 @@
 					<p class="label">YouTube videos</p>
 					<div class="columns is-multiline is-mobile">
 						{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
-							<YouTubePreviewer bind:videoURL={$data[curriculumFormKeys.youtube_video_entries_key][index][curriculumFormKeys.youtube_video_entries_url_key]}>
-								<br>
-								<br>
-								<button class="button is-danger is-light" on:click={removeYouTubeVideo(index)}>
+							<YouTubePreviewer
+								bind:videoURL={$data[
+									curriculumFormKeys.youtube_video_entries_key
+								][index][curriculumFormKeys.youtube_video_entries_url_key]}
+							>
+								<br />
+								<br />
+								<button
+									class="button is-danger is-light"
+									on:click={removeYouTubeVideo(index)}
+								>
 									delete this youtube video
 								</button>
 							</YouTubePreviewer>
 						{/each}
 						<div class="column is-full">
-							<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data[curriculumFormKeys.youtube_video_entries_key] || []).length)}>
+							<button
+								type="button"
+								class="button is-primary is-light"
+								style="width: 100%;"
+								on:click={addYouTubeVideo(
+									($data[curriculumFormKeys.youtube_video_entries_key] || [])
+										.length,
+								)}
+							>
 								Add new
 							</button>
 						</div>
@@ -424,31 +491,38 @@
 					<p class="label">Blog entries</p>
 					<div class="columns is-multiline is-mobile">
 						{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, index}
-									<div class="column is-half">
-										<input
-											class="input"
-											type="text"
-											placeholder="URL"
-											required={true}
-										/>
-									</div>
-								<div class="column is-half">
-									<input
+							<div class="column is-half">
+								<input
+									class="input"
+									type="text"
+									placeholder="URL"
+									required={true}
+								/>
+							</div>
+							<div class="column is-half">
+								<input
 									class="input"
 									type="text"
 									placeholder="URL of the video"
 									required={true}
 								/>
-								</div>
+							</div>
 						{/each}
 						<div class="column">
-							<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[curriculumFormKeys.blog_entries_key] || []).length)}>
+							<button
+								type="button"
+								class="button is-primary is-light"
+								style="width: 100%;"
+								on:click={addBlogEntry(
+									($data[curriculumFormKeys.blog_entries_key] || []).length,
+								)}
+							>
 								Add new
 							</button>
 						</div>
 					</div>
-				  </div>
-				  
+				</div>
+
 				<!-- here -->
 				<div class="field is-grouped">
 					<div class="control">
@@ -459,9 +533,6 @@
 		</div>
 	</div>
 </div>
-
-	
-			
 
 <!-- 	
 		<section class="hero">
@@ -511,7 +582,7 @@
 			</button>
 		</section> -->
 
-		<!-- <section class="hero">
+<!-- <section class="hero">
 			<h2 class="subtitle">Classes</h2>
 			{#each $data.information_entries || [] as information_entry, index}
 				<div class="box">
@@ -647,7 +718,6 @@
 				Add new
 			</button>
 		</section> -->
-
 
 <!-- 
 <style>
