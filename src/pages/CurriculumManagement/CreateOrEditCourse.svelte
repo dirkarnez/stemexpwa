@@ -260,6 +260,11 @@
 			);
 	}
 
+	function removeLevel(index) {
+		return () => unsetField(`${curriculumFormKeys.blog_entries_key}.${index}`);
+	}
+
+
 	function addLesson(levelIndex, index) {
 		debugger;
 		return () =>
