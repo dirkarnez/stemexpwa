@@ -45,7 +45,8 @@
 				formData.delete(curriculumFormKeys.curriculum_plan_file_key)
 			}
 			
-			newIndexedArray(value[curriculumFormKeys.youtube_video_entries_key].length).forEach(i => {
+			const youtubeLength = value[curriculumFormKeys.youtube_video_entries_key].length;
+			newIndexedArray(youtubeLength).forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
 				)) {
