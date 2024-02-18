@@ -59,14 +59,16 @@
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
 				)) {
 					rj(new Error(`Not OK: Please add at least 1 blog entries`));
+					return;
 				}
 			});
 
 			const levelLength = value[curriculumFormKeys.levels_key].length;
 			if (levelLength < 1) {
 				rj(new Error(`Not OK: Please add at least 1 lesson for every level`));
+				return;
 			}
-			
+
 			newIndexedArray().forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`)
