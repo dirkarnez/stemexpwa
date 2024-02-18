@@ -216,7 +216,7 @@
 
 
 	function removeInformationEntry(index) {
-		return () => unsetField(`${information_entries_key}.${index}`);
+		return () => unsetField(`${curriculumFormKeys.information_entries_key}.${index}`);
 	}
 
 	function addInformationEntry(index) {
