@@ -87,6 +87,10 @@
 			// 		}),
 			// 	...tempValues
 			// };
+			if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {
+                formData.delete(curriculumFormKeys.icon_file_key)
+            }
+			
 			try {
 				validateFormData(formData);
 				const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
