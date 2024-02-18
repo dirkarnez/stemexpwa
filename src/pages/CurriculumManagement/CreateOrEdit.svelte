@@ -429,7 +429,7 @@
 												class="input"
 												type="text"
 												placeholder="Level name (A? B?)"
-												name="{curriculumFormKeys.levels_key}.{levelIndex}.{blog_entries_title_key}"
+												name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.level_name_key}"
 												bind:value={blog_entry.title}
 												required={true}
 											/>
