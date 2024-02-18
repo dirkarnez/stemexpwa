@@ -636,7 +636,7 @@
 																		
 																		on:change={e => (file, filename) => {
 																			setFields(
-																				`${curriculumFormKeys.curriculum_plan_file_key}`,
+																				`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${curriculumFormKeys.lesson_presentation_notes_file_name_key}`,
 																				file,
 																				true,
 																			);
