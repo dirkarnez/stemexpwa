@@ -47,10 +47,10 @@
 			throw new Error(`Not OK: Please add at least 1 course level`);
 		}
 
-		levels.forEach(level => {
+		levels.forEach((level) => {
 			const lessons = level[curriculumFormKeys.lessons_key];
 			if (!hasAtLeastOneItemInArray(lessons)) {
-				return false;
+				throw new Error(`Not OK: Please add at least 1 lesson level`);
 			}
 
 			const presentationNotes = lessons[curriculumFormKeys.lesson_presentation_notes_key];
