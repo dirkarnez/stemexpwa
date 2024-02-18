@@ -150,14 +150,11 @@
 		// 	setFields(parent_id_key, parentId, true);
 		// } else {
 
-		const [_wrappedFetchCurriculumEntry] = WrappedFetch(
-			`/api/curriculum-course?id=${id}`,
-		);
 		/*
 			if parent key only, create empty
 		*/
 		(!!id
-			? _wrappedFetchCurriculumEntry
+			?  WrappedFetch(`/api/curriculum-course?id=${id}`)
 			: Promise.resolve({
 					[curriculumFormKeys.parent_id_key]: parentId,
 				})
