@@ -109,7 +109,10 @@
 				[curriculumFormKeys.blog_entries_key]: (
 					(Array.isArray(_data[curriculumFormKeys.blog_entries_key]) && _data[curriculumFormKeys.blog_entries_key].length > 0) 
 					? 
-					[]
+					[{
+						[curriculumFormKeys.blog_entries_external_url_key]: "",
+						[curriculumFormKeys.blog_entries_title_key]: ""
+					}]
 					:
 					[]
 				)
