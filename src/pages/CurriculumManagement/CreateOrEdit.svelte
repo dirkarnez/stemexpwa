@@ -122,7 +122,7 @@
 				[curriculumFormKeys.levels_key]:	(Array.isArray(_data[curriculumFormKeys.levels_key]) && _data[curriculumFormKeys.levels_key].length > 0) 
 				? 
 				_data[curriculumFormKeys.levels_key] : [{
-					[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
+					[curriculumFormKeys.id_key]: "",
 					[curriculumFormKeys.blog_entries_external_url_key]: "",
 					[curriculumFormKeys.blog_entries_title_key]: ""
 				}],
