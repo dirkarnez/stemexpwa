@@ -322,17 +322,19 @@
 					name={curriculumFormKeys.icon_id_key}
 					bind:value={$data[curriculumFormKeys.icon_id_key]}
 				/>
-				
+
 				<div class="field">
 					<figure class="image is-128x128">
 						<img
 							style={`object-fit: cover; height: 100%;`}
-							src={$data[curriculumFormKeys.icon_id_key]
-								? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
-								: 
+							src={
 								$data[curriculumFormKeys.icon_file_preview_key]
 								? $data[curriculumFormKeys.icon_file_preview_key]
-								: `https://bulma.io/images/placeholders/128x128.png`}
+								: 
+								$data[curriculumFormKeys.icon_id_key]
+								? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
+								: 
+								`https://bulma.io/images/placeholders/128x128.png`}
 							alt=""
 						/>
 					</figure>
