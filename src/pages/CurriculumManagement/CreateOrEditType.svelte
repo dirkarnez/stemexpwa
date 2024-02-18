@@ -71,14 +71,14 @@
         /*
         you only need `id` for gettting data, `parent id` is just for association
         */
-        const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum-course-type?id=${id}`);
+        const [  _wrappedFetchCurriculumEntry ] = ;
         debugger;
         (
             !!id 
             ? 
-            _wrappedFetchCurriculumEntry 
+            WrappedFetch(`/api/curriculum-course-type?id=${id}`) 
             : 
-            Promise.resolve({ [curriculumFormKeys.parent_id_key]: parentId}) // console.log("creating new type")
+            Promise.resolve([{ [curriculumFormKeys.parent_id_key]: parentId}, null]) // console.log("creating new type")
         )
         .then(_data => {
             const initValues = {
