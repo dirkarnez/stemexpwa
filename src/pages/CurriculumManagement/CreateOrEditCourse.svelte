@@ -153,13 +153,16 @@
 		/*
 			if parent key only, create empty
 		*/
-		(
+		const [  _wrappedFetchCurriculumEntry ] = (
 			!!id
 			?  
 			WrappedFetch(`/api/curriculum-course?id=${id}`)
 			: 
 			[Promise.resolve({[curriculumFormKeys.parent_id_key]: parentId}), null]
-		).then((_data) => {
+		)
+		
+		_wrappedFetchCurriculumEntry
+		.then((_data) => {
 			const initValues = {
 				[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
 				[curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
