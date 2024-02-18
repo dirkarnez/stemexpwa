@@ -71,7 +71,8 @@
 	}
 
 	const { form, data, setFields, addField, unsetField } = createForm({
-		onSubmit: (values, context) => {
+        onSubmit: (_, context) => {
+			const formData = new FormData(context.event.target);
 			// const {
 			// 	[icon_file_preview_key]: undefined,
 			// 	[information_entries_key]: [],
@@ -93,7 +94,7 @@
 					"/api/curriculum-course",
 					formData,
 				);
-				
+
 				wrappedFetchPromise
 				.then(() => {
 					alert("OK");
