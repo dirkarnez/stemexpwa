@@ -651,7 +651,7 @@
 																		}
 																	/>
 																</InputFileContainer>
-																<button type="button" class="is-danger button delete" on:click={() => {//removeLesson(levelIndex, lessonIndex)}}>
+																<button type="button" class="is-danger button delete" on:click={() => {/*removeLesson(levelIndex, lessonIndex)*/}}>
 																	x
 																</button>
 															</div>
