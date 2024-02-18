@@ -54,7 +54,14 @@
 				}
 			});
 
-			newIndexedArray(value[curriculumFormKeys.blog_entries_key].length).forEach(i => {
+			const blogLengh = value[curriculumFormKeys.blog_entries_key].length;
+			if (blogLengh < 1) {
+				rj(new Error(`Not OK: Please add at least 1 lesson for every level`));
+				return;
+			}
+
+
+			newIndexedArray().forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
@@ -70,7 +77,7 @@
 				return;
 			}
 
-			newIndexedArray().forEach(i => {
+			newIndexedArray(levelLength).forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`)
 					/*extra fields here*/
