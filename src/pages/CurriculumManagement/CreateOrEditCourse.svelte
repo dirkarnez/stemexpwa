@@ -712,10 +712,10 @@
 															Misc. teaching materials<br/>(e.g. source code)
 														</div>
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key] || []) as teacherNote, teacherNoteIndex}
+															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key] || []) as miscMaterial, miscMaterialIndex}
 																<div>
-																	<a href="google.com" class="is-underlined">{teacherNote[curriculumFormKeys.lesson_misc_materials_file_name_key]}</a>
-																	<button type="button" class="is-danger button delete" on:click={removeMiscMaterial(levelIndex, lessonIndex, teacherNoteIndex)}>
+																	<a href="google.com" class="is-underlined">{miscMaterial[curriculumFormKeys.lesson_misc_materials_file_name_key]}</a>
+																	<button type="button" class="is-danger button delete" on:click={removeMiscMaterial(levelIndex, lessonIndex, miscMaterialIndex)}>
 																		x
 																	</button>
 																</div>
