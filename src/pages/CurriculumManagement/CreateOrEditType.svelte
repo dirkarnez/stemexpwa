@@ -30,10 +30,7 @@
             if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {
                 formData.delete(curriculumFormKeys.icon_file_key)
             }
-            if (formData.get(curriculumFormKeys.curriculum_plan_id_key).size == 0) {
-                formData.delete(curriculumFormKeys.curriculum_plan_id_key)
-            }
-            
+
 			const [  wrappedFetchPromise, abort ] = WrappedFetchPOSTMultipart("/api/curriculum-course-type", formData);
 			wrappedFetchPromise
 			.then(newData => {
