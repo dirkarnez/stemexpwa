@@ -53,7 +53,11 @@
 				throw new Error(`Not OK: Please add at least 1 lesson at every course level`);
 			}
 
-			const presentationNotes = lessons[curriculumFormKeys.lesson_presentation_notes_key];
+			lessons.forEach(lesson => {
+				const presentationNotes = lesson[curriculumFormKeys.lesson_presentation_notes_key];
+			}
+
+			
 
 		})
 	}
