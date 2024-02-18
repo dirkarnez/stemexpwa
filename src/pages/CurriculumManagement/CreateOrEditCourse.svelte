@@ -56,14 +56,6 @@
 			throw new Error(`Not OK: Please add at least 1 course level`);
 		}
 
-
-		levels.0.name
-
-		const levels = formData.get(curriculumFormKeys.levels_key);
-		if (!hasAtLeastOneItemInArray(levels)) {
-			
-		}
-
 		levels.forEach(level => {
 			const lessons = level[curriculumFormKeys.lessons_key];
 			if (!hasAtLeastOneItemInArray(lessons)) {
