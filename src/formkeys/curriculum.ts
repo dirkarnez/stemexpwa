@@ -7,9 +7,7 @@ export const icon_file_preview_key = "icon_file_preview";
 export const icon_file_preview_file_name_key = "icon_file_preview_file_name";
 
 export const youtube_video_entries_key = "youtube_video_entries";
-export const youtube_video_entries_title_key = "title";
 export const youtube_video_entries_url_key = "url";
-
 
 
 export const blog_entries_key = "blog_entries";
