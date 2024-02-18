@@ -80,7 +80,6 @@
                 [curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
                 [curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key]
             };
-            debugger;
             setFields(initValues);
         });
         // } else {
