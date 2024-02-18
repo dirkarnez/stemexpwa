@@ -52,13 +52,13 @@
 
 
 		newIndexedArray(value[curriculumFormKeys.blog_entries_key].length).forEach(i => {
-			if (!formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)) {
-				throw new Error(`Not OK: Please add at least 1 YouTube video`);
+			if (!formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`)) {
+				throw new Error(`Not OK: Please add at least 1 blog entries`);
 			}
 		});
 		
-		if (!formData.get(`${curriculumFormKeys.}.0.${curriculumFormKeys.blog_entries_title_key}`) ) {
-			throw new Error(`Not OK: Please add at least 1 blog entries`);
+		if (!formData.get(`${curriculumFormKeys.}.0.${curriculumFormKeys.}`) ) {
+			
 		}
 
 		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
