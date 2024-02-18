@@ -591,7 +591,7 @@
 													Lesson {lessonIndex + 1}
 													<br>
 													<br>
-													<button class="button is-danger is-light" on:click={removeLevel(levelIndex)}>
+													<button class="button is-danger is-light" on:click={removeLesson(lessonIndex)}>
 														delete this lesson
 													</button>
 												</div>
