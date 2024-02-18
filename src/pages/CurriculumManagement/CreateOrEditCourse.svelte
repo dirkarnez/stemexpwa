@@ -641,7 +641,7 @@
 																				true,
 																			);
 																			setFields(
-																				`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.`,
+																				`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${curriculumFormKeys.lesson_presentation_notes_file_name_key}`,
 																				filename,
 																				true,
 																			);
