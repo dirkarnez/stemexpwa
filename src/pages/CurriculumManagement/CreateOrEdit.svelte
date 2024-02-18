@@ -63,10 +63,7 @@
 				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_teacher_notes_key])) {
 					throw new Error(`Not OK: Please add at least 1 teacher notes at every lesson`);
 				}
-				// lesson_misc_materials_key
-				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.])) {
-					throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
-				}
+				// misc. materials can be unprovided
 			});
 
 			
