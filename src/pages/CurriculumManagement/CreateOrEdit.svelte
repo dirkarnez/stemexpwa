@@ -50,8 +50,7 @@
 			// 	...tempValues
 			// };
 
-			if (hasAtLeastOneItemInArray.isArray(values[curriculumFormKeys.youtube_video_entries_key]) 
-				||  values[curriculumFormKeys.youtube_video_entries_key].length < 1) {
+			if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.youtube_video_entries_key])) {
 				alert(`Not OK: ${err}`);
 				return;
 			}
