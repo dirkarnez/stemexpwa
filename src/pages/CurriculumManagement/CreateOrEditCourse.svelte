@@ -202,38 +202,6 @@
 									],
 								},
 							],
-
-				// 	,
-				// [curriculumFormKeys.youtube_video_entries_key]:	(Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0)
-				// 	?
-				// 	_data[curriculumFormKeys.blog_entries_key] : [{
-				// 		[curriculumFormKeys.blog_entries_external_url_key]: "",
-				// 		[curriculumFormKeys.blog_entries_title_key]: ""
-				// 	}],
-				// [curriculumFormKeys.levels_key]:	(Array.isArray(_data[curriculumFormKeys.levels_key]) && _data[curriculumFormKeys.levels_key].length > 0)
-				// ?
-				// _data[curriculumFormKeys.levels_key] : [{
-				// 	[curriculumFormKeys.id_key]: "",
-				// 	[curriculumFormKeys.blog_entries_external_url_key]: "",
-				// 	[curriculumFormKeys.blog_entries_title_key]: ""
-				// }],
-
-				// [curriculumFormKeys.information_entries_key]: (Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0)
-				// 	?
-				// 	_data[curriculumFormKeys.youtube_video_entries_key] : [{
-				// 		[curriculumFormKeys.blog_entries_external_url_key]: "",
-				// 		[curriculumFormKeys.blog_entries_title_key]: ""
-				// 	}],
-
-				// ,
-				// []: (Array.isArray(_data[youtube_video_entries_key]) && _data[youtube_video_entries_key].length > 0) ? _data[youtube_video_entries_key] : [{
-				// 	[blog_entries_external_url_key]: "",
-				// 	[blog_entries_title_key]: ""
-				// }],
-				// []: (Array.isArray(_data[information_entries_key]) && _data[information_entries_key].length > 0) ? _data[information_entries_key] : [{
-				// 	[blog_entries_external_url_key]: "",
-				// 	[blog_entries_title_key]: ""
-				// }]
 			};
 			debugger;
 			setFields(initValues);
