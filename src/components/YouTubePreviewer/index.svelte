@@ -13,7 +13,7 @@
 
 	$: if (isReady === true) {
 		if(!!value) {
-			const matched = videoURL.match(/.*watch\?v=([^&]+).*/);
+			const matched = value.match(/.*watch\?v=([^&]+).*/);
 			if (Array.isArray(matched) && matched.length == 2) {
 				videoId = `${matched[1]}`;
 				player.loadVideoById(videoId);
@@ -81,7 +81,7 @@
 		class="input"
 		type="text"
 		name={name}
-		bind:value={videoURL}
+		bind:value={value}
 		placeholder="URL of the video"
 		required={true}
 	/>
