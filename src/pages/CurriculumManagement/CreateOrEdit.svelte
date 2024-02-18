@@ -66,7 +66,7 @@
 				return;
 			}
 
-			if((!values[curriculumFormKeys.levels_key] || []).every(level => {
+			if((!levels.every(level => {
 				if (!hasAtLeastOneItemInArray(level[curriculumFormKeys.lessons_key])) {
 					return false;
 				}
