@@ -589,7 +589,7 @@
 														<input
 															class="file-input"
 															type="file"
-															name="{curriculumFormKeys.levels_key}{levelIndex}"
+															name="{curriculumFormKeys.levels_key}{levelIndex}{curriculumFormKeys.level_icon_id_key}"
 															on:change={(e) =>
 																handleImageChange(e, (dataURI, filename) => {
 																	setFields(
