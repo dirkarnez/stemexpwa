@@ -279,9 +279,14 @@
 
 	function removeLesson(levelIndex, lessonIndex) {
 		debugger;
+		const kety = `${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}`;
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}`);
 	}
 	
+
+	function removeInterest(index) {
+    return () => unsetField(`interests.${index}`);
+  }
 	// function removeInformationEntry(index) {
 	// 	return () => unsetField(`${curriculumFormKeys.information_entries_key}.${index}`);
 	// }
