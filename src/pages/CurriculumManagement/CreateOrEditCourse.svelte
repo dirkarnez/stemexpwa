@@ -487,7 +487,7 @@
 					<p class="label">Blog entries</p>
 					<div class="columns is-multiline is-mobile">
 						{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, blogIndex}
-							<div class="column is-half">
+							<div class="column is-one-third">
 								<input
 									class="input"
 									type="text"
@@ -497,7 +497,7 @@
 									required={true}
 								/>
 							</div>
-							<div class="column is-half">
+							<div class="column is-one-third">
 								<input
 									class="input"
 									type="text"
@@ -506,6 +506,11 @@
 									bind:value={$data[curriculumFormKeys.blog_entries_key][blogIndex][curriculumFormKeys.blog_entries_title_key]}
 									required={true}
 								/>
+							</div>
+							<div class="column is-one-third">
+								<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+									x
+								</button>
 							</div>
 						{/each}
 						<div class="column">
