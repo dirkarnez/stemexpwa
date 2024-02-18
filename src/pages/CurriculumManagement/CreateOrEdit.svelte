@@ -65,9 +65,6 @@
 				}
 				// misc. materials can be unprovided
 			});
-
-			
-
 		})
 	}
 
