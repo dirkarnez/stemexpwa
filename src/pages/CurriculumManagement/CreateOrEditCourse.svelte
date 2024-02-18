@@ -610,7 +610,7 @@
 												</div>
 											</label>
 										</div>
-										<!-- 
+										
 										<div class="field">
 											<label class="label">Description
 												<div class="control">
@@ -623,7 +623,7 @@
 													/>
 												</div>
 											</label>
-										</div> -->
+										</div>
 					
 										<div class="columns is-multiline is-mobile mt-2">
 											{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key] || []) as lesson, lessonIndex}
