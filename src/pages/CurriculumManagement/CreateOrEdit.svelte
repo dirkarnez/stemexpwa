@@ -402,7 +402,7 @@
 					<p class="label">YouTube videos</p>
 					<div class="columns is-multiline is-mobile">
 						{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
-							<YouTubePreviewer bind:videoURL={$data[curriculumFormKeys.youtube_video_entries_key].url}>
+							<YouTubePreviewer bind:videoURL={$data[curriculumFormKeys.youtube_video_entries_key][index][curriculumFormKeys.youtube_video_entries_url_key]}>
 								<br>curriculumFormKeys.youtube_video_entries_key
 								<br>
 								<button class="button is-danger is-light" on:click={removeYouTubeVideo(index)}>
