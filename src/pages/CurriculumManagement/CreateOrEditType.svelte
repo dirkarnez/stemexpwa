@@ -34,7 +34,6 @@
                 formData.delete(curriculumFormKeys.curriculum_plan_id_key)
             }
             
-
 			const [  wrappedFetchPromise, abort ] = WrappedFetchPOSTMultipart("/api/curriculum-course-type", formData);
 			wrappedFetchPromise
 			.then(newData => {
