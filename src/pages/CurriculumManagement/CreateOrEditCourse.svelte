@@ -634,17 +634,19 @@
 																		type="file"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{curriculumFormKeys.lesson_presentation_notes_file_key}"
 																		
-																		on:change={e => (file, filename) => {
-																			setFields(
-																				`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${curriculumFormKeys.lesson_presentation_notes_file_key}`,
-																				file,
-																				true,
-																			);
-																			setFields(
-																				`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${curriculumFormKeys.lesson_presentation_notes_file_name_key}`,
-																				filename,
-																				true,
-																			);
+																		on:change={e => 
+																			handleDocumentChange(e, (file, filename) => {
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${curriculumFormKeys.lesson_presentation_notes_file_key}`,
+																					file,
+																					true,
+																				);
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${curriculumFormKeys.lesson_presentation_notes_file_name_key}`,
+																					filename,
+																					true,
+																				);
+																			});
 																		}}
 																	/>
 																</InputFileContainer>
