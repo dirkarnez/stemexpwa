@@ -63,9 +63,10 @@
 			});
 
 			const levelLength = value[curriculumFormKeys.levels_key].length;
-			if (lessonLength < 1) {
-					rj(new Error(`Not OK: Please add at least 1 lesson for every level`));
-				}
+			if (levelLength < 1) {
+				rj(new Error(`Not OK: Please add at least 1 lesson for every level`));
+			}
+			
 			newIndexedArray().forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`)
