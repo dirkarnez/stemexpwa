@@ -12,7 +12,7 @@
 	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
     import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 	
-
+    
 	const dispatch = createEventDispatcher();
 
     let location = useLocation();
@@ -68,6 +68,9 @@
 			partners = data;
 		});
 
+        /*
+        you only need `id` for gettting data, `parent id` 
+        */
         const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
         
         (
