@@ -674,14 +674,30 @@
 																</div>
 															{/each}
 															<div>
-																<InputFileContainer>
+																<InputFileContainer filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][curriculumFormKeys.lesson_presentation_note_file_name_key]}>
 																	<input
 																		class="file-input"
 																		type="file"
-																		name="11"
-																		on:change={e => handleImageChange(e, dataURI => setFields(`6565`, dataURI, true))}
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{curriculumFormKeys.lesson_presentation_note_file_key}"
+																		multiple={false}
+																		required={true}
+																		on:change={e => 
+																			handleDocumentChange(e, (file, filename) => {
+																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length;
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_key}`,
+																					file,
+																					true,
+																				);
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_name_key}`,
+																					filename,
+																					true,
+																				);
+																			})
+																		}
 																	/>
-																</InputFileContainer> 
+																</InputFileContainer>
 															</div>
 														</div>
 														<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
