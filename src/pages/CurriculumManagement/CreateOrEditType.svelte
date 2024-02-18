@@ -63,16 +63,17 @@
     });
 
     onMount(() => {
-		debugger;
 		const [  _wrappedFetchPartners ] = WrappedFetch(`/api/partners`);
 		_wrappedFetchPartners.then(data => {
 			partners = data;
 		});
 
-        if (!!id) {
-            const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
-            
-            _wrappedFetchCurriculumEntry.then(_data => {
+        const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
+
+        (!!id ? _wrappedFetchCurriculumEntry : Promise.resolve({
+            [curriculumFormKeys.parent_id_key]: parentId
+        }))
+        .then(_data => {
                 const initValues = {
                     [curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
                     [curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
@@ -82,9 +83,7 @@
                 debugger;
                 setFields(initValues);
             });
-        } else {
-            console.log("creating new type")
-        }
+        });
     });
 
 
