@@ -39,8 +39,7 @@
 		}
 
 		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.blog_entries_key])) {
-			throw(`Not OK: Please add at least 1 blog entries`);
-			return;
+			throw `Not OK: Please add at least 1 blog entries`;
 		}
 
 		const levels = values[curriculumFormKeys.levels_key];
