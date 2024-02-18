@@ -52,7 +52,9 @@
 			if (!hasAtLeastOneItemInArray(lessons)) {
 				return false;
 			}
-			const lessons = level[curriculumFormKeys.lessons_key][curriculumFormKeys.lesson_presentation_notes_key];
+
+			
+			// const lessons = level[curriculumFormKeys.lessons_key][curriculumFormKeys.lesson_presentation_notes_key];
 
 		}))
 	}
