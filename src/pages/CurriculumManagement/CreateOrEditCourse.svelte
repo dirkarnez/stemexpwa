@@ -646,7 +646,7 @@
 															Student notes
 														</div>
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-															<div>
+															<!-- <div>
 																<a href="google.com" class="is-underlined">App Inventor Intro _Lesson1_Student Notes.pdf</a>
 																<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 																	x
@@ -661,7 +661,7 @@
 																		on:change={e => handleImageChange(e, dataURI => setFields(`6565`, dataURI, true))}
 																	/>
 																</InputFileContainer> 
-															</div>
+															</div> -->
 														</div>
 														<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															Teacher notes
