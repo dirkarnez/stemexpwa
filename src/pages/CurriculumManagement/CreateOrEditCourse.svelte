@@ -513,17 +513,13 @@
 											</div>
 										</div>
 									</div>
-									
-							<div class="column is-narrow">
-								<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-									x
-								</button>
-							</div>
+									<div class="column is-narrow">
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+											x
+										</button>
+									</div>
 								</div>
-								
 							</div>
-
-
 						{/each}
 						<div class="column is-full">
 							<button
