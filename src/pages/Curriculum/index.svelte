@@ -23,7 +23,7 @@
 	let curriculum = [];
 
 	onMount(() => {
-		const [  _wrappedFetchCurriculum ] = WrappedFetch(`/api/curriculum?top-level=true`);
+		const [  _wrappedFetchCurriculum ] = WrappedFetch(`/api/curriculum-tree`);
 		wrappedFetchCurriculum = _wrappedFetchCurriculum;
 		wrappedFetchCurriculum.then(data => {
 			curriculum = data;
