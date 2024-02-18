@@ -628,14 +628,14 @@
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []) as presentationNote, presentationNoteIndex}
 																<div>
-																	<a href={`javascript:void(0);`} class="is-underlined">{presentationNote[curriculumFormKeys.lesson_presentation_notes_file_name_key]}</a>
+																	<a href={`javascript:void(0);`} class="is-underlined">{presentationNote[curriculumFormKeys.lesson_presentation_note_file_name_key]}</a>
 																	<button type="button" class="is-danger button delete" on:click={removePresentationNote(levelIndex, lessonIndex, presentationNoteIndex)}>
 																		x
 																	</button>
 																</div>
 															{/each}
 															<div>
-																<InputFileContainer filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][curriculumFormKeys.lesson_presentation_notes_file_name_key]}>
+																<InputFileContainer filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][curriculumFormKeys.lesson_presentation_note_file_name_key]}>
 																	<input
 																		class="file-input"
 																		type="file"
@@ -651,7 +651,7 @@
 																					true,
 																				);
 																				setFields(
-																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_notes_file_name_key}`,
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_name_key}`,
 																					filename,
 																					true,
 																				);
