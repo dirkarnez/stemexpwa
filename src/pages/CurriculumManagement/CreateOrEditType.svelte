@@ -75,7 +75,7 @@
             ? 
             _wrappedFetchCurriculumEntry 
             : 
-            Promise.resolve({ [curriculumFormKeys.parent_id_key]: parentId})
+            Promise.resolve({ [curriculumFormKeys.parent_id_key]: parentId}) // console.log("creating new type")
         )
         .then(_data => {
             const initValues = {
@@ -86,9 +86,6 @@
             };
             setFields(initValues);
         });
-        // } else {
-        //     console.log("creating new type")
-        // }
     });
 </script>
 
