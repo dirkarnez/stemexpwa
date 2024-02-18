@@ -641,7 +641,7 @@
 																		on:change={e => 
 																			handleDocumentChange(e, (file, filename) => {
 																				setFields(
-																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${curriculumFormKeys.lesson_presentation_notes_file_key}`,
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length}.${curriculumFormKeys.lesson_presentation_notes_file_key}`,
 																					file,
 																					true,
 																				);
