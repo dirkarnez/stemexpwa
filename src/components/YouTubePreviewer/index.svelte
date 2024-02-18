@@ -13,7 +13,7 @@
 
 	$: if (isReady === true) {
 		if(!!value) {
-			const matched = value.match(/.*watch\?v=([^&]+).*/);
+			const matched = videoURL.match(/.*watch\?v=([^&]+).*/);
 			if (Array.isArray(matched) && matched.length == 2) {
 				videoId = `${matched[1]}`;
 				player.loadVideoById(videoId);
@@ -41,7 +41,7 @@
 	function onPlayerStateChange(event) {
 		// videoTitle = event.target.getVideoData().title;
 		videoId = event.target.getVideoData().video_id;
-		videoURL = !!videoId ? `https://www.youtube.com/watch?v=${videoId}` : "";
+		value = !!videoId ? `https://www.youtube.com/watch?v=${videoId}` : "";
 	}
 
 	onMount(() => {
