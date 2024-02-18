@@ -48,7 +48,7 @@
 			throw new Error(`Not OK: Please add at least 1 YouTube video`);
 		}
 		
-		if (!formData.get(`${curriculumFormKeys.blog_entries_key}.0`) ) {
+		if (!formData.get(`${curriculumFormKeys.blog_entries_key}.0.${blog_entries_title_key}`) ) {
 			throw new Error(`Not OK: Please add at least 1 blog entries`);
 		}
 
