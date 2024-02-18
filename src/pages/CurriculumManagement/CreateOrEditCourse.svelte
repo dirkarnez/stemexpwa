@@ -611,7 +611,7 @@
 																		type="file"
 																		name={`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.`}
 																		
-																		on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
+																		on:change={e => handleImageChange(e, dataURI => setFields(`435`, dataURI, true))}
 																	/>
 																</InputFileContainer> 
 																<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
