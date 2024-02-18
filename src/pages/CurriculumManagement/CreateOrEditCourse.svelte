@@ -48,8 +48,7 @@
 			if (!formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)) {
 				throw new Error(`Not OK: Please add at least 1 YouTube video`);
 			}
-		})
-
+		});
 		
 		if (!formData.get(`${curriculumFormKeys.blog_entries_key}.0.${curriculumFormKeys.blog_entries_title_key}`) ) {
 			throw new Error(`Not OK: Please add at least 1 blog entries`);
