@@ -646,8 +646,8 @@
 																					filename,
 																					true,
 																				);
-																			});
-																		}}
+																			})
+																		}
 																	/>
 																</InputFileContainer>
 																<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
