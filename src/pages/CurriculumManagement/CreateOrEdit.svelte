@@ -533,24 +533,18 @@
 																/>
 															</InputFileContainer> 
 														</div>
-
 													</div>
 													<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 														Misc. teaching materials<br/>(e.g. source code)
-														<InputFileContainer>
-															<input
-																class="file-input"
-																type="file"
-																name="{curriculumFormKeys.information_entries_icon_file_key}"
-																on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
-															/>
-														</InputFileContainer> 
 													</div>
 													<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-														<a href="google.com" class="is-underlined">Bee-Sound.mp3</a>
-														<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-															x
-														</button>
+														<div>
+															<a href="google.com" class="is-underlined">Bee-Sound.mp3</a>
+															<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+																x
+															</button>
+														</div>
+<!-- 	
 														<br>
 														<a href="google.com" class="is-underlined">codi.jpg</a>
 														<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
@@ -560,7 +554,7 @@
 														<a href="google.com" class="is-underlined">HelloCodi.aia</a>
 														<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 															x
-														</button>
+														</button> -->
 													</div>
 												</div>
 											</div>
