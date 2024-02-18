@@ -429,6 +429,7 @@
 												class="input"
 												type="text"
 												placeholder="Level name (A? B?)"
+												bind:value={name}
 												required={true}
 											/>
 										</div>
