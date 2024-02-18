@@ -197,7 +197,9 @@
 									[curriculumFormKeys.lessons_key]: [
 										{
 											[curriculumFormKeys.lesson_presentation_notes_key]: [],
-											[curriculumFormKeys.lesson_student_notes_key]: "",
+											[curriculumFormKeys.lesson_student_notes_key]: [],
+											[curriculumFormKeys.lesson_teacher_notes_key]: [],
+											[curriculumFormKeys.lesson_misc_materials_key]: []
 										},
 									],
 								},
