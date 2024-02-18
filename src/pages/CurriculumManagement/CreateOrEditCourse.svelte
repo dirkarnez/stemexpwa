@@ -56,25 +56,29 @@
 			throw new Error(`Not OK: Please add at least 1 course level`);
 		}
 
-		levels.forEach(level => {
-			const lessons = level[curriculumFormKeys.lessons_key];
-			if (!hasAtLeastOneItemInArray(lessons)) {
-				throw new Error(`Not OK: Please add at least 1 lesson at every course level`);
-			}
+		// if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}.0.${lesson_presentation_notes_key}.`) ) {
+		// 	throw new Error(`Not OK: Please add at least 1 course level`);
+		// }
 
-			lessons.forEach(lesson => {
-				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_presentation_notes_key])) {
-					throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
-				}
-				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_student_notes_key])) {
-					throw new Error(`Not OK: Please add at least 1 student notes at every lesson`);
-				}
-				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_teacher_notes_key])) {
-					throw new Error(`Not OK: Please add at least 1 teacher notes at every lesson`);
-				}
-				// misc. materials can be unprovided
-			});
-		})
+		// levels.forEach(level => {
+		// 	const lessons = level[curriculumFormKeys.lessons_key];
+		// 	if (!hasAtLeastOneItemInArray(lessons)) {
+		// 		throw new Error(`Not OK: Please add at least 1 lesson at every course level`);
+		// 	}
+
+		// 	lessons.forEach(lesson => {
+		// 		if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.])) {
+		// 			throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
+		// 		}
+		// 		if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_student_notes_key])) {
+		// 			throw new Error(`Not OK: Please add at least 1 student notes at every lesson`);
+		// 		}
+		// 		if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_teacher_notes_key])) {
+		// 			throw new Error(`Not OK: Please add at least 1 teacher notes at every lesson`);
+		// 		}
+		// 		// misc. materials can be unprovided
+		// 	});
+		// })
 	}
 
 	const { form, data, setFields, addField, unsetField } = createForm({
