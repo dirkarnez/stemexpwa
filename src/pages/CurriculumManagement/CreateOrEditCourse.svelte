@@ -632,8 +632,7 @@
 																	<input
 																		class="file-input"
 																		type="file"
-																		name={`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.																<InputFileContainer filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][curriculumFormKeys.lesson_presentation_notes_file_name_key]}>
-																		}.`}
+																		name={`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.{levelIndex}`}
 																		
 																		on:change={e => handleImageChange(e, dataURI => setFields(`435`, dataURI, true))}
 																	/>
