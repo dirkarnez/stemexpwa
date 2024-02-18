@@ -20,6 +20,8 @@ export const blog_entries_title_key = "title";
 
 
 export const curriculum_plan_file_name_key = "curriculum_plan_file_name";
+export const curriculum_plan_id_key = "curriculum_plan_id";
+
 
 export const levels_key = "levels";
 export const level_name_key = "name";
