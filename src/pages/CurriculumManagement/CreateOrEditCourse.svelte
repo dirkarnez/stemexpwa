@@ -294,7 +294,7 @@
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_student_notes_key}.${studentNoteIndex}`);
 	}
 
-	function removePresentationNote(levelIndex, lessonIndex, presentationNoteIndex) {
+	function removeTeacherNote(levelIndex, lessonIndex, presentationNoteIndex) {
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${presentationNoteIndex}`);
 	}
 
