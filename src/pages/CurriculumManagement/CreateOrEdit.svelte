@@ -1,6 +1,4 @@
 <script>
-curriculumFormKeys.
-
 	import { onMount, createEventDispatcher } from "svelte";
 	import { WrappedFetch, WrappedFetchPOST, WrappedFetchPOSTMultipart } from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
