@@ -50,7 +50,7 @@
 				rj(new Error(`Not OK: Please add at least 1 YouTube video`));
 				return;
 			}
-			
+
 			newIndexedArray(youtubeLength).forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
@@ -647,7 +647,7 @@
 																</div>
 															{/each}
 															<div>
-																<InputFileContainer filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][curriculumFormKeys.lesson_presentation_note_file_name_key]}>
+																<InputFileContainer filename={""}>
 																	<input
 																		class="file-input"
 																		type="file"
