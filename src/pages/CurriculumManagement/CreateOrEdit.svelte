@@ -373,11 +373,11 @@
 				<div class="field">
 					<label class="label">Curriculum plan
 						<div class="control">
-							<InputFileContainer>
+							<InputFileContainer filename={$data[curriculumFormKeys.curriculum_plan_file_name_key]}>
 								<input
 									class="file-input"
 									type="file"
-									name="{curriculumFormKeys.information_entries_icon_file_key}"
+									name="{curriculumFormKeys.curriculum_plan_file_name_key}"
 									on:change={e => handleDocumentChange(e, (filename) => {
 										setFields(`${curriculumFormKeys.curriculum_plan_file_name_key}`, filename, true);
 									})}
