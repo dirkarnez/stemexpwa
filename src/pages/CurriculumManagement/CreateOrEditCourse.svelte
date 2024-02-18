@@ -52,7 +52,10 @@
 
 
 		newIndexedArray(value[curriculumFormKeys.blog_entries_key].length).forEach(i => {
-			if (!(formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`))) {
+			if (!(
+				formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
+				formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`)
+			)) {
 				throw new Error(`Not OK: Please add at least 1 blog entries`);
 			}
 		});
