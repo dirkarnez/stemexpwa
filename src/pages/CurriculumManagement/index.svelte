@@ -41,7 +41,7 @@
 			debugger;
 		})
 	}
-
+	
 	onMount(init);
 </script>
 <Router>
