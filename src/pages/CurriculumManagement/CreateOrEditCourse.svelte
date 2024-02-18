@@ -35,7 +35,7 @@
 
 	
 
-	function validateFormData(formData) {
+	function validateFormData(value, formData) {
 		if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {
 			formData.delete(curriculumFormKeys.icon_file_key)
 		}
@@ -55,6 +55,24 @@
 		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
 			throw new Error(`Not OK: Please add at least 1 course level`);
 		}
+
+		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
+			throw new Error(`Not OK: Please add at least 1 course level`);
+		}
+
+		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
+			throw new Error(`Not OK: Please add at least 1 course level`);
+		}
+
+		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
+			throw new Error(`Not OK: Please add at least 1 course level`);
+		}
+
+		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
+			throw new Error(`Not OK: Please add at least 1 course level`);
+		}
+
+		formData.get('levels.0.presentation_notes.0.name')
 		debugger;
 		// if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}.0.${lesson_presentation_notes_key}.`) ) {
 		// 	throw new Error(`Not OK: Please add at least 1 course level`);
@@ -82,7 +100,7 @@
 	}
 
 	const { form, data, setFields, addField, unsetField } = createForm({
-        onSubmit: (_, context) => {
+        onSubmit: (value, context) => {
 			const formData = new FormData(context.event.target);
 			// const {
 			// 	[icon_file_preview_key]: undefined,
@@ -100,7 +118,7 @@
 			// };
 			
 			try {
-				validateFormData(formData);
+				validateFormData(value, formData);
 				const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
 					"/api/curriculum-course",
 					formData,
