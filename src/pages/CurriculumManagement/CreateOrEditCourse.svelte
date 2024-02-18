@@ -239,10 +239,6 @@
 			setFields(initValues);
 		});
 
-		// setFields(youtube_video_entries_key , ($data[youtube_video_entries_key] || [{
-		// 	[youtube_video_entries_title_key]: "",
-		// 	[youtube_video_entries_url_key]: ""
-		// }]), true);
 
 		// setFields(blog_entries_key , ($data[] || [{
 		// 	[blog_entries_external_url_key]: "",
