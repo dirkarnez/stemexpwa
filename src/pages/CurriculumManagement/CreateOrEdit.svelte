@@ -381,7 +381,8 @@
 									on:change={e => handleDocumentChange(e, (filename) => {
 										setFields(`${curriculumFormKeys.curriculum_plan_file_name_key}`, filename, true);
 									})}
-									required={true}
+									multiple={false}
+									required={!$data[curriculumFormKeys.curriculum_plan_id_key]}
 								/>
 							</InputFileContainer> 
 						</div>
