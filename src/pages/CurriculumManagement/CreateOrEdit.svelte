@@ -114,11 +114,10 @@
 		).then((_data) => {
 			const initValues = {
 				[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
-				[curriculumFormKeys.description_key]:
-					_data[curriculumFormKeys.description_key],
+				[curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
 				[curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
-				[curriculumFormKeys.parent_id_key]:
-					_data[curriculumFormKeys.parent_id_key],
+				[curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key],
+				[curriculumFormKeys.curriculum_plan_id_key]: _data[curriculumFormKeys.curriculum_plan_id_key],
 				[curriculumFormKeys.youtube_video_entries_key]:
 					Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) &&
 					_data[curriculumFormKeys.youtube_video_entries_key].length > 0
