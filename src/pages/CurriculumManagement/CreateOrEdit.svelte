@@ -326,7 +326,7 @@
 				<div class="field">
 					<figure class="image is-128x128">
 						<img
-							style={`object-fit: cover; height: 100%;`}
+							style={`height: 100%; width: 100%; object-fit: cover;`}
 							src={
 								$data[curriculumFormKeys.icon_file_preview_key]
 								? $data[curriculumFormKeys.icon_file_preview_key]
@@ -338,16 +338,19 @@
 							alt=""
 						/>
 					</figure>
-
 					<label class="label">Icon
 						<div class="control">
-							<InputFileContainer filename={$data[curriculumFormKeys.icon_file_preview_file_name_key]>
+							<InputFileContainer filename={$data[curriculumFormKeys.icon_file_preview_file_name_key]}>
 								<input
 									class="file-input"
 									type="file"
 									name={curriculumFormKeys.icon_file_key}
-									on:change={e => handleImageChange(e, dataURI => setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true))}
-									required={true}
+									on:change={e => handleImageChange(e, (dataURI, filename) => {
+										setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true);
+										setFields(curriculumFormKeys.icon_file_preview_file_name_key , filename, true);
+									})}
+									multiple={false}
+									required={!$data[curriculumFormKeys.icon_id_key]}
 								/>
 							</InputFileContainer>
 						</div>
