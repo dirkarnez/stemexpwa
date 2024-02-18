@@ -222,16 +222,16 @@
 	}
 
 	function addBlogEntry(index) {
-		return () => addField(`${curriculumFormKeys.blog_entries_key}`, { [curriculumFormKeys.blog_entries_external_url_key]: "", [curriculumFormKeys.blog_entries_title_key]: "" }, index);
+		return () => addField(`${curriculumFormKeys.blog_entries_key}`, { 
+			[curriculumFormKeys.blog_entries_external_url_key]: "", 
+			[curriculumFormKeys.blog_entries_title_key]: "" 
+		}, index);
 	}
 
 	function removeBlogEntry(index) {
 		return () => unsetField(`${curriculumFormKeys.blog_entries_key}.${index}`);
 	}
-
 	
-
-
 	function addLevel(index) {
 		return () => addField(`${curriculumFormKeys.levels_key}`, [{
 			[curriculumFormKeys.id_key]: "",
