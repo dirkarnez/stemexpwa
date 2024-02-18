@@ -538,7 +538,7 @@
 												/>
 											</div>
 											<div class="column is-narrow">
-												<button class="button is-danger is-light ml-auto" on:click={removeLevel(0)}>
+												<button class="button is-danger is-light ml-auto" on:click={removeLevel(levelIndex)}>
 													delete this level
 												</button>
 											</div>
