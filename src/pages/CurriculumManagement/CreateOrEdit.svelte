@@ -60,6 +60,11 @@
 				return;
 			}
 
+			if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.levels_key])) {
+				alert(`Not OK: Please add at least 1 course level`);
+				return;
+			}
+
 			const formData = new FormData(context.event.target);
 
 			// console.log(finalValues);
