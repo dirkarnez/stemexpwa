@@ -429,7 +429,8 @@
 												class="input"
 												type="text"
 												placeholder="Level name (A? B?)"
-												bind:value={name}
+												name="{curriculumFormKeys.levels_key}.{levelIndex}.{blog_entries_title_key}"
+												bind:value={blog_entry.title}
 												required={true}
 											/>
 										</div>
