@@ -338,7 +338,8 @@
 							alt=""
 						/>
 					</figure>
-					<label class="label">
+
+					<label class="label">Icon
 						<div class="control">
 							<InputFileContainer>
 								<input
