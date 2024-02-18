@@ -78,8 +78,7 @@
             : 
             Promise.resolve([{ [curriculumFormKeys.parent_id_key]: parentId}, null]) // console.log("creating new type")
         );
-        debugger;
-
+        _wrappedFetchCurriculumEntry
         .then(_data => {
             const initValues = {
                 [curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
