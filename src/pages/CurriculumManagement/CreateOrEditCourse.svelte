@@ -634,7 +634,7 @@
 																	<input
 																		class="file-input"
 																		type="file"
-																		name="{curriculumFormKeys.information_entries_icon_file_key}"
+																		name="11"
 																		on:change={e => handleImageChange(e, dataURI => setFields(`6565`, dataURI, true))}
 																	/>
 																</InputFileContainer> 
