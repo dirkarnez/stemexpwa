@@ -573,12 +573,11 @@
 											<figure class="image is-128x128">
 												<img
 													style={`object-fit: cover; height: 100%;`}
-													src={$data[curriculumFormKeys.icon_id_key]
-														? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
-														: 
-														$data[curriculumFormKeys.icon_file_preview_key]
+													src={$data[curriculumFormKeys.icon_file_preview_key]
 														? $data[curriculumFormKeys.icon_file_preview_key]
-														: `https://bulma.io/images/placeholders/128x128.png`}
+														: $data[curriculumFormKeys.icon_id_key]
+															? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
+															: `https://bulma.io/images/placeholders/128x128.png`}
 													alt=""
 												/>
 											</figure>
@@ -596,6 +595,7 @@
 												</div>
 											</label>
 										</div>
+										<!-- 
 										<div class="field">
 											<label class="label">Description
 												<div class="control">
@@ -608,7 +608,7 @@
 													/>
 												</div>
 											</label>
-										</div>
+										</div> -->
 					
 										<div class="columns is-multiline is-mobile mt-2">
 											{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key] || []) as lesson, lessonIndex}
