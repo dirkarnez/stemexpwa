@@ -763,7 +763,7 @@
 																			handleDocumentChange(e, (file, filename) => {
 																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key] || []).length;
 																				setFields(
-																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_misc_materials_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_key}`,
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_misc_materials_key}.${index}.${curriculumFormKeys.lesson_misc_materials_file_key}`,
 																					file,
 																					true,
 																				);
