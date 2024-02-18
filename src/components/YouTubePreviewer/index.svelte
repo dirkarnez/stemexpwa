@@ -7,6 +7,7 @@
 
 	let videoId = '';
 	export let videoURL = '';
+	export let name = "";
 	// let videoTitle = '';
 	let isReady = false;
 
