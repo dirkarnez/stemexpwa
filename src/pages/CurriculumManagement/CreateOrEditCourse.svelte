@@ -50,7 +50,6 @@
 					formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
 				)) {
 					rj(new Error(`Not OK: Please add at least 1 YouTube video`));
-					throw 
 				}
 			});
 
@@ -59,7 +58,7 @@
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
 				)) {
-					throw new Error(`Not OK: Please add at least 1 blog entries`);
+					rj(new Error(`Not OK: Please add at least 1 blog entries`));
 				}
 			});
 
