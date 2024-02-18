@@ -44,8 +44,7 @@
 
 		const levels = values[curriculumFormKeys.levels_key];
 		if (!hasAtLeastOneItemInArray(levels)) {
-			alert(`Not OK: Please add at least 1 course level`);
-			return;
+			throw `Not OK: Please add at least 1 course level`;
 		}
 
 		if(!levels.every(level => {
