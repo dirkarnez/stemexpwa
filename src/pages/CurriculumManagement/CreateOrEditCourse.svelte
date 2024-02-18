@@ -715,7 +715,7 @@
 															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []) as teacherNote, teacherNoteIndex}
 																<div>
 																	<a href="google.com" class="is-underlined">{teacherNote[curriculumFormKeys.lesson_teacher_note_file_name_key]}</a>
-																	<button type="button" class="is-danger button delete" on:click={removeTeacherNote(levelIndex, lessonIndex, teacherNoteIndex)}>
+																	<button type="button" class="is-danger button delete" on:click={removeMiscMaterial(levelIndex, lessonIndex, teacherNoteIndex)}>
 																		x
 																	</button>
 																</div>
