@@ -398,7 +398,7 @@
 							delete this youtube video
 						</button>
 					{/each}
-					<div class="column">
+					<div class="column is-full">
 						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data[curriculumFormKeys.youtube_video_entries_key] || []).length)}>
 							Add new
 						</button>
