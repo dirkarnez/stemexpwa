@@ -55,7 +55,10 @@
 
 			lessons.forEach(lesson => {
 				const presentationNotes = lesson[curriculumFormKeys.lesson_presentation_notes_key];
-			}
+				if (!hasAtLeastOneItemInArray(presentationNotes)) {
+					throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
+				}
+			});
 
 			
 
