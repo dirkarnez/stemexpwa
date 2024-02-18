@@ -76,7 +76,7 @@
             ? 
             WrappedFetch(`/api/curriculum-course-type?id=${id}`) 
             : 
-            () => Promise.resolve([{ [curriculumFormKeys.parent_id_key]: parentId}, null]) // console.log("creating new type")
+            [Promise.resolve({ [curriculumFormKeys.parent_id_key]: parentId}), null]// console.log("creating new type")
         );
         _wrappedFetchCurriculumEntry
         .then(_data => {
