@@ -66,7 +66,6 @@
 				if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_misc_materials_key])) {
 					throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
 				}
-
 			});
 
 			
