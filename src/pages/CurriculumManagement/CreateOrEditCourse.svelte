@@ -617,8 +617,8 @@
 													<input
 														class="input"
 														type="text"
-														name={curriculumFormKeys.level_description_key}
-														bind:value={$data[curriculumFormKeys.level_description_key]}
+														name="{curriculumFormKeys.levels_key}{levelIndex}{curriculumFormKeys.level_description_key}"
+														bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_description_key]}
 														required={true}
 													/>
 												</div>
