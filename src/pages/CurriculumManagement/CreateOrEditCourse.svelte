@@ -74,7 +74,7 @@
 				throw new Error(`Not OK: Please add at least 1 lesson for every level`);
 			}
 			
-			newIndexedArray().forEach(j => {
+			newIndexedArray(lessonLength).forEach(j => {
 				if (!(
 					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.`)
 					/*extra fields here*/
