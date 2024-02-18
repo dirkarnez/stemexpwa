@@ -10,52 +10,29 @@
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
 	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
-	
+	import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 
     //import { WrappedFetch } from "../../utils/fetch";
 
-    const description_field_key = "description";
-    const icon_id_key = "icon_id";
-	const parent_id_key = "parent_id";
-    const icon_file_field_key = "icon_file";
-    const icon_file_preview_field_key = "icon_file_preview";
-	const id_field_key = "id";
-
-
-	const youtube_video_entries_field_key = "youtube_video_entries";
-	const youtube_video_entries_title_field_key = "title";
-	const youtube_video_entries_url_field_key = "url";
-
-	const information_entries_field_key = "information_entries";
-	const information_entries_title_field_key = "title";
-	const information_entries_icon_id_field_key = "icon_id";
-	const information_entries_icon_file_field_key = "icon_file";
-	const information_entries_icon_file_preview_field_key = "icon_file_preview";
-	const information_entries_content_field_key = "content";
-
-	const blog_entries_field_key = "blog_entries";
-	const blog_entries_external_url_field_key = "external_url";
-	const blog_entries_title_field_key = "title";
-
 	const dispatch = createEventDispatcher();
 
-    export let id;
-	export let parentId;
+    export let id = "";
+    export let parentId = "";
 
     // export let previousPath;
 
     const { form, data, setFields, addField, unsetField } = createForm({ 
         onSubmit: (values, context) => {
 			// const { 
-			// 	[icon_file_preview_field_key]: undefined,
-			// 	[information_entries_field_key]: [], 
+			// 	[icon_file_preview_key]: undefined,
+			// 	[information_entries_key]: [], 
 			// 	...tempValues 
-			// } = { [information_entries_field_key]: (values[information_entries_field_key] || []), ...values};
+			// } = { [information_entries_key]: (values[information_entries_key] || []), ...values};
 
 			// const finalValues = {
-			// 	[information_entries_field_key]: (values[information_entries_field_key] || [])
+			// 	[information_entries_key]: (values[information_entries_key] || [])
 			// 		.map(information_entry => {
-			// 			const { [information_entries_icon_file_preview_field_key]: undefined, ...obj  } = information_entry;
+			// 			const { [information_entries_icon_file_preview_key]: undefined, ...obj  } = information_entry;
 			// 			return ({...obj})
 			// 		}),
 			// 	...tempValues
@@ -66,9 +43,8 @@
 
 			// console.log(finalValues);
 
-			debugger;
 
-			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-entry", formData);
+			const [  wrappedFetchPromise , abort ] = WrappedFetchPOSTMultipart("/api/curriculum-course", formData);
 			wrappedFetchPromise
 			.then(() => {
 				alert("OK");
@@ -82,77 +58,106 @@
 
 	
 	// $: if (toBeACourse) {
-	// 	if (($data[youtube_video_entries_field_key] || []).length < 1) {
+	// 	if (($data[youtube_video_entries_key] || []).length < 1) {
 	// 		addYouTubeVideo(0)();
 	// 	}
 
-	// 	if (($data[information_entries_field_key] || []).length < 1) {
+	// 	if (($data[information_entries_key] || []).length < 1) {
 	// 		addInformationEntry(0)();
 	// 	}
 
-	// 	if (($data[blog_entries_field_key] || []).length < 1) {
+	// 	if (($data[blog_entries_key] || []).length < 1) {
 	// 		addBlogEntry(0)();
 	// 	}
 	// } else {
-	// 	Array(($data[youtube_video_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+	// 	Array(($data[youtube_video_entries_key] || []).length).fill(0).forEach((_, i) => {
 	// 		removeYouTubeVideo(i);
 	// 	});
 
-	// 	Array(($data[information_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+	// 	Array(($data[information_entries_key] || []).length).fill(0).forEach((_, i) => {
 	// 		removeInformationEntry(i);
 	// 	});
 
-	// 	Array(($data[blog_entries_field_key] || []).length).fill(0).forEach((_, i) => {
+	// 	Array(($data[blog_entries_key] || []).length).fill(0).forEach((_, i) => {
 	// 		removeBlogEntry(i);
 	// 	});
 	// }
 
     onMount(() => {
 		// if (isNullOrEmpty(id)) {
-		// 	setFields(description_field_key, "", true);
+		// 	setFields(description_key, "", true);
 		// 	setFields(icon_id_key, "", true);
 		// 	setFields(parent_id_key, parentId, true);
 		// } else {
-		const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
 
-		_wrappedFetchCurriculumEntry.then(_data => {
-			setFields({
-				[id_field_key]: _data[id_field_key],
-				[description_field_key]: _data[description_field_key],
-				[icon_id_key]: _data[icon_id_key],
-				[parent_id_key]: _data[parent_id_key],
-				[blog_entries_field_key]: (Array.isArray(_data[blog_entries_field_key]) && _data[blog_entries_field_key].length > 0) ? _data[blog_entries_field_key] : [{
-					[blog_entries_external_url_field_key]: "",
-					[blog_entries_title_field_key]: ""
-				}],
-				[youtube_video_entries_field_key]: (Array.isArray(_data[youtube_video_entries_field_key]) && _data[youtube_video_entries_field_key].length > 0) ? _data[youtube_video_entries_field_key] : [{
-					[blog_entries_external_url_field_key]: "",
-					[blog_entries_title_field_key]: ""
-				}],
-				[information_entries_field_key]: (Array.isArray(_data[information_entries_field_key]) && _data[information_entries_field_key].length > 0) ? _data[information_entries_field_key] : [{
-					[blog_entries_external_url_field_key]: "",
-					[blog_entries_title_field_key]: ""
-				}]
-			});
+		const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}&top-level=${!!parentId ? "false" : "true"}`);
+		/*
+			if parent key only, create empty
+		*/
+		(!!id ? 
+		_wrappedFetchCurriculumEntry 
+		: 
+		Promise.resolve({
+			[curriculumFormKeys.parent_id_key]: parentId
+		}))
+		.then(_data => {
+			const initValues = {
+				[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key], 
+				[curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
+				[curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
+				[curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key],
+				[curriculumFormKeys.blog_entries_key]: 
+					(Array.isArray(_data[curriculumFormKeys.blog_entries_key]) && _data[curriculumFormKeys.blog_entries_key].length > 0) 
+					? 
+					_data[curriculumFormKeys.blog_entries_key] : [{
+						[curriculumFormKeys.blog_entries_external_url_key]: "",
+						[curriculumFormKeys.blog_entries_title_key]: ""
+					}],
+				[curriculumFormKeys.youtube_video_entries_key]:	(Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0) 
+					? 
+					_data[curriculumFormKeys.blog_entries_key] : [{
+						[curriculumFormKeys.blog_entries_external_url_key]: "",
+						[curriculumFormKeys.blog_entries_title_key]: ""
+					}],
+				[curriculumFormKeys.information_entries_key]: (Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0) 
+					? 
+					_data[curriculumFormKeys.youtube_video_entries_key] : [{
+						[curriculumFormKeys.blog_entries_external_url_key]: "",
+						[curriculumFormKeys.blog_entries_title_key]: ""
+					}],
+
+
+				// ,
+				// []: (Array.isArray(_data[youtube_video_entries_key]) && _data[youtube_video_entries_key].length > 0) ? _data[youtube_video_entries_key] : [{
+				// 	[blog_entries_external_url_key]: "",
+				// 	[blog_entries_title_key]: ""
+				// }],
+				// []: (Array.isArray(_data[information_entries_key]) && _data[information_entries_key].length > 0) ? _data[information_entries_key] : [{
+				// 	[blog_entries_external_url_key]: "",
+				// 	[blog_entries_title_key]: ""
+				// }]
+			};
+			debugger;
+			setFields(initValues);
 		})
 		
 
 
 
-		// setFields(youtube_video_entries_field_key , ($data[youtube_video_entries_field_key] || [{ 
-		// 	[youtube_video_entries_title_field_key]: "",  
-		// 	[youtube_video_entries_url_field_key]: "" 
+		// setFields(youtube_video_entries_key , ($data[youtube_video_entries_key] || [{ 
+		// 	[youtube_video_entries_title_key]: "",  
+		// 	[youtube_video_entries_url_key]: "" 
 		// }]), true);
 
-		// setFields(blog_entries_field_key , ($data[] || [{
-		// 	[blog_entries_external_url_field_key]: "", 
-		// 	[blog_entries_title_field_key]: ""
+		// setFields(blog_entries_key , ($data[] || [{
+		// 	[blog_entries_external_url_key]: "", 
+		// 	[blog_entries_title_key]: ""
 		// }]), true);
 
-		// setFields(information_entries_field_key , ($data[information_entries_field_key] || [{ 
-		// 	[information_entries_icon_id_field_key]: "",
-		// 	[information_entries_title_field_key]: "", 
-		// 	[information_entries_content_field_key]: "" 
+		// setFields(information_entries_key , ($data[information_entries_key] || [{ 
+		// 	[information_entries_icon_id_key]: "",
+		// 	[information_entries_title_key]: "", 
+		// 	[information_entries_content_key]: "" 
 		// }]), true);
 
 	});
@@ -172,29 +177,29 @@
 	// }
 
 	function removeYouTubeVideo(index) {
-		return () => unsetField(`${youtube_video_entries_field_key}.${index}`);
+		return () => unsetField(`${youtube_video_entries_key}.${index}`);
 	}
 
 	function addYouTubeVideo(index) {
-		return () => addField(`${youtube_video_entries_field_key}`, { [youtube_video_entries_title_field_key]: "", [youtube_video_entries_url_field_key]: "" }, index);
+		return () => addField(`${youtube_video_entries_key}`, { [youtube_video_entries_title_key]: "", [youtube_video_entries_url_key]: "" }, index);
 	}
 
 
 	function removeBlogEntry(index) {
-		return () => unsetField(`${blog_entries_field_key}.${index}`);
+		return () => unsetField(`${blog_entries_key}.${index}`);
 	}
 
 	function addBlogEntry(index) {
-		return () => addField(`${blog_entries_field_key}`, { [blog_entries_external_url_field_key]: "", [blog_entries_title_field_key]: "" }, index);
+		return () => addField(`${blog_entries_key}`, { [blog_entries_external_url_key]: "", [blog_entries_title_key]: "" }, index);
 	}
 
 
 	function removeInformationEntry(index) {
-		return () => unsetField(`${information_entries_field_key}.${index}`);
+		return () => unsetField(`${information_entries_key}.${index}`);
 	}
 
 	function addInformationEntry(index) {
-		return () => addField(`${information_entries_field_key}`, { [information_entries_icon_id_field_key]: "", [information_entries_title_field_key]: "", [information_entries_content_field_key]: "" }, index);
+		return () => addField(`${information_entries_key}`, { [information_entries_icon_id_key]: "", [information_entries_title_key]: "", [information_entries_content_key]: "" }, index);
 	}
 </script>
 
@@ -254,8 +259,8 @@
 							<input
 								class="input"
 								type="hidden"
-								name={parent_id_key}
-								bind:value={$data[parent_id_key]}
+								name={curriculumFormKeys.parent_id_key}
+								bind:value={$data[curriculumFormKeys.parent_id_key]}
 							/>
 						</div>
 					</label>
@@ -265,11 +270,11 @@
 					<figure class="image is-128x128">
 						<img
 							style={`object-fit: cover; height: 100%;`}
-							src={$data[icon_id_key]
-								? getResourcesAPIByID($data[icon_id_key])
+							src={$data[curriculumFormKeys.icon_id_key]
+								? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
 								: 
-								$data[icon_file_preview_field_key]
-								? $data[icon_file_preview_field_key]
+								$data[curriculumFormKeys.icon_file_preview_key]
+								? $data[curriculumFormKeys.icon_file_preview_key]
 								: `https://bulma.io/images/placeholders/128x128.png`}
 							alt=""
 						/>
@@ -280,8 +285,8 @@
 								<input
 									class="file-input"
 									type="file"
-									name={icon_file_field_key}
-									on:change={e => handleImageChange(e, dataURI => setFields(icon_file_preview_field_key , dataURI, true))}
+									name={curriculumFormKeys.icon_file_key}
+									on:change={e => handleImageChange(e, dataURI => setFields(curriculumFormKeys.icon_file_preview_key , dataURI, true))}
 									required={true}
 								/>
 							</InputFileContainer>
@@ -294,8 +299,8 @@
 							<input
 								class="input"
 								type="text"
-								name={description_field_key}
-								bind:value={$data[description_field_key]}
+								name={curriculumFormKeys.description_key}
+								bind:value={$data[curriculumFormKeys.description_key]}
 								required={true}
 							/>
 						</div>
@@ -309,8 +314,8 @@
 							<input
 								class="file-input"
 								type="file"
-								name="{information_entries_icon_file_field_key}"
-								on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+								name="{curriculumFormKeys.information_entries_icon_file_key}"
+								on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
 								required={true}
 							/>
 						</InputFileContainer> 
@@ -320,11 +325,11 @@
 			<div class="field">
 				<p class="label">YouTube videos</p>
 				<div class="columns is-multiline is-mobile">
-					{#each $data[youtube_video_entries_field_key] || [] as youtube_video_entry, index}
+					{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
 						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}/>
 					{/each}
 					<div class="column">
-						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data[youtube_video_entries_field_key] || []).length)}>
+						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data[curriculumFormKeys.youtube_video_entries_key] || []).length)}>
 							Add new
 						</button>
 					</div>
@@ -333,7 +338,7 @@
 			<div class="field">
 				<p class="label">Blog entries</p>
 				<div class="columns is-multiline is-mobile">
-					{#each $data[blog_entries_field_key] || [] as blog_entry, index}
+					{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, index}
 								<div class="column is-half">
 									<input
 										class="input"
@@ -352,7 +357,7 @@
 							</div>
 					{/each}
 					<div class="column">
-						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[blog_entries_field_key] || []).length)}>
+						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[curriculumFormKeys.blog_entries_key] || []).length)}>
 							Add new
 						</button>
 					</div>
@@ -364,11 +369,11 @@
 				<p class="label">Levels</p>
 				<div class="columns is-multiline is-mobile">
 					<!-- !!!!!!!!TODO -->
-					{#each $data[blog_entries_field_key] || [] as blog_entry, index}
+					{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, index}
 							<div class="column is-full">
 								<div class="box">
 									<div class="columns">
-										<div class="column is-three-quarters">
+										<div class="column">
 											<input
 												class="input"
 												type="text"
@@ -376,11 +381,11 @@
 												required={true}
 											/>
 										</div>
-										<div class="column is-one-quarter is-flex">
-											<button class="button is-primary is-light ml-auto" on:click={removeBlogEntry(0)}>
+										<div class="column is-narrow">
+											<button class="button is-primary is-light" on:click={removeBlogEntry(0)}>
 												add new lesson
 											</button>
-											<button class="button is-danger is-light ml-auto" on:click={removeBlogEntry(0)}>
+											<button class="button is-danger is-light" on:click={removeBlogEntry(0)}>
 												delete this level
 											</button>
 										</div>
@@ -393,8 +398,8 @@
 													<input
 														class="file-input"
 														type="file"
-														name="{information_entries_icon_file_field_key}"
-														on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+														name="{information_entries_icon_file_key}"
+														on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_key}`, dataURI, true))}
 													/>
 												</InputFileContainer> 
 											</div>
@@ -422,8 +427,8 @@
 															<input
 																class="file-input"
 																type="file"
-																name="{information_entries_icon_file_field_key}"
-																on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+																name="{curriculumFormKeys.information_entries_icon_file_key}"
+																on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
 															/>
 														</InputFileContainer> 
 														<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
@@ -435,8 +440,8 @@
 															<input
 																class="file-input"
 																type="file"
-																name="{information_entries_icon_file_field_key}"
-																on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+																name="{curriculumFormKeys.information_entries_icon_file_key}"
+																on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
 															/>
 														</InputFileContainer> 
 														<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
@@ -450,8 +455,8 @@
 														<input
 															class="file-input"
 															type="file"
-															name="{information_entries_icon_file_field_key}"
-															on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+															name="{curriculumFormKeys.information_entries_icon_file_key}"
+															on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
 														/>
 													</InputFileContainer> 
 												</div>
@@ -467,8 +472,8 @@
 														<input
 															class="file-input"
 															type="file"
-															name="{information_entries_icon_file_field_key}"
-															on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+															name="{curriculumFormKeys.information_entries_icon_file_key}"
+															on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
 														/>
 													</InputFileContainer> 
 												</div>
@@ -542,7 +547,7 @@
 							</div>
 					{/each}
 					<div class="column">
-						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[blog_entries_field_key] || []).length)}>
+						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[curriculumFormKeys.blog_entries_key] || []).length)}>
 							Add new class
 						</button>
 					</div>
@@ -579,7 +584,7 @@
 									<input
 										class="input"
 										type="text"
-										name="{blog_entries_field_key}.{index}.{blog_entries_external_url_field_key}"
+										name="{blog_entries_key}.{index}.{blog_entries_external_url_key}"
 										bind:value={blog_entry.external_url}
 										placeholder="External URL of the blog"
 										required={true}
@@ -593,7 +598,7 @@
 									<input
 										class="input"
 										type="text"
-										name="{blog_entries_field_key}.{index}.{blog_entries_title_field_key}"
+										name="{blog_entries_key}.{index}.{blog_entries_title_key}"
 										bind:value={blog_entry.title}
 										placeholder="Title of the blog"
 										required={true}
@@ -622,10 +627,10 @@
 						<br><br>
 						<figure class="image is-128x128">
 							<img
-								src={information_entry[information_entries_icon_id_field_key]
-									? getResourcesAPIByID(information_entry[information_entries_icon_id_field_key])
-									: information_entry[information_entries_icon_file_preview_field_key]
-									? information_entry[information_entries_icon_file_preview_field_key]
+								src={information_entry[information_entries_icon_id_key]
+									? getResourcesAPIByID(information_entry[information_entries_icon_id_key])
+									: information_entry[information_entries_icon_file_preview_key]
+									? information_entry[information_entries_icon_file_preview_key]
 									: `https://bulma.io/images/placeholders/128x128.png`}
 								alt=""
 							/>
@@ -637,8 +642,8 @@
 										<input
 											class="file-input"
 											type="file"
-											name="{information_entries_field_key}.{index}.{information_entries_icon_file_field_key}"
-											on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_field_key}.${index}.${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+											name="{information_entries_key}.{index}.{information_entries_icon_file_key}"
+											on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_key}.${index}.${information_entries_icon_file_preview_key}`, dataURI, true))}
 										/>
 									</InputFileContainer> 
 								</label>
@@ -650,7 +655,7 @@
 									<input
 										class="input"
 										type="text"
-										name="{information_entries_field_key}.{index}.{information_entries_title_field_key}"
+										name="{information_entries_key}.{index}.{information_entries_title_key}"
 										bind:value={information_entry.title}
 										required={true}
 										placeholder="Title of the information entry"
@@ -664,7 +669,7 @@
 									<textarea
 										class="textarea"
 										type="text"
-										name="{information_entries_field_key}.{index}.{information_entries_content_field_key}"
+										name="{information_entries_key}.{index}.{information_entries_content_key}"
 										bind:value={information_entry.content}
 										placeholder="Content of the information entry"
 										required={true}
@@ -691,8 +696,8 @@
 														<input
 															class="file-input"
 															type="file"
-															name="{information_entries_field_key}.{index}.{information_entries_icon_file_field_key}"
-															on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_field_key}.${index}.${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+															name="{information_entries_key}.{index}.{information_entries_icon_file_key}"
+															on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_key}.${index}.${information_entries_icon_file_preview_key}`, dataURI, true))}
 														/>
 													</InputFileContainer> 
 												</label>
@@ -722,8 +727,8 @@
 													<input
 														class="file-input"
 														type="file"
-														name="{information_entries_field_key}.{index}.{information_entries_icon_file_field_key}"
-														on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_field_key}.${index}.${information_entries_icon_file_preview_field_key}`, dataURI, true))}
+														name="{information_entries_key}.{index}.{information_entries_icon_file_key}"
+														on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_key}.${index}.${information_entries_icon_file_preview_key}`, dataURI, true))}
 													/>
 												</InputFileContainer> 
 											</label>

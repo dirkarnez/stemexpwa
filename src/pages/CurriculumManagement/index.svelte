@@ -52,12 +52,12 @@
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 				<Index parentId={id}/> <!---previousPath={currentPath}-->
 			</Route>
-			<Route path={`/${stringToURLPart(description)}/add`}>
+			<Route path={`/${stringToURLPart(description)}/new-course`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 				<CreateOrEdit parentId={id} id={""}/> <!---previousPath={currentPath}-->
 			</Route>
 			{#if is_course}
-				<Route path={`/${stringToURLPart(description)}/edit`}>
+				<Route path={`/${stringToURLPart(description)}/edit-course`}>
 					<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 					<CreateOrEdit parentId={parent_id} id={id} on:done={init}/> <!---previousPath={currentPath}-->
 				</Route>
@@ -81,7 +81,6 @@
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 
 		<CreateOrEditType bind:parentId={parentId} on:done={() => {
-			debugger;
 			init();
 			dispatch('done', {});
 		}}/> <!---previousPath={currentPath}-->
@@ -122,7 +121,7 @@
 					<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
 						<div style="margin-top: 1.5rem; position:relative;">
 							<div style={`position:absolute;right:0; top: -1.5rem;`}>
-								<a href={`${$location.pathname}/${stringToURLPart(description)}/${is_course ? "edit" : "edit-course-type"}`} use:link><i class="fas fa-pen" style="padding: 0.2rem"></i></a>
+								<a href={`${$location.pathname}/${stringToURLPart(description)}/${is_course ? "edit-course" : "edit-course-type"}`} use:link><i class="fas fa-pen" style="padding: 0.2rem"></i></a>
 							</div>
 							{#if !is_course}
 								<Link to={`${$location.pathname}/${stringToURLPart(description)}`}>

@@ -23,7 +23,7 @@
     
 	let partners = [];
 
-    const { form, data, setFields, addField, unsetField } = createForm({
+    const { form, data, setFields } = createForm({
         onSubmit: (_, context) => {
             
             console.log(parentId);
@@ -34,7 +34,7 @@
                 formData.delete(curriculumFormKeys.icon_file_key)
             }
 
-			const [  wrappedFetchPromise, abort ] = WrappedFetchPOSTMultipart("/api/curriculum-type", formData);
+			const [  wrappedFetchPromise, abort ] = WrappedFetchPOSTMultipart("/api/curriculum-course-type", formData);
 			wrappedFetchPromise
 			.then(newData => {
                 alert(`OK!`);
@@ -74,7 +74,7 @@
 
         if (!!id) {
             const [  _wrappedFetchCurriculumEntry ] = WrappedFetch(`/api/curriculum?id=${id}`);
-
+            
             _wrappedFetchCurriculumEntry.then(_data => {
                 const initValues = {
                     [curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
