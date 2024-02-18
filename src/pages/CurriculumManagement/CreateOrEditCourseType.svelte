@@ -7,7 +7,7 @@
 	import { handleImageChange } from "../../utils/file";
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
-    import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
+    import * as curriculumFormKeys from "../../formkeys/curriculum";
 
 	const dispatch = createEventDispatcher();
 
