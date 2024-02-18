@@ -101,20 +101,21 @@
 					"/api/curriculum-course",
 					formData,
 				);
-			});
-
-			try {
-
-
-
-				wrappedFetchPromise
-				.then(() => {
+				return wrappedFetchPromise
+			}).then(() => {
 					alert("OK");
 					dispatch("done");
 				})
 				.catch((err) => {
 					alert(`Not OK: ${err}`);
-				});
+				});;
+
+			try {
+
+
+
+				
+				
 			} catch (e) {
 				alert(e);
 			}
