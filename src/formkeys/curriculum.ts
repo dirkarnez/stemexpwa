@@ -18,7 +18,7 @@ export const blog_entries_title_key = "title";
 
 
 export const levels_key = "levels";
-export const lessons_key = "levels";
+export const lessons_key = "lessons";
 
 
 export const information_entries_key = "information_entries";
