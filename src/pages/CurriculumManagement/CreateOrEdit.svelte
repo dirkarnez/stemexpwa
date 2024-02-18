@@ -548,7 +548,7 @@
 					{/each}
 					<div class="column">
 						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addBlogEntry(($data[curriculumFormKeys.blog_entries_key] || []).length)}>
-							Add new class
+							Add new level
 						</button>
 					</div>
 				</div>
