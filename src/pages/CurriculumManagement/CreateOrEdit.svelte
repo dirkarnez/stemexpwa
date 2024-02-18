@@ -1,4 +1,6 @@
 <script>
+curriculumFormKeys.
+
 	import { onMount, createEventDispatcher } from "svelte";
 	import { WrappedFetch, WrappedFetchPOST, WrappedFetchPOSTMultipart } from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
@@ -443,7 +445,7 @@
 											const a = $data[curriculumFormKeys.levels_key][levelIndex];
 											debugger;
 										})()}
-										{#each ($data[curriculumFormKeys.levels_key][levelIndex] || []) as lesson, lessonIndex}
+										{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key] || []) as lesson, lessonIndex}
 											<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 												Lesson 1 {lessonIndex}
 											</div>
