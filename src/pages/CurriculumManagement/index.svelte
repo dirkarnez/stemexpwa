@@ -5,7 +5,7 @@
 	import { useLocation, Link, Route, Router, link, useRouter } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import CreateOrEditCourse from "./CreateOrEditCourse.svelte";
-	import CreateOrEditType from "./CreateOrEditType.svelte";
+	import CreateOrEditType from "./CreateOrEditCourseType.svelte";
 	import Index from "./index.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { isNullOrEmpty } from "../../utils/strings";
@@ -75,7 +75,7 @@
 	{/if}
 	<Route path={`/new-course`}>
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-		<CreateOrEdit parentId={""} id={""} on:done={init}/> <!---previousPath={currentPath}-->
+		<CreateOrEditCourse parentId={""} id={""} on:done={init}/> <!---previousPath={currentPath}-->
 	</Route>
 	<Route path={`/new-course-type`}>
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
