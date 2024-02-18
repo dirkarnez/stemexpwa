@@ -6,14 +6,14 @@
 	import { onMount } from 'svelte';
 
 	let videoId = '';
-	export let videoURL = '';
+	export let value = '';
 	export let name = "";
 	// let videoTitle = '';
 	let isReady = false;
 
 	$: if (isReady === true) {
-		if(!!videoURL) {
-			const matched = videoURL.match(/.*watch\?v=([^&]+).*/);
+		if(!!value) {
+			const matched = value.match(/.*watch\?v=([^&]+).*/);
 			if (Array.isArray(matched) && matched.length == 2) {
 				videoId = `${matched[1]}`;
 				player.loadVideoById(videoId);
