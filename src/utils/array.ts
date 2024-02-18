@@ -7,5 +7,5 @@ export const splitArrayToArrayGroups = <T>(array: Array<T>, numOfGroups: number)
 );
 
 export const HasAtLeastOneItemInArray =  <T>(array: Array<T>) => {
-    return Array.isArray(array) && array[curriculumFormKeys.youtube_video_entries_key].length < 1
+    return Array.isArray(array) && array.length > 0;
 }
