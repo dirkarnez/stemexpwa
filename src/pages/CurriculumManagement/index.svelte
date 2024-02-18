@@ -4,7 +4,7 @@
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router, link, useRouter } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
-	import CreateOrEdit from "./CreateOrEdit.svelte";
+	import CreateOrEditCourse from "./CreateOrEditCourse.svelte";
 	import CreateOrEditType from "./CreateOrEditType.svelte";
 	import Index from "./index.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
@@ -54,12 +54,12 @@
 			</Route>
 			<Route path={`/${stringToURLPart(description)}/new-course`}>
 				<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-				<CreateOrEdit parentId={id} id={""}/> <!---previousPath={currentPath}-->
+				<CreateOrEditCourse parentId={id} id={""}/> <!---previousPath={currentPath}-->
 			</Route>
 			{#if is_course}
 				<Route path={`/${stringToURLPart(description)}/edit-course`}>
 					<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-					<CreateOrEdit parentId={parent_id} id={id} on:done={init}/> <!---previousPath={currentPath}-->
+					<CreateOrEditCourse parentId={parent_id} id={id} on:done={init}/> <!---previousPath={currentPath}-->
 				</Route>
 			{:else}
 				<Route path={`/${stringToURLPart(description)}/edit-course-type`}>
