@@ -51,9 +51,10 @@
 			// };
 
 			if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.youtube_video_entries_key])) {
-				alert(`Not OK: ${err}`);
+				alert(`Not OK: Please add at least 1 YouTube video`);
 				return;
 			}
+			
 			const formData = new FormData(context.event.target);
 
 			// console.log(finalValues);
