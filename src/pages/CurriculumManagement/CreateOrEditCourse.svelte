@@ -576,7 +576,7 @@
 													src={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_file_preview_key]
 														? $data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_file_preview_key]
 														: $data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_id_key]
-															? getResourcesAPIByID($data[curriculumFormKeys.icon_id_key])
+															? getResourcesAPIByID($data[curriculumFormKeys.level_icon_id_key])
 															: `https://bulma.io/images/placeholders/128x128.png`}
 													alt=""
 												/>
