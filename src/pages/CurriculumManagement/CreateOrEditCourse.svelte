@@ -55,7 +55,7 @@
 		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
 			throw new Error(`Not OK: Please add at least 1 course level`);
 		}
-
+		debugger;
 		// if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}.0.${lesson_presentation_notes_key}.`) ) {
 		// 	throw new Error(`Not OK: Please add at least 1 course level`);
 		// }
