@@ -712,17 +712,32 @@
 																	</button>
 																</div>
 															{/each}
-															<!-- 
 															<div>
-																<InputFileContainer>
+																<InputFileContainer filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][curriculumFormKeys.lesson_presentation_note_file_name_key]}>
 																	<input
 																		class="file-input"
 																		type="file"
-																		name={""}
-																		on:change={e => handleImageChange(e, dataURI => setFields(`df`, dataURI, true))}
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{curriculumFormKeys.lesson_presentation_note_file_key}"
+																		multiple={false}
+																		required={true}
+																		on:change={e => 
+																			handleDocumentChange(e, (file, filename) => {
+																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length;
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_key}`,
+																					file,
+																					true,
+																				);
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_name_key}`,
+																					filename,
+																					true,
+																				);
+																			})
+																		}
 																	/>
-																</InputFileContainer> 
-															</div> -->
+																</InputFileContainer>
+															</div>
 														</div>
 														<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															Misc. teaching materials<br/>(e.g. source code)
@@ -736,17 +751,32 @@
 																	</button>
 																</div>
 															{/each}
-															<!-- 
 															<div>
-																<InputFileContainer>
+																<InputFileContainer filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][curriculumFormKeys.lesson_presentation_note_file_name_key]}>
 																	<input
 																		class="file-input"
 																		type="file"
-																		name="f"
-																		on:change={e => handleImageChange(e, dataURI => setFields(`rewr`, dataURI, true))}
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{curriculumFormKeys.lesson_presentation_note_file_key}"
+																		multiple={false}
+																		required={true}
+																		on:change={e => 
+																			handleDocumentChange(e, (file, filename) => {
+																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length;
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_key}`,
+																					file,
+																					true,
+																				);
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_name_key}`,
+																					filename,
+																					true,
+																				);
+																			})
+																		}
 																	/>
-																</InputFileContainer> 
-															</div> -->
+																</InputFileContainer>
+															</div>
 														</div>
 													</div>
 												</div>
