@@ -112,7 +112,9 @@
 					_data[curriculumFormKeys.blog_entries_key] : [{
 						[curriculumFormKeys.blog_entries_external_url_key]: "",
 						[curriculumFormKeys.blog_entries_title_key]: ""
-					}],
+					}]
+					: 
+					[],
 				[curriculumFormKeys.youtube_video_entries_key]:	(Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) && _data[curriculumFormKeys.youtube_video_entries_key].length > 0) 
 					? 
 					_data[curriculumFormKeys.blog_entries_key] : [{
@@ -207,7 +209,7 @@
 		return () => addField(`${curriculumFormKeys.levels_key}`, [{
 			[curriculumFormKeys.id_key]: "",
 			[curriculumFormKeys.lessons_key]: [{
-				
+
 			}]
 		}], index);
 	}
