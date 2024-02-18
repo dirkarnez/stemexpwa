@@ -87,7 +87,7 @@
 			// 	...tempValues
 			// };
 			const formData = new FormData(context.event.target);
-			validateFormData(formData)
+			validateFormData(formData);
 
 
 
