@@ -561,7 +561,7 @@
 							</div>
 					{/each}
 					<div class="column">
-						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addLevel(($data[curriculumFormKeys.lessons_key] || []).length)}>
+						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addLevel(($data[curriculumFormKeys.levels_key] || []).length)}>
 							Add new class
 						</button>
 					</div>
