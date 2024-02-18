@@ -64,7 +64,7 @@
 			{:else}
 				<Route path={`/${stringToURLPart(description)}/edit-course-type`}>
 					<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
-					<CreateOrEditType parentId={parent_id} id={id} on:done={() => {
+					<CreateOrEditCourseType parentId={parent_id} id={id} on:done={() => {
 						debugger;
 						init();
 						dispatch('done', {});
@@ -80,7 +80,7 @@
 	<Route path={`/new-course-type`}>
 		<!-- <SelectedCurriculumCategory colors={colors} parentId={id}/> -->
 
-		<CreateOrEditType bind:parentId={parentId} on:done={() => {
+		<CreateOrEditCourseType bind:parentId={parentId} on:done={() => {
 			init();
 			dispatch('done', {});
 		}}/> <!---previousPath={currentPath}-->
