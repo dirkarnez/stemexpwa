@@ -87,7 +87,6 @@
 			// 		}),
 			// 	...tempValues
 			// };
-			const formData = new FormData(context.event.target);
 			try {
 				validateFormData(formData);
 				const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
