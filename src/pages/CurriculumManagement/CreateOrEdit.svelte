@@ -304,38 +304,25 @@
 	<div class="column is-full">
 		<div class="box">
 			<form use:form enctype="multipart/form-data">
-				
 				<input
-                class="input"
-                type="hidden"
-                name={curriculumFormKeys.parent_id_key}
-                bind:value={$data[curriculumFormKeys.parent_id_key]}
-            />
-            <input
-                class="input"
-                type="hidden"
-                name={curriculumFormKeys.id_key}
-                bind:value={$data[curriculumFormKeys.id_key]}
-            />
-            <input
-                class="input"
-                type="hidden"
-                name={curriculumFormKeys.icon_id_key}
-                bind:value={$data[curriculumFormKeys.icon_id_key]}
-            />
-			
-				<div class="field">
-					<label class="label">Icon
-						<div class="control">
-							<input
-								class="input"
-								type="hidden"
-								name={curriculumFormKeys.parent_id_key}
-								bind:value={$data[curriculumFormKeys.parent_id_key]}
-							/>
-						</div>
-					</label>
-				</div>
+					class="input"
+					type="hidden"
+					name={curriculumFormKeys.parent_id_key}
+					bind:value={$data[curriculumFormKeys.parent_id_key]}
+				/>
+				<input
+					class="input"
+					type="hidden"
+					name={curriculumFormKeys.id_key}
+					bind:value={$data[curriculumFormKeys.id_key]}
+				/>
+				<input
+					class="input"
+					type="hidden"
+					name={curriculumFormKeys.icon_id_key}
+					bind:value={$data[curriculumFormKeys.icon_id_key]}
+				/>
+
 
 				<div class="field">
 					<figure class="image is-128x128">
