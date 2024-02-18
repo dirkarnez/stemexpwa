@@ -86,52 +86,6 @@
 				}
 			});
 		});
-
-		if (!formData.get(`${curriculumFormKeys.}.0.${curriculumFormKeys.}`) ) {
-			throw new Error(`Not OK: Please add at least 1 c`);
-		}
-
-		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
-			throw new Error(`Not OK: Please add at least 1 course level`);
-		}
-
-		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
-			throw new Error(`Not OK: Please add at least 1 course level`);
-		}
-
-		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
-			throw new Error(`Not OK: Please add at least 1 course level`);
-		}
-
-		if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}`) ) {
-			throw new Error(`Not OK: Please add at least 1 course level`);
-		}
-
-		formData.get('levels.0.presentation_notes.0.name')
-		debugger;
-		// if (!formData.get(`${curriculumFormKeys.levels_key}.0.${curriculumFormKeys.level_name_key}.0.${lesson_presentation_notes_key}.`) ) {
-		// 	throw new Error(`Not OK: Please add at least 1 course level`);
-		// }
-
-		// levels.forEach(level => {
-		// 	const lessons = level[curriculumFormKeys.lessons_key];
-		// 	if (!hasAtLeastOneItemInArray(lessons)) {
-		// 		throw new Error(`Not OK: Please add at least 1 lesson at every course level`);
-		// 	}
-
-		// 	lessons.forEach(lesson => {
-		// 		if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.])) {
-		// 			throw new Error(`Not OK: Please add at least 1 presentation notes at every lesson`);
-		// 		}
-		// 		if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_student_notes_key])) {
-		// 			throw new Error(`Not OK: Please add at least 1 student notes at every lesson`);
-		// 		}
-		// 		if (!hasAtLeastOneItemInArray(lesson[curriculumFormKeys.lesson_teacher_notes_key])) {
-		// 			throw new Error(`Not OK: Please add at least 1 teacher notes at every lesson`);
-		// 		}
-		// 		// misc. materials can be unprovided
-		// 	});
-		// })
 	}
 
 	const { form, data, setFields, addField, unsetField } = createForm({
