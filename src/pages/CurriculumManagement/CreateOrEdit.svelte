@@ -60,12 +60,21 @@
 				return;
 			}
 
-			if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.levels_key])) {
+			const levels = values[curriculumFormKeys.levels_key];
+			if (!hasAtLeastOneItemInArray()) {
 				alert(`Not OK: Please add at least 1 course level`);
 				return;
 			}
-			
-			if((!values[curriculumFormKeys.levels_key] || []).every(level => hasAtLeastOneItemInArray(level[curriculumFormKeys.lessons_key])))
+
+			if((!values[curriculumFormKeys.levels_key] || []).every(level => {
+				if (!hasAtLeastOneItemInArray(level[curriculumFormKeys.lessons_key])) {
+					return false;
+				}
+				const lessons = level[curriculumFormKeys.lessons_key][curriculumFormKeys.lesson_presentation_notes_key];
+
+			}))
+
+
 
 
 			if (!hasAtLeastOneItemInArray(level)) {
