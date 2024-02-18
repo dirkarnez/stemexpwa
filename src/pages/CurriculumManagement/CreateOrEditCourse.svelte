@@ -610,7 +610,6 @@
 													<br>
 													<br>
 													<button class="button is-danger is-light" on:click={() => {
-														debugger;
 														removeLesson(levelIndex, lessonIndex)
 													}}>
 														delete this lesson
