@@ -590,7 +590,7 @@
 												<div class="column is-one-quarter is-flex"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 													Lesson {lessonIndex + 1}
 													<button class="button is-danger is-light ml-auto" on:click={removeLevel(levelIndex)}>
-														delete this level
+														delete this lesson
 													</button>
 												</div>
 												<div class="column  is-three-quarters">
