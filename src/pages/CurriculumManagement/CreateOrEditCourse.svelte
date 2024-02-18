@@ -514,7 +514,7 @@
 				<div class="field">
 					<p class="label">Blog entries</p>
 					<div class="columns is-multiline is-mobile">
-						{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, blogIndex}
+						{#each $data[curriculumFormKeys.blog_entries_key] || [] as _, blogIndex}
 							<div class="column is-full">
 								<div class="columns is-multiline is-mobile">
 									<div class="column">
@@ -542,7 +542,7 @@
 										</div>
 									</div>
 									<div class="column is-narrow">
-										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
+										<button type="button" class="is-danger button delete" on:click={removeBlogEntry(blogIndex)}>
 											x
 										</button>
 									</div>
