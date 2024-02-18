@@ -590,6 +590,7 @@
 												<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 													Lesson {lessonIndex + 1}
 													<br>
+													<br>
 													<button class="button is-danger is-light" on:click={removeLevel(levelIndex)}>
 														delete this lesson
 													</button>
