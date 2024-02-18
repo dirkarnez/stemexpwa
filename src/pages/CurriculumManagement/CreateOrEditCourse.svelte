@@ -295,7 +295,7 @@
 	}
 
 	function removeTeacherNote(levelIndex, lessonIndex, presentationNoteIndex) {
-		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${presentationNoteIndex}`);
+		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_teacher_notes_key}.${presentationNoteIndex}`);
 	}
 
 
