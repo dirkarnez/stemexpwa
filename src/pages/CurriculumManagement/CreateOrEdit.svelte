@@ -389,25 +389,25 @@
 					</label>
 				</div>
 
-			<div class="field">
-				<p class="label">YouTube videos</p>
-				<div class="columns is-multiline is-mobile">
-					{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
-						<YouTubePreviewer bind:videoURL={youtube_video_entry.url}>
-							<br>
-							<br>
-							<button class="button is-danger is-light" on:click={removeYouTubeVideo(index)}>
-								delete this youtube video
+				<div class="field">
+					<p class="label">YouTube videos</p>
+					<div class="columns is-multiline is-mobile">
+						{#each $data[curriculumFormKeys.youtube_video_entries_key] || [] as youtube_video_entry, index}
+							<YouTubePreviewer bind:videoURL={youtube_video_entry.url}>
+								<br>
+								<br>
+								<button class="button is-danger is-light" on:click={removeYouTubeVideo(index)}>
+									delete this youtube video
+								</button>
+							</YouTubePreviewer>
+						{/each}
+						<div class="column is-full">
+							<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data[curriculumFormKeys.youtube_video_entries_key] || []).length)}>
+								Add new
 							</button>
-						</YouTubePreviewer>
-					{/each}
-					<div class="column is-full">
-						<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addYouTubeVideo(($data[curriculumFormKeys.youtube_video_entries_key] || []).length)}>
-							Add new
-						</button>
+						</div>
 					</div>
-				  </div>
-			</div>
+				</div>
 			<div class="field">
 				<p class="label">Blog entries</p>
 				<div class="columns is-multiline is-mobile">
