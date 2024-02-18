@@ -87,27 +87,23 @@
 			// 	...tempValues
 			// };
 			const formData = new FormData(context.event.target);
-			validateFormData(formData);
-
-
-
-
-			
-
-			// console.log(finalValues);
-
-			const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
-				"/api/curriculum-course",
-				formData,
-			);
-			wrappedFetchPromise
-				.then(() => {
-					alert("OK");
-					dispatch("done");
-				})
-				.catch((err) => {
-					alert(`Not OK: ${err}`);
-				});
+			try {
+				validateFormData(formData);
+				const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
+					"/api/curriculum-course",
+					formData,
+				);
+				wrappedFetchPromise
+					.then(() => {
+						alert("OK");
+						dispatch("done");
+					})
+					.catch((err) => {
+						alert(`Not OK: ${err}`);
+					});
+			} catch (e) {
+				
+			}
 		},
 	});
 
