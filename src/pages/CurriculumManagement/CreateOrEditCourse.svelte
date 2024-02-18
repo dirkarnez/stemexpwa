@@ -38,55 +38,55 @@
 	function validateFormData(value, formData) {
 		return new Promise((rs, rj) => {
 			if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {
-			formData.delete(curriculumFormKeys.icon_file_key)
-		}
-
-		if (formData.get(curriculumFormKeys.curriculum_plan_file_key).size == 0) {
-			formData.delete(curriculumFormKeys.curriculum_plan_file_key)
-		}
-		
-		newIndexedArray(value[curriculumFormKeys.youtube_video_entries_key].length).forEach(i => {
-			if (!(
-				formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
-			)) {
-				throw new Error(`Not OK: Please add at least 1 YouTube video`);
+				formData.delete(curriculumFormKeys.icon_file_key)
 			}
-		});
 
-		newIndexedArray(value[curriculumFormKeys.blog_entries_key].length).forEach(i => {
-			if (!(
-				formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
-				formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
-			)) {
-				throw new Error(`Not OK: Please add at least 1 blog entries`);
-			}
-		});
-
-		newIndexedArray(value[curriculumFormKeys.levels_key].length).forEach(i => {
-			if (!(
-				formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`)
-				/*extra fields here*/
-			)) {
-				throw new Error(`Not OK: Please add at least 1 course level`);
-			}
-			const lessonLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length;
-
-			if (lessonLength < 1) {
-				throw new Error(`Not OK: Please add at least 1 lesson for every level`);
+			if (formData.get(curriculumFormKeys.curriculum_plan_file_key).size == 0) {
+				formData.delete(curriculumFormKeys.curriculum_plan_file_key)
 			}
 			
-			newIndexedArray(lessonLength).forEach(j => {
-				if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].length < 1) {
-					throw new Error(`Not OK: Please add at least 1 presentation notes for every level`);
-				}
-				if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length < 1) {
-					throw new Error(`Not OK: Please add at least 1 student notes for every level`);
-				}
-				if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length < 1) {
-					throw new Error(`Not OK: Please add at least 1 teacher notes for every level`);
+			newIndexedArray(value[curriculumFormKeys.youtube_video_entries_key].length).forEach(i => {
+				if (!(
+					formData.get(`${curriculumFormKeys.youtube_video_entries_key}.${i}.${curriculumFormKeys.youtube_video_entries_url_key}`)
+				)) {
+					throw new Error(`Not OK: Please add at least 1 YouTube video`);
 				}
 			});
-		});
+
+			newIndexedArray(value[curriculumFormKeys.blog_entries_key].length).forEach(i => {
+				if (!(
+					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
+					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
+				)) {
+					throw new Error(`Not OK: Please add at least 1 blog entries`);
+				}
+			});
+
+			newIndexedArray(value[curriculumFormKeys.levels_key].length).forEach(i => {
+				if (!(
+					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_name_key}`)
+					/*extra fields here*/
+				)) {
+					throw new Error(`Not OK: Please add at least 1 course level`);
+				}
+				const lessonLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length;
+
+				if (lessonLength < 1) {
+					throw new Error(`Not OK: Please add at least 1 lesson for every level`);
+				}
+				
+				newIndexedArray(lessonLength).forEach(j => {
+					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].length < 1) {
+						throw new Error(`Not OK: Please add at least 1 presentation notes for every level`);
+					}
+					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length < 1) {
+						throw new Error(`Not OK: Please add at least 1 student notes for every level`);
+					}
+					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length < 1) {
+						throw new Error(`Not OK: Please add at least 1 teacher notes for every level`);
+					}
+				});
+			});
 		})
 
 	}
