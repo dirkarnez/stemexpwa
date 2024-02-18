@@ -194,6 +194,7 @@
 						? _data[curriculumFormKeys.levels_key]
 						: [
 								{
+									[curriculumFormKeys.level_name_key]: "",
 									[curriculumFormKeys.lessons_key]: [
 										{
 											[curriculumFormKeys.lesson_presentation_notes_key]: [],
