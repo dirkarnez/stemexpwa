@@ -69,8 +69,11 @@
 				throw new Error(`Not OK: Please add at least 1 course level`);
 			}
 			const lessonLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key].length;
+
+			if (lessonLength < 1) {
+
+			}
 			
-			if ()
 			newIndexedArray().forEach(j => {
 				if (!(
 					formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.`)
