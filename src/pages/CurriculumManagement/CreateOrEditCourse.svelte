@@ -73,7 +73,7 @@
 
 			const levelLength = value[curriculumFormKeys.levels_key].length;
 			if (levelLength < 1) {
-				rj(new Error(`Not OK: Please add at least 1 lesson for every level`));
+				rj(new Error(`Not OK: Please add at least 1 level`));
 				return;
 			}
 
