@@ -56,7 +56,7 @@
 			}
 
 			if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.blog_entries_key])) {
-				alert(`Not OK: Please add at least 1 YouTube video`);
+				alert(`Not OK: Please add at least 1 blog entries`);
 				return;
 			}
 
