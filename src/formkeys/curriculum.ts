@@ -26,6 +26,8 @@ export const curriculum_plan_file_key = "curriculum_plan_file";
 export const levels_key = "levels";
 export const level_name_key = "name";
 
+export const lesson_presentation_notes_key = "presentation_notes";
+
 export const lessons_key = "lessons";
 
 
