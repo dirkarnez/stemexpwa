@@ -5,3 +5,7 @@ export const splitArrayToArrayGroups = <T>(array: Array<T>, numOfGroups: number)
     },
     Array(numOfGroups).fill([]),
 );
+
+export const atLeastOneItemInArray =  <T>(array: Array<T>) => {
+
+}
