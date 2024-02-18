@@ -634,7 +634,7 @@
 																		type="file"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{curriculumFormKeys.lesson_presentation_notes_file_key}"
 																		multiple={false}
-																		required={!$data[curriculumFormKeys.curriculum_plan_id_key]}
+																		required={true}
 																		on:change={e => 
 																			handleDocumentChange(e, (file, filename) => {
 																				setFields(
