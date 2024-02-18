@@ -30,7 +30,7 @@
 	// // export let previousPath;
 
 	// const init = () => {
-	// 	const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum?top-level=true` : `/api/curriculum-courses?parent-id=${parentId}`);
+	// 	const [  _wrappedFetchCurriculum ] = WrappedFetch(isNullOrEmpty(parentId) ? `/api/curriculum?top-level=true` : `/api/`);
 	// 	wrappedFetchCurriculum = _wrappedFetchCurriculum;
 	// 	wrappedFetchCurriculum.then(data => {
 	// 		curriculum = data;
