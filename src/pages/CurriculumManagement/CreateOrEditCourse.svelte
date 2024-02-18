@@ -604,7 +604,7 @@
 																	);
 																})}
 															multiple={false}
-															required={!$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_file_preview_file_name_key]}
+															required={!$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_id_key]}
 														/>
 													</InputFileContainer>
 												</div>
