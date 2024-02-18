@@ -596,7 +596,7 @@
 													<br>
 													<br>
 													<button class="button is-danger is-light" on:click={removeLesson(levelIndex, lessonIndex)}>
-														delete this lesson
+														delete this lesson!
 													</button>
 												</div>
 												<div class="column  is-three-quarters">
