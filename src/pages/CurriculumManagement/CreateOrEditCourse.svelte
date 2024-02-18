@@ -1,6 +1,4 @@
 <script>
-curriculumFormKeys.</script>
-<script>
 	import { onMount, createEventDispatcher } from "svelte";
 	import {
 		WrappedFetch,
