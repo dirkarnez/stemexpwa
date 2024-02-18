@@ -43,8 +43,6 @@
 	function onPlayerStateChange(event) {
 		// videoTitle = event.target.getVideoData().title;
 		videoId = event.target.getVideoData().video_id;
-		videoId = ;
-
 		value = !!videoId && !!event.target.getVideoData().title ? `https://www.youtube.com/watch?v=${videoId}` : "";
 	}
 
