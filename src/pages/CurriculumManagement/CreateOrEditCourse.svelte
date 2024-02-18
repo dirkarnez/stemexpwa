@@ -61,7 +61,7 @@
 			}
 
 
-			newIndexedArray().forEach(i => {
+			newIndexedArray(blogLengh).forEach(i => {
 				if (!(
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_title_key}`) && 
 					formData.get(`${curriculumFormKeys.blog_entries_key}.${i}.${curriculumFormKeys.blog_entries_external_url_key}`)
