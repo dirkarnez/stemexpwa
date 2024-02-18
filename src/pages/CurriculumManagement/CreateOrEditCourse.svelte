@@ -487,7 +487,7 @@
 					<p class="label">Blog entries</p>
 					<div class="columns is-multiline is-mobile">
 						{#each $data[curriculumFormKeys.blog_entries_key] || [] as blog_entry, blogIndex}
-							<div class="column is-one-third">
+							<div class="column is-narrow">
 								<input
 									class="input"
 									type="text"
@@ -497,7 +497,7 @@
 									required={true}
 								/>
 							</div>
-							<div class="column is-one-third">
+							<div class="column is-narrow">
 								<input
 									class="input"
 									type="text"
@@ -507,7 +507,7 @@
 									required={true}
 								/>
 							</div>
-							<div class="column is-one-third">
+							<div class="column is-narrow">
 								<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 									x
 								</button>
