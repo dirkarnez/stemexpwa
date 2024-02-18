@@ -584,7 +584,7 @@
 											<label class="label">
 												<div class="control">
 													<InputFileContainer
-														filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.icon_file_preview_file_name_key]}
+														filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_file_preview_file_name_key]}
 													>
 														<input
 															class="file-input"
