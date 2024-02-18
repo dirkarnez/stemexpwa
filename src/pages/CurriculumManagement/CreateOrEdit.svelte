@@ -122,8 +122,7 @@
 					_data[curriculumFormKeys.levels_key]
 					:
 					[{
-						[curriculumFormKeys.blog_entries_external_url_key]: "",
-						[curriculumFormKeys.blog_entries_title_key]: ""
+						[curriculumFormKeys.lessons_key]: []
 					}]
 				)
 
