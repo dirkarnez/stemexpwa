@@ -593,7 +593,7 @@
 															on:change={(e) =>
 																handleImageChange(e, (dataURI, filename) => {
 																	setFields(
-																		curriculumFormKeys.icon_file_preview_key,
+																		{curriculumFormKeys.levels_key}{levelIndex}{curriculumFormKeys.level_icon_file_preview_key},
 																		dataURI,
 																		true,
 																	);
