@@ -102,23 +102,14 @@
 					formData,
 				);
 				return wrappedFetchPromise
-			}).then(() => {
-					alert("OK");
-					dispatch("done");
-				})
-				.catch((err) => {
-					alert(`Not OK: ${err}`);
-				});;
-
-			try {
-
-
-
-				
-				
-			} catch (e) {
-				alert(e);
-			}
+			})
+			.then(() => {
+				alert("OK");
+				dispatch("done");
+			})
+			.catch((err) => {
+				alert(`Not OK: ${err}`);
+			});
 		},
 	});
 
