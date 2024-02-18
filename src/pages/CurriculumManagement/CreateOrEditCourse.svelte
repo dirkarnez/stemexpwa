@@ -497,7 +497,7 @@
 									required={true}
 								/>
 							</div>
-							<div class="column is-narrow">
+							<div class="column is-half">
 								<input
 									class="input"
 									type="text"
