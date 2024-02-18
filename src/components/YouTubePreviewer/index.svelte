@@ -77,6 +77,14 @@
 </style>
 
 <div class="column is-three-quarters">
+	<input
+		class="input"
+		type="text"
+		name={name}
+		bind:value={videoURL}
+		placeholder="URL of the video"
+		required={true}
+	/>
 	<slot/>
 </div>
 <div class="column is-one-quarter">
