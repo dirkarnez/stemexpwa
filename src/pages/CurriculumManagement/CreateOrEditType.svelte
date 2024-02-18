@@ -8,14 +8,13 @@
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
     import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
-    
+
 	const dispatch = createEventDispatcher();
 
     let location = useLocation();
 
     export let parentId = "";
     export let id = "";
-    
     
 	let partners = [];
 
