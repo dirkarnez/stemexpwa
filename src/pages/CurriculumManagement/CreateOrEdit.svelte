@@ -207,7 +207,7 @@
 	}
 	
 	function addLesson(levelIndex, index) {
-		return () => addField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}`, { [blog_entries_external_url_key]: "", [blog_entries_title_key]: "" }, index);
+		return () => addField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}`, { [curriculumFormKeys.blog_entries_external_url_key]: "", [blog_entries_title_key]: "" }, index);
 	}
 
 
