@@ -1,10 +1,10 @@
+export const id_key = "id";
 export const description_key = "description";
 export const icon_id_key = "icon_id";
 export const parent_id_key = "parent_id";
 export const icon_file_key = "icon_file";
 export const icon_file_preview_key = "icon_file_preview";
 export const icon_file_preview_file_name_key = "icon_file_preview_file_name";
-export const id_key = "id";
 
 export const youtube_video_entries_key = "youtube_video_entries";
 export const youtube_video_entries_title_key = "title";
@@ -18,7 +18,7 @@ export const blog_entries_title_key = "title";
 
 
 
-/* course */
+/* course */    
 export const curriculum_plan_file_name_key = "curriculum_plan_file_name";
 export const curriculum_plan_id_key = "curriculum_plan_id";
 export const curriculum_plan_file_key = "curriculum_plan_file";
