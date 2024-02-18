@@ -12,3 +12,13 @@ export const handleImageChange = <K extends keyof HTMLElementEventMap>(event: HT
         }
     }
 }
+
+
+export const handleDocumentChange = <K extends keyof HTMLElementEventMap>(event: HTMLElementEventMap[K] & { target: HTMLInputElement }, callback: (filename: string) => void) => {
+    if (!!event.target.files && event.target.files.length == 1) {
+        const file: File =  event.target.files[0];
+        if (file) {
+            callback(file.name);
+        }
+    }
+}
