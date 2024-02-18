@@ -9,3 +9,5 @@ export const splitArrayToArrayGroups = <T>(array: Array<T>, numOfGroups: number)
 export const hasAtLeastOneItemInArray =  <T>(array: Array<T>) => {
     return Array.isArray(array) && array.length > 0;
 }
+
+export const newIndexedArray = (length: number) => Array(length).fill(NaN).map((_, i) => i)
