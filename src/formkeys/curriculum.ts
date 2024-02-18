@@ -20,3 +20,6 @@ export const information_entries_content_key = "content";
 export const blog_entries_key = "blog_entries";
 export const blog_entries_external_url_key = "external_url";
 export const blog_entries_title_key = "title";
+
+
+export const levels_key = "levels";
