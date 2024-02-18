@@ -54,7 +54,7 @@
 				}
 			});
 
-			const blogLength = value[curriculumFormKeys.blog_entries_key].length;
+			const blogLength = (value[curriculumFormKeys.blog_entries_key] || []).length;
 			if (blogLength < 1) {
 				rj(new Error(`Not OK: Please add at least 1 blog entries`));
 				return;
