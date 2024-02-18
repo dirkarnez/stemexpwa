@@ -95,9 +95,7 @@
 			// 		}),
 			// 	...tempValues
 			// };
-
-
-
+			
 			try {
 				validateFormData(formData);
 				const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
