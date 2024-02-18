@@ -264,7 +264,6 @@
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${index}`);
 	}
 
-
 	function addLesson(levelIndex, index) {
 		debugger;
 		return () =>
@@ -278,6 +277,7 @@
 			);
 	}
 
+	function removeLesson(levelIndex, lessonIndex)
 	// function removeInformationEntry(index) {
 	// 	return () => unsetField(`${curriculumFormKeys.information_entries_key}.${index}`);
 	// }
