@@ -750,7 +750,7 @@
 																		type="file"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_teacher_notes_key}.{curriculumFormKeys.lesson_teacher_note_file_key}"
 																		multiple={false}
-																		required={true}
+																		required={($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []) > 0}
 																		on:change={e => 
 																			handleDocumentChange(e, (file, filename) => {
 																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []).length;
@@ -789,7 +789,7 @@
 																		type="file"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_misc_materials_key}.{curriculumFormKeys.lesson_misc_materials_file_key}"
 																		multiple={false}
-																		required={true}
+																		required={($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key] || []) > 0}
 																		on:change={e => 
 																			handleDocumentChange(e, (file, filename) => {
 																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key] || []).length;
