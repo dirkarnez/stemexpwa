@@ -196,7 +196,7 @@
 								{
 									[curriculumFormKeys.lessons_key]: [
 										{
-											[curriculumFormKeys.blog_entries_external_url_key]: "",
+											[curriculumFormKeys.lesson_presentation_notes_key]: "",
 											[curriculumFormKeys.blog_entries_title_key]: "",
 										},
 									],
