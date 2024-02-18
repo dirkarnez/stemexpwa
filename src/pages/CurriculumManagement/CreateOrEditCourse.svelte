@@ -680,7 +680,7 @@
 																		on:change={e => handleImageChange(e, dataURI => setFields(`6565`, dataURI, true))}
 																	/>
 																</InputFileContainer> 
-															</div> -->
+															</div>
 														</div>
 														<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															Teacher notes
