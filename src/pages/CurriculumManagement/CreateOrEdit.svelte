@@ -65,8 +65,11 @@
 				return;
 			}
 
-			(values[curriculumFormKeys.levels_key] || []).forEach(element => {
-				
+			(values[curriculumFormKeys.levels_key] || []).forEach(level => {
+				if (!hasAtLeastOneItemInArray(level[curriculumFormKeys.lessons_key])) {
+					alert(`Not OK: Please add at least 1 course level`);
+					return;
+				}
 			});
 
 			const formData = new FormData(context.event.target);
