@@ -88,12 +88,15 @@
 				newIndexedArray(lessonLength).forEach(j => {
 					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].length < 1) {
 						rj(new Error(`Not OK: Please add at least 1 presentation notes for every level`));
+						return;
 					}
 					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length < 1) {
 						rj(new Error(`Not OK: Please add at least 1 student notes for every level`));
+						return;
 					}
 					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length < 1) {
 						rj(new Error(`Not OK: Please add at least 1 teacher notes for every level`));
+						return;
 					}
 				});
 			});
