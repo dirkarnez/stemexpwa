@@ -512,19 +512,6 @@
 																x
 															</button>
 														</div>
-														<div>
-															<InputFileContainer>
-																<input
-																	class="file-input"
-																	type="file"
-																	name="{curriculumFormKeys.information_entries_icon_file_key}"
-																	on:change={e => handleImageChange(e, dataURI => setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`, dataURI, true))}
-																/>
-															</InputFileContainer> 
-															<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
-																x
-															</button>
-														</div>
 													</div>
 													<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 														Student notes
