@@ -44,11 +44,11 @@
 			formData.delete(curriculumFormKeys.curriculum_plan_id_key)
 		}
 
-		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.youtube_video_entries_key])) {
+		if (!hasAtLeastOneItemInArray(formData.get(curriculumFormKeys.youtube_video_entries_key))) {
 			throw new Error(`Not OK: Please add at least 1 YouTube video`);
 		}
 
-		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.blog_entries_key])) {
+		if (!hasAtLeastOneItemInArray(formData.get(curriculumFormKeys.blog_entries_key])) {
 			throw new Error(`Not OK: Please add at least 1 blog entries`);
 		}
 
