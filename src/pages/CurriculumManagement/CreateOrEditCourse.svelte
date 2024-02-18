@@ -665,9 +665,9 @@ curriculumFormKeys.</script>
 															Student notes
 														</div>
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []) as studentNote, presentationNoteIndex}
+															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []) as studentNote, studentNoteIndex}
 																<div>
-																	<a href="google.com" class="is-underlined">{presentationNote}</a>
+																	<a href="google.com" class="is-underlined">{studentNote}</a>
 																	<button type="button" class="is-danger button delete" on:click={() => {}}>
 																		x
 																	</button>
