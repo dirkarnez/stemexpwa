@@ -49,7 +49,7 @@
 
 		if(!levels.every(level => {
 			const lessons = level[curriculumFormKeys.lessons_key];
-			if (!hasAtLeastOneItemInArray()) {
+			if (!hasAtLeastOneItemInArray(lessons)) {
 				return false;
 			}
 			const lessons = level[curriculumFormKeys.lessons_key][curriculumFormKeys.lesson_presentation_notes_key];
