@@ -377,7 +377,7 @@
 								<input
 									class="file-input"
 									type="file"
-									name="{curriculumFormKeys.information_entries_icon_file_key}"
+									name="{curriculumFormKeys.curriculum_plan_file_key}"
 									on:change={e => handleDocumentChange(e, (filename) => {
 										setFields(`${curriculumFormKeys.curriculum_plan_file_name_key}`, filename, true);
 									})}
