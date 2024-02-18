@@ -96,12 +96,16 @@
         onSubmit: (value, context) => {
 			const formData = new FormData(context.event.target);
 			
-			try {
-				validateFormData(value, formData);
+			validateFormData(value, formData).then(() => {
 				const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
 					"/api/curriculum-course",
 					formData,
 				);
+			});
+
+			try {
+
+
 
 				wrappedFetchPromise
 				.then(() => {
