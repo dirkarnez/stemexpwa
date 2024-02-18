@@ -598,7 +598,7 @@
 																		true,
 																	);
 																	setFields(
-																		curriculumFormKeys.icon_file_preview_file_name_key,
+																		`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.level_icon_file_preview_file_name_key}`,
 																		filename,
 																		true,
 																	);
