@@ -1,15 +1,13 @@
 <script>
 	import { onMount, createEventDispatcher } from "svelte";
-	import { WrappedFetch, WrappedFetchPOST, WrappedFetchPOSTMultipart } from "../../utils/fetch";
+	import { WrappedFetch, WrappedFetchPOSTMultipart } from "../../utils/fetch";
 	import { stringToURLPart, mustMatchThenReplace } from "../../utils/url";
-	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
+	import { useLocation, navigate } from "svelte-routing";
 	// import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { handleImageChange } from "../../utils/file";
-	import { isNullOrEmpty } from "../../utils/strings";
     import { createForm } from 'felte';
 	import InputFileContainer from "../../components/InputFileContainer.svelte";
-	import YouTubePreviewer from "../../components/YouTubePreviewer/index.svelte";
     import * as curriculumFormKeys from "../../formkeys/curriculum.ts";
 	
     
