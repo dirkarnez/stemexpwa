@@ -696,7 +696,6 @@
 													</div>
 												</div>
 											{/each}
-											
 											<div class="column is-full">
 												<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addLesson(levelIndex, ($data[curriculumFormKeys.lessons_key] || []).length)}>
 													Add new lesson
