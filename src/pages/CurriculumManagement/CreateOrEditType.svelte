@@ -86,9 +86,6 @@
         //     console.log("creating new type")
         // }
     });
-
-
-
 </script>
 
 <div class="columns">
