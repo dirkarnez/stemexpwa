@@ -688,7 +688,7 @@
 															Misc. teaching materials<br/>(e.g. source code)
 														</div>
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
-															<div>
+															<!-- <div>
 																<a href="google.com" class="is-underlined">Bee-Sound.mp3</a>
 																<button type="button" class="is-danger button delete" on:click={removeBlogEntry(0)}>
 																	x
@@ -703,7 +703,7 @@
 																		on:change={e => handleImageChange(e, dataURI => setFields(`rewr`, dataURI, true))}
 																	/>
 																</InputFileContainer> 
-															</div>
+															</div> -->
 														</div>
 													</div>
 												</div>
