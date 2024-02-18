@@ -33,6 +33,32 @@
 
 	// export let previousPath;
 
+	function validateFormData(formData) {
+		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.youtube_video_entries_key])) {
+			throw `Not OK: Please add at least 1 YouTube video`;
+		}
+
+		if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.blog_entries_key])) {
+			throw(`Not OK: Please add at least 1 blog entries`);
+			return;
+		}
+
+		const levels = values[curriculumFormKeys.levels_key];
+		if (!hasAtLeastOneItemInArray(levels)) {
+			alert(`Not OK: Please add at least 1 course level`);
+			return;
+		}
+
+		if(!levels.every(level => {
+			const lessons = level[curriculumFormKeys.lessons_key];
+			if (!hasAtLeastOneItemInArray()) {
+				return false;
+			}
+			const lessons = level[curriculumFormKeys.lessons_key][curriculumFormKeys.lesson_presentation_notes_key];
+
+		}))
+	}
+
 	const { form, data, setFields, addField, unsetField } = createForm({
 		onSubmit: (values, context) => {
 			// const {
@@ -50,30 +76,7 @@
 			// 	...tempValues
 			// };
 
-			if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.youtube_video_entries_key])) {
-				alert(`Not OK: Please add at least 1 YouTube video`);
-				return;
-			}
 
-			if (!hasAtLeastOneItemInArray(values[curriculumFormKeys.blog_entries_key])) {
-				alert(`Not OK: Please add at least 1 blog entries`);
-				return;
-			}
-
-			const levels = values[curriculumFormKeys.levels_key];
-			if (!hasAtLeastOneItemInArray(levels)) {
-				alert(`Not OK: Please add at least 1 course level`);
-				return;
-			}
-
-			if(!levels.every(level => {
-				const lessons = level[curriculumFormKeys.lessons_key];
-				if (!hasAtLeastOneItemInArray()) {
-					return false;
-				}
-				const lessons = level[curriculumFormKeys.lessons_key][curriculumFormKeys.lesson_presentation_notes_key];
-
-			}))
 
 
 
