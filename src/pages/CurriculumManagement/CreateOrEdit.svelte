@@ -197,8 +197,8 @@
 		return () => unsetField(`${blog_entries_key}.${index}`);
 	}
 
-	function addBlogEntry(index) {
-		return () => addField(`${blog_entries_key}`, { [blog_entries_external_url_key]: "", [blog_entries_title_key]: "" }, index);
+	function addLesson(levelIndex, index) {
+		return () => addField(`${curriculumFormKeys.levels_key}`, { [blog_entries_external_url_key]: "", [blog_entries_title_key]: "" }, index);
 	}
 
 
