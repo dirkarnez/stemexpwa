@@ -555,7 +555,7 @@
 								<input
 									class="input"
 									type="text"
-									name={`${curriculumFormKeys.blog_entries_key}.${blogIndex}${curriculumFormKeys.blog_entries_external_url_key}`}
+									name={`${curriculumFormKeys.blog_entries_key}.${blogIndex}.${curriculumFormKeys.blog_entries_external_url_key}`}
 									bind:value={$data[curriculumFormKeys.blog_entries_key][blogIndex][curriculumFormKeys.blog_entries_external_url_key]}
 									placeholder="URL of the blog"
 									required={true}
