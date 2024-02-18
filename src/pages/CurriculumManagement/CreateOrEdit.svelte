@@ -413,23 +413,9 @@
 											</button>
 										</div>
 									</div>
-
-									<!-- <div class="field">
-										<label class="label">Curriculum plan
-											<div class="control">
-												<InputFileContainer>
-													<input
-														class="file-input"
-														type="file"
-														name="{information_entries_icon_file_key}"
-														on:change={e => handleImageChange(e, dataURI => setFields(`${information_entries_icon_file_preview_key}`, dataURI, true))}
-													/>
-												</InputFileContainer> 
-											</div>
-										</label>
-									</div> -->
 				
 									<div class="columns is-multiline is-mobile mt-2">
+										{#each ($data[curriculumFormKeys.levels_key][levelIndex] || []) as lesson, lessonIndex}
 										<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 											Lesson 1
 										</div>
