@@ -380,7 +380,7 @@
 									name="{curriculumFormKeys.information_entries_icon_file_key}"
 									on:change={e => handleImageChange(e, (dataURI, filename) => {
 										setFields(`${curriculumFormKeys.information_entries_icon_file_preview_key}`
-									}, dataURI, true))}
+									}, true))}
 									required={true}
 								/>
 							</InputFileContainer> 
