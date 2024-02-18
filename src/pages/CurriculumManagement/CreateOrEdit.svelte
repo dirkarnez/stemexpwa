@@ -185,11 +185,11 @@
 	// }
 
 	function removeYouTubeVideo(index) {
-		return () => unsetField(`${youtube_video_entries_key}.${index}`);
+		return () => unsetField(`${curriculumFormKeys.youtube_video_entries_key}.${index}`);
 	}
 
 	function addYouTubeVideo(index) {
-		return () => addField(`${youtube_video_entries_key}`, { [curriculumFormKeys.youtube_video_entries_title_key]: "", [youtube_video_entries_url_key]: "" }, index);
+		return () => addField(`${curriculumFormKeys.youtube_video_entries_key}`, { [curriculumFormKeys.youtube_video_entries_title_key]: "", [curriculumFormKeys.youtube_video_entries_url_key]: "" }, index);
 	}
 
 
