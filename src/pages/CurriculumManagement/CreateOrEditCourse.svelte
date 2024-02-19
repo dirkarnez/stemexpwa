@@ -116,6 +116,7 @@
 							);
 						});
 					}
+
 					const studentNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length
 					if (studentNotesLength < 1) {
 						rj(new Error(`Not OK: Please add at least 1 student notes for every course level`));
@@ -131,6 +132,23 @@
 							);
 						});
 					}
+
+					const teacherNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length;
+					if (teacherNotesLength < 1) {
+						rj(new Error(`Not OK: Please add at least 1 teacher notes for every course level`));
+						return;
+					} else {
+						newIndexedArray(teacherNotesLength).forEach(k => {
+							formData.set(
+								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`, 
+								new File(
+									[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`)], 
+									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_teacher_notes_key][k][curriculumFormKeys.lesson_teacher_note_file_name_key]
+								)
+							);
+						});
+					}
+
 
 					const teacherNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length;
 					if (teacherNotesLength < 1) {
