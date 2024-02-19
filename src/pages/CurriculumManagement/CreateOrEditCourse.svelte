@@ -233,7 +233,7 @@
 						? _data[curriculumFormKeys.levels_key]
 						: [
 								{
-									[curriculumFormKeys.id]: "",
+									[curriculumFormKeys.id_key]: "",
 									[curriculumFormKeys.level_name_key]: "",
 									[curriculumFormKeys.lessons_key]: [
 										{
