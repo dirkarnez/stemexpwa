@@ -151,11 +151,8 @@
 
 
 					const miscMaterialsLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_misc_materials_key].length;
-					if (miscMaterialsLength < 1) {
-						rj(new Error(`Not OK: Please add at least 1 teacher notes for every course level`));
-						return;
-					} else {
-						newIndexedArray(teacherNotesLength).forEach(k => {
+					if (miscMaterialsLength > 0) {
+						newIndexedArray(miscMaterialsLength).forEach(k => {
 							formData.set(
 								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`, 
 								new File(
