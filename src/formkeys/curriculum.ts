@@ -35,6 +35,7 @@ export const lesson_presentation_note_file_name_key = "name"
 export const lesson_presentation_note_file_key = "presentation_note_file";
 
 export const lesson_student_notes_key = "student_notes";
+export const lesson_presentation_note_id_key = "presentation_note_id";
 export const lesson_student_note_file_name_key = "name"
 export const lesson_student_note_file_key = "student_note_file"
 
