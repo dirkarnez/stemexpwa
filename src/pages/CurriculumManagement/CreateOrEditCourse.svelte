@@ -640,6 +640,12 @@
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []) as presentationNote, presentationNoteIndex}
 																<div>
+																	<input
+																		class="input"
+																		type="hidden"
+																		name={curriculumFormKeys.curriculum_plan_id_key}
+																		bind:value="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length}.{curriculumFormKeys.lesson_presentation_note_file_key}[curriculumFormKeys.]}"
+																	/>
 																	<a href={`javascript:void(0);`} class="is-underlined">{presentationNote[curriculumFormKeys.lesson_presentation_note_file_name_key]}</a>
 																	<button type="button" class="is-danger button delete" on:click={removePresentationNote(levelIndex, lessonIndex, presentationNoteIndex)}>
 																		x
