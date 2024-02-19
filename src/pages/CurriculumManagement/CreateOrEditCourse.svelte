@@ -687,8 +687,8 @@
 														class="input"
 														type="hidden"
 														style="display: none;"
-														name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_number_key}.{studentNoteIndex}.{curriculumFormKeys.id_key}"
-														bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_number_key][studentNoteIndex][curriculumFormKeys.id_key]}
+														name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_number_key}"
+														bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_number_key]}
 													/> 
 													<button class="button is-danger is-light" on:click={removeLesson(levelIndex, lessonIndex)}>
 														delete this lesson
