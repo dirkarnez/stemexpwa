@@ -178,9 +178,28 @@
 				);
 				return wrappedFetchPromise
 			})
-			.then(() => {
-				alert("OK");
-				dispatch("done");
+			.then(newData => {
+                alert(`OK!`);
+
+                const reinitValues = {
+                    [curriculumFormKeys.id_key]: newData[curriculumFormKeys.id_key],
+                    [curriculumFormKeys.description_key]: newData[curriculumFormKeys.description_key],
+                    [curriculumFormKeys.icon_id_key]: newData[curriculumFormKeys.icon_id_key],
+                    [curriculumFormKeys.parent_id_key]: newData[curriculumFormKeys.parent_id_key]
+                };
+
+                setFields(reinitValues);
+
+                dispatch('done', {});
+                
+                const newPath = mustMatchThenReplace(
+                    /^(\/curriculum-management)(\/[^\/]+)(\/[^\/]+)?$/ig,
+                    $location.pathname,  
+                    (_, p2, p3, p4) =>  {
+                        return `${[p2, `/${stringToURLPart($data[curriculumFormKeys.description_key])}`, "/edit-course-type"].join("")}`;
+                    });
+                    
+                navigate(newPath, true);
 			})
 			.catch((err) => {
 				alert(`Not OK: ${err}`);
