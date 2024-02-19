@@ -654,7 +654,6 @@
 																</div>
 															{/each}
 															<div>
-																{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length}
 																<InputFileContainer filename={""}>
 																	<input
 																		class="file-input"
