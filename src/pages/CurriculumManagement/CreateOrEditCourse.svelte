@@ -106,12 +106,13 @@
 						return;
 					} else
 					{
+						// levels[0].lessons[0].presentation_notes[0].name
 						newIndexedArray(presentationNotesLength).forEach(k => {
 							formData.set(
 								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`, 
 								new File(
 									[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`)], 
-									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_presentation_notes_key][k][lesson_presentation_note_file_name_key]
+									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_presentation_notes_key][k][curriculumFormKeys.lesson_presentation_note_file_name_key]
 								)
 							);
 						});
