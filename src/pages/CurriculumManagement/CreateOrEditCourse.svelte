@@ -604,8 +604,7 @@
 												<input
 													class="input"
 													name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.id_key}"
-													bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_name_key]}
-													required={true}
+													bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.id_key]}
 												/>
 											</div>
 											<div class="column is-narrow">
