@@ -91,3 +91,11 @@ information_entries
 												</div>
 											</div> -->
                                             ```
+
+                                            <input
+                                            class="input"
+                                            type="hidden"
+                                            name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{presentationNoteIndex}.{curriculumFormKeys.lesson_presentation_note_file_key}"
+                                            bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][presentationNoteIndex][curriculumFormKeys.lesson_presentation_note_file_key]}
+                                        />
+                                        <a href={`javascript:void(0);`} class="is-underlined">{presentationNote[curriculumFormKeys.lesson_presentation_note_file_name_key] || "" }</a>
