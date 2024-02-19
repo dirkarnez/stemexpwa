@@ -8,4 +8,4 @@ export const getHost = () => {
     "";
 }
 
-export const getResourcesAPIByID = (id: string) => `${getHost()}${!!id ? `/api/resourse?id=${id}` : ""}`;
+export const getResourcesAPIByID = (id: string) => !!id ? `${getHost()}${!!id ? `/api/resourse?id=${id}` : ""}` : "";
