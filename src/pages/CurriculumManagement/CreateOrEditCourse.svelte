@@ -730,6 +730,13 @@
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []) as teacherNote, teacherNoteIndex}
 																<div>
+																	<!-- <input
+																		class="input"
+																		type="file"
+																		style="display: none;"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_teacher_notes_key}.{teacherNoteIndex}.{curriculumFormKeys.lesson_teacher_note_file_key}"
+																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key][teacherNoteIndex][curriculumFormKeys.lesson_teacher_note_file_key]}
+																	/> -->
 																	<a href={`javascript:void(0);`} class="is-underlined">{teacherNote[curriculumFormKeys.lesson_teacher_note_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removeTeacherNote(levelIndex, lessonIndex, teacherNoteIndex)}>
 																		x
@@ -737,11 +744,11 @@
 																</div>
 															{/each}
 															<div>
-																<!-- name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_teacher_notes_key}.{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []).length - 1}.{curriculumFormKeys.lesson_teacher_note_file_key}" -->
 																<InputFileContainer filename={""}>
 																	<input
 																		class="file-input"
 																		type="file"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_teacher_notes_key}.{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []).length - 1}.{curriculumFormKeys.lesson_teacher_note_file_key}"
 																		multiple={false}
 																		required={!(($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []).length > 0)}
 																		on:change={e => 
