@@ -643,7 +643,8 @@
 																<div>
 																	<input
 																		class="input"
-																		type="hidden"
+																		type="file"
+																		style="display: none;"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{presentationNoteIndex}.{curriculumFormKeys.lesson_presentation_note_file_key}"
 																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][presentationNoteIndex][curriculumFormKeys.lesson_presentation_note_file_key]}
 																	/>
