@@ -653,7 +653,33 @@
 																	</button>
 																</div>
 															{/each}
-
+															<div>
+																<InputFileContainer filename={""}>
+																	<input
+																		class="file-input"
+																		type="file"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length}.{curriculumFormKeys.lesson_presentation_note_file_key}"
+																		multiple={false}
+																		required={!(($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length > 0)}
+																		on:change={e => 
+																			handleDocumentChange(e, (file, filename) => {
+																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length;
+																				debugger;
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_key}`,
+																					file,
+																					true,
+																				);
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_name_key}`,
+																					filename,
+																					true,
+																				);
+																			})
+																		}
+																	/>
+																</InputFileContainer>
+															</div>
 														</div>
 														<!-- <div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															Student notes
