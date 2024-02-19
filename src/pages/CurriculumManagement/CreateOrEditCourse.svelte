@@ -765,6 +765,7 @@
 																</div>
 															{/each}
 															<div>
+																{{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key] || []).length - 1}}
 																<InputFileContainer filename={""}>
 																	<input
 																		class="file-input"
