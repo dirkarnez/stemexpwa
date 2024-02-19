@@ -120,7 +120,7 @@
 
 	const { form, data, setFields, addField, unsetField } = createForm({
         onSubmit: (value, context) => {
-			const formData = new FormData(context.event.target);
+			const formData = removeDuplicateKeys(new FormData(context.event.target));
 			
 			validateFormData(value, formData).then(() => {
 				const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
