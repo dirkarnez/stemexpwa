@@ -42,12 +42,12 @@ export const lesson_student_note_file_key = "file"
 
 export const lesson_teacher_notes_key = "teacher_notes";
 export const lesson_teacher_note_file_name_key = "name";
-export const lesson_teacher_note_id_key = "resource_id";
+export const lesson_teacher_note_file_id_key = "resource_id";
 export const lesson_teacher_note_file_key = "file";
 
 export const lesson_misc_materials_key = "misc_materials";
 export const lesson_misc_materials_file_name_key = "name";
-export const lesson_misc_materials_id_key = "resource_id";
+export const lesson_misc_materials_file_id_key = "resource_id";
 export const lesson_misc_materials_file_key = "file";
 
 export const lessons_key = "lessons";
