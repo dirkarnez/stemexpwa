@@ -182,12 +182,50 @@
                 alert(`OK!`);
 
                 const reinitValues = {
-                    [curriculumFormKeys.id_key]: newData[curriculumFormKeys.id_key],
-                    [curriculumFormKeys.description_key]: newData[curriculumFormKeys.description_key],
-                    [curriculumFormKeys.icon_id_key]: newData[curriculumFormKeys.icon_id_key],
-                    [curriculumFormKeys.parent_id_key]: newData[curriculumFormKeys.parent_id_key]
-                };
-
+					[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
+					[curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
+					[curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
+					[curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key],
+					[curriculumFormKeys.curriculum_plan_id_key]: _data[curriculumFormKeys.curriculum_plan_id_key],
+					[curriculumFormKeys.youtube_video_entries_key]:
+						Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) &&
+						_data[curriculumFormKeys.youtube_video_entries_key].length > 0
+							? _data[curriculumFormKeys.youtube_video_entries_key]
+							: [
+									{
+										[curriculumFormKeys.youtube_video_entries_url_key]: "",
+									},
+								],
+					[curriculumFormKeys.blog_entries_key]:
+						Array.isArray(_data[curriculumFormKeys.blog_entries_key]) &&
+						_data[curriculumFormKeys.blog_entries_key].length > 0
+							? _data[curriculumFormKeys.blog_entries_key]
+							: [
+									{
+										[curriculumFormKeys.blog_entries_external_url_key]: "",
+										[curriculumFormKeys.blog_entries_title_key]: "",
+									},
+								],
+					[curriculumFormKeys.levels_key]:
+						Array.isArray(_data[curriculumFormKeys.levels_key]) &&
+						_data[curriculumFormKeys.levels_key].length > 0
+							? _data[curriculumFormKeys.levels_key]
+							: [
+									{
+										[curriculumFormKeys.id_key]: "",
+										[curriculumFormKeys.level_name_key]: "",
+										[curriculumFormKeys.lessons_key]: [
+											{
+												[curriculumFormKeys.lesson_presentation_notes_key]: [],
+												[curriculumFormKeys.lesson_student_notes_key]: [],
+												[curriculumFormKeys.lesson_teacher_notes_key]: [],
+												[curriculumFormKeys.lesson_misc_materials_key]: []
+											},
+										],
+									},
+								],
+				};
+				
                 setFields(reinitValues);
 
                 dispatch('done', {});
