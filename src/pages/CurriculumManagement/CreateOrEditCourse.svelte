@@ -693,7 +693,6 @@
 																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key][studentNoteIndex][curriculumFormKeys.lesson_student_note_file_key]}
 																	/>
 																	<a href={`javascript:void(0);`} class="is-underlined">{studentNote[curriculumFormKeys.lesson_student_note_file_name_key] || "" }</a>
-																	
 																	<button type="button" class="is-danger button delete" on:click={removeStudentNote(levelIndex, lessonIndex, studentNoteIndex)}>
 																		x
 																	</button>
