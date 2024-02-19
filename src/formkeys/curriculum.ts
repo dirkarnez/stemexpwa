@@ -52,13 +52,3 @@ export const lesson_misc_materials_file_key = "file";
 
 export const lessons_key = "lessons";
 export const lesson_number_key = "lesson_number";
-
-
-
-
-// export const information_entries_key = "information_entries";
-// export const information_entries_title_key = "title";
-// export const information_entries_icon_id_key = "icon_id";
-// export const information_entries_icon_file_key = "icon_file";
-// export const information_entries_icon_file_preview_key = "icon_file_preview";
-// export const information_entries_content_key = "content";
