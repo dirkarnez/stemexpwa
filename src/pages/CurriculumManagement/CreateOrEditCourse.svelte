@@ -762,16 +762,22 @@
 																<div>
 																	<input
 																		class="input"
-																		type="file"
+																		type="hidden"
 																		style="display: none;"
-																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{studentNoteIndex}.{curriculumFormKeys.lesson_student_note_file_key}"
-																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key][studentNoteIndex][curriculumFormKeys.lesson_student_note_file_key]}
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{studentNoteIndex}.{curriculumFormKeys.id_key}"
 																	/>
 																	<input
 																		class="input"
 																		type="hidden"
 																		style="display: none;"
-																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{studentNoteIndex}.{curriculumFormKeys.id_key}"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{studentNoteIndex}.{curriculumFormKeys.lesson_presentation_note_file_id_key}"
+																	/>
+																	<input
+																		class="input"
+																		type="file"
+																		style="display: none;"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{studentNoteIndex}.{curriculumFormKeys.lesson_student_note_file_key}"
+																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key][studentNoteIndex][curriculumFormKeys.lesson_student_note_file_key]}
 																	/>
 																	<a href={`javascript:void(0);`} class="is-underlined">{studentNote[curriculumFormKeys.lesson_student_note_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removeStudentNote(levelIndex, lessonIndex, studentNoteIndex)}>
