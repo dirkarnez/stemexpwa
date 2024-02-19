@@ -107,7 +107,7 @@
 					{
 						formData[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key] = 
 						formData[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].map(a => {
-							return new File([file], 'new-file-name.txt')
+							return new File([a[curriculumFormKeys.lesson_presentation_note_file_key]], 'new-file-name.txt')
 						})
 						
 					}
