@@ -680,7 +680,7 @@
 																</InputFileContainer>
 															</div>
 														</div>
-														<!-- <div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+														<div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															Student notes
 														</div>
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
@@ -795,7 +795,7 @@
 																	/>
 																</InputFileContainer>
 															</div>
-														</div> -->
+														</div>
 													</div>
 												</div>
 											{/each}
