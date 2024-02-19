@@ -188,6 +188,7 @@
 					[curriculumFormKeys.icon_id_key]: newData[curriculumFormKeys.icon_id_key],
 					[curriculumFormKeys.parent_id_key]: newData[curriculumFormKeys.parent_id_key],
 					[curriculumFormKeys.curriculum_plan_id_key]: newData[curriculumFormKeys.curriculum_plan_id_key],
+					[curriculumFormKeys.curriculum_plan_file_name_key]: newData[curriculumFormKeys.curriculum_plan_file_name_key],
 					[curriculumFormKeys.youtube_video_entries_key]:
 						Array.isArray(newData[curriculumFormKeys.youtube_video_entries_key]) &&
 						newData[curriculumFormKeys.youtube_video_entries_key].length > 0
@@ -269,6 +270,7 @@
 				[curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
 				[curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key],
 				[curriculumFormKeys.curriculum_plan_id_key]: _data[curriculumFormKeys.curriculum_plan_id_key],
+				[curriculumFormKeys.curriculum_plan_file_name_key]: _data[curriculumFormKeys.curriculum_plan_file_name_key],
 				[curriculumFormKeys.youtube_video_entries_key]:
 					Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) &&
 					_data[curriculumFormKeys.youtube_video_entries_key].length > 0
