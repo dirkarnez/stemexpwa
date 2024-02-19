@@ -530,6 +530,7 @@
 					<label class="label"
 						>Curriculum plan
 						<div class="control">
+							<a href={`google.com`}>{$data[curriculumFormKeys.curriculum_plan_file_name_key] || ""}</a>
 							<InputFileContainer
 								filename={$data[
 									curriculumFormKeys.curriculum_plan_file_name_key
