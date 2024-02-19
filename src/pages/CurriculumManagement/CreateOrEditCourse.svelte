@@ -149,7 +149,6 @@
 						});
 					}
 
-
 					const miscMaterialsLength = (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_misc_materials_key] || []).length;
 					newIndexedArray(miscMaterialsLength).forEach(k => {
 						formData.set(
