@@ -639,6 +639,7 @@
 															Presentation notes
 														</div>
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
+															<!-- bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][presentationNoteIndex][curriculumFormKeys.lesson_presentation_note_file_key]} -->
 															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []) as presentationNote, presentationNoteIndex}
 																<div>
 																	<input
@@ -646,7 +647,6 @@
 																		type="file"
 																		style="display: none;"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{presentationNoteIndex}.{curriculumFormKeys.lesson_presentation_note_file_key}"
-																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key][presentationNoteIndex][curriculumFormKeys.lesson_presentation_note_file_key]}
 																	/>
 																	<a href={`javascript:void(0);`} class="is-underlined">{presentationNote[curriculumFormKeys.lesson_presentation_note_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removePresentationNote(levelIndex, lessonIndex, presentationNoteIndex)}>
