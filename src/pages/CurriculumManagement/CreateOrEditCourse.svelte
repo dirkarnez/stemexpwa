@@ -171,6 +171,7 @@
 			const formData = removeDuplicateKeys(new FormData(context.event.target));
 			
 			validateFormData(value, formData).then(() => {
+				debugger;
 				const [wrappedFetchPromise, abort] = WrappedFetchPOSTMultipart(
 					"/api/curriculum-course",
 					formData,
