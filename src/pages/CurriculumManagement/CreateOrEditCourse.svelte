@@ -116,7 +116,8 @@
 							);
 						});
 					}
-					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length < 1) {
+					const studentNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length
+					if (studentNotesLength < 1) {
 						rj(new Error(`Not OK: Please add at least 1 student notes for every course level`));
 						return;
 					}
