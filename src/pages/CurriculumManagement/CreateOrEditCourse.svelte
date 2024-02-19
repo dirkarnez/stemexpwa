@@ -686,7 +686,7 @@
 																</div>
 															{/each}
 															<div>
-																<InputFileContainer filename={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key][curriculumFormKeys.lesson_student_note_file_name_key]}>
+																<InputFileContainer filename={""}>
 																	<input
 																		class="file-input"
 																		type="file"
