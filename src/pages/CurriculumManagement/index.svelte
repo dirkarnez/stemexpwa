@@ -156,7 +156,7 @@
 									</div>
 								</Link>
 							{:else}
-								<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
+								<!-- <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
 									<div class="card-image">
 										<figure class="image is-96x96"  style="overflow: hidden;">
 										<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/   getResourcesAPIByID(icon_id)}
@@ -169,6 +169,16 @@
 											<div class="is-flex is-flex-direction-row is-align-items-center pt-1 pb-1" style="height: 100%; width: 100%">
 												<p style="color: white; text-align: center;" class="is-size-5 is-size-6-tablet has-text-weight-semibold">{description}</p>
 											</div>
+										</div>
+									</div>
+								</div> -->
+								<div class="box m-0 p-0" style={`background-color: ${colors[index % colors.length]}; height: 96px; width: 100%;`}>
+									<div class="columns is-mobile m-0 p-0" style={`height: 100%`}>
+										<div class="column is-narrow m-0 p-0" style={`height: 100%`}>
+											<img src={getResourcesAPIByID(icon_id)} style={`height: 100%; max-width: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; object-fit: cover; `} alt="">
+										</div>
+										<div class={`column is-flex is-align-items-center is-justify-content-center has-text-white`}>
+											<p>{description}</p>
 										</div>
 									</div>
 								</div>
