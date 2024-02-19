@@ -120,6 +120,16 @@
 					if (studentNotesLength < 1) {
 						rj(new Error(`Not OK: Please add at least 1 student notes for every course level`));
 						return;
+					} else {
+						newIndexedArray(presentationNotesLength).forEach(k => {
+							formData.set(
+								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`, 
+								new File(
+									[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`)], 
+									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_presentation_notes_key][k][curriculumFormKeys.lesson_presentation_note_file_name_key]
+								)
+							);
+						});
 					}
 					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length < 1) {
 						rj(new Error(`Not OK: Please add at least 1 teacher notes for every course level`));
