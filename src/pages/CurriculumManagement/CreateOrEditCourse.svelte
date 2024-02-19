@@ -105,6 +105,7 @@
 						return;
 					} else
 					{
+						formData[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key] = 
 						formData[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].map(a => {
 
 						})
