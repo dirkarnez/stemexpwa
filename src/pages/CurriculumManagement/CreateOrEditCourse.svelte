@@ -734,7 +734,7 @@
 																		class="input"
 																		type="hidden"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_teacher_notes_key}.{teacherNote}.{curriculumFormKeys.lesson_teacher_note_file_key}"
-																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key][teacherNote][curriculumFormKeys.lesson_teacher_note_file_key]}
+																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key][teacherNoteIndex][curriculumFormKeys.lesson_teacher_note_file_key]}
 																	/>
 																	<a href={`javascript:void(0);`} class="is-underlined">{teacherNote[curriculumFormKeys.lesson_teacher_note_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removeTeacherNote(levelIndex, lessonIndex, teacherNoteIndex)}>
