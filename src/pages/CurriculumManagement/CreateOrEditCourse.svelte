@@ -679,9 +679,9 @@
 											class="input"
 											type="hidden"
 											name={curriculumFormKeys.icon_id_key}
-											bind:value={$data[curriculumFormKeys.icon_id_key]}
+											bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_file_preview_key]}
 										/>
-										
+
 										<div class="field">
 											<figure class="image is-128x128">
 												<img
