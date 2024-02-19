@@ -182,10 +182,10 @@
                 alert(`OK!`);
 
                 const reinitValues = {
-					[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
-					[curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
-					[curriculumFormKeys.icon_id_key]: _data[curriculumFormKeys.icon_id_key],
-					[curriculumFormKeys.parent_id_key]: _data[curriculumFormKeys.parent_id_key],
+					[curriculumFormKeys.id_key]: newData[curriculumFormKeys.id_key],
+					[curriculumFormKeys.description_key]: newData[curriculumFormKeys.description_key],
+					[curriculumFormKeys.icon_id_key]: newData[curriculumFormKeys.icon_id_key],
+					[curriculumFormKeys.parent_id_key]: newData[curriculumFormKeys.parent_id_key],
 					[curriculumFormKeys.curriculum_plan_id_key]: _data[curriculumFormKeys.curriculum_plan_id_key],
 					[curriculumFormKeys.youtube_video_entries_key]:
 						Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) &&
@@ -225,7 +225,7 @@
 									},
 								],
 				};
-				
+
                 setFields(reinitValues);
 
                 dispatch('done', {});
