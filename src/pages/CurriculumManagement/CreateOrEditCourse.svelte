@@ -601,6 +601,14 @@
 													bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_name_key]}
 													required={true}
 												/>
+												<input
+													class="input"
+													type="hidden"
+													placeholder="Level name (e.g. A? B?)"
+													name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.level_name_key}"
+													bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_name_key]}
+													required={true}
+												/>
 											</div>
 											<div class="column is-narrow">
 												<button class="button is-danger is-light ml-auto" on:click={removeLevel(levelIndex)}>
