@@ -131,7 +131,9 @@
 							);
 						});
 					}
-					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length < 1) {
+
+					const s = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length;
+					if ( < 1) {
 						rj(new Error(`Not OK: Please add at least 1 teacher notes for every course level`));
 						return;
 					}
