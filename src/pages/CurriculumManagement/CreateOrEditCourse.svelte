@@ -7,6 +7,7 @@
 	} from "../../utils/fetch";
 	import { stringToURLPart } from "../../utils/url";
 	import { newIndexedArray } from "../../utils/array";
+	import { stringToURLPart, mustMatchThenReplace } from "../../utils/url";
 	import {
 		useLocation,
 		Link,
