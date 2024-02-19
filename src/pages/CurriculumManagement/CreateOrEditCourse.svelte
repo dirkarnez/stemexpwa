@@ -111,7 +111,7 @@
 								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${lesson_presentation_note_file_key}`, 
 								new File(
 									[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${lesson_presentation_note_file_key}`)], 
-									value[curriculumFormKeys.levels_key][i].lessons[i].presentation_notes[k].name
+									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i].presentation_notes[k].name
 								)
 							);
 						})
