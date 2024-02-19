@@ -653,7 +653,7 @@
 																	</button>
 																</div>
 															{/each}
-															<!-- <div>
+															<div>
 																<InputFileContainer filename={""}>
 																	<input
 																		class="file-input"
@@ -679,7 +679,7 @@
 																		}
 																	/>
 																</InputFileContainer>
-															</div> -->
+															</div>
 														</div>
 														<!-- <div class="column is-one-quarter"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															Student notes
