@@ -153,9 +153,9 @@
 					const miscMaterialsLength = (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_misc_materials_key] || []).length;
 					newIndexedArray(miscMaterialsLength).forEach(k => {
 						formData.set(
-							`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_misc_materials_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`, 
+							`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_misc_materials_key}.${k}.${curriculumFormKeys.lesson_misc_materials_file_key}`, 
 							new File(
-								[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_misc_materials_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`)], 
+								[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_misc_materials_key}.${k}.${curriculumFormKeys.lesson_misc_materials_file_key}`)], 
 								value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_misc_materials_key][k][curriculumFormKeys.lesson_teacher_note_file_name_key]
 							)
 						);
