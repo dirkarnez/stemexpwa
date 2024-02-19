@@ -662,21 +662,20 @@
 																		multiple={false}
 																		required={!(($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length > 0)}
 																		on:change={e => 
-																			// handleDocumentChange(e, (file, filename) => {
-																			// 	const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length;
-																			// 	debugger;
-																			// 	setFields(
-																			// 		`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_key}`,
-																			// 		file,
-																			// 		true,
-																			// 	);
-																			// 	setFields(
-																			// 		`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_name_key}`,
-																			// 		filename,
-																			// 		true,
-																			// 	);
-																			// })
-																			{}
+																			handleDocumentChange(e, (file, filename) => {
+																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length;
+																				debugger;
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_key}`,
+																					file,
+																					true,
+																				);
+																				setFields(
+																					`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_presentation_notes_key}.${index}.${curriculumFormKeys.lesson_presentation_note_file_name_key}`,
+																					filename,
+																					true,
+																				);
+																			})
 																		}
 																	/>
 																</InputFileContainer>
