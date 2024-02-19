@@ -150,7 +150,7 @@
 					}
 
 
-					const teacherNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length;
+					const teacherNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_misc_materials_key].length;
 					if (teacherNotesLength < 1) {
 						rj(new Error(`Not OK: Please add at least 1 teacher notes for every course level`));
 						return;
