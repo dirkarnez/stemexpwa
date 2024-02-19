@@ -235,7 +235,7 @@
                     /^(\/curriculum-management)(\/[^\/]+)(\/[^\/]+)?$/ig,
                     $location.pathname,  
                     (_, p2, p3, p4) =>  {
-                        return `${[p2, `/${stringToURLPart($data[curriculumFormKeys.description_key])}`, "/edit-course-type"].join("")}`;
+                        return `${[p2, `/${stringToURLPart($data[curriculumFormKeys.description_key])}`, "/edit-course"].join("")}`;
                     });
                     
                 navigate(newPath, true);
