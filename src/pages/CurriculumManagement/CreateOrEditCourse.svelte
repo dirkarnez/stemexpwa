@@ -186,11 +186,11 @@
 					[curriculumFormKeys.description_key]: newData[curriculumFormKeys.description_key],
 					[curriculumFormKeys.icon_id_key]: newData[curriculumFormKeys.icon_id_key],
 					[curriculumFormKeys.parent_id_key]: newData[curriculumFormKeys.parent_id_key],
-					[curriculumFormKeys.curriculum_plan_id_key]: _data[curriculumFormKeys.curriculum_plan_id_key],
+					[curriculumFormKeys.curriculum_plan_id_key]: newData[curriculumFormKeys.curriculum_plan_id_key],
 					[curriculumFormKeys.youtube_video_entries_key]:
-						Array.isArray(_data[curriculumFormKeys.youtube_video_entries_key]) &&
-						_data[curriculumFormKeys.youtube_video_entries_key].length > 0
-							? _data[curriculumFormKeys.youtube_video_entries_key]
+						Array.isArray(newData[curriculumFormKeys.youtube_video_entries_key]) &&
+						newData[curriculumFormKeys.youtube_video_entries_key].length > 0
+							? newData[curriculumFormKeys.youtube_video_entries_key]
 							: [
 									{
 										[curriculumFormKeys.youtube_video_entries_url_key]: "",
@@ -198,7 +198,7 @@
 								],
 					[curriculumFormKeys.blog_entries_key]:
 						Array.isArray(_data[curriculumFormKeys.blog_entries_key]) &&
-						_data[curriculumFormKeys.blog_entries_key].length > 0
+						newData[curriculumFormKeys.blog_entries_key].length > 0
 							? _data[curriculumFormKeys.blog_entries_key]
 							: [
 									{
