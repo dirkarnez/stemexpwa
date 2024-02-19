@@ -51,6 +51,7 @@ export const lesson_misc_materials_id_key = "resource_id";
 export const lesson_misc_materials_file_key = "file";
 
 export const lessons_key = "lessons";
+export const lesson_number_key = "lesson_number";
 
 
 
