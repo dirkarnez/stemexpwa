@@ -121,7 +121,7 @@
 						rj(new Error(`Not OK: Please add at least 1 student notes for every course level`));
 						return;
 					} else {
-						newIndexedArray(presentationNotesLength).forEach(k => {
+						newIndexedArray(studentNotesLength).forEach(k => {
 							formData.set(
 								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`, 
 								new File(
