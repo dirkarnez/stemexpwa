@@ -603,6 +603,7 @@
 												/>
 												<input
 													class="input"
+													type="hidden"
 													name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.id_key}"
 													bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.id_key]}
 												/>
