@@ -150,8 +150,8 @@
 					}
 
 
-					const misc_materialsLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_misc_materials_key].length;
-					if (teacherNotesLength < 1) {
+					const miscMaterialsLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_misc_materials_key].length;
+					if (miscMaterialsLength < 1) {
 						rj(new Error(`Not OK: Please add at least 1 teacher notes for every course level`));
 						return;
 					} else {
