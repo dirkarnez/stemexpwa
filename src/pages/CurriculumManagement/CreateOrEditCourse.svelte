@@ -713,7 +713,7 @@
 																		class="input"
 																		type="hidden"
 																		style="display: none;"
-																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{presentationNoteIndex}.{curriculumFormKeys.lesson_presentation_note_id_key}"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{presentationNoteIndex}.{curriculumFormKeys.lesson_presentation_note_file_id_key}"
 																	/>
 																	<input
 																		class="input"
