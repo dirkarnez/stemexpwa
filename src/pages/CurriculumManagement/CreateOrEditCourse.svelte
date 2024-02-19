@@ -142,7 +142,7 @@
 								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_student_note_file_key}`, 
 								new File(
 									[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_student_note_file_key}`)], 
-									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_teacher_notes_key][k][curriculumFormKeys.lesson_teacher_note_file_key]
+									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_teacher_notes_key][k][curriculumFormKeys.lesson_teacher_note_file_name_key]
 								)
 							);
 						});
