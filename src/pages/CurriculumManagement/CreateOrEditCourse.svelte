@@ -106,7 +106,6 @@
 						return;
 					} else
 					{
-						// levels[0].lessons[0].presentation_notes[0].name
 						newIndexedArray(presentationNotesLength).forEach(k => {
 							formData.set(
 								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`, 
