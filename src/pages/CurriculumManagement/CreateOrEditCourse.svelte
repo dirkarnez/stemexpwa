@@ -603,9 +603,7 @@
 												/>
 												<input
 													class="input"
-													type="hidden"
-													placeholder="Level name (e.g. A? B?)"
-													name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.level_name_key}"
+													name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.id_key}"
 													bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_name_key]}
 													required={true}
 												/>
