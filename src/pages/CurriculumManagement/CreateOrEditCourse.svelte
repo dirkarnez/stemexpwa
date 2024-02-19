@@ -683,6 +683,13 @@
 													Lesson {lessonIndex + 1}
 													<br>
 													<br>
+													<input
+														class="input"
+														type="hidden"
+														style="display: none;"
+														name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{studentNoteIndex}.{curriculumFormKeys.id_key}"
+														bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key][studentNoteIndex][curriculumFormKeys.id_key]}
+													/> 
 													<button class="button is-danger is-light" on:click={removeLesson(levelIndex, lessonIndex)}>
 														delete this lesson
 													</button>
@@ -748,13 +755,6 @@
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{studentNoteIndex}.{curriculumFormKeys.lesson_student_note_file_key}"
 																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key][studentNoteIndex][curriculumFormKeys.lesson_student_note_file_key]}
 																	/>
-																	<!-- <input
-																		class="input"
-																		type="hidden"
-																		style="display: none;"
-																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{studentNoteIndex}.{curriculumFormKeys.id_key}"
-																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key][studentNoteIndex][curriculumFormKeys.id_key]}
-																	/> -->
 																	<a href={`javascript:void(0);`} class="is-underlined">{studentNote[curriculumFormKeys.lesson_student_note_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removeStudentNote(levelIndex, lessonIndex, studentNoteIndex)}>
 																		x
