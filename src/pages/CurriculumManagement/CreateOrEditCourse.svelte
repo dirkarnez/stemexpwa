@@ -100,8 +100,8 @@
 				}
 				
 				newIndexedArray(lessonLength).forEach(j => {
-					const presentationNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key]
-					if (presentationNotesLength.length < 1) {
+					const presentationNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].length
+					if (presentationNotesLength < 1) {
 						rj(new Error(`Not OK: Please add at least 1 presentation notes for every course level`));
 						return;
 					} else
