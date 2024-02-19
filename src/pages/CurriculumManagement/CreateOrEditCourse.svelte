@@ -530,7 +530,7 @@
 					<label class="label"
 						>Curriculum plan
 						<div class="control">
-							<a href={getResourcesAPIByID($data[curriculumFormKeys.curriculum_plan_id_key])}>{$data[curriculumFormKeys.curriculum_plan_file_name_key] || ""}</a>
+							<a href={getResourcesAPIByID($data[curriculumFormKeys.curriculum_plan_id_key])} target="_blank">{$data[curriculumFormKeys.curriculum_plan_file_name_key] || ""}</a>
 							<InputFileContainer
 								filename={$data[
 									curriculumFormKeys.curriculum_plan_file_name_key
