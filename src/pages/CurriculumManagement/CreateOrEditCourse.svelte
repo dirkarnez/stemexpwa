@@ -678,7 +678,7 @@
 										<input
 											class="input"
 											type="hidden"
-											name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.level_icon_file_key}"
+											name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.level_icon_id_key}"
 											bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_icon_id_key]}
 										/>
 
