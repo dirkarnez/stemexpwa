@@ -524,6 +524,7 @@
 				</div>
 
 				<div class="field">
+					<a href={`https://localhost/api/resourse?id=34226ba4cf1d11ee9aa006c3bc34e27e`}
 					<label class="label"
 						>Curriculum plan
 						<div class="control">
