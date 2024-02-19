@@ -180,7 +180,7 @@
 			})
 			.then(newData => {
                 alert(`OK!`);
-
+				debugger;
                 const reinitValues = {
 					[curriculumFormKeys.id_key]: newData[curriculumFormKeys.id_key],
 					[curriculumFormKeys.description_key]: newData[curriculumFormKeys.description_key],
@@ -223,9 +223,9 @@
 											},
 										],
 									},
-								],
+								]
 				};
-
+				debugger;
                 setFields(reinitValues);
 
                 dispatch('done', {});
