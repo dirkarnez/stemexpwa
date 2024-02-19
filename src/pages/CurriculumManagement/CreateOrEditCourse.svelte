@@ -776,6 +776,14 @@
 														<div class="column is-three-quarters"  style="border-bottom: 1px solid hsl(0deg,0%,86%);">
 															{#each ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key] || []) as miscMaterial, miscMaterialIndex}
 																<div>
+																	<input
+																		class="input"
+																		type="hidden"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_teacher_notes_key}.{miscMaterial}.{curriculumFormKeys.lesson_teacher_note_file_key}"
+																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key][miscMaterial][curriculumFormKeys.lesson_teacher_note_file_key]}
+																	/>
+																	<a href={`javascript:void(0);`} class="is-underlined">{miscMaterial[curriculumFormKeys.lesson_teacher_note_file_name_key] || "" }</a>
+
 																	<a href="google.com" class="is-underlined">{miscMaterial[curriculumFormKeys.lesson_misc_materials_file_name_key]}</a>
 																	<button type="button" class="is-danger button delete" on:click={removeMiscMaterial(levelIndex, lessonIndex, miscMaterialIndex)}>
 																		x
