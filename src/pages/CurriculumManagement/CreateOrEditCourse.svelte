@@ -691,7 +691,7 @@
 																	<input
 																		class="file-input"
 																		type="file"
-																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []).length}.{curriculumFormKeys.lesson_student_note_file_key}"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []).length - 1}.{curriculumFormKeys.lesson_student_note_file_key}"
 																		multiple={false}
 																		required={!(($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []).length > 0)}
 																		on:change={e => 
