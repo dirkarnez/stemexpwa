@@ -109,7 +109,7 @@
 						newIndexedArray(presentationNotesLength).forEach(k => {
 							formData.set(
 								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${lesson_presentation_note_file_key}`, 
-								new File([formData.get(${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${lesson_presentation_note_file_key})], "345")
+								new File([formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${lesson_presentation_note_file_key}`)], "345")
 							);
 						})
 
