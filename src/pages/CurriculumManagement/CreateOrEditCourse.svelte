@@ -778,7 +778,7 @@
 																	<input
 																		class="input"
 																		type="hidden"
-																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_misc_materials_key}.{miscMaterial}.{curriculumFormKeys.lesson_misc_materials_file_key}"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_misc_materials_key}.{miscMaterialIndex}.{curriculumFormKeys.lesson_misc_materials_file_key}"
 																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key][miscMaterialIndex][curriculumFormKeys.lesson_misc_materials_file_key]}
 																	/>
 																	<a href={`javascript:void(0);`} class="is-underlined">{miscMaterial[curriculumFormKeys.lesson_misc_materials_file_name_key] || "" }</a>
