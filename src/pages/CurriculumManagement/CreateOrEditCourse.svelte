@@ -28,6 +28,7 @@
 	//import { WrappedFetch } from "../../utils/fetch";
 
 	const dispatch = createEventDispatcher();
+	const location = useLocation();
 
 	export let id = "";
 	export let parentId = "";
