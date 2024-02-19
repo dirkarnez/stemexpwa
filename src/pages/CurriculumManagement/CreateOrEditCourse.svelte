@@ -765,13 +765,13 @@
 																		class="input"
 																		type="hidden"
 																		style="display: none;"
-																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{studentNoteIndex}.{curriculumFormKeys.id_key}"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{studentNoteIndex}.{curriculumFormKeys.id_key}"
 																	/>
 																	<input
 																		class="input"
 																		type="hidden"
 																		style="display: none;"
-																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{studentNoteIndex}.{curriculumFormKeys.lesson_student_note_file_id_key}"
+																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{studentNoteIndex}.{curriculumFormKeys.lesson_student_note_file_id_key}"
 																	/>
 																	<input
 																		class="input"
