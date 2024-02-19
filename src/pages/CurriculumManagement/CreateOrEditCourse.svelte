@@ -109,6 +109,9 @@
 						formData[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].map(a => {
 							return new File([a[curriculumFormKeys.lesson_presentation_note_file_key]], a[curriculumFormKeys.lesson_presentation_note_file_name_key])
 						});
+
+						formData.set(`${curriculumFormKeys.levels_key}.0.lessons.0.presentation_notes.0.presentation_note_file`, 
+						new File([formData.get('levels.0.lessons.0.presentation_notes.0.presentation_note_file')], "345"))
 					}
 					if (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length < 1) {
 						rj(new Error(`Not OK: Please add at least 1 student notes for every course level`));
