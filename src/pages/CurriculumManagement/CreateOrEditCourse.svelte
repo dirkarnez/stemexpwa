@@ -261,6 +261,8 @@
 		
 		_wrappedFetchCurriculumCourse
 		.then((_data) => {
+
+			debugger;
 			const initValues = {
 				[curriculumFormKeys.id_key]: _data[curriculumFormKeys.id_key],
 				[curriculumFormKeys.description_key]: _data[curriculumFormKeys.description_key],
