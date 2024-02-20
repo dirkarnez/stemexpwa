@@ -35,3 +35,4 @@ stemexpwa
 - [ ] [Get Started - BulmaBadge](https://bulma-badge.netlify.app/get-started/)
 - [ ] https://github.com/dirkarnez/syncform
 - [ ] encodeURI("dsfs fsd")
+- [ ] https://github.com/dirkarnez/svelte-async-button
