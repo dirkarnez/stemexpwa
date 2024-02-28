@@ -36,3 +36,6 @@ stemexpwa
 - [ ] https://github.com/dirkarnez/syncform
 - [ ] encodeURI("dsfs fsd")
 - [ ] https://github.com/dirkarnez/svelte-async-button
+- [ ]umd
+    - [Custom elements API • Docs • Svelte](https://svelte.dev/docs/custom-elements-api)
+    - [使用svelte+webpack 打包成umd形式的js库_webpack svelte-CSDN博客](https://blog.csdn.net/sinat_23156865/article/details/123347825)
