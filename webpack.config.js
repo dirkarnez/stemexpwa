@@ -41,7 +41,18 @@ module.exports = {
 	context: path.resolve(__dirname, "./src"),
 	devtool: isProduction ? false : "inline-source-map",
 	entry: {
-		main: "./index.ts"
+		main: {
+			import: './index.ts',
+		},
+		mycomponent: {
+			import: './components/Testing/index.ts',
+			library: {
+				name: 'MyComponent',
+				type: 'umd',
+				umdNamedDefine: true,
+				export: "default"
+			},
+		}
 	},
 	resolve: {
 		alias: {
