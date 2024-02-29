@@ -30,12 +30,9 @@ stemexpwa
       <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
       ```
     - https://stackoverflow.com/questions/22726941/youtube-api-get-current-video-title
-
 - [ ] [Usage - BulmaTagsInput](https://bulma-tagsinput.netlify.app/get-started/usage/)
 - [ ] [Get Started - BulmaBadge](https://bulma-badge.netlify.app/get-started/)
 - [ ] https://github.com/dirkarnez/syncform
 - [ ] encodeURI("dsfs fsd")
 - [ ] https://github.com/dirkarnez/svelte-async-button
-- [ ]umd
-    - [Custom elements API • Docs • Svelte](https://svelte.dev/docs/custom-elements-api)
-    - [使用svelte+webpack 打包成umd形式的js库_webpack svelte-CSDN博客](https://blog.csdn.net/sinat_23156865/article/details/123347825)
+- [x] umd
