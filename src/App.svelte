@@ -8,6 +8,9 @@
 	<Route path="/login">
 		<LoginPage/>
 	</Route>
+	<Route path="/register">
+		<h1>Hi</h1>
+	</Route>
 	<Route path="/*">
 		<Home/>
 	</Route>

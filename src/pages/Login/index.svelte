@@ -3,7 +3,7 @@
 	import AppBackground from "../../assets/images/AppBackground.png";
 	// import { form, field, defaultFieldOptions } from "svelte-forms";
 	// import { required } from "svelte-forms/validators";
-	import { navigate } from "svelte-routing";
+	import { navigate, link } from "svelte-routing";
 	import { WrappedFetch } from "../../utils/fetch";
 	import { createForm } from 'felte';
 
@@ -186,6 +186,7 @@
 									<button class="button is-primary" type="submit">Submit</button>
 								</div>
 							</div>
+							<a href="/register" use:link>reg</a>
 						</form>
 					</div>
 				</div>
