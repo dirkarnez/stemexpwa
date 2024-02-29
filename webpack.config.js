@@ -43,15 +43,6 @@ module.exports = {
 	entry: {
 		main: {
 			import: './index.ts',
-		},
-		mycomponent: {
-			import: './components/Testing/index.ts',
-			library: {
-				name: 'MyComponent',
-				type: 'umd',
-				umdNamedDefine: true,
-				export: "default"
-			},
 		}
 	},
 	resolve: {

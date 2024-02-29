@@ -35,4 +35,4 @@ stemexpwa
 - [ ] https://github.com/dirkarnez/syncform
 - [ ] encodeURI("dsfs fsd")
 - [ ] https://github.com/dirkarnez/svelte-async-button
-- [x] umd
+- [x] ~umd~ Just iframe instead, cannot afford css issues
