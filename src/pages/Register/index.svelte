@@ -118,7 +118,7 @@
 							<button class="button is-primary" type="submit">Submit</button>
 						</div>
 					</div>
-					<a href="/register" use:link>reg</a>
+					<a href="/login" use:link>login</a>
 				</form>
 			</div>
 		</div>

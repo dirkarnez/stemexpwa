@@ -2,6 +2,8 @@
 	import { Router, Route } from "svelte-routing";
 	import Home from "./Home.svelte";
 	import LoginPage from "./pages/Login/index.svelte";
+	import RegisterPage from "./pages/Register/index.svelte";
+	
 </script>
 
 <Router>
@@ -9,7 +11,7 @@
 		<LoginPage/>
 	</Route>
 	<Route path="/register">
-		<h1>Hi</h1>
+		<RegisterPage/>
 	</Route>
 	<Route path="/*">
 		<Home/>
