@@ -45,7 +45,7 @@
 	{/if}
 
 	<Route path="/">
-        <div class="columns">
+        <!-- <div class="columns">
             <div class="column">
                 <div class="content">
                     <p>
@@ -56,7 +56,7 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
         {#if Array.isArray(curriculumCategoryCourses)}
             <div class="columns is-multiline is-mobile">
                 {#each curriculumCategoryCourses as { description, icon_id}, index}

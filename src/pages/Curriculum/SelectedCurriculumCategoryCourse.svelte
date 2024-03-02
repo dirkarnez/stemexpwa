@@ -9,7 +9,7 @@
     //export let courses;
     //export let routePath;
     export let parentId;
-	export let previousPath;
+	// export let previousPath;
 
     //$: selectedUpdatedSchedule = courses.get(routePath);
     
@@ -29,7 +29,7 @@
     });
 </script>
 
-<div class="columns">
+<!-- <div class="columns">
     <div class="column">
         <div class="content">
             <p>
@@ -40,7 +40,7 @@
             </p>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="columns is-multiline">
 	<div class="column is-one-third-desktop is-full-tablet is-full-mboile">

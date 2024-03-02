@@ -4,6 +4,7 @@
 	import LoginPage from "./pages/Login/index.svelte";
 	import RegisterPage from "./pages/Register/index.svelte";
 	import ActivationPage from "./pages/Activation/index.svelte";
+	import Curriculum from "./pages/Curriculum/index.svelte";
 
 </script>
 
@@ -16,6 +17,13 @@
 	</Route>
 	<Route path="/activation">
 		<ActivationPage/>
+	</Route>
+	<Route path="/curriculum-embeded/*">
+		<div>
+			Title
+			<br>
+			<Curriculum/>
+		</div>
 	</Route>
 	<Route path="/*">
 		<Home/>
