@@ -739,12 +739,14 @@
 										<div class="field">
 											<label class="label">Description
 												<div class="control">
-													<input
+													<textarea class="textarea"
+													name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.level_description_key}"
+														bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_description_key]}
+														required={true}/>
+													<textarea
 														class="input"
 														type="text"
-														name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.level_description_key}"
-														bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_description_key]}
-														required={true}
+														
 													/>
 												</div>
 											</label>
