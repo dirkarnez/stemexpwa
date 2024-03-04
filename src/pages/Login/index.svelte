@@ -9,6 +9,7 @@
 	
 	const { form } = createForm({
 		onSubmit: (values) => {
+			debugger;
 				const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/login", {
 					method: "POST",
 					body: JSON.stringify(values)
@@ -115,10 +116,10 @@
 
 					<div class="field">
 						<div class="control">
-							<button class="button is-primary" type="submit">Submit</button>
+							<button class="button is-primary" type="submit">Log in</button>
 						</div>
 					</div>
-					<a href="/register" use:link>reg</a>
+					<a href="/register" use:link>Don't have an account? Sign up now!</a>
 				</form>
 			</div>
 		</div>

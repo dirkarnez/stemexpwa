@@ -20,6 +20,7 @@
 
     const { form, data, setFields } = createForm({
         onSubmit: (_, context) => {
+            debugger;
 			const formData = new FormData(context.event.target);
 
             if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {

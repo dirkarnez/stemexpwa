@@ -61,7 +61,7 @@
 				</div>
 				<form use:form>
 					<div class="field">
-						<label class="label" for="userName">User name</label>
+						<label class="label" for="userName">User name
 						<div class="control has-icons-left">
 							<!-- {#if $myForm.hasError('user_name.required')}
 								<input
@@ -86,6 +86,62 @@
 							<p class="help is-danger">User Name is required</p>
 						{/if} -->
 					</div>
+
+					<div class="field">
+						<label class="label" for="email">Email</label>
+						<div class="control has-icons-left">
+							<!-- {#if $myForm.hasError('password.required')}
+								<input
+									id="c"
+									class="input is-danger"
+									type="password"
+									placeholder="Enter your password"
+									bind:value={$password.value} />
+							{:else} -->
+								<input
+									id="email"
+									class="input"
+									type="text"
+									name="email"
+									placeholder="Enter your email"/>
+							<!-- {/if} -->
+							<span class="icon is-small is-left">
+								<i class="fa-solid fa-at"></i>
+							</span>
+						</div>
+						<!-- {#if $myForm.hasError('password.required')}
+							<p class="help is-danger">Password is required</p>
+						{/if} -->
+					</div>
+
+					<div class="field">
+						<label class="label" for="contactNumber">Contact Number</label>
+						<div class="control has-icons-left">
+							<!-- {#if $myForm.hasError('password.required')}
+								<input
+									id="c"
+									class="input is-danger"
+									type="password"
+									placeholder="Enter your password"
+									bind:value={$password.value} />
+							{:else} -->
+								<input
+									id="contactNumber"
+									class="input"
+									type="text"
+									name="contact-number"
+									placeholder="Enter your contact number"/>
+							<!-- {/if} -->
+							<span class="icon is-small is-left">
+								<i class="fa-solid fa-phone"></i>
+							</span>
+						</div>
+						<!-- {#if $myForm.hasError('password.required')}
+							<p class="help is-danger">Password is required</p>
+						{/if} -->
+					</div>
+
+
 					<div class="field">
 						<label class="label" for="password">Password</label>
 						<div class="control has-icons-left">
@@ -115,10 +171,10 @@
 
 					<div class="field">
 						<div class="control">
-							<button class="button is-primary" type="submit">Submit</button>
+							<button class="button is-primary" type="submit">Register</button>
 						</div>
 					</div>
-					<a href="/login" use:link>login</a>
+					<a href="/login" use:link>Already have an account? Log in now !</a>
 				</form>
 			</div>
 		</div>
