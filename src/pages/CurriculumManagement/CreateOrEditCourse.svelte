@@ -38,6 +38,7 @@
 	
 
 	function validateFormData(value, formData) {
+		debugger;
 		return new Promise((rs, rj) => {
 			if (formData.get(curriculumFormKeys.icon_file_key).size == 0) {
 				formData.delete(curriculumFormKeys.icon_file_key)
@@ -107,53 +108,39 @@
 					}
 
 					const presentationNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].length
-					if (presentationNotesLength < 1) {
-						rj(new Error(`Not OK: Please add at least 1 presentation notes for every course level`));
-						return;
-					} else
-					{
-						newIndexedArray(presentationNotesLength).forEach(k => {
-							formData.set(
-								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`, 
-								new File(
-									[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`)], 
-									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_presentation_notes_key][k][curriculumFormKeys.lesson_presentation_note_file_name_key]
-								)
-							);
-						});
-					}
+					newIndexedArray(presentationNotesLength).forEach(k => {
+						formData.set(
+							`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`, 
+							new File(
+								[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_presentation_notes_key}.${k}.${curriculumFormKeys.lesson_presentation_note_file_key}`)], 
+								value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_presentation_notes_key][k][curriculumFormKeys.lesson_presentation_note_file_name_key]
+							)
+						);
+					});
+					
 
 					const studentNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_student_notes_key].length
-					if (studentNotesLength < 1) {
-						rj(new Error(`Not OK: Please add at least 1 student notes for every course level`));
-						return;
-					} else {
-						newIndexedArray(studentNotesLength).forEach(k => {
-							formData.set(
-								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_student_notes_key}.${k}.${curriculumFormKeys.lesson_student_note_file_key}`, 
-								new File(
-									[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_student_notes_key}.${k}.${curriculumFormKeys.lesson_student_note_file_key}`)], 
-									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_student_notes_key][k][curriculumFormKeys.lesson_student_note_file_name_key]
-								)
-							);
-						});
-					}
+					newIndexedArray(studentNotesLength).forEach(k => {
+						formData.set(
+							`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_student_notes_key}.${k}.${curriculumFormKeys.lesson_student_note_file_key}`, 
+							new File(
+								[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_student_notes_key}.${k}.${curriculumFormKeys.lesson_student_note_file_key}`)], 
+								value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_student_notes_key][k][curriculumFormKeys.lesson_student_note_file_name_key]
+							)
+						);
+					});
+					
 
 					const teacherNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_teacher_notes_key].length;
-					if (teacherNotesLength < 1) {
-						rj(new Error(`Not OK: Please add at least 1 teacher notes for every course level`));
-						return;
-					} else {
-						newIndexedArray(teacherNotesLength).forEach(k => {
-							formData.set(
-								`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`, 
-								new File(
-									[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`)], 
-									value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_teacher_notes_key][k][curriculumFormKeys.lesson_teacher_note_file_name_key]
-								)
-							);
-						});
-					}
+					newIndexedArray(teacherNotesLength).forEach(k => {
+						formData.set(
+							`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`, 
+							new File(
+								[formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.lessons_key}.${j}.${curriculumFormKeys.lesson_teacher_notes_key}.${k}.${curriculumFormKeys.lesson_teacher_note_file_key}`)], 
+								value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][i][curriculumFormKeys.lesson_teacher_notes_key][k][curriculumFormKeys.lesson_teacher_note_file_name_key]
+							)
+						);
+					});
 
 					const miscMaterialsLength = (value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_misc_materials_key] || []).length;
 					newIndexedArray(miscMaterialsLength).forEach(k => {
@@ -390,6 +377,7 @@
 	}
 
 	function removeLesson(levelIndex, lessonIndex) {
+		debugger;
 		return () => unsetField(`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}`);
 	}
 
@@ -766,7 +754,7 @@
 														name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_number_key}"
 														bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_number_key]}
 													/> 
-													<button class="button is-danger is-light" on:click={removeLesson(levelIndex, lessonIndex)}>
+													<button class="button is-danger is-light" on:click={() => removeLesson(levelIndex, lessonIndex)}>
 														delete this lesson
 													</button>
 												</div>
@@ -810,7 +798,6 @@
 																		type="file"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length - 1}.{curriculumFormKeys.lesson_presentation_note_file_key}"
 																		multiple={false}
-																		required={!(($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length > 0)}
 																		on:change={e => 
 																			handleDocumentChange(e, (file, filename) => {
 																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_presentation_notes_key] || []).length;
@@ -868,7 +855,6 @@
 																		type="file"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []).length - 1}.{curriculumFormKeys.lesson_student_note_file_key}"
 																		multiple={false}
-																		required={!(($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []).length > 0)}
 																		on:change={e => 
 																			handleDocumentChange(e, (file, filename) => {
 																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key] || []).length;
@@ -926,7 +912,6 @@
 																		type="file"
 																		name={`${curriculumFormKeys.levels_key}.${levelIndex}.${curriculumFormKeys.lessons_key}.${lessonIndex}.${curriculumFormKeys.lesson_teacher_notes_key}.${($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []).length - 1}.${curriculumFormKeys.lesson_teacher_note_file_key}`}
 																		multiple={false}
-																		required={!(($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []).length > 0)}
 																		on:change={e => 
 																			handleDocumentChange(e, (file, filename) => {
 																				const index = ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key] || []).length;
