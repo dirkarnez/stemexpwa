@@ -101,6 +101,11 @@
 				}
 				
 				newIndexedArray(lessonLength).forEach(j => {
+					if (formData.get(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_icon_file_key}`).size == 0) {
+						debugger;
+						formData.delete(`${curriculumFormKeys.levels_key}.${i}.${curriculumFormKeys.level_icon_file_key}`)
+					}
+
 					const presentationNotesLength = value[curriculumFormKeys.levels_key][i][curriculumFormKeys.lessons_key][j][curriculumFormKeys.lesson_presentation_notes_key].length
 					if (presentationNotesLength < 1) {
 						rj(new Error(`Not OK: Please add at least 1 presentation notes for every course level`));
@@ -168,8 +173,8 @@
 	}
 
 	const { form, data, setFields, addField, unsetField } = createForm({
-        onSubmit: (value, context) => {
-			const formData = removeDuplicateKeys(new FormData(context.event.target));
+        onSubmit: (value, {form}) => {
+			const formData = removeDuplicateKeys(new FormData(form));
 			
 			validateFormData(value, formData).then(() => {
 				debugger;
@@ -1002,7 +1007,7 @@
 												</div>
 											{/each}
 											<div class="column is-full">
-												<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addLesson(levelIndex, ($data[curriculumFormKeys.lessons_key] || []).length)}>
+												<button type="button" class="button is-primary is-light" style="width: 100%;" on:click={addLesson(levelIndex, ($data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key] || []).length)}>
 													Add new lesson
 												</button>
 											</div>
