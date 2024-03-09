@@ -9,19 +9,20 @@
 	
 	const { form } = createForm({
 		onSubmit: (values) => {
+			debugger;
 			alert("Will be available");
-				// const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
-				// 	method: "POST",
-				// 	body: JSON.stringify(values)
-				// });
+				const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
+					method: "POST",
+					body: JSON.stringify(values)
+				});
 
-				// wrappedFetchPromise
-				// .then(() => {
-				// 	navigate("/", { replace: true });
-				// })
-				// .catch(e => {
-				// 	alert("fetch error: " + "cannot login");
-				// });
+				wrappedFetchPromise
+				.then(() => {
+					navigate("/", { replace: true });
+				})
+				.catch(e => {
+					alert("fetch error: " + "cannot login");
+				});
 		}
 	})
 
@@ -130,7 +131,7 @@
 									id="contactNumber"
 									class="input"
 									type="text"
-									name="contact-number"
+									name="contact_number"
 									placeholder="Enter your contact number"/>
 							<!-- {/if} -->
 							<span class="icon is-small is-left">

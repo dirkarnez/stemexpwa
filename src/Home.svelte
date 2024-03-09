@@ -118,7 +118,6 @@
 	<Link to="/installation">Installation</Link>
 	<Link to="/settings">Settings</Link>
 </nav> -->
-{#if !!role}
 <nav class="navbar" aria-label="main navigation" style="box-shadow: 0 0 2rem #2125291a;">
 	<div class="navbar-brand">
 		<div class="navbar-start">
@@ -436,6 +435,5 @@
 		</Router>
 	</section>
 </div>
-{/if}
 
 
