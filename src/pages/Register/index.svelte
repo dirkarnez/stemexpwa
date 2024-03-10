@@ -23,7 +23,7 @@
 				navigate("/", { replace: true });
 			})
 			.catch(e => {
-				registerButtonText = "Oops! Something went wrong, please try again later."
+				registerButtonText = "Oops! Something went wrong. Please try again later."
 				alert("fetch error: " + "cannot login");
 			})
 			.finally(() => {
