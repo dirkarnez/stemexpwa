@@ -1,6 +1,5 @@
 <script>
 	import { Router, Route } from "svelte-routing";
-	import stemex_icon from "../../assets/images/stemex_icon.png";
 	import Home from "./Home.svelte";
 	import LoginPage from "./pages/Login/index.svelte";
 	import RegisterPage from "./pages/Register/index.svelte";

@@ -1,5 +1,6 @@
 <script>
 	import { Router, Route, useLocation } from "svelte-routing";
+    import stemex_icon from "../../assets/images/stemex_icon.png";
     import queryString from 'query-string';
     import { WrappedFetch } from "../../utils/fetch";
 	import { onMount } from "svelte";
