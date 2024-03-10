@@ -86,7 +86,7 @@
 									name="user_name"
 									type="text"
 									placeholder="Enter your user name"
-									required/>
+									required={true}/>
 							<!-- {/if} -->
 							<span class="icon is-small is-left">
 								<i class="fas fa-user" />
