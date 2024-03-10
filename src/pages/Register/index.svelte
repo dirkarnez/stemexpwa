@@ -23,6 +23,7 @@
 				navigate("/", { replace: true });
 			})
 			.catch(e => {
+				registerButtonText
 				alert("fetch error: " + "cannot login");
 			})
 			.finally(() => {
