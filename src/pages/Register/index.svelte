@@ -24,7 +24,6 @@
 			})
 			.catch(e => {
 				registerButtonText = "Oops! Something went wrong. Please try again later."
-				alert("fetch error: " + "cannot login");
 			})
 			.finally(() => {
 				registerButtonText = "Register";
