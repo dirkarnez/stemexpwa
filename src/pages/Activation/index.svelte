@@ -41,7 +41,7 @@
                 {#if isActivated}
                     <p>Your account is activated!</p>
                 {:else}
-                    <p>Your account is activated!</p>
+                    <p>Oops, something is wrong with the link. Please try again later.</p>
                 {/if}
 			</div>
 		</div>
