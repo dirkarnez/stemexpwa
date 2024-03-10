@@ -16,7 +16,7 @@
         });
         wrappedFetchPromise
             .then(() => {
-                message
+                message = "Your account is activated"
             })
             .catch(e => {
 
