@@ -172,7 +172,7 @@
 
 					<div class="field">
 						<div class="control">
-							<button class="button is-warning is-fullwidth" type="submit">Register</button>
+							<button class="button is-warning is-fullwidth" type="submit">{registerButtonText}</button>
 						</div>
 					</div>
 					<a href="/login" use:link>Already have an account? Log in now !</a>
