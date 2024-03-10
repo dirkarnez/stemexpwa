@@ -9,7 +9,7 @@
     onMount(() => {
         const [  wrappedFetchPromise , abort ] = WrappedFetch(`/api/activation"`, {
             method: "POST",
-            body: JSON.stringify(values)
+            body: JSON.stringify({key: key})
         });
         wrappedFetchPromise
         .then(() => {
