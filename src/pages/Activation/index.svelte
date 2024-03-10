@@ -16,22 +16,24 @@
 		ActivationFailed
 	}
 
-	let state: State =  State.Idle;
+	let state: State =  !!key ? State.Idle : State.ActivationFailed;
 
 	onMount(() => {
-		state = State.Activating;
+		if (state == State.Idle) {
+			state = State.Activating;
 
-		const [wrappedFetchPromise, abort] = WrappedFetch(`/api/activation`, {
-			method: "POST",
-			body: JSON.stringify({ key: key }),
-		});
-		wrappedFetchPromise
-			.then((data: any) => {
-				state = State.ActivationSuccessful;
-			})
-			.catch((e) => {
-				state = State.ActivationFailed;
+			const [wrappedFetchPromise, abort] = WrappedFetch(`/api/activation`, {
+				method: "POST",
+				body: JSON.stringify({ key: key }),
 			});
+			wrappedFetchPromise
+				.then((data: any) => {
+					state = State.ActivationSuccessful;
+				})
+				.catch((e) => {
+					state = State.ActivationFailed;
+				});
+		}
 	});
 </script>
 
