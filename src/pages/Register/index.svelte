@@ -141,7 +141,8 @@
 									class="input"
 									type="text"
 									name="contact_number"
-									placeholder="Enter your contact number"/>
+									placeholder="Enter your contact number"
+									required={true}/>
 							<!-- {/if} -->
 							<span class="icon is-small is-left">
 								<i class="fa-solid fa-phone"></i>
@@ -169,7 +170,8 @@
 									class="input"
 									type="password"
 									name="password"
-									placeholder="Enter your password"/>
+									placeholder="Enter your password"
+									required={true}/>
 							<!-- {/if} -->
 							<span class="icon is-small is-left">
 								<i class="fas fa-key" />
