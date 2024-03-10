@@ -20,7 +20,7 @@
 			});
 			wrappedFetchPromise
 			.then(() => {
-				registerButtonText = "Regsitered"
+				registerButtonText = "Please check your email for activitation!"
 				return new Promise(res => setTimeout(res, 10000));
 			})
 			.catch(e => {
