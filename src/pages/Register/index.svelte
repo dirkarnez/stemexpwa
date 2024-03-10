@@ -20,7 +20,7 @@
 			});
 			wrappedFetchPromise
 			.then(() => {
-				navigate("/", { replace: true });
+				
 			})
 			.catch(e => {
 				registerButtonText = "Oops! Something went wrong. Please try again later."
