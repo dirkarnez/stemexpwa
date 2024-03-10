@@ -24,7 +24,7 @@
 </script>
 <HundredVh>
 	<h2 slot="title" class="subtitle" style="color: white">
-		Sign in to your account to continue
+		Activating
 	</h2>
     <div slot="content" class="card" style="text-align: left;">
 		<div class="card-content" style="padding: 4rem 2.5rem;">
