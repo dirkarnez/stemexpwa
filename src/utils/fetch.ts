@@ -1,11 +1,11 @@
-export const FakeFetch = (p, data) => new Promise(res => {
-    setTimeout(() => {
-        res(data);
-    }, 500)
-});
+// export const FakeFetch = (p, data) => new Promise(res => {
+//     setTimeout(() => {
+//         res(data);
+//     }, 500)
+// });
 
 
-export const WrappedFetchData = (url, params = {}) => {
+export const WrappedFetchData = (url: string, params: RequestInit = {}) => {
     // return fetch(
     //     location.host.includes("localhost") ? 
     //     `https://localhost${url}`
@@ -28,10 +28,12 @@ export const WrappedFetchData = (url, params = {}) => {
         :
         url;
 
-    const obj = {
+    const include: RequestCredentials = "include"
+
+    const obj: RequestInit = {
         signal: abortController.signal,
         headers: myHeaders,
-        credentials: "include",
+        credentials: include,
         // cache: "no-cache",
         // credentials: 'same-origin',
         // redirect: 'follow',
@@ -54,7 +56,8 @@ export const WrappedFetchData = (url, params = {}) => {
     ];
 }
 
-export const WrappedFetch = (url, params = {}) => {
+type WrappedFetchReturns =  [Promise<any>, AbortController];
+export const WrappedFetch = (url: string, params: RequestInit = {}): WrappedFetchReturns => {
     // return fetch(
     //     location.host.includes("localhost") ? 
     //     `https://localhost${url}`
@@ -70,17 +73,19 @@ export const WrappedFetch = (url, params = {}) => {
     var myHeaders = new Headers();
     // myHeaders.append("pragma", "no-cache");
     // myHeaders.append("Cache-Control", "no-cache");
-
+    
     const input = isDev
         ?
         `https://localhost:443${url}`
         :
         url;
 
-    const obj = {
+    const include: RequestCredentials = "include"
+
+    const obj: RequestInit = {
         signal: abortController.signal,
         headers: myHeaders,
-        credentials: "include",
+        credentials: include,
         // cache: "no-cache",
         // credentials: 'same-origin',
         // redirect: 'follow',
@@ -104,7 +109,7 @@ export const WrappedFetch = (url, params = {}) => {
 }
 
 // const [  wrappedFetchPromise , abort ] = WrappedFetchPOST("/api/login", JSON.stringify(myForm.summary()));
-export const WrappedFetchPOST = (url, stringifiedJSON) => {
+export const WrappedFetchPOST = (url: string, stringifiedJSON: string) => {
     return WrappedFetch(url, {
         method: "POST",
         body: stringifiedJSON
@@ -112,7 +117,7 @@ export const WrappedFetchPOST = (url, stringifiedJSON) => {
 }
 
 // const [  wrappedFetchPromise , abort ] = WrappedFetchPOST("/api/login", JSON.stringify(myForm.summary()));
-export const WrappedFetchPOSTMultipart = (url, formData) => {
+export const WrappedFetchPOSTMultipart = (url: string, formData: FormData) => {
     //const formData = new FormData();
 
    //objectToFormData(obj, formData, "");
@@ -124,7 +129,7 @@ export const WrappedFetchPOSTMultipart = (url, formData) => {
 }
 
 
-function objectToFormData(obj, formData, parentKey) {
+function objectToFormData(obj: any, formData: FormData, parentKey: string) {
     for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
             const value = obj[key];
