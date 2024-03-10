@@ -20,7 +20,7 @@
 			});
 			wrappedFetchPromise
 			.then(() => {
-				registerButtonText = "Oops! Something went wrong. Please try again later."
+				registerButtonText = "Regsitered"
 				return new Promise(res => setTimeout(res, 10000));
 			})
 			.catch(e => {
