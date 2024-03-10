@@ -3,6 +3,8 @@
     import queryString from 'query-string';
     import { WrappedFetch } from "../../utils/fetch";
 	import { onMount } from "svelte";
+    import HundredVh from "../../components/HundredVh/index.svelte";
+    
 	let location = useLocation();
     const key = queryString.parse($location.search)["key"] || "";
 
