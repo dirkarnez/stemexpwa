@@ -5,8 +5,9 @@
 	import { navigate, link } from "svelte-routing";
 	import { WrappedFetch } from "../../utils/fetch";
 	import { createForm } from 'felte';
-	import HundredVh from "../../components/HundredVh/index.svelte"
-	
+	import HundredVh from "../../components/HundredVh/index.svelte";
+	import SocialMediaButtons from "../../components/SocialMediaButtons/index.svelte";
+
 	const { form } = createForm({
 		onSubmit: (values) => {
 			debugger;
@@ -116,10 +117,14 @@
 
 					<div class="field">
 						<div class="control">
-							<button class="button is-primary" type="submit">Log in</button>
+							<button class="button is-warning is-fullwidth" type="submit">Log in</button>
 						</div>
 					</div>
 					<a href="/register" use:link>Don't have an account? Sign up now!</a>
+					<div>
+						<div class="divider">OR</div>
+					</div>
+					<SocialMediaButtons/>
 				</form>
 			</div>
 		</div>

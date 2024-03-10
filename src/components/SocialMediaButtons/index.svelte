@@ -1,0 +1,3 @@
+<button type="button" class="button is-light is-fullwidth mb-1" on:click={() => { alert("To be available"); }}><i class="fa-brands fa-google"></i>&nbsp;&nbsp;Continue with Google</button>
+<button type="button" class="button is-dark is-fullwidth has-text-white mb-1" on:click={() => { alert("To be available"); }}><i class="fa-brands fa-apple"></i>&nbsp;&nbsp;Continue with Apple</button>
+<button type="button" class="button is-fullwidth has-text-white" style="background-color: #316FF6;" on:click={() => { alert("To be available"); }}><i class="fa-brands fa-facebook"></i>&nbsp;&nbsp;Continue with Facebook</button>

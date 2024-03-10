@@ -68,7 +68,7 @@
 		class="columns is-centered has-text-centered mt-4 mb-4"
 		style="width: 100%; max-width: 1024px">
 		<div class="column is-full-mobile is-half-desktop is-half-tablet">
-			<h1 class="title" style="color: white">STEMex Academy</h1>
+			<h1 class="title" style="color: white">STEMex Hub</h1>
             <slot name="title"></slot>
             <slot name="content"></slot>
         </div>
