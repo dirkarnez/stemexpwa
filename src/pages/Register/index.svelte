@@ -139,7 +139,7 @@
 								<input
 									id="contactNumber"
 									class="input"
-									type="text"
+									type="tel"
 									name="contact_number"
 									placeholder="Enter your contact number"
 									required={true}/>
