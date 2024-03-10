@@ -1,6 +1,7 @@
 <script>
 	import { Router, Route, useLocation } from "svelte-routing";
     import queryString from 'query-string';
+    import { WrappedFetch } from "../../utils/fetch";
 	import { onMount } from "svelte";
 	let location = useLocation();
     const key = queryString.parse($location.search)["key"] || "";
