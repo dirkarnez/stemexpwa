@@ -16,7 +16,7 @@
         });
         wrappedFetchPromise
             .then(() => {
-                
+                message
             })
             .catch(e => {
 
