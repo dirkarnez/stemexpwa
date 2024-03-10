@@ -38,6 +38,7 @@
 						height="132"
 						class="img-fluid" />
 				</div>
+                {isActivated}
 			</div>
 		</div>
 	</div>
