@@ -10,20 +10,18 @@
 	
 	const { form } = createForm({
 		onSubmit: (values) => {
-			debugger;
-			alert("Will be available");
-				const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
-					method: "POST",
-					body: JSON.stringify(values)
-				});
+			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
+				method: "POST",
+				body: JSON.stringify(values)
+			});
 
-				wrappedFetchPromise
-				.then(() => {
-					navigate("/", { replace: true });
-				})
-				.catch(e => {
-					alert("fetch error: " + "cannot login");
-				});
+			wrappedFetchPromise
+			.then(() => {
+				navigate("/", { replace: true });
+			})
+			.catch(e => {
+				alert("fetch error: " + "cannot login");
+			});
 		}
 	})
 
