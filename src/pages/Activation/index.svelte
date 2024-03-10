@@ -7,22 +7,22 @@
     const key = queryString.parse($location.search)["key"] || "";
 
     onMount(() => {
-        const [  wrappedFetchPromise , abort ] = WrappedFetch(`/api/Activation?key=${key}"`, {
-				method: "POST",
-				body: JSON.stringify(values)
-			});
-			wrappedFetchPromise
-			.then(() => {
-				registerButtonText = "Please check your email for activation!"
-				return new Promise(res => setTimeout(res, 10000));
-			})
-			.catch(e => {
-				registerButtonText = "Oops! Something went wrong. Please try again later."
-				return new Promise(res => setTimeout(res, 10000));
-			})
-			.finally(() => {
-				registerButtonText = "Register";
-			});
+        const [  wrappedFetchPromise , abort ] = WrappedFetch(`/api/activation?key=${key}"`, {
+            method: "POST",
+            body: JSON.stringify(values)
+        });
+        wrappedFetchPromise
+        .then(() => {
+            registerButtonText = "Please check your email for activation!"
+            return new Promise(res => setTimeout(res, 10000));
+        })
+        .catch(e => {
+            registerButtonText = "Oops! Something went wrong. Please try again later."
+            return new Promise(res => setTimeout(res, 10000));
+        })
+        .finally(() => {
+            registerButtonText = "Register";
+        });
     })
 </script>
 
