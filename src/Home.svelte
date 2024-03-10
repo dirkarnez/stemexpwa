@@ -119,8 +119,8 @@
 	<Link to="/settings">Settings</Link>
 </nav> -->
 <nav class="navbar" aria-label="main navigation" style="box-shadow: 0 0 2rem #2125291a;">
-	<div class="navbar-brand">
-		<div class="navbar-start">
+	<div class="navbar-brand" style="width: 15rem;">
+		<div class="navbar-start" style="margin-right: 0;">
 			<a
 				href={`javascript:void(0);`}
 				on:click={toggleSidebar}
@@ -174,6 +174,7 @@
 		</div> -->
 	<!-- </div> -->
 	<div class="navbar-menu">
+		<div class="is-flex is-align-items-center"><div class="control has-icons-right" style="width: 30rem;"><input class="input" type="text" placeholder="Search..."> <span class="icon is-small is-right"><i class="fas fa-search"></i></span></div></div>
 		<div class="navbar-end">
 			<div class="navbar-item">
 			  <!-- <div class="buttons">
