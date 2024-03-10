@@ -140,7 +140,7 @@
 									id="contactNumber"
 									class="input"
 									type="tel"
-									name="contact_number"
+									name="contact_number" inputmode="numeric" pattern="[0-9]+" minlength="8" maxlength="20"
 									placeholder="Enter your contact number"
 									required={true}/>
 							<!-- {/if} -->
