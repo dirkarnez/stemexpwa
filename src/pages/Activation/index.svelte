@@ -38,7 +38,9 @@
 						height="132"
 						class="img-fluid" />
 				</div>
-                {isActivated}
+                {#if isActivated}
+                {else}
+                {/if}
 			</div>
 		</div>
 	</div>
