@@ -39,7 +39,7 @@
 						class="img-fluid" />
 				</div>
                 {#if isActivated}
-                    <p>Your account is activated!</p>
+                    <p>Your account is activated! Please proceed</p>
                 {:else}
                     <p>Oops, something is wrong with the link. Please try again later.</p>
                 {/if}
