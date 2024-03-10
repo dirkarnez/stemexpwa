@@ -19,7 +19,7 @@
                 isActivated = true;
             })
             .catch(e => {
-                isActivated = true;
+                isActivated = false;
             });
     })
 </script>
