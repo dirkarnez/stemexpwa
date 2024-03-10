@@ -8,7 +8,7 @@
 
 	let location = useLocation();
     const key = queryString.parse($location.search)["key"] || "";
-    let isactivated;
+    let isActivated;
     onMount(() => {
         const [  wrappedFetchPromise , abort ] = WrappedFetch(`/api/activation"`, {
             method: "POST",
@@ -16,10 +16,10 @@
         });
         wrappedFetchPromise
             .then(() => {
-                message = "Your account is activated"
+                isActivated = true;
             })
             .catch(e => {
-
+                isActivated = true;
             });
     })
 </script>
