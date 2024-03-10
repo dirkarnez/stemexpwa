@@ -13,7 +13,7 @@
 	const { form } = createForm({
 		onSubmit: (values) => {
 			registerButtonText = "Registering...";
-			
+
 			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
 				method: "POST",
 				body: JSON.stringify(values)
@@ -85,7 +85,8 @@
 									class="input"
 									name="user_name"
 									type="text"
-									placeholder="Enter your user name"/>
+									placeholder="Enter your user name"
+									required/>
 							<!-- {/if} -->
 							<span class="icon is-small is-left">
 								<i class="fas fa-user" />
