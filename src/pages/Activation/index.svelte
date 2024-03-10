@@ -13,15 +13,10 @@
         });
         wrappedFetchPromise
             .then(() => {
-                registerButtonText = "Please check your email for activation!"
                 return new Promise(res => setTimeout(res, 10000));
             })
             .catch(e => {
-                registerButtonText = "Oops! Something went wrong. Please try again later."
                 return new Promise(res => setTimeout(res, 10000));
-            })
-            .finally(() => {
-                registerButtonText = "Register";
             });
     })
 </script>
