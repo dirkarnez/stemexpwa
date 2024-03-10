@@ -13,7 +13,7 @@
 	const { form } = createForm({
 		onSubmit: (values) => {
 			registerButtonText = "Registering...";
-			
+
 			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
 				method: "POST",
 				body: JSON.stringify(values)
@@ -24,6 +24,9 @@
 			})
 			.catch(e => {
 				alert("fetch error: " + "cannot login");
+			})
+			.finally(() => {
+				registerButtonText = "Register";
 			});
 		}
 	})
