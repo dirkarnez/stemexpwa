@@ -1,5 +1,5 @@
 <script>
-	import { Router, Route, useLocation } from "svelte-routing";
+	import { Router, Route, useLocation, link } from "svelte-routing";
     import stemex_icon from "../../assets/images/stemex_icon.png";
     import queryString from 'query-string';
     import { WrappedFetch } from "../../utils/fetch";
@@ -39,7 +39,7 @@
 						class="img-fluid" />
 				</div>
                 {#if isActivated}
-                    <p>Your account is activated! Please proceed to <a href="/login">login</a>!</p>
+                    <p>Your account is activated! Please proceed to <a href="/login" use:link>login</a>!</p>
                 {:else}
                     <p>Oops, something is wrong with the link. Please try again later.</p>
                 {/if}
