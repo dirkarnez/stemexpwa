@@ -9,6 +9,7 @@
 	import SocialMediaButtons from "../../components/SocialMediaButtons/index.svelte";
 	
 	let registerButtonText = "Register";
+
 	const { form } = createForm({
 		onSubmit: (values) => {
 			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
