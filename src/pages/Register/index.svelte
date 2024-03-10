@@ -12,11 +12,12 @@
 
 	const { form } = createForm({
 		onSubmit: (values) => {
+			registerButtonText = "Registering...";
+			
 			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
 				method: "POST",
 				body: JSON.stringify(values)
 			});
-
 			wrappedFetchPromise
 			.then(() => {
 				navigate("/", { replace: true });
