@@ -8,7 +8,7 @@
 
 	let location = useLocation();
     const key = queryString.parse($location.search)["key"] || "";
-
+    let message;
     onMount(() => {
         const [  wrappedFetchPromise , abort ] = WrappedFetch(`/api/activation"`, {
             method: "POST",
