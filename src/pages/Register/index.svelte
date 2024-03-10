@@ -113,7 +113,8 @@
 									class="input"
 									type="text"
 									name="email"
-									placeholder="Enter your email"/>
+									placeholder="Enter your email"
+									required={true}/>
 							<!-- {/if} -->
 							<span class="icon is-small is-left">
 								<i class="fa-solid fa-at"></i>
