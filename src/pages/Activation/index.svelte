@@ -10,7 +10,7 @@
     const key = queryString.parse($location.search)["key"] || "";
     let isActivated;
     onMount(() => {
-        const [  wrappedFetchPromise , abort ] = WrappedFetch(`/api/activation"`, {
+        const [  wrappedFetchPromise , abort ] = WrappedFetch(`/api/activation`, {
             method: "POST",
             body: JSON.stringify({key: key})
         });
