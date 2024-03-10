@@ -6,6 +6,7 @@
     const key = queryString.parse($location.search)["key"] || "";
 
     onMount(() => {
+        debugger;
         fetch(`/api/${key}`)
     })
 </script>
