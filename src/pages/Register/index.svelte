@@ -8,6 +8,7 @@
 	import HundredVh from "../../components/HundredVh/index.svelte";
 	import SocialMediaButtons from "../../components/SocialMediaButtons/index.svelte";
 	
+	let registerButtonText = "Register";
 	const { form } = createForm({
 		onSubmit: (values) => {
 			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
