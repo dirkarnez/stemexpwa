@@ -13,12 +13,12 @@
         });
         wrappedFetchPromise
             .then(() => {
-                return new Promise(res => setTimeout(res, 10000));
+
             })
             .catch(e => {
-                return new Promise(res => setTimeout(res, 10000));
+
             });
     })
 </script>
 
-<h1>{key}</h1>
+<h1></h1>
