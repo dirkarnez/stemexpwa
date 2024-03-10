@@ -111,7 +111,7 @@
 								<input
 									id="email"
 									class="input"
-									type="text"
+									type="email"
 									name="email"
 									placeholder="Enter your email"
 									required={true}/>
