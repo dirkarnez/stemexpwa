@@ -23,7 +23,7 @@
 				navigate("/", { replace: true });
 			})
 			.catch(e => {
-				registerButtonText = "Oops!\nSomething went wrong. Please try again later."
+				registerButtonText = "Oops! Something went wrong. Please try again later."
 				return new Promise(res => setTimeout(res, 10000));
 			})
 			.finally(() => {
