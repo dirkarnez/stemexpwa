@@ -39,3 +39,6 @@ stemexpwa
 - [ ] [Oppia | Free, Online and Interactive Lessons for Anyone](https://www.oppia.org/)
 - [ ] breadcrumb
 - [ ] 2-level of aside
+- [ ] [How to Add Sign in with Apple to your React app! - YouTube](https://www.youtube.com/watch?v=BxNpGkMyGes)
+    -  [Sign in with Apple from a Firebase Web App - YouTube](https://www.youtube.com/watch?v=UafqYgRoIC0)
+    -  [markbates/goth: Package goth provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.](https://github.com/markbates/goth)
