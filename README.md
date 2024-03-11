@@ -27,6 +27,7 @@ stemexpwa
     - https://svelte.dev/examples/svelte-component
 - [ ] email activation code sample "You are almost there"
     - [Promotional template - Stacks](https://stackoverflow.design/email/templates/promotional/)
+    - [Free Email Verification Template](https://www.mailmodo.com/email-templates/email-verification-template/)
 - [x] YT
     - ```html
       <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
