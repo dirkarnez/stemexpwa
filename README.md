@@ -41,6 +41,7 @@ stemexpwa
 - [x] ~umd~ Just iframe instead, cannot afford css issues
 - [ ] [Oppia | Free, Online and Interactive Lessons for Anyone](https://www.oppia.org/)
 - [ ] breadcrumb
+- [ ] [dirkarnez/svelte-dropdown-filter](https://github.com/dirkarnez/svelte-dropdown-filter)
 - [ ] 2-level of aside
 - [ ] [How to Add Sign in with Apple to your React app! - YouTube](https://www.youtube.com/watch?v=BxNpGkMyGes)
     -  [Sign in with Apple from a Firebase Web App - YouTube](https://www.youtube.com/watch?v=UafqYgRoIC0)
