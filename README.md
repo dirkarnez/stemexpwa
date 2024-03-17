@@ -43,6 +43,7 @@ stemexpwa
 - [ ] breadcrumb
 - [ ] [dirkarnez/svelte-dropdown-filter](https://github.com/dirkarnez/svelte-dropdown-filter)
 - [ ] 2-level of aside
+- [ ] https://mcd.feedspot.com/media-contact-database/category?_src=rss&_origin=nepal_news_rss_feeds
 - [ ] [How to Add Sign in with Apple to your React app! - YouTube](https://www.youtube.com/watch?v=BxNpGkMyGes)
     -  [Sign in with Apple from a Firebase Web App - YouTube](https://www.youtube.com/watch?v=UafqYgRoIC0)
     -  [markbates/goth: Package goth provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.](https://github.com/markbates/goth)
