@@ -44,6 +44,42 @@
 	
 	onMount(init);
 </script>
+<div class="columns">
+	<div class="column">
+		<div class="content">
+			<h4>Curriculum</h4>
+			<nav class="breadcrumb" aria-label="breadcrumbs">
+				<ul style="margin-left: 0;">
+				  <li><a href={`javascript:void(0)`}>Bulma</a></li>
+				  <li><a href={`javascript:void(0)`}>Documentation</a></li>
+				  <li><a href={`javascript:void(0)`}>Components</a></li>
+				  <li class="is-active"><a href={`javascript:void(0)`} aria-current="page">Breadcrumb</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- {#if (previousPath.match(/\//g) || []).length > 1}
+			<p>
+				<a href={previousPath} class="button is-danger" use:link>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="feather feather-chevron-left align-middle">
+						<polyline points="15 18 9 12 15 6" />
+					</svg>
+					Back
+				</a>
+			</p>
+		{/if} -->
+	</div>
+</div>
+
 <Router>
 	{#if Array.isArray(curriculum)}
 		{#each curriculum as { description, icon_id, id, parent_id, is_course } }
@@ -87,34 +123,6 @@
 	</Route>
 
 	<Route path="/">
-		<div class="columns">
-			<div class="column">
-				<div class="content">
-					<h4>Curriculum</h4>
-				</div>
-				<!-- {#if (previousPath.match(/\//g) || []).length > 1}
-					<p>
-						<a href={previousPath} class="button is-danger" use:link>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="feather feather-chevron-left align-middle">
-								<polyline points="15 18 9 12 15 6" />
-							</svg>
-							Back
-						</a>
-					</p>
-				{/if} -->
-			</div>
-		</div>
-		
 		<div class="columns is-multiline is-mobile">
 			{#if Array.isArray(curriculum)}
 				{#each curriculum as { description, icon_id, is_course }, index}

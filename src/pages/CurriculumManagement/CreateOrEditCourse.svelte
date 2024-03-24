@@ -427,11 +427,6 @@
 
 <div class="columns is-multiline">
 	<div class="column is-full">
-		<div class="content">
-			<h4>Curriculum</h4>
-		</div>
-	</div>
-	<div class="column is-full">
 		<div class="box">
 			<form use:form enctype="multipart/form-data">
 				<input
