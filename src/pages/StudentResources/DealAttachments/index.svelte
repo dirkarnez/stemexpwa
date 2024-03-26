@@ -20,14 +20,17 @@
 <h4>Learning Portfolio</h4>
 <div class="columns is-multiline is-mobile">
     <div class="column">
+
+        {#if Array.isArray(portfolios)}
         {#each portfolios as portfolio}
-            <a class="button is-link" href={portfolio.url}  target="_blank">
-                <span class="icon is-small">
-                    <i class="fa fa-download"></i>
-                </span>
-                &nbsp;&nbsp; Download portfolio as PDF
-            </a>
-        {/each}
+        <a class="button is-link" href={portfolio.url}  target="_blank">
+            <span class="icon is-small">
+                <i class="fa fa-download"></i>
+            </span>
+            &nbsp;&nbsp; Download portfolio as PDF
+        </a>
+    {/each}
+        {/if}
     </div>
 </div>
 <h4>Class videos</h4>
