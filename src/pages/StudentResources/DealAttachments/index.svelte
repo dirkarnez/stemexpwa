@@ -18,7 +18,7 @@
 
 {#each attachments.filter(attachment => `${attachment["extension"]}`.endsWith("pdf")) as portfolio}
     {
-        \portfolio
+        portfolio
     }
 {/each}
 
