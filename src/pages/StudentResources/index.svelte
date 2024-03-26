@@ -194,6 +194,8 @@
                             </div>
 						</div>
 
+						<Dealatt dealId={datum["properties"]["hs_object_id"]}/>
+
 						<h4>Class videos</h4>
 						<div class="columns is-multiline is-mobile">
 							{#if Array.isArray(datum.videoGroups) && datum.videoGroups.length > 0 && datum.videoGroups.some((videoGroup) => Array.isArray(videoGroup) && videoGroup.length > 0)}
