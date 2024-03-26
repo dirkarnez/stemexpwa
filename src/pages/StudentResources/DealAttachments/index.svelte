@@ -1,1 +1,3 @@
-/student-deal-attachments
+<!-- <script>
+    /student-deal-attachments -->
+</script>
