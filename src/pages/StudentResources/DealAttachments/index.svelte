@@ -6,7 +6,7 @@
 
     let attachments = [];
 
-    $: portfolios  = attachments.filter(attachment => `${attachment["extension"]}`.endsWith("pdf"));
+    $: portfolios  = (attachments || []).filter(attachment => `${attachment["extension"]}`.endsWith("pdf"));
 
     onMount(() => {
         debugger;
@@ -20,6 +20,7 @@
 <h4>Learning Portfolio</h4>
 <div class="columns is-multiline is-mobile">
     <div class="column">
+
         {#each portfolios as portfolio}
             <a class="button is-link" href={portfolio.url}  target="_blank">
                 <span class="icon is-small">
