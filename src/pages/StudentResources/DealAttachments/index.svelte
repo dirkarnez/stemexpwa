@@ -19,26 +19,24 @@
 </script>
 <h4>Learning Portfolio</h4>
 <div class="columns is-multiline is-mobile">
-    
-        {#if Array.isArray(portfolios) && portfolios.length > 0}
-            <div class="column">
-                {#each portfolios as portfolio}
-                    <a class="button is-link" href={portfolio.url}  target="_blank">
-                        <span class="icon is-small">
-                            <i class="fa fa-download"></i>
-                        </span>
-                        &nbsp;&nbsp; Download portfolio as PDF
-                    </a>
-                {/each}
-            </div>
-        {:else}
-        <div
-            class="column is-half-desktop is-half-tablet is-full-mobile"
-        >
-            None
+    {#if Array.isArray(portfolios) && portfolios.length > 0}
+        <div class="column">
+            {#each portfolios as portfolio}
+                <a class="button is-link" href={portfolio.url}  target="_blank">
+                    <span class="icon is-small">
+                        <i class="fa fa-download"></i>
+                    </span>
+                    &nbsp;&nbsp; Download portfolio as PDF
+                </a>
+            {/each}
         </div>
-        {/if}
-
+    {:else}
+    <div
+        class="column is-half-desktop is-half-tablet is-full-mobile"
+    >
+        None
+    </div>
+    {/if}
 </div>
 <h4>Class videos</h4>
 <div class="columns is-multiline is-mobile">
