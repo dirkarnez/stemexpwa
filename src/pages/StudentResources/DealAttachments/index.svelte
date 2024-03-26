@@ -30,7 +30,11 @@
                 </a>
             {/each}
         {:else}
-            <h2>No portfolio</h2>
+        <div
+        class="column is-half-desktop is-half-tablet is-full-mobile"
+    >
+        None
+    </div>
         {/if}
     </div>
 </div>
