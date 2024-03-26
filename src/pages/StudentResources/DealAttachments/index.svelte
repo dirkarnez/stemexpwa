@@ -31,8 +31,8 @@
 
 <h4>Class videos</h4>
 <div class="columns is-multiline is-mobile">
-{#if Array.isArray(datum.videoGroups) && datum.videoGroups.length > 0 && datum.videoGroups.some((videoGroup) => Array.isArray(videoGroup) && videoGroup.length > 0)}
-    {#each []].videoGroups as videoGroup}
+{#if Array.isArray([].videoGroups) && [].videoGroups.length > 0 && [].videoGroups.some((videoGroup) => Array.isArray(videoGroup) && videoGroup.length > 0)}
+    {#each [].videoGroups as videoGroup}
         <div
             class="column is-half-desktop is-half-tablet is-full-mobile"
         >
@@ -65,7 +65,7 @@
 </div>
 <h4>Class photos</h4>
 <div class="columns is-multiline is-mobile">
-{#if Array.isArray(datum.photoGroups) && datum.photoGroups.length > 0 && datum.photoGroups.some((photoGroup) => Array.isArray(photoGroup) && photoGroup.length > 0)}
+{#if Array.isArray([].photoGroups) && datum.photoGroups.length > 0 && datum.photoGroups.some((photoGroup) => Array.isArray(photoGroup) && photoGroup.length > 0)}
     {#each datum.photoGroups as photoGroup}
         <div
             class="column is-one-third-desktop is-half-tablet is-full-mobile"
