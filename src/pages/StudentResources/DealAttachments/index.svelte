@@ -16,7 +16,5 @@
     })
 </script>
 
-<div>
-    de
-</div>
+{#each datum.videoGroups as videoGroup}
 
