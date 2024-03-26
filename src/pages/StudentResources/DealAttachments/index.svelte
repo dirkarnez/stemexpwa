@@ -20,7 +20,7 @@
 <h4>Learning Portfolio</h4>
 <div class="columns is-multiline is-mobile">
     <div class="column">
-        {#each attachments.filter(attachment => `${attachment["extension"]}`.endsWith("pdf")) as portfolio}
+        {#each portfolios as portfolio}
             <a class="button is-link" href={portfolio.url}  target="_blank">
                 <span class="icon is-small">
                     <i class="fa fa-download"></i>
