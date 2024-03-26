@@ -11,7 +11,9 @@
 	import Collapsible from "../../components/Collapsible/index.svelte";
 	import Modal from "../../components/Modal/index.svelte";
     import LearningPortfolio from "./LearningPortfolio/index.svelte";
+    import DealAttachments from "./DealAttachments/index.svelte";
 	import VideoPlayer from  "../../components/VideoPlayer/index.svelte";
+	
 
 	// import stemexIcon from "./assets/images/stemex_icon.png";
 	// import SmartCity from "../assets/images/upcoming-schedule/Smart City/Level 1-min.png";
