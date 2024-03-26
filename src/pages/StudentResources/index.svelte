@@ -100,6 +100,16 @@
 	let openModal = false;
 
 	let students = [];
+	let deals = {};
+
+	$: if (Array.isArray(students) && !!students[activeStudentIdx]) {
+		const [ wrappedFetchPromise2, abort ] = WrappedFetch(`/api/student-deals?student-id=${students[activeStudentIdx].id}`)
+		wrappedFetchPromise2
+		.then(a => {
+			deals = a["results"];
+		});
+	}
+
 
 	let activeStudentIdx = 0;
 	onMount(() => {
@@ -108,11 +118,7 @@
 			students = studentsResponse;
 
 			// _
-			const [ wrappedFetchPromise2, abort ] = WrappedFetch(`/api/student-deals?student-id=${students[activeStudentIdx].id}`)
-			return wrappedFetchPromise2
-		})
-		.then((a) => {
-			debugger;
+			
 		});
 	});
 
@@ -159,10 +165,11 @@
 	<!-- <div class="column is-two-third-desktop is-two-third-tablet is-full-mobile"> -->
 	<div class="column">
 		<div class="content">
-			{#if Array.isArray(data) && data.length > 0}
-				<Collapsible {data}>
+			{#if Array.isArray(deals)}
+				<Collapsible data={deals}>
 					<svelte:fragment slot="header" let:datum>
-						{datum.className}&nbsp;(Joined at&nbsp{datum.from}&nbsp;to&nbsp;{datum.to})
+						{datum["properties"]["new_course_name"]}&nbsp;(Joined at&nbsp{datum.from}&nbsp;to&nbsp;{datum.to})
+						<input type="hidden" value={datum["properties"]["hs_object_id"]}>
 					</svelte:fragment>
 					<svelte:fragment slot="content" let:datum>
 						<h4>Lesson notes</h4>
