@@ -8,7 +8,7 @@
     onMount(() => {
         debugger;
         console.log(dealId);
-        const [ wrappedFetchPromise, abort ] = WrappedFetch("/api/students-to-user")
+        const [ wrappedFetchPromise, abort ] = WrappedFetch("/api/student-deal-attachments")
 		wrappedFetchPromise.then(studentsResponse => {
 			students = studentsResponse;
 
