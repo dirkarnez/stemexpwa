@@ -16,6 +16,6 @@
     })
 </script>
 
-{#each datum.videoGroups as videoGroup}
+{#each attachments.filter(attachment => attachment["extension"] === "pdf") as videoGroup}
 {/each}
 
