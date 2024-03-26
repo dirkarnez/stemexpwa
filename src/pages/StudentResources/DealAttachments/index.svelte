@@ -5,7 +5,8 @@
     export let dealId = "";
 
     onMount(() => {
-        
+        debugger;
+        console.log(dealId);
     })
 </script>
 
