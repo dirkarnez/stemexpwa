@@ -12,9 +12,7 @@
         const [ wrappedFetchPromise, abort ] = WrappedFetch("/api/student-deal-attachments")
 		wrappedFetchPromise.then(attachmentsResponse => {
 			attachments = attachmentsResponse;
-
-			// _
-			
+            debugger;
 		});
     })
 </script>
