@@ -17,4 +17,5 @@
 </script>
 
 {#each datum.videoGroups as videoGroup}
+{/each}
 
