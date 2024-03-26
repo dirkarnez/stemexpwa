@@ -30,7 +30,7 @@
                 </a>
             {/each}
         {:else}
-            <h2>No Portfolio</h2>
+            <h2>No portfolio</h2>
         {/if}
     </div>
 </div>
