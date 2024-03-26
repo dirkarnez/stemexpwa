@@ -1,4 +1,4 @@
 <script>
-<!----->    /student-deal-attachments -->
+<!---   /student-deal-attachments -->
 </script>
 
