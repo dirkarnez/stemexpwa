@@ -18,16 +18,16 @@
 
 <div class="columns is-multiline is-mobile">
     <div class="column">
-        <LearningPortfolio/>
+        {#each attachments.filter(attachment => `${attachment["extension"]}`.endsWith("pdf")) as portfolio}
+        <a class="button is-link" href={portfolio.url}  target="_blank">
+            <span class="icon is-small">
+                <i class="fa fa-download"></i>
+            </span>
+            &nbsp;&nbsp; Download portfolio as PDF
+        </a>
+        {/each}
     </div>
 </div>
 
-{#each attachments.filter(attachment => `${attachment["extension"]}`.endsWith("pdf")) as portfolio}
-<a class="button is-link" href={portfolio.url}  target="_blank">
-    <span class="icon is-small">
-        <i class="fa fa-download"></i>
-    </span>
-    &nbsp;&nbsp; Download portfolio as PDF
-</a>
-{/each}
+
 
