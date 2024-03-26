@@ -31,10 +31,10 @@
             {/each}
         {:else}
         <div
-        class="column is-half-desktop is-half-tablet is-full-mobile"
-    >
-        None
-    </div>
+            class="column is-half-desktop is-half-tablet is-full-mobile"
+        >
+            None
+        </div>
         {/if}
     </div>
 </div>
