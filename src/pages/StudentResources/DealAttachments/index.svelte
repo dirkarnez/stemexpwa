@@ -1,5 +1,6 @@
 <script>
 // /student-deal-attachments 
+    export let dealId = "";
 </script>
 
 <div>
