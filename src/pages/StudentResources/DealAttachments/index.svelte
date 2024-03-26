@@ -6,6 +6,8 @@
 
     let attachments = [];
 
+    $: portfolios  = attachments.filter(attachment => `${attachment["extension"]}`.endsWith("pdf"));
+
     onMount(() => {
         debugger;
         console.log(dealId);
