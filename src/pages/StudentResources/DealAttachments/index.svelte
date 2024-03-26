@@ -29,6 +29,8 @@
                     &nbsp;&nbsp; Download portfolio as PDF
                 </a>
             {/each}
+        {:else}
+            <h2>No Portfolio</h2>
         {/if}
     </div>
 </div>
