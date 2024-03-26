@@ -137,7 +137,7 @@
 {#if !!svg}
 	{@html svg.node().outerHTML}
 	<br />
-	<a class="button is-link" href={portfolio.url} >
+	<a class="button is-link" href={portfolio.url}  target="_blank">
 		<span class="icon is-small">
 			<i class="fa fa-download"></i>
 		</span>
