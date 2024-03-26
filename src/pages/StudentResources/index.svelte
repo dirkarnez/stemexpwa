@@ -168,7 +168,7 @@
 			{#if Array.isArray(deals)}
 				<Collapsible data={deals}>
 					<svelte:fragment slot="header" let:datum>
-						{datum["properties"]["new_course_name"]}&nbsp;(datum["course_dates"]})
+						{datum["properties"]["new_course_name"]}&nbsp;({datum["course_dates"]})
 						<input type="hidden" value={datum["properties"]["hs_object_id"]}>
 					</svelte:fragment>
 					<svelte:fragment slot="content" let:datum>
