@@ -99,6 +99,23 @@
 
 	let openModal = false;
 
+	let students = [];
+
+	let activeStudentIdx = 0;
+	onMount(() => {
+		const [ wrappedFetchPromise, abort ] = WrappedFetch("/api/students-to-user")
+		wrappedFetchPromise.then(studentsResponse => {
+			students = studentsResponse;
+
+			// _
+			const [ wrappedFetchPromise2, abort ] = WrappedFetch(`/api/student-deals?student-id=${students[activeStudentIdx].id}`)
+			return wrappedFetchPromise2
+		})
+		.then((a) => {
+			debugger;
+		});
+	});
+
 
 
 	// const currentPath = $location.pathname;
@@ -120,7 +137,9 @@
 
 <div class="tabs">
 	<ul>
-		<li class="is-active"><a href={`javascript:void(0)`}>Lincoln Leung</a></li>
+		{#each students as student, i}
+			<li class={i == activeStudentIdx ? "is-active" : ""}><a href={`javascript:void(0)`}>{student.name}</a></li>
+		{/each}
 	</ul>
 </div>
 

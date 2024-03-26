@@ -60,7 +60,7 @@ $beige-lighter: #EFF0EB;
   --bulma-family-primary: "Balsamiq Sans", sans-serif;
   --bulma-family-secondary: "Balsamiq Sans", sans-serif;
   --bulma-menu-item-radius: 0;
-  
+
   --bulma-menu-item-hover-color: #e9ecefbf;
   --bulma-menu-item-hover-background-color: unset;
   --bulma-menu-list-link-padding: 0.625rem 1.625rem;
@@ -86,7 +86,7 @@ $beige-lighter: #EFF0EB;
 // }
 
 
-// @import "video.js/dist/video-js.min.css";
+@import "video.js/dist/video-js.min.css";
 // @import "~@creativebulma/bulma-divider";
 
 // @include mobile {
@@ -125,6 +125,7 @@ html {
   height: fill-available;
   height: -webkit-fill-available;
   scroll-behavior: smooth;
+  overflow-y: auto;
 }
 
 body {
