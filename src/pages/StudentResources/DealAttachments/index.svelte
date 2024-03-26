@@ -28,7 +28,6 @@
         {/each}
     </div>
 </div>
-
 <h4>Class videos</h4>
 <div class="columns is-multiline is-mobile">
 {#if Array.isArray([].videoGroups) && [].videoGroups.length > 0 && [].videoGroups.some((videoGroup) => Array.isArray(videoGroup) && videoGroup.length > 0)}
