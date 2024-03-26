@@ -16,6 +16,12 @@
     })
 </script>
 
+<div class="columns is-multiline is-mobile">
+    <div class="column">
+        <LearningPortfolio/>
+    </div>
+</div>
+
 {#each attachments.filter(attachment => `${attachment["extension"]}`.endsWith("pdf")) as portfolio}
 <a class="button is-link" href={portfolio.url}  target="_blank">
     <span class="icon is-small">
