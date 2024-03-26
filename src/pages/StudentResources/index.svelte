@@ -189,12 +189,12 @@
 						</div>
 
 
-						<h4>Learning Portfolio</h4>
+						<!-- <h4>Learning Portfolio</h4>
 						<div class="columns is-multiline is-mobile">
 							<div class="column">
                                 <LearningPortfolio/>
                             </div>
-						</div>
+						</div> -->
 
 						<DealAttachments dealId={datum["properties"]["hs_object_id"]}/>
 
