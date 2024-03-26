@@ -66,22 +66,22 @@
 <h4>Class photos</h4>
 <div class="columns is-multiline is-mobile">
 {#if Array.isArray([].photoGroups) && [].photoGroups.length > 0 && [].photoGroups.some((photoGroup) => Array.isArray(photoGroup) && photoGroup.length > 0)}
-    {#each datum.photoGroups as photoGroup}
+    {#each [].photoGroups as photoGroup}
         <div
             class="column is-one-third-desktop is-half-tablet is-full-mobile"
         >
             {#each photoGroup as photo}
                 <button
                     on:click={() => {
-                        openModal = true;
+                        // openModal = true;
                     }}
                     style="border: none; margin-bottom: 0.75rem;background-color: white;"
                 >
-                    <img
+                    <!-- <img
                         src={getResourcesAPIByID(photo)}
                         style="width: 100%;"
                         alt="random img"
-                    />
+                    /> -->
                 </button>
             {/each}
         </div>
