@@ -2,8 +2,9 @@
 	import { onMount } from "svelte";
     import { FakeFetch, WrappedFetch } from "../../../utils/fetch";
 
-// /student-deal-attachments 
     export let dealId = "";
+
+    let attachments = [];
 
     onMount(() => {
         debugger;
