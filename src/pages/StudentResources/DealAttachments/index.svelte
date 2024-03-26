@@ -17,8 +17,12 @@
 </script>
 
 {#each attachments.filter(attachment => `${attachment["extension"]}`.endsWith("pdf")) as portfolio}
-    {
-        portfolio
-    }
+    
+    <button class="button is-link" on:click={a}>
+		<span class="icon is-small">
+			<i class="fa fa-download"></i>
+		</span>
+		&nbsp;&nbsp; Download portfolio as PDF
+	</button>
 {/each}
 
