@@ -137,10 +137,10 @@
 {#if !!svg}
 	{@html svg.node().outerHTML}
 	<br />
-	<button class="button is-link" on:click={a}>
+	<a class="button is-link" on:click={a}>
 		<span class="icon is-small">
 			<i class="fa fa-download"></i>
 		</span>
 		&nbsp;&nbsp; Download portfolio as PDF
-	</button>
+	</a>
 {/if}
