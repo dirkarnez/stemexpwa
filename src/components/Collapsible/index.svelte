@@ -20,7 +20,6 @@
         <slot name="header" slot="header" datum={datum}/>
         <slot name="content" slot="content" datum={datum}/>
     </CollapsibleCard>
-    <br>
 {/each}     
 
 
