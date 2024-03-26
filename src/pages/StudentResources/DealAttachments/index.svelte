@@ -9,8 +9,8 @@
         debugger;
         console.log(dealId);
         const [ wrappedFetchPromise, abort ] = WrappedFetch("/api/student-deal-attachments")
-		wrappedFetchPromise.then(studentsResponse => {
-			students = studentsResponse;
+		wrappedFetchPromise.then(attachmentsResponse => {
+			attachments = attachmentsResponse;
 
 			// _
 			
