@@ -14,6 +14,7 @@
         const [ wrappedFetchPromise, abort ] = WrappedFetch(`/api/student-deal-attachments?deal-id=${dealId}`)
 		wrappedFetchPromise.then(attachmentsResponse => {
 			attachments = attachmentsResponse.data;
+            
 		});
     })
 </script>
