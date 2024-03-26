@@ -9,7 +9,19 @@ $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 
 @use "bulma/sass";
+@use "bulma/sass/utilities/mixins";
 
+@include mixins.desktop {
+  // Styles applied
+  // below $tablet
+  .my-main {
+    margin-left: 15rem;
+  }
+
+  .my-left-menu:not(.open) {
+    left: 0;
+  }
+}
 
   //$family-sans-serif: '',
 
@@ -39,23 +51,21 @@ $beige-lighter: #EFF0EB;
 // // @import "bulma/sass/layout/hero.sass";
 // // @import "bulma/sass/layout/section.sass";
 
-// $menu-item-radius: 0,
-// $menu-item-color: #e9ecef80 ,
-// $menu-item-active-color: #e9ecef,
-// $menu-item-active-background-color: unset,
-// $menu-item-hover-color: #e9ecefbf,
-// $menu-item-hover-background-color: unset,
-// $menu-list-link-padding: 0.625rem 1.625rem,
-// //$menu-label-spacing: 0;
-// //$menu-label-font-size: 1rem;
-// $menu-label-color:  #e9ecef80
+
 
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
 :root {
-  --bulma-primary: green;
+  --bulma-primary: #0d6efd;
   --bulma-family-primary: "Balsamiq Sans", sans-serif;
   --bulma-family-secondary: "Balsamiq Sans", sans-serif;
+  --bulma-menu-item-radius: 0;
+  
+  --bulma-menu-item-hover-color: #e9ecefbf;
+  --bulma-menu-item-hover-background-color: unset;
+  --bulma-menu-list-link-padding: 0.625rem 1.625rem;
+  //$menu-label-spacing: 0;
+  //$menu-label-font-size: 1rem;
 }
 
 
@@ -79,117 +89,108 @@ $beige-lighter: #EFF0EB;
 // @import "video.js/dist/video-js.min.css";
 // @import "~@creativebulma/bulma-divider";
 
-// // @include mobile {
-// //   #sidebar {
-// //     width: 100%;
-// //   }
-  
-// //   // Styles applied
-// //   // below $tablet
-// // }
-
-// .menu-list a.is-active {
-//   background: linear-gradient(90deg,rgba(59,125,221,.1),rgba(59,125,221,.088) 50%,transparent);
-//   border-left-color: #3b7ddd;
-// }
-// .menu-list a {
-//   border-left: 3px solid transparent;
-// }
-
-// // when in desktop
-// @include desktop {
-//   // .navbar-burger {
-//   //   display: block;
-//   // }
-  
-//   .my-main {
-//     margin-left: 15rem;
+// @include mobile {
+//   #sidebar {
+//     width: 100%;
 //   }
-
-//   .my-left-menu:not(.open) {
-//     left: 0;
-//   }
+  
+//   // Styles applied
+//   // below $tablet
 // }
+
+.menu-list a.is-active {
+  background: linear-gradient(90deg,rgba(59,125,221,.1),rgba(59,125,221,.088) 50%,transparent);
+  border-left-color: #3b7ddd;
+  color: #e9ecef;
+}
+
+.menu-list a {
+  border-left: 3px solid transparent;
+  background-color: unset;
+  color:  #e9ecef80;
+}
+
+
 
 // // @import "bulma-timeline";
 
-// *
-// {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-// html {
-//   height: fill-available;
-//   height: -webkit-fill-available;
-//   scroll-behavior: smooth;
-// }
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+  height: auto !important;
+  overflow-x: hidden;
+  background-color: #f5f7fb;
+}
+
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+.my-left-menu {
+  z-index: 10;
+  top: var(--bulma-navbar-height);
+  width: 15rem;
+  bottom: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  left: -15rem;
+  overflow: hidden;
+  position: fixed;
+  transition: left 0.3s ease;
+}
+
+.my-left-menu.open {
+  left: 0;
+}
+
+.my-left-menu.closed {
+  left: -15rem;
+}
+
+.my-main {
+  padding-top: var(--bulma-navbar-height);
+  padding-left: 0;
+  padding-right: 0;
+  height: auto !important;
+  min-height: 0px !important;
+  /* Used in this example to enable scrolling */
+  /*width: 100%;*/
+  transition: margin-left 0.3s ease;
+}
+
 
 // body {
-//   margin: 0;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   min-height: 100vh;
-//   min-height: fill-available;
-//   min-height: -webkit-fill-available;
-//   height: auto !important;
-//   overflow-x: hidden;
-//   background-color: #f5f7fb;
+// 	margin: 0;
+// 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+// 		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+// 		sans-serif;
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
 // }
-
-
-// .navbar {
-//   overflow: hidden;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-// }
-
-
-// .my-left-menu {
-//   z-index: 10;
-//   top: $navbar-height;
-//   width: 15rem;
-//   bottom: 0;
-//   display: -ms-flexbox;
-//   display: flex;
-//   -ms-flex-direction: column;
-//   flex-direction: column;
-//   left: -15rem;
-//   overflow: hidden;
-//   position: fixed;
-//   transition: left 0.3s ease;
-// }
-
-// .my-left-menu.open {
-//   left: 0;
-// }
-
-// .my-left-menu.closed {
-//   left: -15rem;
-// }
-
-// .my-main {
-//   padding-top: $navbar-height;
-//   padding-left: 0;
-//   padding-right: 0;
-//   height: auto !important;
-//   min-height: 0px !important;
-//   /* Used in this example to enable scrolling */
-//   /*width: 100%;*/
-//   transition: margin-left 0.3s ease;
-// }
-
-
-// // body {
-// // 	margin: 0;
-// // 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-// // 		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-// // 		sans-serif;
-// // 	-webkit-font-smoothing: antialiased;
-// // 	-moz-osx-font-smoothing: grayscale;
-// // }
 
 
 // /*timeline - last minute offer*/
@@ -345,13 +346,13 @@ $beige-lighter: #EFF0EB;
 // // }
 
 
-// /* respsonsive iframe */
-// iframe {
-//   height: 100%;
-//   left: 0;
-//   position: absolute;
-//   top: 0;
-//   width: 100%;
-// }
+/* respsonsive iframe */
+iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 
 

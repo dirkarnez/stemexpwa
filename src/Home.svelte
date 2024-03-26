@@ -119,8 +119,8 @@
 	<Link to="/settings">Settings</Link>
 </nav> -->
 <nav class="navbar" aria-label="main navigation" style="box-shadow: 0 0 2rem #2125291a;">
-	<div class="navbar-brand" style="width: 15rem;">
-		<div class="navbar-start" style="margin-right: 0;">
+	<div class="navbar-brand is-align-items-center" style="width: 15rem;">
+		<div class="navbar-start px-2" style="margin-right: 0;">
 			<a
 				href={`javascript:void(0);`}
 				on:click={toggleSidebar}
@@ -128,9 +128,10 @@
 				class={`navbar-burger my-burger ${isSideBarOpen ? "is-active" : ""}`}
 				aria-label="menu"
 				aria-expanded="false">
-				<span aria-hidden="true" />
-				<span aria-hidden="true" />
-				<span aria-hidden="true" />
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
 			</a>
 		</div>
 		<a class="navbar-item" href="/" use:link>
