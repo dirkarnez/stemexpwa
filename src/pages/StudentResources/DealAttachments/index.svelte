@@ -16,6 +16,6 @@
     })
 </script>
 
-{#each attachments.filter(attachment => attachment["extension"] === "pdf") as videoGroup}
+{#each attachments.filter(attachment => attachment["extension"].ends``.endsWith("pdf")) as videoGroup}
 {/each}
 
