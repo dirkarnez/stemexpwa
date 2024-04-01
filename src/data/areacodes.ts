@@ -233,5 +233,5 @@
     "Wallis & Futuna (+681)" },
     "Yemen (+967)" },
     "Zambia (+260)" },
-    "Zimbabwe (+263)"
+    "Zimbabwe (+263)" }
 ]
