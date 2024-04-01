@@ -139,11 +139,7 @@
 									bind:value={$password.value} />
 							{:else} -->
 								<input
-									id="areaCode"
-									class="input"
-									type="text"
-									name="area_code" inputmode="numeric" pattern="[0-9]+"
-									placeholder="Enter your area code"
+								area_code
 									required={true}/>
 							<!-- {/if} -->
 							<span class="icon is-small is-left">
