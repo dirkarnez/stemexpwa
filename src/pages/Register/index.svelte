@@ -13,6 +13,7 @@
 
 	const { form } = createForm({
 		onSubmit: (values) => {
+			debugger;
 			registerButtonText = "Registering...";
 
 			const [  wrappedFetchPromise , abort ] = WrappedFetch("/api/register", {
