@@ -1,5 +1,5 @@
 [
-    "Afghanistan (+93)" },
+    { code: "", description: "Afghanistan (+93)" },
     "Albania (+355)" },
     "Algeria (+213)" },
     "American Samoa (+1)" },
