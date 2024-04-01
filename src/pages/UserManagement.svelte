@@ -96,7 +96,7 @@
 						<a class="button is-primary is-pulled-right" href={`${$location.pathname}/add`} use:link>Add New User</a>
 
 							<br/>
-							<table class="table">
+							<table class="table is-fullwidth">
 								<thead>
 									<tr>
 										<th>User</th>
