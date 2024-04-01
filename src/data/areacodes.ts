@@ -1,4 +1,4 @@
-[
+export default [
     { code: "", description: "Afghanistan (+93)" },
     { code: "", description: "Albania (+355)" },
     { code: "", description: "Algeria (+213)" },
