@@ -133,7 +133,7 @@
 							<div class="select is-fullwidth">
 								<select name="area_code">
 									{#each areacodes as areacode}
-										<option value="Argentina">Argentina</option>
+										<option value="Argentina">{areacode.description}</option>
 									{/each}
 								</select>
 							</div>
