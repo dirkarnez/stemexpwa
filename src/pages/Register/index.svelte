@@ -142,8 +142,8 @@
 									id="areaCode"
 									class="input"
 									type="text"
-									name="contact_number" inputmode="numeric" pattern="[0-9]+"
-									placeholder="Enter your contact number"
+									name="area_code" inputmode="numeric" pattern="[0-9]+"
+									placeholder="Enter your area code"
 									required={true}/>
 							<!-- {/if} -->
 							<span class="icon is-small is-left">
