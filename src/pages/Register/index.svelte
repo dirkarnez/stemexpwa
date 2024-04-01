@@ -128,7 +128,7 @@
 
 					
 					<div class="field">
-						<label class="label" for="contactNumber">Area Code</label>
+						<label class="label" for="areaCode">Area Code</label>
 						<div class="control has-icons-left">
 							<!-- {#if $myForm.hasError('password.required')}
 								<input
@@ -139,7 +139,7 @@
 									bind:value={$password.value} />
 							{:else} -->
 								<input
-									id="contactNumber"
+									id="areaCode"
 									class="input"
 									type="tel"
 									name="contact_number" inputmode="numeric" pattern="[0-9]+" minlength="8" maxlength="20"
