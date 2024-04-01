@@ -129,39 +129,17 @@
 					
 					<div class="field">
 						<label class="label" for="areaCode">Area Code</label>
-
-
-							<div class="control is-expanded has-icons-left">
-								<div class="select is-fullwidth">
-									<select name="area_code">
-										<option value="Argentina">Argentina</option>
-				
-									</select>
-								</div>
-							  	<span class="icon is-small is-left">
-									<i class="fa-solid fa-phone"></i>
-								</span>
+						<div class="control is-expanded has-icons-left">
+							<div class="select is-fullwidth">
+								<select name="area_code">
+									<option value="Argentina">Argentina</option>
+			
+								</select>
 							</div>
-					
-
-						<div class="control ">
-							<!-- {#if $myForm.hasError('password.required')}
-								<input
-									id="c"
-									class="input is-danger"
-									type="password"
-									placeholder="Enter your password"
-									bind:value={$password.value} />
-							{:else} -->
-								<input
-								
-									/>
-							<!-- {/if} -->
-
+							<span class="icon is-small is-left">
+								<i class="fa-solid fa-phone"></i>
+							</span>
 						</div>
-						<!-- {#if $myForm.hasError('password.required')}
-							<p class="help is-danger">Password is required</p>
-						{/if} -->
 					</div>
 
 					<div class="field">
