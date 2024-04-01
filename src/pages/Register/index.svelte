@@ -128,7 +128,7 @@
 
 					
 					<div class="field">
-						<label class="label" for="contactNumber">Contact Number</label>
+						<label class="label" for="contactNumber">Area Code</label>
 						<div class="control has-icons-left">
 							<!-- {#if $myForm.hasError('password.required')}
 								<input
