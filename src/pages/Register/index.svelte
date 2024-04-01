@@ -7,7 +7,7 @@
 	import { createForm } from 'felte';
 	import HundredVh from "../../components/HundredVh/index.svelte";
 	import SocialMediaButtons from "../../components/SocialMediaButtons/index.svelte";
-	import SocialMediaButtons from "../../data/areacodes";
+	import areacodes from "../../data/areacodes";
 	
 	let registerButtonText = "Register";
 
