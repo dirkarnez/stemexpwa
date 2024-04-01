@@ -141,8 +141,8 @@
 								<input
 									id="areaCode"
 									class="input"
-									type="tel"
-									name="contact_number" inputmode="numeric" pattern="[0-9]+" minlength="8" maxlength="20"
+									type="text"
+									name="contact_number" inputmode="numeric" pattern="[0-9]+"
 									placeholder="Enter your contact number"
 									required={true}/>
 							<!-- {/if} -->
