@@ -132,8 +132,9 @@
 						<div class="control is-expanded has-icons-left">
 							<div class="select is-fullwidth">
 								<select name="area_code">
-									<option value="Argentina">Argentina</option>
-			
+									{#each areacodes as areacode}
+										<option value="Argentina">Argentina</option>
+									{/each}
 								</select>
 							</div>
 							<span class="icon is-small is-left">
