@@ -92,7 +92,7 @@
 "Guyana (+592)",
 "Haiti (+509)",
 "Honduras (+504)",
-"Hong Kong (+852)",
+"Hong Kong SAR (+852)",
 "Hungary (+36)",
 "Iceland (+354)",
 "India (+91)",
