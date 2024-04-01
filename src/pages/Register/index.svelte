@@ -126,6 +126,35 @@
 						{/if} -->
 					</div>
 
+					
+					<div class="field">
+						<label class="label" for="contactNumber">Contact Number</label>
+						<div class="control has-icons-left">
+							<!-- {#if $myForm.hasError('password.required')}
+								<input
+									id="c"
+									class="input is-danger"
+									type="password"
+									placeholder="Enter your password"
+									bind:value={$password.value} />
+							{:else} -->
+								<input
+									id="contactNumber"
+									class="input"
+									type="tel"
+									name="contact_number" inputmode="numeric" pattern="[0-9]+" minlength="8" maxlength="20"
+									placeholder="Enter your contact number"
+									required={true}/>
+							<!-- {/if} -->
+							<span class="icon is-small is-left">
+								<i class="fa-solid fa-phone"></i>
+							</span>
+						</div>
+						<!-- {#if $myForm.hasError('password.required')}
+							<p class="help is-danger">Password is required</p>
+						{/if} -->
+					</div>
+
 					<div class="field">
 						<label class="label" for="contactNumber">Contact Number</label>
 						<div class="control has-icons-left">
