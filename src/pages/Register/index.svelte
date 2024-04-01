@@ -134,7 +134,7 @@
 							<div class="select is-fullwidth">
 								<select name="area_code">
 									{#each areacodes as areacode}
-										<option value={areacode.code}>{areacode.description}</option>
+										<option value={areacode.code} selected={areacode.code == "852"}>{areacode.description}</option>
 									{/each}
 								</select>
 							</div>
