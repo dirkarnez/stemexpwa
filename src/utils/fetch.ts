@@ -24,7 +24,7 @@ export const WrappedFetchData = (url: string, params: RequestInit = {}) => {
 
     const input = isDev
         ?
-        `https://localhost:443${url}`
+        `https://localhost:4443${url}`
         :
         url;
 
@@ -57,6 +57,7 @@ export const WrappedFetchData = (url: string, params: RequestInit = {}) => {
 }
 
 type WrappedFetchReturns =  [Promise<any>, AbortController];
+
 export const WrappedFetch = (url: string, params: RequestInit = {}): WrappedFetchReturns => {
     // return fetch(
     //     location.host.includes("localhost") ? 
@@ -76,7 +77,7 @@ export const WrappedFetch = (url: string, params: RequestInit = {}): WrappedFetc
     
     const input = isDev
         ?
-        `https://localhost:443${url}`
+        `https://localhost:4443${url}`
         :
         url;
 

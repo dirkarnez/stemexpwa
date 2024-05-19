@@ -298,7 +298,9 @@ module.exports = {
 		hot: true,
 		host: '0.0.0.0',
 		historyApiFallback: true,
-		https: true,
+		server: {
+			type: 'https'
+		},
 		static: {
 			directory: path.join(__dirname, 'public'),
 			publicPath: '/',
