@@ -10,6 +10,12 @@
         //     //    "${env:APPDATA}\\PowerShell\\custom-init.ps1"
         //     ]
         // }
+        "Command Prompt": {
+            "path": "${env:windir}\\System32\\cmd.exe",
+            "env": { 
+                "PATH": "${env:USERPROFILE}\\Downloads\\node-v18.18.0-win-x64\\node-v18.18.0-win-x64" 
+            }
+        }
     },
     "terminal.integrated.defaultProfile.windows": "Command Prompt"
 }
