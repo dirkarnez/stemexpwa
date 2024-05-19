@@ -1,9 +1,9 @@
 export const getHost = () => {
-    const isDev =  location.host.includes("localhost");
-
+    const isDev =  location.host.startsWith("localhost");
+    
     return isDev 
     ?
-    `https://localhost`
+    `https://localhost:4443`
     :
     "";
 }

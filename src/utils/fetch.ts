@@ -1,3 +1,5 @@
+import { getHost } from "./api";
+
 export const FakeFetch = (p: any, data: any) => new Promise(res => {
     setTimeout(() => {
         res(data);
@@ -14,19 +16,11 @@ export const WrappedFetchData = (url: string, params: RequestInit = {}) => {
     //     , 
     //     ...params
     // )
-    const isDev = location.host.includes("localhost");
-
     var abortController = new AbortController();
 
     var myHeaders = new Headers();
     // myHeaders.append("pragma", "no-cache");
     // myHeaders.append("Cache-Control", "no-cache");
-
-    const input = isDev
-        ?
-        `https://localhost:4443${url}`
-        :
-        url;
 
     const include: RequestCredentials = "include"
 
@@ -42,7 +36,7 @@ export const WrappedFetchData = (url: string, params: RequestInit = {}) => {
     };
 
     return [
-        fetch(input, obj)
+        fetch(`${getHost()}${url}`, obj)
             .then(response => {
                 if (response.ok && response.status >= 200 && response.status < 300) {
                     return response.arrayBuffer()
@@ -74,12 +68,6 @@ export const WrappedFetch = (url: string, params: RequestInit = {}): WrappedFetc
     var myHeaders = new Headers();
     // myHeaders.append("pragma", "no-cache");
     // myHeaders.append("Cache-Control", "no-cache");
-    
-    const input = isDev
-        ?
-        `https://localhost:4443${url}`
-        :
-        url;
 
     const include: RequestCredentials | undefined = isDev ? "include" : undefined;
 
@@ -97,7 +85,7 @@ export const WrappedFetch = (url: string, params: RequestInit = {}): WrappedFetc
     };
 
     return [
-        fetch(input, obj)
+        fetch(`${getHost()}${url}`, obj)
             .then(response => {
                 if (response.ok && response.status >= 200 && response.status < 300) {
                     return response.json();
