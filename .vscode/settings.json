@@ -1,0 +1,15 @@
+{
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": null,
+        "Windows PowerShell": null,
+        // "Custom Init": {
+        //     "path": "pwsh.exe",
+        //     "args": [
+        //     //    "-noexit",
+        //     //    "-file",
+        //     //    "${env:APPDATA}\\PowerShell\\custom-init.ps1"
+        //     ]
+        // }
+    },
+    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}
