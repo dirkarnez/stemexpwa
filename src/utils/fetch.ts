@@ -66,7 +66,7 @@ export const WrappedFetch = (url: string, params: RequestInit = {}): WrappedFetc
     //     , 
     //     ...params
     // )
-    const isDev = location.host.includes("localhost");
+    const isDev = location.host.startsWith("localhost");
 
     var abortController = new AbortController();
 
@@ -80,7 +80,9 @@ export const WrappedFetch = (url: string, params: RequestInit = {}): WrappedFetc
         :
         url;
 
-    const include: RequestCredentials = "include"
+    const include: RequestCredentials | undefined = isDev ? "include" : undefined;
+
+    debugger;
 
     const obj: RequestInit = {
         signal: abortController.signal,
