@@ -46,7 +46,7 @@
 </script>
 <div class="columns">
 	<div class="column">
-		<div class="content">
+		<!-- <div class="content">
 			<h4>Curriculum</h4>
 			<nav class="breadcrumb" aria-label="breadcrumbs">
 				<ul style="margin-left: 0;">
@@ -56,7 +56,7 @@
 				  <li class="is-active"><a href={`javascript:void(0)`} aria-current="page">Breadcrumb</a></li>
 				</ul>
 			</nav>
-		</div>
+		</div> -->
 		<!-- {#if (previousPath.match(/\//g) || []).length > 1}
 			<p>
 				<a href={previousPath} class="button is-danger" use:link>

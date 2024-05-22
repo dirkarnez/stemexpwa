@@ -723,6 +723,18 @@
 												</div>
 											</label>
 										</div>
+
+										<div class="field">
+											<label class="label">Title
+												<div class="control">
+													<textarea class="textarea"
+														name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.level_title_key}"
+														bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.level_title_key]}
+														required={true}
+													/>
+												</div>
+											</label>
+										</div>
 										
 										<div class="field">
 											<label class="label">Description
