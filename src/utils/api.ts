@@ -3,7 +3,7 @@ export const getHost = () => {
     
     return isDev 
     ?
-    `https://localhost:4443`
+    `https://localhost:4437`
     :
     "";
 }
