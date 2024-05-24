@@ -54,7 +54,7 @@
 	});
 
 	// if mobile default closed
-	let isSideBarOpen = true; //!navigator.userAgentData.mobile;
+	let isSideBarOpen = false; //!navigator.userAgentData.mobile;
 
 	function toggleSidebar() {
 		isSideBarOpen = !isSideBarOpen;

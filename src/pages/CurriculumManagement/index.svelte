@@ -9,7 +9,7 @@
 	import Index from "./index.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { isNullOrEmpty } from "../../utils/strings";
-	import { CurriculumManagementButton } from "./CurriculumManagementButton.svelte"
+	import CurriculumManagementButton from "./CurriculumManagementButton.svelte"
 	
 	export let parentId = null;
 

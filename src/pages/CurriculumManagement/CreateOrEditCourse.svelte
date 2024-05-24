@@ -792,7 +792,7 @@
 																		style="display: none;"
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_presentation_notes_key}.{presentationNoteIndex}.{curriculumFormKeys.lesson_presentation_note_file_key}"
 																	/>
-																	<a href={`javascript:void(0);`} class="is-underlined">{presentationNote[curriculumFormKeys.lesson_presentation_note_file_name_key] || "" }</a>
+																	<a href={getResourcesAPIByID(presentationNote[curriculumFormKeys.lesson_presentation_note_file_id_key])} class="is-underlined">{presentationNote[curriculumFormKeys.lesson_presentation_note_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removePresentationNote(levelIndex, lessonIndex, presentationNoteIndex)}>
 																		x
 																	</button>
@@ -849,7 +849,7 @@
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_student_notes_key}.{studentNoteIndex}.{curriculumFormKeys.lesson_student_note_file_key}"
 																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_student_notes_key][studentNoteIndex][curriculumFormKeys.lesson_student_note_file_key]}
 																	/>
-																	<a href={`javascript:void(0);`} class="is-underlined">{studentNote[curriculumFormKeys.lesson_student_note_file_name_key] || "" }</a>
+																	<a href={getResourcesAPIByID(studentNote[curriculumFormKeys.lesson_student_note_file_id_key])} class="is-underlined">{studentNote[curriculumFormKeys.lesson_student_note_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removeStudentNote(levelIndex, lessonIndex, studentNoteIndex)}>
 																		x
 																	</button>
@@ -906,7 +906,7 @@
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_teacher_notes_key}.{teacherNoteIndex}.{curriculumFormKeys.lesson_teacher_note_file_key}"
 																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_teacher_notes_key][teacherNoteIndex][curriculumFormKeys.lesson_teacher_note_file_key]}
 																	/>
-																	<a href={`javascript:void(0);`} class="is-underlined">{teacherNote[curriculumFormKeys.lesson_teacher_note_file_name_key] || "" }</a>
+																	<a href={getResourcesAPIByID(teacherNote[curriculumFormKeys.lesson_teacher_note_file_id_key])} class="is-underlined">{teacherNote[curriculumFormKeys.lesson_teacher_note_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removeTeacherNote(levelIndex, lessonIndex, teacherNoteIndex)}>
 																		x
 																	</button>
@@ -963,7 +963,7 @@
 																		name="{curriculumFormKeys.levels_key}.{levelIndex}.{curriculumFormKeys.lessons_key}.{lessonIndex}.{curriculumFormKeys.lesson_misc_materials_key}.{miscMaterialIndex}.{curriculumFormKeys.lesson_misc_materials_file_key}"
 																		bind:value={$data[curriculumFormKeys.levels_key][levelIndex][curriculumFormKeys.lessons_key][lessonIndex][curriculumFormKeys.lesson_misc_materials_key][miscMaterialIndex][curriculumFormKeys.lesson_misc_materials_file_key]}
 																	/>
-																	<a href={`javascript:void(0);`} class="is-underlined">{miscMaterial[curriculumFormKeys.lesson_misc_materials_file_name_key] || "" }</a>
+																	<a href={getResourcesAPIByID(miscMaterial[curriculumFormKeys.lesson_misc_materials_file_id_key])} class="is-underlined">{miscMaterial[curriculumFormKeys.lesson_misc_materials_file_name_key] || "" }</a>
 																	<button type="button" class="is-danger button delete" on:click={removeMiscMaterial(levelIndex, lessonIndex, miscMaterialIndex)}>
 																		x
 																	</button>
