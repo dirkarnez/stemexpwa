@@ -9,6 +9,7 @@
 	import Index from "./index.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { isNullOrEmpty } from "../../utils/strings";
+	import { CurriculumManagementButton } from "./CurriculumManagementButton.svelte"
 	
 	export let parentId = null;
 
@@ -151,17 +152,7 @@
 										</div>
 									</div> -->
 
-
-									<div class="box m-0 p-0" style={`background-color: ${colors[index % colors.length]}; height: 96px; width: 100%;`}>
-										<div class="columns is-mobile m-0 p-0" style={`height: 100%`}>
-											<div class="column is-narrow m-0 p-0" style={`height: 100%`}>
-												<img src={getResourcesAPIByID(icon_id)} style={`height: 100%; max-width: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; object-fit: cover; `} alt="">
-											</div>
-											<div class={`column is-flex is-align-items-center is-justify-content-center has-text-white`}>
-												<p>{description}</p>
-											</div>
-										</div>
-									</div>
+									<CurriculumManagementButton description={description} iconId={icon_id} color={colors[index % colors.length]}  />
 								</Link>
 							{:else}
 								<!-- <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
@@ -180,16 +171,7 @@
 										</div>
 									</div>
 								</div> -->
-								<div class="box m-0 p-0" style={`background-color: ${colors[index % colors.length]}; height: 96px; width: 100%;`}>
-									<div class="columns is-mobile m-0 p-0" style={`height: 100%`}>
-										<div class="column is-narrow m-0 p-0" style={`height: 100%`}>
-											<img src={getResourcesAPIByID(icon_id)} style={`height: 100%; max-width: 96px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; object-fit: cover; `} alt="">
-										</div>
-										<div class={`column is-flex is-align-items-center is-justify-content-center has-text-white`}>
-											<p>{description}</p>
-										</div>
-									</div>
-								</div>
+								<CurriculumManagementButton description={description} iconId={icon_id} color={colors[index % colors.length]}  />
 							{/if}
 						</div>
 					</div>
