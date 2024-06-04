@@ -4,7 +4,7 @@
 	import { stringToURLPart } from "../../utils/url";
 	import { useLocation, Link, Route, Router } from "svelte-routing";
 	import SelectedCurriculumCategory from "./SelectedCurriculumCategory.svelte";
-	import { getResourcesAPIByID } from "../../utils/api";
+	import CurriculumEntryButton from "../../components/CurriculumEntryButton/index.svelte";
 	
 	let location = useLocation();
 
@@ -53,7 +53,7 @@
 				{#each curriculum as { description, icon_id }, index}
 					<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
 						<Link to={`${$location.pathname}/${stringToURLPart(description)}`}>
-							<div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
+							<!-- <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
 								<div class="card-image">
 									<figure class="image is-96x96" style="overflow: hidden;">
 										<img src={/*icon ?? "https://bulma.io/images/placeholders/96x96.png"*/  getResourcesAPIByID(icon_id)}
@@ -68,7 +68,8 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
+							<CurriculumEntryButton description={description} iconId={icon_id} color={colors[index % colors.length]} />
 						</Link>
 					</div>
 				{/each}

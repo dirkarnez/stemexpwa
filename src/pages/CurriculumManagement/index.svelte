@@ -9,7 +9,7 @@
 	import Index from "./index.svelte";
 	import { getResourcesAPIByID } from "../../utils/api";
 	import { isNullOrEmpty } from "../../utils/strings";
-	import CurriculumManagementButton from "./CurriculumManagementButton.svelte"
+	import CurriculumEntryButton from "../../components/CurriculumEntryButton/index.svelte"
 	
 	export let parentId = null;
 
@@ -152,7 +152,7 @@
 										</div>
 									</div> -->
 
-									<CurriculumManagementButton description={description} iconId={icon_id} color={colors[index % colors.length]}  />
+									<CurriculumEntryButton description={description} iconId={icon_id} color={colors[index % colors.length]}  />
 								</Link>
 							{:else}
 								<!-- <div class="card is-flex is-flex-direction-row" style={`background-color: ${colors[index % colors.length]}`}>
@@ -171,7 +171,7 @@
 										</div>
 									</div>
 								</div> -->
-								<CurriculumManagementButton description={description} iconId={icon_id} color={colors[index % colors.length]}  />
+								<CurriculumEntryButton description={description} iconId={icon_id} color={colors[index % colors.length]}  />
 							{/if}
 						</div>
 					</div>

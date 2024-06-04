@@ -297,6 +297,7 @@ module.exports = {
 	devServer: {
 		hot: true,
 		host: '0.0.0.0',
+		allowedHosts: 'all',
 		historyApiFallback: true,
 		server: {
 			type: 'https'

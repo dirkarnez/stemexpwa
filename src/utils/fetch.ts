@@ -61,7 +61,7 @@ export const WrappedFetch = (url: string, params: RequestInit = {}): WrappedFetc
     //     , 
     //     ...params
     // )
-    const isDev = location.host.startsWith("localhost");
+    const isDev = location.host.includes("localhost");
 
     var abortController = new AbortController();
 
