@@ -39,7 +39,8 @@
 	{#if Array.isArray(curriculumCategoryCourses)}
 		{#each curriculumCategoryCourses as { description, id } }
             <Route path={`/${stringToURLPart(description)}`}>
-				<SelectedCurriculumCategoryCourse parentId={id} previousPath={currentPath}/>
+				<SelectedCurriculumCategoryCourse parentId={id} /> 
+                <!-- previousPath={currentPath} -->
 			</Route>
 		{/each}
 	{/if}

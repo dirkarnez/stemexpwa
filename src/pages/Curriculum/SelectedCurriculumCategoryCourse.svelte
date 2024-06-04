@@ -3,13 +3,13 @@
 	import { WrappedFetch } from "../../utils/fetch";
 	import { useLocation, Link, Route, Router, link, navigate } from "svelte-routing";
 	import { getResourcesAPIByID } from "../../utils/api";
+	import { convertYouTubeUrl } from "../../utils/url";
     
     //import elementry1 from "../assets/images/schedule-details/codingMineCraftElementry/elementry1.png"
 
     //export let courses;
     //export let routePath;
     export let parentId;
-	// export let previousPath;
 
     //$: selectedUpdatedSchedule = courses.get(routePath);
     
@@ -19,11 +19,12 @@
     let curriculumCategoryCourseDetails = [];
 
     onMount(() => {
-        const url = `/api/curriculum?id=${parentId}`;
+        const url = `/api/curriculum-course?id=${parentId}`;
         const [  _wrappedFetchCurriculumCategoryCourse ] = WrappedFetch(url);
         wrappedFetchCurriculumCategoryCourse = _wrappedFetchCurriculumCategoryCourse;
         wrappedFetchCurriculumCategoryCourse
         .then(data => {
+			debugger;
             curriculumCategoryCourseDetails = data;
         })
     });
@@ -45,21 +46,21 @@
 <div class="columns is-multiline">
 	<div class="column is-one-third-desktop is-full-tablet is-full-mboile">
 		<div class="columns is-multiline">
-			<div class="column is-full-desktop is-half-tablet is-full-mobile">
+			<!-- <div class="column is-full-desktop is-half-tablet is-full-mobile">
                 {#if Array.isArray(curriculumCategoryCourseDetails.youtube_video_entries)}
-                    {#each curriculumCategoryCourseDetails.youtube_video_entries as { url , title }}
+                    {#each curriculumCategoryCourseDetails.youtube_video_entries as { url  }}
                         <iframe
                             style="height: 380px; width: 100%"
                             frameborder="0"
                             webkitallowfullscreen="false"
                             mozallowfullscreen="false"
                             allowfullscreen="false"
-                            src={url}
-                            title={title}
+                            src={convertYouTubeUrl(url)}
+                            title="dfg"
                         />
                     {/each}
                 {/if}
-			</div>
+			</div> -->
 			<div class="column is-full-desktop is-half-tablet is-full-mobile">
 				<div class="content">
 					<h4>Our blog</h4>

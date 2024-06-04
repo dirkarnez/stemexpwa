@@ -10,3 +10,17 @@ export const mustMatchThenReplace = (regex: RegExp, stringtoreplace: string, rep
 		throw "!!!!";
 	}
 }
+
+export function convertYouTubeUrl(url: string) {
+	// Parse the URL using the URL class
+	const parsedUrl = new URL(url);
+  
+	// Extract the video ID from the URL parameters
+	const videoId = parsedUrl.searchParams.get('v');
+  
+	// Construct the embed URL
+	const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  
+	return embedUrl;
+  }
+  
