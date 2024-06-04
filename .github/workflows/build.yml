@@ -17,7 +17,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      hostName: ubuntu@ec2-43-198-151-195.ap-east-1.compute.amazonaws.com
+#      hostName: ubuntu@ec2-43-198-151-195.ap-east-1.compute.amazonaws.com 
+      hostName: ubuntu@ec2-18-163-71-246.ap-east-1.compute.amazonaws.com
       targetFolder: /home/ubuntu/public
       targetZip: ${{ github.event.repository.name }}-${{ github.ref_name }}.zip
     strategy:
