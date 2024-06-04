@@ -46,21 +46,25 @@
 <div class="columns is-multiline">
 	<div class="column is-one-third-desktop is-full-tablet is-full-mboile">
 		<div class="columns is-multiline">
-			<!-- <div class="column is-full-desktop is-half-tablet is-full-mobile">
+			<div class="column is-full-desktop is-half-tablet is-full-mobile">
                 {#if Array.isArray(curriculumCategoryCourseDetails.youtube_video_entries)}
                     {#each curriculumCategoryCourseDetails.youtube_video_entries as { url  }}
-                        <iframe
-                            style="height: 380px; width: 100%"
-                            frameborder="0"
-                            webkitallowfullscreen="false"
-                            mozallowfullscreen="false"
-                            allowfullscreen="false"
-                            src={convertYouTubeUrl(url)}
-                            title="dfg"
-                        />
+						<div class="iframe-container">
+							<iframe
+								style="width: 100%; border: none;"
+								frameborder="0"
+								webkitallowfullscreen="false"
+								mozallowfullscreen="false"
+								allowfullscreen="false"
+								src={convertYouTubeUrl(url)}
+								title="dfg"
+							>
+								<p>Your browser does not support iframes.</p>
+							</iframe>
+						</div>
                     {/each}
                 {/if}
-			</div> -->
+			</div>
 			<div class="column is-full-desktop is-half-tablet is-full-mobile">
 				<div class="content">
 					<h4>Our blog</h4>
@@ -77,8 +81,8 @@
 	</div>
 	<div class="column is-two-thirds-desktop is-full-tablet is-full-mboile">
 		<div class="content">
-			{#if Array.isArray(curriculumCategoryCourseDetails.information_entries)}
-				{#each curriculumCategoryCourseDetails.information_entries as { title, content, icon_id }}
+			{#if Array.isArray(curriculumCategoryCourseDetails.levels)}
+				{#each curriculumCategoryCourseDetails.levels as { title, description, icon_id }}
 					<div class="box">
 						<!-- <article class="media">
 							<div class="media-left">
@@ -101,7 +105,7 @@
 							<div class="column is-full-mobile">
 								<div class="content">
 									<h2>{title}</h2>
-									<p>{content}</p>
+									<p>{description}</p>
 									<a class="is-link" href={`javascript:void(0)`}>Join now</a>
 								</div>
 							</div>
